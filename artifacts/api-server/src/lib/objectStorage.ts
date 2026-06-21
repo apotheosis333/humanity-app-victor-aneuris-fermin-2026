@@ -9,7 +9,8 @@ import {
   setObjectAclPolicy,
 } from "./objectAcl";
 
-const REPLIT_SIDECAR_ENDPOINT = "http://127.0.0.1:1106";
+const REPLIT_SIDECAR_ENDPOINT =
+  process.env.REPLIT_SIDECAR_ENDPOINT || "http://127.0.0.1:1106";
 
 export const objectStorageClient = new Storage({
   credentials: {
@@ -258,7 +259,7 @@ async function signObjectURL({
   if (!response.ok) {
     throw new Error(
       `Failed to sign object URL, errorcode: ${response.status}, ` +
-        `make sure you're running on Replit`
+        `make sure you're running on Replit or set REPLIT_SIDECAR_ENDPOINT`
     );
   }
 

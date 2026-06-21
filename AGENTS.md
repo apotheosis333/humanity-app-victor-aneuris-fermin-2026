@@ -94,6 +94,8 @@ Known or likely required variables:
 - `AI_INTEGRATIONS_OPENAI_API_KEY` - OpenAI integration API key.
 - `PUBLIC_OBJECT_SEARCH_PATHS` - public object storage search paths.
 - `PRIVATE_OBJECT_DIR` - private object storage directory.
+- `REPLIT_SIDECAR_ENDPOINT` - optional override for Replit object storage sidecar URL.
+- `STORAGE_PROVIDER`, `STORAGE_BUCKET`, `STORAGE_REGION`, `STORAGE_ENDPOINT`, `STORAGE_ACCESS_KEY_ID`, `STORAGE_SECRET_ACCESS_KEY`, `STORAGE_PUBLIC_BASE_URL` - planned production storage adapter variables.
 - `LOG_LEVEL` - optional backend logging level.
 - `NODE_ENV` - runtime environment.
 

@@ -48,6 +48,14 @@ AI_INTEGRATIONS_OPENAI_BASE_URL=
 AI_INTEGRATIONS_OPENAI_API_KEY=
 PUBLIC_OBJECT_SEARCH_PATHS=
 PRIVATE_OBJECT_DIR=
+REPLIT_SIDECAR_ENDPOINT=
+STORAGE_PROVIDER=
+STORAGE_BUCKET=
+STORAGE_REGION=
+STORAGE_ENDPOINT=
+STORAGE_ACCESS_KEY_ID=
+STORAGE_SECRET_ACCESS_KEY=
+STORAGE_PUBLIC_BASE_URL=
 LOG_LEVEL=
 ```
 
@@ -103,4 +111,4 @@ AI_INTEGRATIONS_OPENAI_API_KEY=
 
 Object storage is not fully cloud-portable yet. The current backend storage implementation still depends on Replit-style object storage behavior, including a local Replit sidecar endpoint for signed URLs.
 
-Before a full non-Replit Render/Railway launch, replace or rework object storage with a deployable provider flow such as Google Cloud Storage, S3-compatible storage, Supabase Storage, or another production storage service.
+Before a full non-Replit Render/Railway launch, replace or rework object storage with a deployable provider flow such as S3-compatible storage, Google Cloud Storage, Supabase Storage, or another production storage service. See `docs/storage-readiness.md` for the recommended adapter strategy.
