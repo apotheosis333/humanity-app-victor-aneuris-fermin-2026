@@ -84,6 +84,7 @@ Known or likely required variables:
 
 - `DATABASE_URL` - PostgreSQL connection string used by `lib/db`.
 - `PORT` - required by the backend server and currently required by the frontend Vite config.
+- `CORS_ORIGINS` - comma-separated backend CORS allowlist for deployed web and mobile origins.
 - `BASE_PATH` - currently required by the frontend Vite config.
 - `VITE_CLERK_PUBLISHABLE_KEY` - Clerk publishable key for the frontend.
 - `VITE_CLERK_PROXY_URL` - optional Clerk proxy URL used by the frontend.

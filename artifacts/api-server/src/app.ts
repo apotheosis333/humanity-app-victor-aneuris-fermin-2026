@@ -5,6 +5,7 @@ import { clerkMiddleware } from "@clerk/express";
 import { publishableKeyFromHost } from "@clerk/shared/keys";
 import router from "./routes";
 import { logger } from "./lib/logger";
+import { corsOptions } from "./lib/cors";
 import {
   CLERK_PROXY_PATH,
   clerkProxyMiddleware,
@@ -35,9 +36,17 @@ app.use(
 
 app.use(CLERK_PROXY_PATH, clerkProxyMiddleware());
 
-app.use(cors({ credentials: true, origin: true }));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.get("/health", (_req, res) => {
+  res.json({
+    ok: true,
+    service: "humanity-api",
+    timestamp: new Date().toISOString(),
+  });
+});
 
 app.use(
   clerkMiddleware((req) => ({
