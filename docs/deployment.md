@@ -109,6 +109,6 @@ AI_INTEGRATIONS_OPENAI_API_KEY=
 
 ## Storage Warning
 
-Object storage is not fully cloud-portable yet. The current backend storage implementation still depends on Replit-style object storage behavior, including a local Replit sidecar endpoint for signed URLs.
+Object storage now supports the existing Replit sidecar mode and an S3-compatible mode selected by `STORAGE_PROVIDER`.
 
-Before a full non-Replit Render/Railway launch, replace or rework object storage with a deployable provider flow such as S3-compatible storage, Google Cloud Storage, Supabase Storage, or another production storage service. See `docs/storage-readiness.md` for the recommended adapter strategy.
+For Render/Railway, use `STORAGE_PROVIDER=s3` with a provider such as Cloudflare R2, AWS S3, or Backblaze B2. Replit mode still depends on a Replit sidecar and is not suitable for normal Render/Railway deployment. See `docs/storage-readiness.md` for setup details.

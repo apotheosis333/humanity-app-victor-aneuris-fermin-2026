@@ -1,6 +1,6 @@
 # Storage Deployment Readiness
 
-This note documents the current HuMANity object storage flow and the recommended replacement path for non-Replit deployment. It contains no secret values.
+This note documents the HuMANity object storage flow and the storage adapter paths for Replit and S3-compatible production deployment. It contains no secret values.
 
 ## Current Architecture
 
@@ -17,13 +17,26 @@ Current profile image upload flow:
 1. The signed-in frontend calls `POST /api/storage/uploads/request-url`.
 2. The backend validates image type and size.
 3. The backend creates a private object path under `PRIVATE_OBJECT_DIR`.
-4. The backend asks the Replit object storage sidecar for a signed PUT URL.
+4. The backend asks the configured storage adapter for a signed PUT URL.
 5. The browser uploads the file directly to that signed URL.
 6. The frontend calls `POST /api/storage/uploads/finalize`.
 7. The backend stores ACL metadata on the object with the Clerk user as owner and public visibility.
 8. Profile photos are stored as `/api/storage/objects/...` URLs and are served through the backend ACL-aware object route.
 
-## Replit-Specific Dependencies
+## Storage Providers
+
+`STORAGE_PROVIDER` selects the backend adapter:
+
+- Empty or `replit`: use the existing Replit object storage sidecar behavior.
+- `s3`: use S3-compatible storage, such as Cloudflare R2, AWS S3, or Backblaze B2.
+
+The frontend upload contract remains stable:
+
+- `POST /api/storage/uploads/request-url`
+- `POST /api/storage/uploads/finalize`
+- `GET /api/storage/objects/*`
+
+## Replit Storage
 
 The backend currently uses `@google-cloud/storage`, but authentication and signed URL generation depend on Replit's local object storage sidecar.
 
@@ -35,21 +48,41 @@ Current Replit-specific behavior:
 - Signed URL endpoint: `/object-storage/signed-object-url`.
 - Path variables: `PUBLIC_OBJECT_SEARCH_PATHS` and `PRIVATE_OBJECT_DIR`.
 
-`REPLIT_SIDECAR_ENDPOINT` can override the default sidecar URL, but this preserves Replit-style behavior only. It does not make storage cloud-portable on Render/Railway by itself.
+`REPLIT_SIDECAR_ENDPOINT` can override the default sidecar URL, but this preserves Replit-style behavior only.
 
 ## What Fails On Render/Railway
 
-On Render/Railway there is no Replit sidecar at `127.0.0.1:1106`, so these operations will fail:
+On Render/Railway there is no Replit sidecar at `127.0.0.1:1106`, so Replit mode will fail for:
 
 - Generating signed upload URLs.
 - Fetching sidecar credentials for Google Cloud Storage.
 - Any upload flow that depends on `getObjectEntityUploadURL()`.
 
-Profile image uploads are therefore blocked until storage is replaced or adapted for a normal cloud provider.
+Use `STORAGE_PROVIDER=s3` for non-Replit production deployment.
+
+## S3-Compatible Storage
+
+The S3 adapter can generate presigned PUT URLs and serve stored objects through the existing backend routes. It stores app ACL metadata in object metadata and keeps stable app object paths such as `/objects/uploads/<id>`.
+
+Required env vars when `STORAGE_PROVIDER=s3`:
+
+```bash
+STORAGE_PROVIDER=s3
+STORAGE_BUCKET=
+STORAGE_REGION=
+STORAGE_ENDPOINT=
+STORAGE_ACCESS_KEY_ID=
+STORAGE_SECRET_ACCESS_KEY=
+STORAGE_PUBLIC_BASE_URL=
+```
+
+`STORAGE_ENDPOINT` is required for Cloudflare R2 and most S3-compatible providers. For AWS S3, it can usually be omitted.
+
+`STORAGE_PUBLIC_BASE_URL` is optional. The current backend still preserves `/api/storage/objects/*` serving, so public CDN delivery can be added deliberately later without changing profile upload UI.
 
 ## Current Environment Variables
 
-Currently used:
+Replit mode:
 
 ```bash
 PUBLIC_OBJECT_SEARCH_PATHS=
@@ -57,7 +90,7 @@ PRIVATE_OBJECT_DIR=
 REPLIT_SIDECAR_ENDPOINT=
 ```
 
-Planned production adapter variables:
+S3-compatible mode:
 
 ```bash
 STORAGE_PROVIDER=
@@ -87,28 +120,31 @@ Alternative: Google Cloud Storage can also work because the current code already
 
 Supabase Storage can work too, especially if Supabase becomes the database/auth/storage platform later, but it is less aligned with the current Express/Drizzle architecture.
 
-## Implementation Plan
+## Implemented Adapter Shape
 
-Implement storage replacement in a dedicated step.
+`ObjectStorageService` now delegates to provider adapters while keeping the route-facing methods stable:
+
+- `searchPublicObject`
+- `downloadObject`
+- `getObjectEntityUploadURL`
+- `getObjectEntityFile`
+- `normalizeObjectEntityPath`
+- `trySetObjectEntityAclPolicy`
+- `canAccessObjectEntity`
+- `deleteObject` support at the adapter level for future cleanup flows
+
+The existing Replit behavior is preserved as the default adapter. The S3 adapter is enabled only when `STORAGE_PROVIDER=s3`.
+
+## Future Implementation Plan
+
+Further hardening should happen in later steps.
 
 Suggested approach:
 
-1. Add a storage adapter interface for the backend methods already used by routes:
-   - create signed upload URL
-   - normalize object path
-   - fetch object metadata/stream
-   - set/get ACL metadata or equivalent app-owned metadata
-   - check read access
-2. Keep the existing Replit adapter as `STORAGE_PROVIDER=replit`.
-3. Add an S3-compatible adapter as `STORAGE_PROVIDER=s3`.
-4. Preserve existing API routes:
-   - `POST /api/storage/uploads/request-url`
-   - `POST /api/storage/uploads/finalize`
-   - `GET /api/storage/objects/*`
-5. Preserve the frontend upload contract so profile upload UI does not need a redesign.
-6. Store stable app object paths such as `/objects/<id>` rather than provider URLs.
-7. Use backend serving or short-lived read URLs for private/protected objects.
-8. Add migration notes for existing Replit object paths if production data already exists there.
+1. Add integration tests or manual smoke tests against a real R2/S3 bucket.
+2. Decide whether profile images should continue through backend reads or move to a CDN/public base URL.
+3. Add object deletion to the future account deletion flow.
+4. Add migration notes for existing Replit object paths if production data already exists there.
 
 ## Manual Provider Setup Checklist
 
@@ -125,8 +161,9 @@ For Cloudflare R2 or another S3-compatible provider:
    - `STORAGE_SECRET_ACCESS_KEY=`
    - `STORAGE_PUBLIC_BASE_URL=` if public CDN delivery is used
 4. Configure CORS on the bucket so browser PUT uploads from the deployed frontend/mobile origins are allowed.
-5. Keep the bucket private unless a deliberate CDN/public object strategy is chosen.
-6. Verify profile photo upload, finalize, profile save, profile view, and object read behavior.
+5. Allow the `PUT` method and `Content-Type` header in bucket CORS.
+6. Keep the bucket private unless a deliberate CDN/public object strategy is chosen.
+7. Verify profile photo upload, finalize, profile save, profile view, and object read behavior.
 
 ## Cost And Complexity
 
@@ -136,4 +173,4 @@ For Cloudflare R2 or another S3-compatible provider:
 - Google Cloud Storage: moderate complexity, viable but requires replacing Replit sidecar credentials with normal cloud credentials/signing.
 - Supabase Storage: moderate complexity, best if Supabase becomes a larger platform dependency.
 
-Recommendation: implement the adapter in the next storage-specific development step before deploying backend uploads to Render/Railway.
+Recommendation: use Cloudflare R2 first for production smoke testing, then keep the adapter provider-neutral so AWS S3 or Backblaze B2 remain viable.
