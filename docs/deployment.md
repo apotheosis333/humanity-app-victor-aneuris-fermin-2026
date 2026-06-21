@@ -69,6 +69,8 @@ Local development origins are allowed automatically when `NODE_ENV` is not `prod
 
 The backend uses PostgreSQL through Drizzle and requires `DATABASE_URL`.
 
+See `docs/database-auth-readiness.md` for the current database/auth production checklist and known account deletion gaps.
+
 Before pointing production traffic at the backend, provision a production PostgreSQL database and run the repository's database setup command from a trusted environment:
 
 ```bash
