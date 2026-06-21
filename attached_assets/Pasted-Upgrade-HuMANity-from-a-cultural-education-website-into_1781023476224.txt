@@ -1,0 +1,133 @@
+Upgrade HuMANity from a cultural education website into a premium global empathy platform designed to help humanity understand, respect, and connect with one another.
+
+Core mission:
+“Helping humanity see itself as one family without erasing what makes each culture unique.”
+
+Build these major features:
+
+1. Earth View Homepage
+Create a cinematic homepage with a rotating Earth/globe visual. At first, show Earth without borders. When users interact, reveal countries and allow exploration. The emotional theme should be: before borders, politics, and conflict, we are one human family.
+
+2. Human Stories
+Add a section on every country page called “A Day In My Life.”
+This should eventually contain first-person stories from ordinary citizens:
+- Students
+- Parents
+- Workers
+- Artists
+- Elders
+- Farmers
+- Teachers
+- Doctors
+- Entrepreneurs
+
+3. Walk In Their Shoes AI
+Create a feature where users can choose a country, region, age, and occupation, then receive an immersive first-person day-in-the-life experience from that perspective. Make this educational, respectful, and empathy-focused.
+
+4. World Dinner Table
+Create a virtual global discussion feature where people from different nations answer the same universal questions:
+- What does family mean to you?
+- What makes you happy?
+- What does peace mean to you?
+- What do you hope for your children?
+- What do you wish the world understood about your people?
+
+5. Humanity Score
+Create a personal learning dashboard that tracks:
+- Countries explored
+- Cultures learned
+- Languages sampled
+- Stories read
+- Perspectives experienced
+- Peace projects discovered
+
+This is not a competition. It should feel like personal growth.
+
+6. Global Music Explorer
+Add music discovery to each country page:
+- Traditional music
+- Folk instruments
+- Modern music
+- Cultural soundscapes
+- Famous artists
+
+7. World Language Discovery
+Each country page should teach simple phrases in major local languages:
+- Hello
+- Thank you
+- Peace
+- Friendship
+- I love you
+- Welcome
+
+8. Humanity Timeline
+Build an interactive timeline showing what different civilizations were doing during the same historical periods. Example: 1000 BCE should show developments in Egypt, China, Israel, India, Greece, Africa, and the Americas side by side.
+
+9. Shared Humanity Map
+Create a feature that highlights similarities between cultures:
+- Family values
+- Hospitality
+- Respect for elders
+- Community life
+- Education
+- Faith traditions
+- Food customs
+- Music patterns
+- Migration history
+
+10. Peace Projects
+Add a section where users can discover real-world humanitarian projects:
+- Clean water
+- Education
+- Medical aid
+- Conflict resolution
+- Food security
+- Refugee support
+- Environmental healing
+
+11. Future of Humanity
+Create a collaborative section focused on humanity’s biggest challenges:
+- Poverty
+- Disease
+- Education
+- Climate
+- Energy
+- AI
+- Space exploration
+- War and peace
+
+12. Humanity Pledge
+Add an optional pledge users can sign:
+“I will seek understanding before judgment.
+I will value the dignity of every human being.
+I will remain curious about cultures different from my own.
+I recognize that humanity is stronger when we learn from one another.”
+
+Design style:
+Make the platform feel premium, cinematic, peaceful, and futuristic. Use the existing HuMANity color palette:
+- Midnight Blue: #0F172A
+- Royal Blue: #2563EB
+- Warm Gold: #FBBF24
+- Pure White: #FFFFFF
+- Soft Light Background: #F8FAFC
+- Charcoal Text: #1F2937
+
+Brand styling:
+- Write the name exactly as “HuMANity”
+- Make “MAN” Warm Gold
+- Make the rest Royal Blue or White depending on background
+- Use gold only for meaningful highlights, selected countries, important icons, and special moments
+
+User experience:
+The app should feel like a digital United Nations for ordinary people. It should not feel like a generic encyclopedia or social media app. It should feel inspiring, emotionally intelligent, respectful, educational, and world-class.
+
+Technical requirements:
+- Mobile-responsive
+- Scalable database structure
+- Country pages generated from structured data
+- Clean component architecture
+- Searchable countries
+- Filter by continent, language, culture, religion, population, and region
+- Future-ready for user accounts, AI features, translations, and community stories
+
+Build this as a polished MVP first, using placeholder data where needed, but structure the code so real content, APIs, and AI integrations can be added later.

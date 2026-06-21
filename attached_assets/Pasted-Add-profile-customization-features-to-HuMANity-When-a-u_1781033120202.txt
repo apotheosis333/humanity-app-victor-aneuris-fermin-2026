@@ -1,0 +1,54 @@
+Add profile customization features to HuMANity.
+
+When a user edits their profile, include two major features:
+
+1. Profile Picture Upload
+
+Allow users to upload a profile picture from their computer, phone, or device.
+
+Requirements:
+- Add an "Upload Profile Picture" button
+- Allow image file selection
+- Show a preview before saving
+- Save the uploaded image to the user profile
+- Allow users to replace or remove their profile picture
+- Use a clean circular avatar style
+- Add basic validation for file type and size
+- Accept common image formats like JPG, PNG, and WEBP
+
+2. Profile Music
+
+Add a "Profile Song" feature inspired by classic MySpace.
+
+Users should be able to search for and select a song to display on their profile.
+
+Requirements:
+- Add a "Choose Profile Song" section in profile editing
+- Include a music search bar
+- Allow users to search a large music catalog using Spotify or Apple Music API integration
+- Show search results with:
+  - Song title
+  - Artist
+  - Album cover
+  - Preview/play button when available
+- Allow the user to select one song as their profile song
+- Display the selected song on the public profile
+- Include album artwork, song title, artist name, and a play preview if available
+- Allow users to change or remove their profile song
+
+Important:
+Use official API integrations only. Do not upload or store copyrighted music files directly. Store only the song metadata, streaming link, album art URL, and preview URL if the API provides one.
+
+If Spotify or Apple Music API credentials are not available yet, build the UI and database fields with placeholder/mock search results so the real API can be connected later.
+
+Design Style:
+Make this feature feel premium, futuristic, and personal.
+
+Use:
+- Glassmorphism profile cards
+- Soft blue glow around avatars
+- Warm gold highlights for selected music
+- Smooth hover animations
+- Clean mobile-responsive layout
+
+The goal is to let every user express their identity through image, culture, and music while keeping the platform safe, legal, and scalable.

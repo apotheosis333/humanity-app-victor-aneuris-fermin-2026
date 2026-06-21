@@ -1,0 +1,639 @@
+[
+  {
+    "countryCode": "SL",
+    "year": 1462,
+    "title": "Portuguese explorer Pedro de Sintra names Sierra Leone",
+    "description": "Portuguese navigator Pedro de Sintra mapped the coast and named the mountainous peninsula Serra Lyoa (Lion Mountains), origin of the country's name.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "SL",
+    "year": 1787,
+    "title": "Founding of the Province of Freedom",
+    "description": "British abolitionists settled freed slaves at Granville Town, an early settlement that preceded the colony for liberated Africans.",
+    "category": "social"
+  },
+  {
+    "countryCode": "SL",
+    "year": 1792,
+    "title": "Freetown founded by Nova Scotian settlers",
+    "description": "Freed black Loyalists from Nova Scotia established Freetown, which became the capital and a haven for liberated Africans.",
+    "category": "social"
+  },
+  {
+    "countryCode": "SL",
+    "year": 1808,
+    "title": "Sierra Leone becomes a British Crown Colony",
+    "description": "Britain took over the settlement, making Freetown a base for the Royal Navy's anti-slavery patrols off West Africa.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SL",
+    "year": 1961,
+    "title": "Sierra Leone gains independence from Britain",
+    "description": "On 27 April 1961 Sierra Leone became an independent nation within the Commonwealth, with Milton Margai as its first prime minister.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SL",
+    "year": 1991,
+    "title": "Outbreak of the Sierra Leone Civil War",
+    "description": "The Revolutionary United Front launched a rebellion that triggered an eleven-year civil war notorious for the use of blood diamonds and child soldiers.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SL",
+    "year": 2002,
+    "title": "End of the civil war",
+    "description": "The brutal conflict was declared over after UN and British intervention, beginning a long process of reconstruction and reconciliation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SL",
+    "year": 2014,
+    "title": "Ebola epidemic strikes Sierra Leone",
+    "description": "The West African Ebola outbreak devastated the country, killing thousands before being contained by 2016.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "SO",
+    "year": -2500,
+    "title": "Land of Punt trades with ancient Egypt",
+    "description": "The Horn of Africa region, often linked with the fabled Land of Punt, supplied incense, gold and ivory to ancient Egyptian expeditions.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "SO",
+    "year": 900,
+    "title": "Rise of Mogadishu as a trading hub",
+    "description": "Mogadishu grew into a wealthy Indian Ocean port, trading gold and goods with Arabia, Persia, India and beyond.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "SO",
+    "year": 1415,
+    "title": "Adal Sultanate fights Ethiopia",
+    "description": "The Muslim Adal Sultanate, centered in the Horn, waged prolonged wars with the Christian Ethiopian Empire.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SO",
+    "year": 1875,
+    "title": "Sultanate of the Geledi and colonial pressures",
+    "description": "Local Somali sultanates flourished even as European and Egyptian powers began to encroach on the Somali coast.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SO",
+    "year": 1899,
+    "title": "Dervish movement led by Sayyid Mohammed Abdullah Hassan",
+    "description": "The Dervish State resisted British, Italian and Ethiopian colonization for two decades in a major anti-colonial struggle.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SO",
+    "year": 1960,
+    "title": "Somalia gains independence and unifies",
+    "description": "British Somaliland and Italian Somaliland merged on 1 July 1960 to form the independent Somali Republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SO",
+    "year": 1991,
+    "title": "Collapse of the Siad Barre government",
+    "description": "The fall of dictator Siad Barre plunged Somalia into civil war and prolonged statelessness.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SO",
+    "year": 2012,
+    "title": "Federal Government of Somalia established",
+    "description": "Somalia adopted a provisional constitution and formed its first permanent central government since 1991.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZA",
+    "year": -100000,
+    "title": "Early modern humans at the southern coast",
+    "description": "Sites such as Blombos Cave preserve some of the earliest evidence of symbolic behavior and tool use by Homo sapiens.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "ZA",
+    "year": 1488,
+    "title": "Bartolomeu Dias rounds the Cape of Good Hope",
+    "description": "The Portuguese navigator became the first European to sail around the southern tip of Africa, opening a sea route to Asia.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "ZA",
+    "year": 1652,
+    "title": "Dutch establish Cape Town",
+    "description": "Jan van Riebeeck founded a Dutch East India Company resupply station at the Cape, beginning permanent European settlement.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZA",
+    "year": 1879,
+    "title": "Anglo-Zulu War",
+    "description": "The Zulu Kingdom fought Britain, winning a famous victory at Isandlwana before ultimately being defeated.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ZA",
+    "year": 1910,
+    "title": "Union of South Africa formed",
+    "description": "Four British colonies united to create the self-governing Union of South Africa within the British Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZA",
+    "year": 1948,
+    "title": "Apartheid system introduced",
+    "description": "The National Party institutionalized apartheid, a legal system of racial segregation and white minority rule.",
+    "category": "social"
+  },
+  {
+    "countryCode": "ZA",
+    "year": 1994,
+    "title": "First democratic elections; Mandela elected president",
+    "description": "Apartheid ended as all races voted freely, electing Nelson Mandela as South Africa's first black president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZA",
+    "year": 2010,
+    "title": "South Africa hosts the FIFA World Cup",
+    "description": "South Africa became the first African nation to host the football World Cup, a landmark moment for the continent.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "SS",
+    "year": 1821,
+    "title": "Turco-Egyptian penetration of the south",
+    "description": "Egyptian forces under Muhammad Ali pushed up the Nile, drawing the southern Sudan region into wider conquest and the slave trade.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SS",
+    "year": 1899,
+    "title": "Anglo-Egyptian Condominium over Sudan",
+    "description": "Britain and Egypt jointly administered Sudan, including the south, often governing the region separately from the north.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SS",
+    "year": 1955,
+    "title": "First Sudanese Civil War begins",
+    "description": "Southern soldiers mutinied at Torit, igniting a long conflict between the marginalized south and the Khartoum government.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SS",
+    "year": 1983,
+    "title": "Second Sudanese Civil War and the SPLA",
+    "description": "John Garang founded the Sudan People's Liberation Army, launching a war that lasted over two decades.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SS",
+    "year": 2005,
+    "title": "Comprehensive Peace Agreement signed",
+    "description": "The agreement ended the second civil war and granted the south autonomy with a path toward a self-determination referendum.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SS",
+    "year": 2011,
+    "title": "South Sudan becomes independent",
+    "description": "Following an overwhelming referendum vote, South Sudan declared independence on 9 July 2011 as the world's newest nation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SS",
+    "year": 2013,
+    "title": "Outbreak of the South Sudanese Civil War",
+    "description": "Political rivalry between President Salva Kiir and Riek Machar erupted into a devastating civil war.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SD",
+    "year": -2000,
+    "title": "Kingdom of Kerma flourishes in Nubia",
+    "description": "The Kerma civilization became one of Africa's earliest urban states, rivaling ancient Egypt along the Nile.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "SD",
+    "year": -750,
+    "title": "Kushite kings rule Egypt",
+    "description": "The Kingdom of Kush, based at Napata, conquered Egypt and ruled as the 25th Dynasty of black pharaohs.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SD",
+    "year": -300,
+    "title": "Meroe becomes capital of Kush",
+    "description": "The Kushite kingdom shifted south to Meroe, famed for ironworking, pyramids and the Meroitic script.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "SD",
+    "year": 350,
+    "title": "Aksum sacks Meroe",
+    "description": "The Ethiopian Kingdom of Aksum invaded, hastening the decline of the once-powerful Meroitic state.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SD",
+    "year": 1821,
+    "title": "Egyptian conquest founds Khartoum",
+    "description": "Ottoman-Egyptian forces conquered northern Sudan and established Khartoum as an administrative center.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SD",
+    "year": 1885,
+    "title": "Mahdist forces capture Khartoum",
+    "description": "The Mahdist uprising defeated Anglo-Egyptian forces and killed General Gordon, founding an independent Islamic state.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SD",
+    "year": 1956,
+    "title": "Sudan gains independence",
+    "description": "Sudan became an independent republic on 1 January 1956, ending Anglo-Egyptian rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SD",
+    "year": 2019,
+    "title": "Revolution ousts Omar al-Bashir",
+    "description": "Mass protests led the military to remove President Omar al-Bashir after three decades of authoritarian rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ST",
+    "year": 1470,
+    "title": "Portuguese discover uninhabited islands",
+    "description": "Portuguese navigators reached the uninhabited islands of Sao Tome and Principe, claiming them for Portugal.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "ST",
+    "year": 1493,
+    "title": "First permanent settlement on Sao Tome",
+    "description": "Portugal began colonizing the islands, soon making them a major sugar producer using enslaved African labor.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "ST",
+    "year": 1595,
+    "title": "Amador's slave rebellion",
+    "description": "Enslaved Africans led by Amador rose in revolt and briefly controlled much of Sao Tome, a landmark resistance.",
+    "category": "social"
+  },
+  {
+    "countryCode": "ST",
+    "year": 1800,
+    "title": "Cocoa and coffee plantations rise",
+    "description": "In the 19th century the islands became leading cocoa producers, worked by contract laborers under harsh conditions.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "ST",
+    "year": 1953,
+    "title": "Batepa massacre",
+    "description": "Portuguese colonial authorities killed many Forros laborers in a brutal crackdown that fueled nationalist sentiment.",
+    "category": "social"
+  },
+  {
+    "countryCode": "ST",
+    "year": 1975,
+    "title": "Sao Tome and Principe gains independence",
+    "description": "The islands became an independent republic from Portugal on 12 July 1975 following the Carnation Revolution.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ST",
+    "year": 1991,
+    "title": "First multiparty elections held",
+    "description": "Sao Tome and Principe transitioned from single-party socialist rule to multiparty democracy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TZ",
+    "year": -1800000,
+    "title": "Early hominins at Olduvai Gorge",
+    "description": "Olduvai Gorge and Laetoli preserve some of the oldest fossils and footprints of early human ancestors.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "TZ",
+    "year": 1000,
+    "title": "Swahili city-state of Kilwa flourishes",
+    "description": "Kilwa Kisiwani became a wealthy Indian Ocean trade center exporting gold, ivory and goods across the region.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "TZ",
+    "year": 1498,
+    "title": "Vasco da Gama reaches the Swahili coast",
+    "description": "The Portuguese explorer stopped at coastal cities en route to India, foreshadowing Portuguese dominance of the coast.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "TZ",
+    "year": 1840,
+    "title": "Sultan of Oman moves capital to Zanzibar",
+    "description": "Said bin Sultan relocated his seat to Zanzibar, making it a center of the clove and slave trades.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "TZ",
+    "year": 1905,
+    "title": "Maji Maji Rebellion against German rule",
+    "description": "A widespread uprising challenged German colonial control of Tanganyika before being violently suppressed.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TZ",
+    "year": 1961,
+    "title": "Tanganyika gains independence",
+    "description": "Tanganyika became independent from Britain on 9 December 1961 under Julius Nyerere.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TZ",
+    "year": 1964,
+    "title": "Union forms the United Republic of Tanzania",
+    "description": "Tanganyika and Zanzibar united to create Tanzania following the Zanzibar Revolution.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TZ",
+    "year": 1967,
+    "title": "Arusha Declaration sets socialist course",
+    "description": "Nyerere proclaimed ujamaa, a policy of African socialism and self-reliance that reshaped Tanzanian society.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "TG",
+    "year": 1500,
+    "title": "Ewe and Mina peoples settle the region",
+    "description": "Migrating Ewe and coastal Mina communities established the societies that form much of modern Togo's population.",
+    "category": "social"
+  },
+  {
+    "countryCode": "TG",
+    "year": 1700,
+    "title": "Coastal area drawn into Atlantic slave trade",
+    "description": "The Togo coast became part of the 'Slave Coast,' where European traders bought captives for the Americas.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "TG",
+    "year": 1884,
+    "title": "Germany establishes Togoland protectorate",
+    "description": "Germany signed treaties making Togoland a colony, which it developed as a model plantation territory.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TG",
+    "year": 1914,
+    "title": "Togoland falls to Allied forces",
+    "description": "During World War I, British and French troops seized German Togoland, later dividing it under League of Nations mandates.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TG",
+    "year": 1960,
+    "title": "Togo gains independence",
+    "description": "French Togoland became the independent Republic of Togo on 27 April 1960, with Sylvanus Olympio as leader.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TG",
+    "year": 1967,
+    "title": "Gnassingbe Eyadema seizes power",
+    "description": "Eyadema took control in a coup and ruled Togo for 38 years, one of Africa's longest reigns.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TG",
+    "year": 2005,
+    "title": "Faure Gnassingbe succeeds his father",
+    "description": "After Eyadema's death, his son Faure became president amid disputed elections and protests.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TN",
+    "year": -814,
+    "title": "Founding of Carthage",
+    "description": "Phoenician settlers from Tyre founded Carthage, which grew into a dominant Mediterranean maritime power.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TN",
+    "year": -218,
+    "title": "Hannibal crosses the Alps",
+    "description": "Carthaginian general Hannibal led an army with elephants over the Alps to invade Rome in the Second Punic War.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TN",
+    "year": -146,
+    "title": "Rome destroys Carthage",
+    "description": "Rome razed Carthage at the end of the Third Punic War, making the region the province of Africa.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TN",
+    "year": 670,
+    "title": "Arabs found Kairouan",
+    "description": "Arab conquerors established Kairouan, which became a major center of Islamic learning and the Great Mosque.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "TN",
+    "year": 1574,
+    "title": "Tunisia becomes an Ottoman province",
+    "description": "The Ottomans took control of Tunis, which later became a largely autonomous beylik.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TN",
+    "year": 1881,
+    "title": "France establishes a protectorate",
+    "description": "France imposed a protectorate over Tunisia under the Treaty of Bardo, beginning colonial rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TN",
+    "year": 1956,
+    "title": "Tunisia gains independence",
+    "description": "Tunisia became independent from France on 20 March 1956, with Habib Bourguiba leading the new nation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TN",
+    "year": 2011,
+    "title": "Jasmine Revolution sparks the Arab Spring",
+    "description": "Mass protests ousted President Ben Ali, igniting uprisings across the Arab world.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UG",
+    "year": 1300,
+    "title": "Kingdom of Bunyoro-Kitara rises",
+    "description": "The powerful Bunyoro-Kitara kingdom dominated the Great Lakes region in the medieval period.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UG",
+    "year": 1500,
+    "title": "Buganda kingdom emerges",
+    "description": "The Kingdom of Buganda grew into one of the most influential states in the Lake Victoria region.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UG",
+    "year": 1862,
+    "title": "John Hanning Speke reaches Buganda",
+    "description": "The British explorer visited the court of Buganda while seeking the source of the Nile.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "UG",
+    "year": 1894,
+    "title": "Uganda becomes a British protectorate",
+    "description": "Britain declared a protectorate over the Buganda kingdom and surrounding territories.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UG",
+    "year": 1962,
+    "title": "Uganda gains independence",
+    "description": "Uganda became independent from Britain on 9 October 1962, with Milton Obote as prime minister.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UG",
+    "year": 1971,
+    "title": "Idi Amin seizes power",
+    "description": "Idi Amin took control in a coup and ruled brutally until 1979, expelling Asians and killing many Ugandans.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UG",
+    "year": 1986,
+    "title": "Yoweri Museveni takes power",
+    "description": "Museveni's National Resistance Army captured Kampala, beginning his long presidency.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZM",
+    "year": 1100,
+    "title": "Trade and settlement on the central plateau",
+    "description": "Iron-working Bantu-speaking communities engaged in copper and trade networks across what is now Zambia.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "ZM",
+    "year": 1855,
+    "title": "Livingstone reaches Victoria Falls",
+    "description": "Explorer David Livingstone became the first European to view the falls on the Zambezi, naming them for Queen Victoria.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "ZM",
+    "year": 1889,
+    "title": "British South Africa Company administers the region",
+    "description": "Cecil Rhodes's company gained control over the territory that became Northern Rhodesia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZM",
+    "year": 1928,
+    "title": "Copperbelt mining boom begins",
+    "description": "Large-scale copper mining transformed the economy and society of Northern Rhodesia.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "ZM",
+    "year": 1953,
+    "title": "Federation of Rhodesia and Nyasaland formed",
+    "description": "Northern Rhodesia was joined into a federation, a move that fueled African nationalist opposition.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZM",
+    "year": 1964,
+    "title": "Zambia gains independence",
+    "description": "Northern Rhodesia became the Republic of Zambia on 24 October 1964, with Kenneth Kaunda as first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZM",
+    "year": 1991,
+    "title": "Multiparty democracy returns",
+    "description": "Frederick Chiluba defeated Kaunda in elections, ending single-party rule peacefully.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZW",
+    "year": 1100,
+    "title": "Great Zimbabwe rises",
+    "description": "The stone city of Great Zimbabwe became the capital of a powerful kingdom that controlled regional gold trade.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "ZW",
+    "year": 1450,
+    "title": "Kingdom of Mutapa emerges",
+    "description": "As Great Zimbabwe declined, the Mutapa Empire rose to dominate trade between the interior and the coast.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZW",
+    "year": 1840,
+    "title": "Ndebele kingdom established",
+    "description": "Mzilikazi led the Ndebele people into the region, founding a kingdom centered near present-day Bulawayo.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZW",
+    "year": 1890,
+    "title": "Pioneer Column establishes colonial rule",
+    "description": "Cecil Rhodes's British South Africa Company occupied the territory, which became Southern Rhodesia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZW",
+    "year": 1896,
+    "title": "First Chimurenga uprising",
+    "description": "The Shona and Ndebele rose against British colonial rule in a major anti-colonial rebellion.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ZW",
+    "year": 1965,
+    "title": "Rhodesia's Unilateral Declaration of Independence",
+    "description": "The white minority government under Ian Smith declared independence from Britain to preserve minority rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZW",
+    "year": 1980,
+    "title": "Zimbabwe gains independence",
+    "description": "After a long liberation war, Zimbabwe became independent on 18 April 1980, with Robert Mugabe as leader.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ZW",
+    "year": 2017,
+    "title": "Mugabe resigns after military intervention",
+    "description": "Robert Mugabe stepped down after 37 years in power following a military takeover and mass protests.",
+    "category": "political"
+  }
+]

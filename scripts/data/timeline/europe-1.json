@@ -1,0 +1,779 @@
+[
+  {
+    "countryCode": "AL",
+    "year": -627,
+    "title": "Founding of Epidamnos (Durrës)",
+    "description": "Greek colonists from Corinth and Corcyra founded the coastal city of Epidamnos, later Dyrrhachium and modern Durrës, a key Adriatic port.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AL",
+    "year": -168,
+    "title": "Roman Conquest of Illyria",
+    "description": "Rome defeated the Illyrian kingdom under King Gentius, bringing the region of modern Albania under Roman control.",
+    "category": "military"
+  },
+  {
+    "countryCode": "AL",
+    "year": 1443,
+    "title": "Skanderbeg's Rebellion Against the Ottomans",
+    "description": "Gjergj Kastrioti, known as Skanderbeg, led a prolonged Albanian resistance against the Ottoman Empire from his stronghold at Krujë.",
+    "category": "military"
+  },
+  {
+    "countryCode": "AL",
+    "year": 1912,
+    "title": "Albanian Declaration of Independence",
+    "description": "Ismail Qemali proclaimed Albania's independence from the Ottoman Empire in Vlorë, establishing the modern Albanian state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AL",
+    "year": 1944,
+    "title": "Communist Takeover Under Enver Hoxha",
+    "description": "Enver Hoxha's partisans seized power, beginning over four decades of isolationist communist rule in Albania.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AL",
+    "year": 1991,
+    "title": "End of Communist Rule",
+    "description": "Albania transitioned to a multiparty democracy as the communist system collapsed, ending decades of isolation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AL",
+    "year": 2009,
+    "title": "Albania Joins NATO",
+    "description": "Albania became a full member of the NATO alliance, marking its integration into Western security structures.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AD",
+    "year": 1278,
+    "title": "Foundation of the Co-Principality",
+    "description": "The first paréage established Andorra as a co-principality ruled jointly by the Bishop of Urgell and the Count of Foix, a system that endures today.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AD",
+    "year": 1419,
+    "title": "Creation of the Consell de la Terra",
+    "description": "Andorra established the Council of the Land, one of Europe's oldest parliamentary bodies, to represent its parishes.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AD",
+    "year": 1607,
+    "title": "French Head of State Confirmed",
+    "description": "A French edict confirmed the French head of state as co-prince of Andorra alongside the Bishop of Urgell.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AD",
+    "year": 1933,
+    "title": "Universal Male Suffrage Introduced",
+    "description": "Following political unrest, Andorra extended voting rights to all adult men, modernizing its electoral system.",
+    "category": "social"
+  },
+  {
+    "countryCode": "AD",
+    "year": 1970,
+    "title": "Women Gain the Right to Vote",
+    "description": "Andorra granted women the right to vote, expanding democratic participation in the principality.",
+    "category": "social"
+  },
+  {
+    "countryCode": "AD",
+    "year": 1993,
+    "title": "New Constitution and UN Membership",
+    "description": "Andorra adopted its first written constitution as a parliamentary democracy and joined the United Nations.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AT",
+    "year": 15,
+    "title": "Roman Province of Noricum Established",
+    "description": "The Celtic kingdom of Noricum, covering much of modern Austria, was incorporated peacefully into the Roman Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AT",
+    "year": 1278,
+    "title": "Habsburg Rule Begins",
+    "description": "Rudolf I of Habsburg defeated Ottokar II at the Battle on the Marchfeld, beginning over six centuries of Habsburg rule in Austria.",
+    "category": "military"
+  },
+  {
+    "countryCode": "AT",
+    "year": 1529,
+    "title": "First Ottoman Siege of Vienna",
+    "description": "Vienna withstood a major siege by the Ottoman Empire under Suleiman the Magnificent, halting Ottoman expansion into Central Europe.",
+    "category": "military"
+  },
+  {
+    "countryCode": "AT",
+    "year": 1867,
+    "title": "Austro-Hungarian Compromise",
+    "description": "The Ausgleich created the dual monarchy of Austria-Hungary, granting Hungary autonomy under a shared Habsburg crown.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AT",
+    "year": 1918,
+    "title": "Founding of the Republic of Austria",
+    "description": "After the collapse of Austria-Hungary in World War I, the First Austrian Republic was proclaimed in Vienna.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AT",
+    "year": 1938,
+    "title": "Anschluss with Nazi Germany",
+    "description": "Nazi Germany annexed Austria in the Anschluss, ending Austrian independence until after World War II.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AT",
+    "year": 1955,
+    "title": "Austrian State Treaty and Neutrality",
+    "description": "Austria regained full sovereignty as Allied occupation ended, and it declared permanent neutrality.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AT",
+    "year": 1995,
+    "title": "Austria Joins the European Union",
+    "description": "Austria became a member of the European Union, deepening its integration into European economic and political structures.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "BY",
+    "year": 1067,
+    "title": "First Mention of Minsk",
+    "description": "Minsk, the future Belarusian capital, was first recorded in chronicles in connection with the Battle on the Nemiga River.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BY",
+    "year": 1386,
+    "title": "Union with Poland-Lithuania",
+    "description": "The Grand Duchy of Lithuania, encompassing Belarusian lands, entered a dynastic union with Poland that shaped the region for centuries.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BY",
+    "year": 1517,
+    "title": "Francysk Skaryna Prints First Belarusian Book",
+    "description": "Francysk Skaryna printed a Bible in a Slavic vernacular in Prague, pioneering printing in Eastern Europe.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "BY",
+    "year": 1795,
+    "title": "Belarusian Lands Annexed by Russia",
+    "description": "Following the partitions of Poland-Lithuania, Belarusian territories were incorporated into the Russian Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BY",
+    "year": 1919,
+    "title": "Byelorussian Soviet Socialist Republic Formed",
+    "description": "The Byelorussian SSR was established, later becoming a founding republic of the Soviet Union.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BY",
+    "year": 1986,
+    "title": "Chernobyl Fallout Devastates Belarus",
+    "description": "The Chernobyl nuclear disaster in neighboring Ukraine contaminated large areas of Belarus, causing lasting health and environmental harm.",
+    "category": "social"
+  },
+  {
+    "countryCode": "BY",
+    "year": 1991,
+    "title": "Belarus Declares Independence",
+    "description": "Belarus declared independence amid the dissolution of the Soviet Union, becoming a sovereign state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BY",
+    "year": 1994,
+    "title": "Alexander Lukashenko Elected President",
+    "description": "Alexander Lukashenko won Belarus's first presidential election and went on to dominate the country's politics for decades.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BE",
+    "year": -57,
+    "title": "Caesar Conquers the Belgae",
+    "description": "Julius Caesar subdued the Belgae tribes during the Gallic Wars, describing them as among the fiercest peoples of Gaul.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BE",
+    "year": 1302,
+    "title": "Battle of the Golden Spurs",
+    "description": "Flemish militias defeated French knights at Kortrijk, a landmark victory celebrated in Flemish history.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BE",
+    "year": 1432,
+    "title": "Van Eyck Completes the Ghent Altarpiece",
+    "description": "Jan van Eyck completed the Ghent Altarpiece, a masterpiece of Early Netherlandish painting in Flanders.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "BE",
+    "year": 1830,
+    "title": "Belgian Revolution and Independence",
+    "description": "Belgium broke away from the United Kingdom of the Netherlands, establishing an independent constitutional monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BE",
+    "year": 1914,
+    "title": "German Invasion in World War I",
+    "description": "Germany invaded neutral Belgium, triggering British entry into World War I and devastating the country.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BE",
+    "year": 1958,
+    "title": "Treaty of Rome Hosts and Brussels EEC",
+    "description": "Belgium became a founding member of the European Economic Community, with Brussels emerging as Europe's institutional center.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "BE",
+    "year": 1993,
+    "title": "Belgium Becomes a Federal State",
+    "description": "Constitutional reforms transformed Belgium into a federal state with autonomous Flemish, Walloon, and Brussels regions.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BA",
+    "year": 9,
+    "title": "Roman Conquest of the Illyrians",
+    "description": "Rome suppressed the Great Illyrian Revolt and consolidated control over the region of modern Bosnia within the province of Dalmatia.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BA",
+    "year": 1377,
+    "title": "Kingdom of Bosnia Founded",
+    "description": "Tvrtko I was crowned king, establishing the medieval Kingdom of Bosnia as a powerful Balkan state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BA",
+    "year": 1463,
+    "title": "Ottoman Conquest of Bosnia",
+    "description": "The Ottoman Empire conquered the Kingdom of Bosnia, beginning over four centuries of Ottoman rule and Islamization.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BA",
+    "year": 1878,
+    "title": "Austro-Hungarian Administration Begins",
+    "description": "The Congress of Berlin placed Bosnia and Herzegovina under Austro-Hungarian administration, ending Ottoman control.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BA",
+    "year": 1914,
+    "title": "Assassination of Archduke Franz Ferdinand",
+    "description": "Gavrilo Princip assassinated Archduke Franz Ferdinand in Sarajevo, triggering the outbreak of World War I.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BA",
+    "year": 1992,
+    "title": "Independence and Outbreak of War",
+    "description": "Bosnia and Herzegovina declared independence from Yugoslavia, soon followed by a devastating three-year war.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BA",
+    "year": 1995,
+    "title": "Dayton Peace Agreement",
+    "description": "The Dayton Accords ended the Bosnian War, establishing the country's current decentralized political structure.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BG",
+    "year": 681,
+    "title": "Founding of the First Bulgarian Empire",
+    "description": "Khan Asparuh established the First Bulgarian Empire south of the Danube, recognized by Byzantium as a sovereign state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BG",
+    "year": 864,
+    "title": "Christianization Under Boris I",
+    "description": "Boris I adopted Christianity as the state religion, integrating Bulgaria into the Christian European world.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "BG",
+    "year": 886,
+    "title": "Cyrillic Script Developed in Bulgaria",
+    "description": "Disciples of Saints Cyril and Methodius developed the Cyrillic alphabet in Bulgaria, shaping Slavic literacy.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "BG",
+    "year": 1396,
+    "title": "Ottoman Conquest of Bulgaria",
+    "description": "The Ottoman Empire completed its conquest of Bulgaria, beginning nearly five centuries of Ottoman rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BG",
+    "year": 1878,
+    "title": "Liberation and Autonomous Principality",
+    "description": "The Russo-Turkish War and the Treaty of Berlin created an autonomous Bulgarian principality, ending Ottoman domination.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BG",
+    "year": 1908,
+    "title": "Bulgaria Declares Full Independence",
+    "description": "Bulgaria proclaimed full independence from the Ottoman Empire, elevating its ruler to the title of tsar.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BG",
+    "year": 1989,
+    "title": "Fall of the Communist Regime",
+    "description": "The long-ruling communist leader Todor Zhivkov was ousted, beginning Bulgaria's transition to democracy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BG",
+    "year": 2007,
+    "title": "Bulgaria Joins the European Union",
+    "description": "Bulgaria became a member of the European Union, completing its post-communist integration with Europe.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "HR",
+    "year": 925,
+    "title": "Tomislav Crowned First King of Croatia",
+    "description": "Tomislav is traditionally regarded as the first king of Croatia, uniting Croatian lands into a medieval kingdom.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HR",
+    "year": 1102,
+    "title": "Personal Union with Hungary",
+    "description": "Croatia entered a personal union with the Kingdom of Hungary, shaping its political path for centuries.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HR",
+    "year": 1527,
+    "title": "Habsburg Rule Begins",
+    "description": "Croatian nobles elected Ferdinand of Habsburg as king, bringing Croatia under Habsburg rule as a defense against the Ottomans.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HR",
+    "year": 1918,
+    "title": "Joining the Kingdom of Yugoslavia",
+    "description": "After Austria-Hungary's collapse, Croatia joined the new Kingdom of Serbs, Croats and Slovenes, later Yugoslavia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HR",
+    "year": 1991,
+    "title": "Croatia Declares Independence",
+    "description": "Croatia declared independence from Yugoslavia, triggering the Croatian War of Independence.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HR",
+    "year": 1995,
+    "title": "End of the War of Independence",
+    "description": "Operation Storm and subsequent agreements brought the Croatian War of Independence to an end, restoring state control.",
+    "category": "military"
+  },
+  {
+    "countryCode": "HR",
+    "year": 2013,
+    "title": "Croatia Joins the European Union",
+    "description": "Croatia became the 28th member of the European Union, marking its integration into the European community.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "CZ",
+    "year": 863,
+    "title": "Cyril and Methodius in Great Moravia",
+    "description": "The missionaries Cyril and Methodius arrived in Great Moravia, spreading Christianity and Slavonic liturgy among the Czechs.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "CZ",
+    "year": 1348,
+    "title": "Charles University Founded in Prague",
+    "description": "Emperor Charles IV founded Charles University in Prague, the oldest university in Central Europe.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "CZ",
+    "year": 1415,
+    "title": "Jan Hus Burned at the Stake",
+    "description": "Reformer Jan Hus was executed for heresy, sparking the Hussite movement and wars that shaped Czech identity.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "CZ",
+    "year": 1620,
+    "title": "Battle of White Mountain",
+    "description": "Habsburg forces defeated the Bohemian estates, ushering in centuries of Habsburg dominance over the Czech lands.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CZ",
+    "year": 1918,
+    "title": "Founding of Czechoslovakia",
+    "description": "Czechoslovakia was established as an independent republic following the dissolution of Austria-Hungary.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CZ",
+    "year": 1968,
+    "title": "Prague Spring and Soviet Invasion",
+    "description": "Reforms during the Prague Spring were crushed when Warsaw Pact forces invaded Czechoslovakia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CZ",
+    "year": 1989,
+    "title": "Velvet Revolution",
+    "description": "Peaceful protests during the Velvet Revolution ended communist rule in Czechoslovakia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CZ",
+    "year": 1993,
+    "title": "Establishment of the Czech Republic",
+    "description": "Czechoslovakia peacefully split in the Velvet Divorce, creating the independent Czech Republic and Slovakia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DK",
+    "year": 965,
+    "title": "Harald Bluetooth Christianizes Denmark",
+    "description": "King Harald Bluetooth converted the Danes to Christianity, commemorated on the Jelling runestones.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "DK",
+    "year": 1014,
+    "title": "Cnut the Great Builds a North Sea Empire",
+    "description": "The Danish king Cnut the Great ruled an empire spanning Denmark, England, and Norway.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DK",
+    "year": 1397,
+    "title": "Kalmar Union Formed",
+    "description": "Queen Margaret I united Denmark, Norway, and Sweden under a single crown in the Kalmar Union.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DK",
+    "year": 1536,
+    "title": "Protestant Reformation in Denmark",
+    "description": "Denmark officially adopted Lutheranism, establishing a state Protestant church under royal authority.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "DK",
+    "year": 1849,
+    "title": "Denmark Adopts a Constitution",
+    "description": "Denmark transitioned from absolute monarchy to constitutional monarchy with its first democratic constitution.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DK",
+    "year": 1849,
+    "title": "Abolition of Absolute Monarchy",
+    "description": "The June Constitution ended centuries of absolutist royal rule and introduced parliamentary governance.",
+    "category": "social"
+  },
+  {
+    "countryCode": "DK",
+    "year": 1973,
+    "title": "Denmark Joins the European Community",
+    "description": "Denmark joined the European Economic Community, the first Nordic country to do so.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "EE",
+    "year": 1219,
+    "title": "Danish Conquest of Tallinn",
+    "description": "Danish forces under Valdemar II conquered northern Estonia, founding the city later known as Tallinn.",
+    "category": "military"
+  },
+  {
+    "countryCode": "EE",
+    "year": 1632,
+    "title": "University of Tartu Founded",
+    "description": "King Gustavus Adolphus of Sweden founded the University of Tartu, a lasting center of learning in Estonia.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "EE",
+    "year": 1918,
+    "title": "Estonia Declares Independence",
+    "description": "Estonia proclaimed independence amid the collapse of the Russian Empire, founding its first republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "EE",
+    "year": 1940,
+    "title": "Soviet Annexation of Estonia",
+    "description": "The Soviet Union occupied and annexed Estonia under the Molotov-Ribbentrop Pact, ending its independence.",
+    "category": "political"
+  },
+  {
+    "countryCode": "EE",
+    "year": 1989,
+    "title": "The Baltic Way",
+    "description": "Estonians joined a human chain across the Baltic states protesting Soviet rule and demanding independence.",
+    "category": "social"
+  },
+  {
+    "countryCode": "EE",
+    "year": 1991,
+    "title": "Restoration of Independence",
+    "description": "Estonia restored its independence as the Soviet Union collapsed, regaining full sovereignty.",
+    "category": "political"
+  },
+  {
+    "countryCode": "EE",
+    "year": 2004,
+    "title": "Estonia Joins the EU and NATO",
+    "description": "Estonia joined both the European Union and NATO, anchoring itself firmly in Western institutions.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FI",
+    "year": 1155,
+    "title": "Swedish Influence and Christianization",
+    "description": "According to tradition, a Swedish crusade brought Christianity and Swedish rule to Finland in the mid-12th century.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "FI",
+    "year": 1548,
+    "title": "Agricola Publishes Finnish New Testament",
+    "description": "Mikael Agricola translated the New Testament into Finnish, laying the foundation for written Finnish.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "FI",
+    "year": 1809,
+    "title": "Finland Becomes a Russian Grand Duchy",
+    "description": "Sweden ceded Finland to Russia, which became an autonomous Grand Duchy under the tsar.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FI",
+    "year": 1906,
+    "title": "Universal Suffrage Introduced",
+    "description": "Finland became the first country in Europe to grant women full voting and candidacy rights.",
+    "category": "social"
+  },
+  {
+    "countryCode": "FI",
+    "year": 1917,
+    "title": "Finland Declares Independence",
+    "description": "Finland declared independence from Russia amid the chaos of the Russian Revolution.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FI",
+    "year": 1939,
+    "title": "The Winter War",
+    "description": "Finland resisted a Soviet invasion in the Winter War, preserving its independence despite territorial losses.",
+    "category": "military"
+  },
+  {
+    "countryCode": "FI",
+    "year": 1995,
+    "title": "Finland Joins the European Union",
+    "description": "Finland became a member of the European Union, deepening its ties with Western Europe.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "FR",
+    "year": -52,
+    "title": "Caesar Defeats Vercingetorix at Alesia",
+    "description": "Julius Caesar's victory over the Gallic chieftain Vercingetorix completed the Roman conquest of Gaul.",
+    "category": "military"
+  },
+  {
+    "countryCode": "FR",
+    "year": 496,
+    "title": "Baptism of Clovis",
+    "description": "The Frankish king Clovis converted to Catholic Christianity, uniting the Franks and founding a Christian kingdom.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "FR",
+    "year": 800,
+    "title": "Charlemagne Crowned Emperor",
+    "description": "Charlemagne was crowned Emperor by the Pope in Rome, reviving imperial authority in Western Europe.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FR",
+    "year": 1431,
+    "title": "Execution of Joan of Arc",
+    "description": "Joan of Arc, a key figure in the Hundred Years' War, was burned at the stake; she became a French national heroine.",
+    "category": "military"
+  },
+  {
+    "countryCode": "FR",
+    "year": 1789,
+    "title": "The French Revolution Begins",
+    "description": "The storming of the Bastille launched the French Revolution, overturning the monarchy and proclaiming liberty and equality.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FR",
+    "year": 1804,
+    "title": "Napoleon Crowned Emperor",
+    "description": "Napoleon Bonaparte crowned himself Emperor of the French, reshaping Europe through war and reform.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FR",
+    "year": 1889,
+    "title": "Eiffel Tower Completed",
+    "description": "The Eiffel Tower was completed for the Paris World's Fair, becoming an enduring symbol of France.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "FR",
+    "year": 1958,
+    "title": "Fifth Republic Established",
+    "description": "Charles de Gaulle founded the Fifth Republic, creating France's current constitutional system.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DE",
+    "year": 9,
+    "title": "Battle of the Teutoburg Forest",
+    "description": "Germanic tribes under Arminius destroyed three Roman legions, halting Roman expansion east of the Rhine.",
+    "category": "military"
+  },
+  {
+    "countryCode": "DE",
+    "year": 962,
+    "title": "Otto I Founds the Holy Roman Empire",
+    "description": "Otto I was crowned emperor, establishing the Holy Roman Empire that dominated German lands for centuries.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DE",
+    "year": 1450,
+    "title": "Gutenberg's Printing Press",
+    "description": "Johannes Gutenberg developed movable-type printing in Mainz, revolutionizing the spread of knowledge.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "DE",
+    "year": 1517,
+    "title": "Luther's Ninety-Five Theses",
+    "description": "Martin Luther challenged Church practices, launching the Protestant Reformation from Wittenberg.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "DE",
+    "year": 1871,
+    "title": "Unification of Germany",
+    "description": "The German states united into the German Empire under Prussian leadership and Chancellor Otto von Bismarck.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DE",
+    "year": 1933,
+    "title": "Nazi Seizure of Power",
+    "description": "Adolf Hitler became chancellor, leading to dictatorship, the Holocaust, and World War II.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DE",
+    "year": 1989,
+    "title": "Fall of the Berlin Wall",
+    "description": "The Berlin Wall fell, symbolizing the end of the Cold War division of Germany.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DE",
+    "year": 1990,
+    "title": "German Reunification",
+    "description": "East and West Germany reunified into a single democratic state after decades of division.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GR",
+    "year": -776,
+    "title": "First Olympic Games",
+    "description": "The first recorded Olympic Games were held at Olympia, a defining tradition of ancient Greek culture.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "GR",
+    "year": -508,
+    "title": "Birth of Athenian Democracy",
+    "description": "The reforms of Cleisthenes established democracy in Athens, a foundational model for later governments.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GR",
+    "year": -480,
+    "title": "Battles of Thermopylae and Salamis",
+    "description": "Greek city-states resisted the Persian invasion, with decisive resistance at Thermopylae and victory at Salamis.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GR",
+    "year": -336,
+    "title": "Reign of Alexander the Great Begins",
+    "description": "Alexander the Great ascended the Macedonian throne and built an empire spreading Greek culture across Asia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GR",
+    "year": 1453,
+    "title": "Fall of Constantinople",
+    "description": "The Ottoman conquest of Constantinople ended the Byzantine Empire, bringing Greek lands under Ottoman rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GR",
+    "year": 1821,
+    "title": "Greek War of Independence Begins",
+    "description": "Greeks rose against Ottoman rule, launching the war that led to an independent Greek state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GR",
+    "year": 1896,
+    "title": "First Modern Olympic Games in Athens",
+    "description": "Athens hosted the first modern Olympic Games, reviving the ancient tradition.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "GR",
+    "year": 1981,
+    "title": "Greece Joins the European Community",
+    "description": "Greece became a member of the European Economic Community, integrating with Western Europe.",
+    "category": "economic"
+  }
+]

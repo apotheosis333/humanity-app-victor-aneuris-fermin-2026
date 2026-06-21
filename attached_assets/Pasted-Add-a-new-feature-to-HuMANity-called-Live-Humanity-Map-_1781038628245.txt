@@ -1,0 +1,90 @@
+Add a new feature to HuMANity called "Live Humanity Map."
+
+This feature should make the 3D globe feel alive by showing privacy-safe global user activity.
+
+Purpose:
+When users open HuMANity, they should feel connected to a living global community. The globe should visually show that people around the world are exploring, learning, connecting, and participating together.
+
+Core Rule:
+Do NOT show exact user locations. Only show approximate regional or city-level locations for privacy and safety.
+
+Feature Requirements:
+
+1. Active User Markers
+Show active users on the 3D globe as soft glowing blue light points.
+
+2. New Member Markers
+Show new signups as warm gold pulse animations.
+
+3. Humanity Pledge Markers
+Show users who signed the Humanity Pledge as small gold heart markers.
+
+4. Cultural Exchange Markers
+Show cultural exchange activity as purple glowing markers.
+
+5. World Dinner Table Markers
+Show World Dinner Table participants as green glowing markers.
+
+6. Layer Toggle Panel
+Allow users to toggle each layer on or off:
+- Active Users
+- New Members
+- Humanity Pledges
+- Cultural Exchanges
+- World Dinner Table
+
+7. Global Statistics Panel
+Add a beautiful glassmorphism stats panel showing:
+- Active Humans Online
+- Countries Represented
+- Languages Spoken
+- Humanity Pledges Signed
+- Cultural Exchanges Completed
+
+8. Privacy-Safe Location Logic
+Use approximate location only:
+- Country
+- Region
+- Major city area if available
+- Never exact coordinates
+- Never street-level location
+- Never expose private user data
+
+9. Visual Style
+Match the current HuMANity futuristic aesthetic:
+- 3D Earth-from-orbit globe
+- Soft blue atmosphere
+- Midnight Blue background
+- Royal Blue glowing active markers
+- Warm Gold pulse effects
+- Glassmorphism interface panels
+- Smooth animations
+- Premium spacing
+- Elegant futuristic UI
+
+10. Emotional Goal
+The globe should feel like the heartbeat of humanity.
+
+When users see the lights across Earth, they should feel:
+
+"People everywhere are here. Humanity is alive. We are connected."
+
+11. Future-Ready Structure
+Build this with mock/sample user activity data first if real users are not available yet.
+
+Structure the code so real-time active user data can be added later using:
+- WebSockets
+- Supabase realtime
+- Firebase realtime
+- Or another live database/event system
+
+Final Goal:
+Create a feature that makes HuMANity feel like a living global network, not just a static website.
+
+Name the section:
+
+"Live Humanity Map"
+
+Optional subtitle:
+
+"See humanity learning, connecting, and growing across Earth in real time."

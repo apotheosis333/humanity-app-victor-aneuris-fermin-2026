@@ -1,0 +1,611 @@
+[
+  {
+    "countryCode": "DZ",
+    "year": -1100,
+    "title": "Phoenician trading posts established",
+    "description": "Phoenicians founded coastal trading settlements along the North African coast, including sites that would grow into key ports of the region.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "DZ",
+    "year": -202,
+    "title": "Kingdom of Numidia unified under Massinissa",
+    "description": "After the Battle of Zama, Massinissa unified the Berber kingdom of Numidia, a powerful state allied with Rome in present-day Algeria.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DZ",
+    "year": 698,
+    "title": "Arab Muslim conquest of the Maghreb",
+    "description": "Umayyad forces took the region from the Byzantines, beginning the Islamization and Arabization of North Africa.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "DZ",
+    "year": 1516,
+    "title": "Ottoman rule begins in Algiers",
+    "description": "The corsair Barbarossa brought Algiers under Ottoman protection, establishing the Regency of Algiers for three centuries.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DZ",
+    "year": 1830,
+    "title": "French conquest of Algiers",
+    "description": "France invaded and captured Algiers, beginning 132 years of colonial rule and large-scale settlement.",
+    "category": "military"
+  },
+  {
+    "countryCode": "DZ",
+    "year": 1954,
+    "title": "Algerian War of Independence begins",
+    "description": "The FLN launched an armed struggle against French colonial rule on 1 November 1954, sparking a brutal eight-year war.",
+    "category": "military"
+  },
+  {
+    "countryCode": "DZ",
+    "year": 1962,
+    "title": "Algeria gains independence from France",
+    "description": "After a costly war, Algeria became independent on 5 July 1962, ending French colonial rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AO",
+    "year": 1483,
+    "title": "Portuguese explorer Diogo Cão reaches the Congo",
+    "description": "Portuguese navigators arrived at the mouth of the Congo River, opening contact with the Kingdom of Kongo and the Angolan coast.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "AO",
+    "year": 1575,
+    "title": "Portuguese found Luanda",
+    "description": "Paulo Dias de Novais established São Paulo de Loanda, which became the colonial capital and a major slave-trade port.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AO",
+    "year": 1641,
+    "title": "Queen Njinga resists Portuguese expansion",
+    "description": "Queen Njinga of Ndongo and Matamba led decades of resistance and diplomacy against Portuguese colonization.",
+    "category": "military"
+  },
+  {
+    "countryCode": "AO",
+    "year": 1961,
+    "title": "Angolan War of Independence begins",
+    "description": "Armed uprisings against Portuguese rule erupted in 1961, beginning a long liberation struggle.",
+    "category": "military"
+  },
+  {
+    "countryCode": "AO",
+    "year": 1975,
+    "title": "Angola gains independence from Portugal",
+    "description": "Angola became independent on 11 November 1975, though independence was followed by a prolonged civil war.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AO",
+    "year": 2002,
+    "title": "End of the Angolan Civil War",
+    "description": "The death of UNITA leader Jonas Savimbi led to a ceasefire, ending 27 years of civil war.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BJ",
+    "year": 1600,
+    "title": "Rise of the Kingdom of Dahomey",
+    "description": "The powerful Kingdom of Dahomey emerged on the Abomey plateau, becoming a major regional state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BJ",
+    "year": 1727,
+    "title": "Dahomey conquers Whydah port",
+    "description": "King Agaja captured the coastal port of Whydah, giving Dahomey control of a key Atlantic slave-trade outlet.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BJ",
+    "year": 1894,
+    "title": "France conquers Dahomey",
+    "description": "After two Franco-Dahomean wars, France defeated King Béhanzin and incorporated Dahomey into its colonial empire.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BJ",
+    "year": 1960,
+    "title": "Dahomey gains independence",
+    "description": "The Republic of Dahomey became independent from France on 1 August 1960.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BJ",
+    "year": 1975,
+    "title": "Country renamed Benin",
+    "description": "Under President Mathieu Kérékou the nation was renamed the People's Republic of Benin.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BJ",
+    "year": 1991,
+    "title": "Peaceful democratic transition",
+    "description": "Benin held multiparty elections after a national conference, becoming an early model of democratic transition in Africa.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BW",
+    "year": 1818,
+    "title": "Founding of the Bangwato state",
+    "description": "Tswana chiefdoms such as the Bangwato consolidated power, shaping the political landscape of the region.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BW",
+    "year": 1885,
+    "title": "Bechuanaland Protectorate established",
+    "description": "Britain declared a protectorate over Bechuanaland, partly at the request of Tswana chiefs seeking protection.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BW",
+    "year": 1895,
+    "title": "Three Chiefs travel to Britain",
+    "description": "Chiefs Khama III, Sebele I, and Bathoen I petitioned London to keep Bechuanaland under Crown rather than company control.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BW",
+    "year": 1966,
+    "title": "Botswana gains independence",
+    "description": "Botswana became an independent republic on 30 September 1966, with Seretse Khama as its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BW",
+    "year": 1967,
+    "title": "Discovery of diamonds at Orapa",
+    "description": "Major diamond deposits were found at Orapa, transforming Botswana into one of Africa's fastest-growing economies.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "BW",
+    "year": 2014,
+    "title": "Okavango Delta named UNESCO site",
+    "description": "The Okavango Delta became Botswana's first UNESCO World Heritage Site, recognized as a globally important wetland.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "BF",
+    "year": 1500,
+    "title": "Mossi kingdoms flourish",
+    "description": "The Mossi states such as Ouagadougou and Yatenga dominated the region with organized cavalry-based kingdoms.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BF",
+    "year": 1896,
+    "title": "French conquest of the Mossi",
+    "description": "France captured Ouagadougou and brought the Mossi kingdoms under colonial control.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BF",
+    "year": 1919,
+    "title": "Colony of Upper Volta created",
+    "description": "France established the colony of Upper Volta within French West Africa.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BF",
+    "year": 1960,
+    "title": "Upper Volta gains independence",
+    "description": "Upper Volta became independent from France on 5 August 1960.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BF",
+    "year": 1984,
+    "title": "Renamed Burkina Faso by Thomas Sankara",
+    "description": "President Thomas Sankara renamed the country Burkina Faso, meaning 'Land of Upright People', and launched social reforms.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BF",
+    "year": 2014,
+    "title": "Popular uprising ousts Compaoré",
+    "description": "Mass protests forced President Blaise Compaoré to resign after 27 years in power.",
+    "category": "social"
+  },
+  {
+    "countryCode": "BI",
+    "year": 1680,
+    "title": "Kingdom of Burundi consolidates",
+    "description": "Under Ntare Rushatsi and successors, the Kingdom of Burundi grew into a centralized monarchy ruled by a mwami.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BI",
+    "year": 1899,
+    "title": "Incorporated into German East Africa",
+    "description": "Burundi was absorbed into German East Africa, with the monarchy retained under indirect rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BI",
+    "year": 1916,
+    "title": "Belgian occupation begins",
+    "description": "Belgian forces occupied Burundi during World War I, later administering it under a League of Nations mandate.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BI",
+    "year": 1962,
+    "title": "Burundi gains independence",
+    "description": "Burundi became independent on 1 July 1962, initially as a constitutional monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BI",
+    "year": 1966,
+    "title": "Monarchy abolished, republic declared",
+    "description": "A coup ended the monarchy and Burundi was proclaimed a republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BI",
+    "year": 1993,
+    "title": "First democratic president assassinated",
+    "description": "The assassination of Melchior Ndadaye, Burundi's first elected Hutu president, triggered a long civil war.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BI",
+    "year": 2005,
+    "title": "Civil war ends with new constitution",
+    "description": "A power-sharing constitution and elections largely ended Burundi's civil war.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CV",
+    "year": 1456,
+    "title": "Portuguese discover uninhabited islands",
+    "description": "Portuguese navigators reached the uninhabited Cape Verde archipelago in the mid-15th century.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "CV",
+    "year": 1462,
+    "title": "Settlement of Ribeira Grande founded",
+    "description": "Portuguese settlers founded Ribeira Grande on Santiago, the first permanent European town in the tropics.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CV",
+    "year": 1620,
+    "title": "Hub of the transatlantic slave trade",
+    "description": "Cape Verde became a key Atlantic entrepôt linking Africa, Europe, and the Americas through the slave trade.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "CV",
+    "year": 1956,
+    "title": "PAIGC founded by Amílcar Cabral",
+    "description": "Amílcar Cabral co-founded the PAIGC to seek independence for Cape Verde and Guinea-Bissau from Portugal.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CV",
+    "year": 1975,
+    "title": "Cape Verde gains independence",
+    "description": "Cape Verde became independent from Portugal on 5 July 1975.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CV",
+    "year": 1991,
+    "title": "First multiparty elections",
+    "description": "Cape Verde held its first multiparty elections, becoming one of Africa's most stable democracies.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CM",
+    "year": 1472,
+    "title": "Portuguese reach the Wouri estuary",
+    "description": "Portuguese explorers named the river Rio dos Camarões ('River of Prawns'), the origin of the country's name.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "CM",
+    "year": 1884,
+    "title": "German protectorate of Kamerun established",
+    "description": "Germany signed treaties with coastal chiefs and established the colony of Kamerun.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CM",
+    "year": 1916,
+    "title": "British and French partition Cameroon",
+    "description": "After defeating Germany in WWI, Britain and France divided Cameroon into separate mandates.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CM",
+    "year": 1960,
+    "title": "French Cameroon gains independence",
+    "description": "French Cameroon became independent on 1 January 1960 as the Republic of Cameroon.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CM",
+    "year": 1961,
+    "title": "Reunification with British Southern Cameroons",
+    "description": "Following a plebiscite, British Southern Cameroons joined to form a federal republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CM",
+    "year": 1990,
+    "title": "Indomitable Lions reach World Cup quarterfinals",
+    "description": "Cameroon's national football team became the first African side to reach a World Cup quarterfinal.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "CF",
+    "year": 1875,
+    "title": "Region depopulated by slave raids",
+    "description": "Sultanates and traders conducted extensive slave raids across the area before colonial rule.",
+    "category": "social"
+  },
+  {
+    "countryCode": "CF",
+    "year": 1894,
+    "title": "France establishes Ubangi-Shari",
+    "description": "France created the territory of Ubangi-Shari, later part of French Equatorial Africa.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CF",
+    "year": 1928,
+    "title": "Kongo-Wara rebellion against French rule",
+    "description": "A major rural uprising, the Kongo-Wara or 'War of the Hoe Handle', challenged French colonial exploitation.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CF",
+    "year": 1960,
+    "title": "Central African Republic gains independence",
+    "description": "The Central African Republic became independent from France on 13 August 1960.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CF",
+    "year": 1976,
+    "title": "Bokassa proclaims an empire",
+    "description": "President Jean-Bédel Bokassa declared himself emperor, renaming the country the Central African Empire until 1979.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CF",
+    "year": 2016,
+    "title": "Touadéra elected after civil conflict",
+    "description": "Faustin-Archange Touadéra won elections aimed at restoring stability after years of sectarian conflict.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TD",
+    "year": -500,
+    "title": "Iron-working Sao civilization emerges",
+    "description": "The Sao culture flourished near Lake Chad, known for its terracotta and bronze artistry.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "TD",
+    "year": 900,
+    "title": "Rise of the Kanem Empire",
+    "description": "The Kanem Empire emerged northeast of Lake Chad, becoming a major trans-Saharan trading power.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TD",
+    "year": 1085,
+    "title": "Kanem ruler converts to Islam",
+    "description": "Mai Humai of Kanem adopted Islam, linking the empire to the wider Muslim world and trade networks.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "TD",
+    "year": 1900,
+    "title": "French defeat Rabih az-Zubayr",
+    "description": "France defeated the warlord Rabih az-Zubayr at Kousséri, paving the way for colonization of Chad.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TD",
+    "year": 1960,
+    "title": "Chad gains independence",
+    "description": "Chad became independent from France on 11 August 1960.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TD",
+    "year": 2003,
+    "title": "Oil exports begin via Chad-Cameroon pipeline",
+    "description": "Chad began exporting crude oil through a pipeline to the Atlantic coast, reshaping its economy.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "KM",
+    "year": 933,
+    "title": "Early settlement by Bantu and Arab traders",
+    "description": "The Comoros islands were settled by Bantu-speaking peoples and integrated into Indian Ocean trade networks.",
+    "category": "social"
+  },
+  {
+    "countryCode": "KM",
+    "year": 1505,
+    "title": "Portuguese reach the Comoros",
+    "description": "Portuguese explorers arrived in the islands during their expansion into the Indian Ocean.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "KM",
+    "year": 1841,
+    "title": "France colonizes Mayotte",
+    "description": "France acquired the island of Mayotte, beginning its gradual colonization of the Comoros archipelago.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KM",
+    "year": 1975,
+    "title": "Comoros declares independence",
+    "description": "Three of the four main islands declared independence from France on 6 July 1975.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KM",
+    "year": 2001,
+    "title": "Union of the Comoros constitution adopted",
+    "description": "A new constitution created the Union of the Comoros with rotating presidency among the islands.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KM",
+    "year": 2009,
+    "title": "Mayotte votes to become French department",
+    "description": "Mayotte voted to become an overseas department of France, a status the Comoros continues to dispute.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CG",
+    "year": 1400,
+    "title": "Kingdom of Kongo flourishes",
+    "description": "The powerful Kingdom of Kongo dominated the region around the lower Congo River.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CG",
+    "year": 1880,
+    "title": "Brazza founds Brazzaville",
+    "description": "Pierre Savorgnan de Brazza signed treaties with the Téké and founded Brazzaville for France.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "CG",
+    "year": 1910,
+    "title": "Capital of French Equatorial Africa",
+    "description": "Brazzaville became the federal capital of French Equatorial Africa.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CG",
+    "year": 1960,
+    "title": "Republic of the Congo gains independence",
+    "description": "The Republic of the Congo became independent from France on 15 August 1960.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CG",
+    "year": 1969,
+    "title": "Marxist People's Republic proclaimed",
+    "description": "Congo became the People's Republic of the Congo, adopting Marxist-Leninist policies for two decades.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CG",
+    "year": 1997,
+    "title": "Civil war returns Sassou Nguesso to power",
+    "description": "A short civil war ended with Denis Sassou Nguesso reclaiming the presidency.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CD",
+    "year": 1390,
+    "title": "Founding of the Kingdom of Kongo",
+    "description": "The Kingdom of Kongo arose as a major centralized state spanning parts of the modern DR Congo and Angola.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CD",
+    "year": 1482,
+    "title": "Portuguese reach the Congo River",
+    "description": "Diogo Cão became the first European to reach the Congo River mouth, opening contact with the Kongo kingdom.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "CD",
+    "year": 1885,
+    "title": "Congo Free State under King Leopold II",
+    "description": "King Leopold II of Belgium claimed the Congo as his private state, leading to notorious colonial atrocities.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CD",
+    "year": 1908,
+    "title": "Belgium takes over the Congo",
+    "description": "International outcry forced Leopold to transfer the colony to the Belgian state as the Belgian Congo.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CD",
+    "year": 1960,
+    "title": "Congo gains independence",
+    "description": "The Democratic Republic of the Congo became independent from Belgium on 30 June 1960, with Patrice Lumumba as prime minister.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CD",
+    "year": 1965,
+    "title": "Mobutu seizes power",
+    "description": "Joseph-Désiré Mobutu took power in a coup, later renaming the country Zaire and ruling for over three decades.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CD",
+    "year": 1997,
+    "title": "Mobutu ousted, country renamed",
+    "description": "Laurent-Désiré Kabila overthrew Mobutu and renamed the nation the Democratic Republic of the Congo.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DJ",
+    "year": 825,
+    "title": "Spread of Islam along the coast",
+    "description": "Islam reached the Horn of Africa coast through Arab traders, deeply shaping local society.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "DJ",
+    "year": 1862,
+    "title": "France acquires Obock",
+    "description": "France purchased the port of Obock, beginning its colonial presence on the Gulf of Tadjoura.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DJ",
+    "year": 1888,
+    "title": "French Somaliland established",
+    "description": "France consolidated its holdings into French Somaliland, with Djibouti city as its center.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DJ",
+    "year": 1917,
+    "title": "Addis Ababa-Djibouti railway completed",
+    "description": "The railway linking Ethiopia to the port of Djibouti was completed, boosting regional trade.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "DJ",
+    "year": 1977,
+    "title": "Djibouti gains independence",
+    "description": "Djibouti became independent from France on 27 June 1977.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DJ",
+    "year": 2002,
+    "title": "First foreign military bases established",
+    "description": "Djibouti's strategic location led to foreign military bases, making it a key hub for global naval operations.",
+    "category": "military"
+  }
+]

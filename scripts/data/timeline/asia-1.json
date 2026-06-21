@@ -1,0 +1,765 @@
+[
+  {
+    "countryCode": "AF",
+    "year": -500,
+    "title": "Achaemenid Persian Rule",
+    "description": "The region of modern Afghanistan, including Bactria and Arachosia, became part of the Achaemenid Persian Empire under Darius I.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AF",
+    "year": -329,
+    "title": "Alexander the Great Conquers Bactria",
+    "description": "Alexander the Great campaigned through the region, founding cities and bringing Hellenistic influence to Bactria and Sogdiana.",
+    "category": "military"
+  },
+  {
+    "countryCode": "AF",
+    "year": -250,
+    "title": "Greco-Bactrian Kingdom",
+    "description": "A Hellenistic state emerged in Bactria, blending Greek and local cultures and minting renowned coinage.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "AF",
+    "year": 1747,
+    "title": "Founding of the Durrani Empire",
+    "description": "Ahmad Shah Durrani united Pashtun tribes and founded the Durrani Empire, often seen as the origin of modern Afghanistan.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AF",
+    "year": 1919,
+    "title": "Independence from British Influence",
+    "description": "Following the Third Anglo-Afghan War, Afghanistan regained full control of its foreign affairs under Amanullah Khan.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AF",
+    "year": 1979,
+    "title": "Soviet Invasion",
+    "description": "The Soviet Union invaded Afghanistan, beginning a decade-long war that caused immense devastation and displacement.",
+    "category": "military"
+  },
+  {
+    "countryCode": "AF",
+    "year": 2001,
+    "title": "Fall of the Taliban Regime",
+    "description": "A US-led coalition removed the Taliban from power following the September 11 attacks, beginning a new political era.",
+    "category": "military"
+  },
+  {
+    "countryCode": "AM",
+    "year": -782,
+    "title": "Founding of Erebuni Fortress",
+    "description": "King Argishti I of Urartu founded the fortress of Erebuni, considered the origin of Armenia's capital Yerevan.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AM",
+    "year": -190,
+    "title": "Kingdom of Greater Armenia",
+    "description": "Artaxias I founded the Artaxiad dynasty, establishing an independent Armenian kingdom that later expanded under Tigranes the Great.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AM",
+    "year": 301,
+    "title": "First Nation to Adopt Christianity",
+    "description": "Armenia became the first state to adopt Christianity as its official religion under King Tiridates III.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "AM",
+    "year": 405,
+    "title": "Creation of the Armenian Alphabet",
+    "description": "Mesrop Mashtots created the Armenian alphabet, enabling a flourishing of national literature and identity.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "AM",
+    "year": 1915,
+    "title": "Armenian Genocide",
+    "description": "The Ottoman Empire carried out the systematic deportation and mass killing of around 1.5 million Armenians.",
+    "category": "social"
+  },
+  {
+    "countryCode": "AM",
+    "year": 1991,
+    "title": "Independence from the Soviet Union",
+    "description": "Armenia declared independence as the USSR dissolved, becoming a sovereign republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AM",
+    "year": 1988,
+    "title": "Spitak Earthquake",
+    "description": "A devastating earthquake struck northern Armenia, killing tens of thousands and destroying entire towns.",
+    "category": "social"
+  },
+  {
+    "countryCode": "AZ",
+    "year": -300,
+    "title": "Kingdom of Caucasian Albania",
+    "description": "Caucasian Albania, an ancient state in the region of modern Azerbaijan, emerged and later adopted Christianity.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AZ",
+    "year": 1136,
+    "title": "Rise of the Atabegs of Azerbaijan",
+    "description": "The Eldiguzid (Atabeg) dynasty established a powerful state in the region, a flourishing period of Persian-influenced culture.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AZ",
+    "year": 1209,
+    "title": "Poet Nizami Ganjavi",
+    "description": "Nizami Ganjavi, one of the greatest Persian-language poets, lived and worked in Ganja, leaving a lasting literary legacy.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "AZ",
+    "year": 1813,
+    "title": "Treaty of Gulistan",
+    "description": "The treaty between Russia and Persia transferred much of present-day Azerbaijan to the Russian Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AZ",
+    "year": 1918,
+    "title": "Azerbaijan Democratic Republic",
+    "description": "Azerbaijan declared independence, becoming the first secular democratic republic in the Muslim world and granting women suffrage.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AZ",
+    "year": 1991,
+    "title": "Independence from the Soviet Union",
+    "description": "Azerbaijan restored its independence following the collapse of the Soviet Union.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AZ",
+    "year": 1994,
+    "title": "Contract of the Century",
+    "description": "Azerbaijan signed a major oil agreement with international companies, transforming its economy through Caspian petroleum.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "BD",
+    "year": -250,
+    "title": "Ancient Mauryan Bengal",
+    "description": "The region of Bengal, including ancient Pundravardhana, became part of the Mauryan Empire and an early urban center.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BD",
+    "year": 750,
+    "title": "Rise of the Pala Empire",
+    "description": "The Buddhist Pala dynasty unified Bengal and became a major patron of learning, art, and Buddhism in South Asia.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "BD",
+    "year": 1576,
+    "title": "Mughal Conquest of Bengal",
+    "description": "The Mughal Empire annexed Bengal, which became one of its wealthiest and most productive provinces.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BD",
+    "year": 1757,
+    "title": "Battle of Plassey",
+    "description": "The British East India Company defeated the Nawab of Bengal, beginning British colonial dominance over the region.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BD",
+    "year": 1947,
+    "title": "Partition and East Pakistan",
+    "description": "The partition of British India created East Bengal as part of Pakistan, separated from West Pakistan by India.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BD",
+    "year": 1952,
+    "title": "Bengali Language Movement",
+    "description": "Protests demanding recognition of Bengali led to deaths in Dhaka, later commemorated as International Mother Language Day.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "BD",
+    "year": 1971,
+    "title": "Liberation War and Independence",
+    "description": "Bangladesh won independence from Pakistan after a brutal nine-month war led by Sheikh Mujibur Rahman.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BT",
+    "year": 1616,
+    "title": "Unification by Zhabdrung",
+    "description": "Zhabdrung Ngawang Namgyal unified Bhutan and established a dual system of religious and civil governance.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BT",
+    "year": 1627,
+    "title": "Construction of Punakha Dzong",
+    "description": "The Punakha Dzong was built as a fortress-monastery, becoming a center of Bhutanese government and Buddhist culture.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "BT",
+    "year": 1907,
+    "title": "Founding of the Wangchuck Monarchy",
+    "description": "Ugyen Wangchuck was crowned the first hereditary king of Bhutan, unifying the country under a single monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BT",
+    "year": 1971,
+    "title": "Bhutan Joins the United Nations",
+    "description": "Bhutan became a member of the United Nations, expanding its presence on the international stage.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BT",
+    "year": 1972,
+    "title": "Gross National Happiness Concept",
+    "description": "King Jigme Singye Wangchuck introduced Gross National Happiness as a guiding philosophy of national development.",
+    "category": "social"
+  },
+  {
+    "countryCode": "BT",
+    "year": 1999,
+    "title": "Introduction of Television and Internet",
+    "description": "Bhutan became one of the last nations to introduce television and the internet, opening to global media.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "BT",
+    "year": 2008,
+    "title": "Transition to Democracy",
+    "description": "Bhutan held its first national parliamentary elections, transitioning from absolute monarchy to constitutional democracy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BN",
+    "year": 1368,
+    "title": "Rise of the Bruneian Sultanate",
+    "description": "Brunei emerged as a powerful Islamic sultanate controlling trade across coastal Borneo and beyond.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BN",
+    "year": 1521,
+    "title": "Magellan Expedition Visits Brunei",
+    "description": "Survivors of Magellan's expedition visited the wealthy court of Brunei, documenting its splendor and power.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "BN",
+    "year": 1888,
+    "title": "British Protectorate Established",
+    "description": "Brunei became a British protectorate, preserving the sultanate while ceding control of foreign affairs.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BN",
+    "year": 1929,
+    "title": "Discovery of Oil at Seria",
+    "description": "Major oil reserves were discovered at Seria, transforming Brunei into one of the wealthiest states in the region.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "BN",
+    "year": 1959,
+    "title": "First Written Constitution",
+    "description": "Brunei adopted its first written constitution, granting internal self-government while remaining a British protectorate.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BN",
+    "year": 1984,
+    "title": "Full Independence",
+    "description": "Brunei gained full independence from Britain, with Sultan Hassanal Bolkiah as head of state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BN",
+    "year": 2014,
+    "title": "Introduction of Sharia Penal Code",
+    "description": "Brunei began implementing a Sharia-based penal code, the first East Asian nation to do so at the national level.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "KH",
+    "year": 802,
+    "title": "Founding of the Khmer Empire",
+    "description": "Jayavarman II declared himself universal monarch, founding the Khmer Empire that dominated Southeast Asia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KH",
+    "year": 1113,
+    "title": "Construction of Angkor Wat",
+    "description": "King Suryavarman II began building Angkor Wat, the largest religious monument in the world.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "KH",
+    "year": 1431,
+    "title": "Fall of Angkor",
+    "description": "The Siamese sacked Angkor, prompting the Khmer to abandon the capital and shift power southward.",
+    "category": "military"
+  },
+  {
+    "countryCode": "KH",
+    "year": 1863,
+    "title": "French Protectorate",
+    "description": "Cambodia became a French protectorate, beginning nearly a century of colonial rule under French Indochina.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KH",
+    "year": 1953,
+    "title": "Independence from France",
+    "description": "Cambodia gained full independence from France under King Norodom Sihanouk.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KH",
+    "year": 1975,
+    "title": "Khmer Rouge Takeover",
+    "description": "The Khmer Rouge seized power and carried out a genocide that killed an estimated 1.7 to 2 million people.",
+    "category": "social"
+  },
+  {
+    "countryCode": "KH",
+    "year": 1993,
+    "title": "Restoration of the Monarchy",
+    "description": "Following UN-administered elections, Cambodia restored its constitutional monarchy and adopted a new constitution.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CN",
+    "year": -1600,
+    "title": "Shang Dynasty",
+    "description": "The Shang dynasty arose along the Yellow River, producing the earliest known Chinese writing and bronze casting.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "CN",
+    "year": -551,
+    "title": "Birth of Confucius",
+    "description": "The philosopher Confucius was born, founding a tradition of ethics and governance that shaped East Asian civilization.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "CN",
+    "year": -221,
+    "title": "Unification under the Qin Dynasty",
+    "description": "Qin Shi Huang unified China into the first centralized empire and standardized writing, currency, and measures.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CN",
+    "year": -130,
+    "title": "Opening of the Silk Road",
+    "description": "Under Emperor Wu of Han, trade routes connecting China to Central Asia and Europe flourished.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "CN",
+    "year": 105,
+    "title": "Invention of Paper",
+    "description": "Cai Lun refined papermaking during the Han dynasty, revolutionizing the recording and spread of knowledge.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "CN",
+    "year": 1405,
+    "title": "Voyages of Zheng He",
+    "description": "Admiral Zheng He led massive maritime expeditions across the Indian Ocean, projecting Ming power and trade.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "CN",
+    "year": 1911,
+    "title": "Fall of the Qing Dynasty",
+    "description": "The Xinhai Revolution ended over two thousand years of imperial rule and established the Republic of China.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CN",
+    "year": 1949,
+    "title": "Founding of the People's Republic",
+    "description": "Mao Zedong proclaimed the People's Republic of China after the Communists won the civil war.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CY",
+    "year": -1200,
+    "title": "Mycenaean Greek Settlement",
+    "description": "Mycenaean Greeks settled Cyprus, establishing the Greek cultural and linguistic roots of the island.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "CY",
+    "year": -709,
+    "title": "Assyrian Influence over Cypriot Kingdoms",
+    "description": "The independent city-kingdoms of Cyprus paid tribute to Assyria, reflecting the island's strategic trade position.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CY",
+    "year": -58,
+    "title": "Roman Annexation",
+    "description": "Cyprus was annexed by the Roman Republic, becoming a prosperous province known for copper and trade.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CY",
+    "year": 1571,
+    "title": "Ottoman Conquest",
+    "description": "The Ottoman Empire captured Cyprus from Venice, beginning three centuries of Ottoman rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CY",
+    "year": 1878,
+    "title": "British Administration Begins",
+    "description": "Britain took over administration of Cyprus from the Ottomans, later formally annexing it.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CY",
+    "year": 1960,
+    "title": "Independence from Britain",
+    "description": "Cyprus became an independent republic with a power-sharing constitution between Greek and Turkish Cypriots.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CY",
+    "year": 1974,
+    "title": "Division of the Island",
+    "description": "A Greek-backed coup and subsequent Turkish invasion divided Cyprus, a partition that endures today.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CY",
+    "year": 2004,
+    "title": "Accession to the European Union",
+    "description": "Cyprus joined the European Union, though EU law is suspended in the northern part of the divided island.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GE",
+    "year": -300,
+    "title": "Kingdom of Kartli (Iberia)",
+    "description": "The Kingdom of Iberia emerged in eastern Georgia, becoming an important Caucasian state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GE",
+    "year": 337,
+    "title": "Adoption of Christianity",
+    "description": "King Mirian III made Christianity the state religion of Iberia after the mission of Saint Nino.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "GE",
+    "year": 1089,
+    "title": "Reign of David the Builder",
+    "description": "David IV reunified Georgia and ushered in a medieval golden age of culture and military strength.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GE",
+    "year": 1184,
+    "title": "Golden Age under Queen Tamar",
+    "description": "Queen Tamar's reign marked the height of Georgian power, expansion, and cultural achievement.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "GE",
+    "year": 1801,
+    "title": "Russian Annexation",
+    "description": "The Russian Empire annexed the Georgian kingdom of Kartli-Kakheti, ending centuries of independence.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GE",
+    "year": 1918,
+    "title": "Democratic Republic of Georgia",
+    "description": "Georgia declared independence and established a democratic republic, lasting until Soviet invasion in 1921.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GE",
+    "year": 1991,
+    "title": "Independence from the Soviet Union",
+    "description": "Georgia restored its independence as the Soviet Union collapsed.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GE",
+    "year": 2003,
+    "title": "Rose Revolution",
+    "description": "A peaceful revolution forced President Shevardnadze to resign, ushering in pro-Western democratic reforms.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IN",
+    "year": -2600,
+    "title": "Indus Valley Civilization",
+    "description": "The Indus Valley Civilization flourished with planned cities like Harappa and Mohenjo-daro and advanced urban infrastructure.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "IN",
+    "year": -563,
+    "title": "Birth of the Buddha",
+    "description": "Siddhartha Gautama, the Buddha, was born, founding Buddhism which spread across Asia and the world.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "IN",
+    "year": -322,
+    "title": "Founding of the Maurya Empire",
+    "description": "Chandragupta Maurya founded the Maurya Empire, the first to unify most of the Indian subcontinent.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IN",
+    "year": 320,
+    "title": "Gupta Empire Golden Age",
+    "description": "The Gupta Empire ushered in a golden age of mathematics, astronomy, art, and the concept of zero.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "IN",
+    "year": 1526,
+    "title": "Founding of the Mughal Empire",
+    "description": "Babur won the Battle of Panipat and founded the Mughal Empire, which shaped Indian art and architecture.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IN",
+    "year": 1858,
+    "title": "British Crown Rule (the Raj)",
+    "description": "After the 1857 rebellion, the British Crown assumed direct rule over India, beginning the British Raj.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IN",
+    "year": 1947,
+    "title": "Independence and Partition",
+    "description": "India gained independence from Britain, accompanied by the partition that created Pakistan.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IN",
+    "year": 1950,
+    "title": "Adoption of the Constitution",
+    "description": "India adopted its constitution and became a sovereign democratic republic, the world's largest democracy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ID",
+    "year": 671,
+    "title": "Rise of Srivijaya",
+    "description": "The maritime empire of Srivijaya emerged on Sumatra, dominating trade and Buddhist learning across the region.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "ID",
+    "year": 800,
+    "title": "Construction of Borobudur",
+    "description": "The vast Buddhist temple of Borobudur was built in central Java, a masterpiece of ancient architecture.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "ID",
+    "year": 1293,
+    "title": "Founding of the Majapahit Empire",
+    "description": "The Majapahit Empire rose in Java, becoming the largest Hindu-Buddhist empire in Southeast Asian history.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ID",
+    "year": 1602,
+    "title": "Dutch East India Company Arrives",
+    "description": "The Dutch East India Company established trading dominance, beginning centuries of colonial control.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "ID",
+    "year": 1883,
+    "title": "Eruption of Krakatoa",
+    "description": "The catastrophic eruption of Krakatoa killed tens of thousands and affected global climate.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "ID",
+    "year": 1945,
+    "title": "Declaration of Independence",
+    "description": "Sukarno and Hatta proclaimed Indonesian independence from Dutch colonial rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ID",
+    "year": 2004,
+    "title": "Indian Ocean Tsunami",
+    "description": "A massive earthquake and tsunami devastated Aceh and other coastal regions, killing over 160,000 in Indonesia.",
+    "category": "social"
+  },
+  {
+    "countryCode": "JP",
+    "year": -660,
+    "title": "Legendary Founding by Emperor Jimmu",
+    "description": "Tradition holds that Emperor Jimmu founded the Japanese imperial line, the basis of the world's oldest monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "JP",
+    "year": 538,
+    "title": "Introduction of Buddhism",
+    "description": "Buddhism was introduced from Korea, profoundly shaping Japanese religion, art, and culture.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "JP",
+    "year": 1192,
+    "title": "Establishment of the Kamakura Shogunate",
+    "description": "Minamoto no Yoritomo founded the first shogunate, beginning centuries of rule by the samurai military class.",
+    "category": "political"
+  },
+  {
+    "countryCode": "JP",
+    "year": 1603,
+    "title": "Tokugawa Shogunate Begins",
+    "description": "Tokugawa Ieyasu established the Edo shogunate, ushering in over two centuries of peace and isolation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "JP",
+    "year": 1868,
+    "title": "Meiji Restoration",
+    "description": "Imperial power was restored and Japan launched rapid modernization and industrialization.",
+    "category": "political"
+  },
+  {
+    "countryCode": "JP",
+    "year": 1945,
+    "title": "Atomic Bombings and Surrender",
+    "description": "The atomic bombings of Hiroshima and Nagasaki led to Japan's surrender, ending World War II.",
+    "category": "military"
+  },
+  {
+    "countryCode": "JP",
+    "year": 1964,
+    "title": "Tokyo Olympic Games",
+    "description": "Japan hosted the Summer Olympics and unveiled the Shinkansen bullet train, symbolizing its postwar revival.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "KZ",
+    "year": -500,
+    "title": "Scythian and Saka Nomads",
+    "description": "The Saka and other nomadic peoples flourished on the Kazakh steppe, leaving rich burial mounds and goldwork.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "KZ",
+    "year": 1219,
+    "title": "Mongol Conquest",
+    "description": "Genghis Khan's armies conquered the region, which later became part of the Mongol Empire and the Golden Horde.",
+    "category": "military"
+  },
+  {
+    "countryCode": "KZ",
+    "year": 1465,
+    "title": "Founding of the Kazakh Khanate",
+    "description": "The Kazakh Khanate was established, uniting Kazakh tribes and forming the basis of Kazakh national identity.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KZ",
+    "year": 1731,
+    "title": "Russian Protection of the Junior Zhuz",
+    "description": "Kazakh tribes began accepting Russian protection, leading gradually to absorption into the Russian Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KZ",
+    "year": 1957,
+    "title": "Baikonur Cosmodrome Established",
+    "description": "The Soviet Union built Baikonur in Kazakhstan, later the launch site of the first human spaceflight.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "KZ",
+    "year": 1991,
+    "title": "Independence from the Soviet Union",
+    "description": "Kazakhstan declared independence, becoming the last Soviet republic to do so as the USSR dissolved.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KZ",
+    "year": 1997,
+    "title": "Capital Moved to Astana",
+    "description": "Kazakhstan moved its capital from Almaty to Astana, signaling national renewal and development.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KG",
+    "year": -201,
+    "title": "Early Kyrgyz on the Yenisei",
+    "description": "The Kyrgyz people are first recorded in Chinese sources, originally living near the Yenisei River in Siberia.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "KG",
+    "year": 840,
+    "title": "Kyrgyz Khaganate",
+    "description": "The Yenisei Kyrgyz defeated the Uyghur Khaganate and established a powerful steppe state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KG",
+    "year": 1207,
+    "title": "Submission to the Mongols",
+    "description": "The Kyrgyz submitted to Genghis Khan's expanding empire, becoming part of the Mongol world.",
+    "category": "military"
+  },
+  {
+    "countryCode": "KG",
+    "year": 1876,
+    "title": "Russian Conquest of Kyrgyzstan",
+    "description": "The Russian Empire fully incorporated Kyrgyz lands following the conquest of the Khanate of Kokand.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KG",
+    "year": 1991,
+    "title": "Independence from the Soviet Union",
+    "description": "Kyrgyzstan declared independence as the Soviet Union collapsed, with Askar Akayev as first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KG",
+    "year": 2005,
+    "title": "Tulip Revolution",
+    "description": "Mass protests, known as the Tulip Revolution, forced President Akayev from power amid demands for reform.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KG",
+    "year": 2010,
+    "title": "Adoption of Parliamentary System",
+    "description": "After unrest ousted the president, Kyrgyzstan adopted a new constitution creating a parliamentary democracy.",
+    "category": "political"
+  }
+]

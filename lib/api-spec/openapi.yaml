@@ -1,0 +1,2214 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: huMANity API - Explore history and culture of nations
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: countries
+    description: Country operations
+  - name: timeline
+    description: Timeline event operations
+  - name: milestones
+    description: Cultural milestone operations
+  - name: stories
+    description: Personal story operations
+  - name: explore
+    description: Discovery and search operations
+  - name: ai
+    description: AI-powered features
+  - name: pledge
+    description: Humanity Pledge operations
+  - name: Storage
+    description: Object storage upload and serving endpoints
+  - name: music
+    description: Music catalog search (Apple Music / iTunes)
+  - name: connections
+    description: Human Connections - user lookup and mutual connection requests
+  - name: world-news
+    description: AI-curated positive World News feed, reactions, and saves
+
+paths:
+  /storage/uploads/request-url:
+    post:
+      tags: [Storage]
+      operationId: requestUploadUrl
+      summary: Request a presigned URL for file upload
+      description: |
+        Returns a presigned GCS URL for direct upload. The client sends JSON
+        metadata here, then uploads the file directly to the returned URL.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UploadUrlRequest"
+      responses:
+        "200":
+          description: Presigned upload URL generated.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UploadUrlResponse"
+        "400":
+          description: Missing or invalid required fields.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
+        "500":
+          description: Failed to generate upload URL.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
+
+  /storage/uploads/finalize:
+    post:
+      tags: [Storage]
+      operationId: finalizeUpload
+      summary: Finalize an uploaded object and publish it
+      description: |
+        Called after a successful PUT to the presigned URL. Sets a public ACL
+        policy on the uploaded object (owned by the requesting user) so it can be
+        served from the public profile. Requires authentication.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FinalizeUploadRequest"
+      responses:
+        "200":
+          description: Object finalized and published.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FinalizedUploadResult"
+        "400":
+          description: Missing or invalid object path.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
+        "401":
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
+        "500":
+          description: Failed to finalize object.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
+
+  /music/search:
+    get:
+      tags: [music]
+      operationId: searchMusic
+      summary: Search the music catalog for a profile song
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+            minLength: 1
+          description: Search term (song, artist, or album).
+      responses:
+        "200":
+          description: Matching tracks.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MusicTrack"
+        "400":
+          description: Missing query.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  /countries:
+    get:
+      operationId: listCountries
+      tags: [countries]
+      summary: List all countries
+      parameters:
+        - name: continent
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: language
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: religion
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: region
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of countries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Country"
+    post:
+      operationId: createCountry
+      tags: [countries]
+      summary: Create a country entry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CountryInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Country"
+
+  /countries/featured:
+    get:
+      operationId: listFeaturedCountries
+      tags: [explore]
+      summary: Get featured countries
+      responses:
+        "200":
+          description: Featured countries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Country"
+
+  /countries/random:
+    get:
+      operationId: getRandomCountry
+      tags: [explore]
+      summary: Get a random country
+      responses:
+        "200":
+          description: A random country
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Country"
+
+  /countries/daily:
+    get:
+      operationId: getDailyCountry
+      tags: [explore]
+      summary: Get the daily featured country
+      description: Returns a deterministically selected country based on the current date
+      responses:
+        "200":
+          description: Daily country
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Country"
+
+  /countries/search:
+    get:
+      operationId: searchCountries
+      tags: [explore]
+      summary: Search countries
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Country"
+
+  /countries/continents:
+    get:
+      operationId: listContinents
+      tags: [explore]
+      summary: Get countries grouped by continent
+      responses:
+        "200":
+          description: Countries by continent
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ContinentGroup"
+
+  /countries/compare:
+    get:
+      operationId: compareCountries
+      tags: [explore]
+      summary: Compare two countries side by side
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: string
+          description: First country code
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Second country code
+      responses:
+        "200":
+          description: Country comparison
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CountryComparison"
+
+  /countries/{code}:
+    get:
+      operationId: getCountry
+      tags: [countries]
+      summary: Get country detail
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Country detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CountryDetail"
+        "404":
+          description: Not found
+
+  /countries/{code}/timeline:
+    get:
+      operationId: listTimeline
+      tags: [timeline]
+      summary: Get timeline events for a country
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Timeline events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TimelineEvent"
+    post:
+      operationId: createTimelineEvent
+      tags: [timeline]
+      summary: Add a timeline event
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TimelineEventInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimelineEvent"
+
+  /countries/{code}/milestones:
+    get:
+      operationId: listMilestones
+      tags: [milestones]
+      summary: Get cultural milestones for a country
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Cultural milestones
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CulturalMilestone"
+    post:
+      operationId: createMilestone
+      tags: [milestones]
+      summary: Add a cultural milestone
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MilestoneInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CulturalMilestone"
+
+  /countries/{code}/stories:
+    get:
+      operationId: listStories
+      tags: [stories]
+      summary: Get personal stories for a country
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Personal stories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Story"
+    post:
+      operationId: createStory
+      tags: [stories]
+      summary: Add a personal story
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StoryInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Story"
+
+  /countries/{code}/phrases:
+    get:
+      operationId: getCountryPhrases
+      tags: [countries]
+      summary: Get language phrases for a country
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Language phrases
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CountryPhrase"
+
+  /countries/{code}/stats:
+    get:
+      operationId: getCountryStats
+      tags: [countries]
+      summary: Get stats for a country
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Country stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CountryStats"
+
+  /humanity-timeline:
+    get:
+      operationId: getHumanityTimeline
+      tags: [timeline]
+      summary: Cross-civilization humanity timeline
+      description: Returns events from different civilizations grouped by historical era
+      parameters:
+        - name: era
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [ancient, classical, medieval, modern, contemporary]
+      responses:
+        "200":
+          description: Humanity timeline by era
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/HumanityTimelineEra"
+
+  /humanity-timeline/search:
+    get:
+      operationId: searchTimeline
+      tags: [timeline]
+      summary: Search timeline events across all nations
+      description: Diacritic-insensitive search across nation names, event titles, and descriptions, with optional category/era filters.
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Search term (matches nation name, title, description)
+        - name: category
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by event category
+        - name: era
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [ancient, classical, medieval, modern, contemporary]
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Matching timeline events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TimelineSearchResult"
+
+  /humanity-timeline/compare:
+    get:
+      operationId: compareTimelines
+      tags: [timeline]
+      summary: Compare the timelines of multiple nations side by side
+      parameters:
+        - name: countries
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Comma-separated country codes (2-4)
+      responses:
+        "200":
+          description: Per-nation timeline events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/NationTimeline"
+
+  /walk-in-shoes:
+    post:
+      operationId: walkInShoes
+      tags: [ai]
+      summary: Walk In Their Shoes AI experience
+      description: Generates an immersive first-person day-in-the-life narrative using AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WalkInShoesRequest"
+      responses:
+        "200":
+          description: Immersive narrative response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WalkNarrativeResponse"
+
+  /pledge:
+    post:
+      operationId: signPledge
+      tags: [pledge]
+      summary: Sign the Humanity Pledge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PledgeInput"
+      responses:
+        "201":
+          description: Pledge signed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PledgeResponse"
+
+  /pledge/count:
+    get:
+      operationId: getPledgeCount
+      tags: [pledge]
+      summary: Get total number of pledge signers
+      responses:
+        "200":
+          description: Pledge count
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PledgeCount"
+
+  /me/profile:
+    get:
+      operationId: getMyProfile
+      tags: [profile]
+      summary: Get the signed-in user's profile
+      responses:
+        "200":
+          description: The user's profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+        "401":
+          description: Unauthorized
+        "404":
+          description: Profile not yet created
+    put:
+      operationId: updateMyProfile
+      tags: [profile]
+      summary: Create or update the signed-in user's profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProfileInput"
+      responses:
+        "200":
+          description: The saved profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+        "401":
+          description: Unauthorized
+
+  /me/pledge:
+    post:
+      operationId: pledgeAsUser
+      tags: [profile]
+      summary: Mark the signed-in user as having taken the Humanity Pledge
+      responses:
+        "200":
+          description: The updated profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+        "401":
+          description: Unauthorized
+
+  /profile/{userId}:
+    get:
+      operationId: getProfile
+      tags: [profile]
+      summary: Get a public profile by user id
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: The profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+        "404":
+          description: Not found
+
+  /users/search:
+    get:
+      operationId: searchUsers
+      tags: [connections]
+      summary: Search people by name, username, or email
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Matching people with the viewer's connection status to each
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/UserSearchResult"
+        "401":
+          description: Unauthorized
+
+  /connections/recommendations:
+    get:
+      operationId: getConnectionRecommendations
+      tags: [connections]
+      summary: Recommend people to connect with based on shared interests
+      description: Ranks non-connected members by overlap of interests, languages, country, and favorites with the signed-in user.
+      responses:
+        "200":
+          description: Recommended people, highest match first
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/RecommendedUser"
+        "401":
+          description: Unauthorized
+
+  /connections:
+    get:
+      operationId: listConnections
+      tags: [connections]
+      summary: List the signed-in user's accepted Human Connections
+      responses:
+        "200":
+          description: Accepted connections
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ConnectionUser"
+        "401":
+          description: Unauthorized
+
+  /connections/requests:
+    get:
+      operationId: listConnectionRequests
+      tags: [connections]
+      summary: List pending incoming and outgoing connection requests
+      responses:
+        "200":
+          description: Pending requests grouped by direction
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConnectionRequestsList"
+        "401":
+          description: Unauthorized
+    post:
+      operationId: sendConnectionRequest
+      tags: [connections]
+      summary: Send a connection request to another user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ConnectionRequestInput"
+      responses:
+        "201":
+          description: Resulting connection status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConnectionStatusResult"
+        "400":
+          description: Invalid request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Target user not found
+
+  /connections/requests/{id}/accept:
+    post:
+      operationId: acceptConnectionRequest
+      tags: [connections]
+      summary: Accept an incoming connection request
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Resulting connection status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConnectionStatusResult"
+        "401":
+          description: Unauthorized
+        "404":
+          description: Request not found
+
+  /connections/requests/{id}:
+    delete:
+      operationId: deleteConnectionRequest
+      tags: [connections]
+      summary: Decline an incoming request or cancel an outgoing one
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Request removed
+        "401":
+          description: Unauthorized
+        "404":
+          description: Request not found
+
+  /connections/status/{userId}:
+    get:
+      operationId: getConnectionStatus
+      tags: [connections]
+      summary: Get the viewer's connection status with a specific user
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Connection status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConnectionStatusResult"
+        "401":
+          description: Unauthorized
+
+  /connections/{userId}:
+    delete:
+      operationId: removeConnection
+      tags: [connections]
+      summary: Remove an existing connection with a user
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Connection removed
+        "401":
+          description: Unauthorized
+        "404":
+          description: Connection not found
+
+  /messages:
+    get:
+      operationId: listConversations
+      tags: [messages]
+      summary: List the signed-in user's direct-message conversations
+      responses:
+        "200":
+          description: Conversations ordered by most recent message
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ConversationSummary"
+        "401":
+          description: Unauthorized
+
+  /messages/unread-count:
+    get:
+      operationId: getUnreadMessageCount
+      tags: [messages]
+      summary: Total number of unread direct messages for the signed-in user
+      responses:
+        "200":
+          description: Unread message count
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnreadCount"
+        "401":
+          description: Unauthorized
+
+  /messages/{userId}:
+    get:
+      operationId: getMessageThread
+      tags: [messages]
+      summary: Get the message thread with a specific connection
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: The conversation partner and the messages exchanged
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageThread"
+        "401":
+          description: Unauthorized
+        "403":
+          description: Not connected with this user
+    post:
+      operationId: sendMessage
+      tags: [messages]
+      summary: Send a direct message to a connection
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SendMessageInput"
+      responses:
+        "201":
+          description: The created message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DirectMessage"
+        "400":
+          description: Invalid message
+        "401":
+          description: Unauthorized
+        "403":
+          description: Not connected with this user
+
+  /messages/{userId}/read:
+    post:
+      operationId: markMessagesRead
+      tags: [messages]
+      summary: Mark all messages from a connection as read
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Messages marked as read
+        "401":
+          description: Unauthorized
+        "403":
+          description: Not connected with this user
+
+  /dinner-table/current:
+    get:
+      operationId: getCurrentDinner
+      tags: [dinner]
+      summary: Get this week's World Dinner Table question and answers
+      responses:
+        "200":
+          description: Current dinner question with answers
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CurrentDinner"
+
+  /dinner-table/questions:
+    get:
+      operationId: listDinnerQuestions
+      tags: [dinner]
+      summary: List all World Dinner Table questions (newest first)
+      responses:
+        "200":
+          description: Question summaries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/DinnerQuestionSummary"
+
+  /dinner-table/questions/{id}:
+    get:
+      operationId: getDinnerQuestion
+      tags: [dinner]
+      summary: Get a specific dinner question with its answers
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Question with answers
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DinnerQuestionDetail"
+        "404":
+          description: Not found
+
+  /dinner-table/questions/{id}/answers:
+    post:
+      operationId: submitDinnerAnswer
+      tags: [dinner]
+      summary: Submit an answer to a dinner question
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DinnerAnswerInput"
+      responses:
+        "201":
+          description: The created answer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DinnerAnswer"
+        "401":
+          description: Unauthorized
+        "409":
+          description: Already answered this question
+
+  /world-news:
+    get:
+      operationId: listWorldNews
+      tags: [world-news]
+      summary: List AI-curated positive world news
+      description: Returns the most recent positive news, newest first. Optional category/region filters. Viewer reaction/saved state is included when signed in.
+      parameters:
+        - name: category
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: region
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Positive news items, newest first
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/WorldNewsItem"
+
+  /world-news/saved:
+    get:
+      operationId: listSavedWorldNews
+      tags: [world-news]
+      summary: List the signed-in user's saved news
+      responses:
+        "200":
+          description: Saved news items, most recently saved first
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/WorldNewsItem"
+        "401":
+          description: Unauthorized
+
+  /world-news/{id}/react:
+    post:
+      operationId: reactToWorldNews
+      tags: [world-news]
+      summary: Set or change the signed-in user's reaction on a news item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewsReactionInput"
+      responses:
+        "200":
+          description: The updated news item
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorldNewsItem"
+        "401":
+          description: Unauthorized
+        "404":
+          description: News item not found
+    delete:
+      operationId: removeWorldNewsReaction
+      tags: [world-news]
+      summary: Remove the signed-in user's reaction from a news item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: The updated news item
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorldNewsItem"
+        "401":
+          description: Unauthorized
+        "404":
+          description: News item not found
+
+  /world-news/{id}/save:
+    post:
+      operationId: saveWorldNews
+      tags: [world-news]
+      summary: Save a news item for the signed-in user
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: The updated news item
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorldNewsItem"
+        "401":
+          description: Unauthorized
+        "404":
+          description: News item not found
+    delete:
+      operationId: unsaveWorldNews
+      tags: [world-news]
+      summary: Remove a saved news item for the signed-in user
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: The updated news item
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorldNewsItem"
+        "401":
+          description: Unauthorized
+        "404":
+          description: News item not found
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required: [status]
+
+    Country:
+      type: object
+      required: [id, code, name, continent]
+      properties:
+        id:
+          type: integer
+        code:
+          type: string
+          description: ISO 3166-1 alpha-2 country code
+        name:
+          type: string
+        continent:
+          type: string
+        region:
+          type: ["string", "null"]
+        capital:
+          type: ["string", "null"]
+        flagUrl:
+          type: ["string", "null"]
+        coverImageUrl:
+          type: ["string", "null"]
+        summary:
+          type: ["string", "null"]
+        population:
+          type: ["integer", "null"]
+        areaKm2:
+          type: ["integer", "null"]
+        languages:
+          type: ["string", "null"]
+        currency:
+          type: ["string", "null"]
+        governmentType:
+          type: ["string", "null"]
+        religion:
+          type: ["string", "null"]
+        featured:
+          type: boolean
+
+    CountryDetail:
+      type: object
+      required: [id, code, name, continent]
+      properties:
+        id:
+          type: integer
+        code:
+          type: string
+        name:
+          type: string
+        continent:
+          type: string
+        region:
+          type: ["string", "null"]
+        capital:
+          type: ["string", "null"]
+        flagUrl:
+          type: ["string", "null"]
+        coverImageUrl:
+          type: ["string", "null"]
+        summary:
+          type: ["string", "null"]
+        population:
+          type: ["integer", "null"]
+        areaKm2:
+          type: ["integer", "null"]
+        languages:
+          type: ["string", "null"]
+        currency:
+          type: ["string", "null"]
+        governmentType:
+          type: ["string", "null"]
+        religion:
+          type: ["string", "null"]
+        featured:
+          type: boolean
+        timelineCount:
+          type: integer
+        milestoneCount:
+          type: integer
+        storyCount:
+          type: integer
+
+    CountryInput:
+      type: object
+      required: [code, name, continent]
+      properties:
+        code:
+          type: string
+        name:
+          type: string
+        continent:
+          type: string
+        region:
+          type: string
+        capital:
+          type: string
+        flagUrl:
+          type: string
+        coverImageUrl:
+          type: string
+        summary:
+          type: string
+        population:
+          type: integer
+        areaKm2:
+          type: integer
+        languages:
+          type: string
+        currency:
+          type: string
+        governmentType:
+          type: string
+        religion:
+          type: string
+        featured:
+          type: boolean
+
+    CountryComparison:
+      type: object
+      required: [a, b]
+      properties:
+        a:
+          $ref: "#/components/schemas/CountryDetail"
+        b:
+          $ref: "#/components/schemas/CountryDetail"
+
+    TimelineEvent:
+      type: object
+      required: [id, countryCode, year, title, description]
+      properties:
+        id:
+          type: integer
+        countryCode:
+          type: string
+        year:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        mediaUrl:
+          type: ["string", "null"]
+        mediaType:
+          type: ["string", "null"]
+        category:
+          type: ["string", "null"]
+
+    TimelineEventInput:
+      type: object
+      required: [year, title, description]
+      properties:
+        year:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        mediaUrl:
+          type: string
+        mediaType:
+          type: string
+        category:
+          type: string
+
+    CulturalMilestone:
+      type: object
+      required: [id, countryCode, title, description]
+      properties:
+        id:
+          type: integer
+        countryCode:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        year:
+          type: ["integer", "null"]
+        category:
+          type: ["string", "null"]
+        imageUrl:
+          type: ["string", "null"]
+
+    MilestoneInput:
+      type: object
+      required: [title, description]
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        year:
+          type: integer
+        category:
+          type: string
+        imageUrl:
+          type: string
+
+    Story:
+      type: object
+      required: [id, countryCode, title, content]
+      properties:
+        id:
+          type: integer
+        countryCode:
+          type: string
+        title:
+          type: string
+        author:
+          type: ["string", "null"]
+        content:
+          type: string
+        audioUrl:
+          type: ["string", "null"]
+        videoUrl:
+          type: ["string", "null"]
+        imageUrl:
+          type: ["string", "null"]
+        createdAt:
+          type: string
+
+    StoryInput:
+      type: object
+      required: [title, content]
+      properties:
+        title:
+          type: string
+        author:
+          type: string
+        content:
+          type: string
+        audioUrl:
+          type: string
+        videoUrl:
+          type: string
+        imageUrl:
+          type: string
+
+    ContinentGroup:
+      type: object
+      required: [continent, countries]
+      properties:
+        continent:
+          type: string
+        countries:
+          type: array
+          items:
+            $ref: "#/components/schemas/Country"
+
+    CountryStats:
+      type: object
+      required: [code, timelineCount, milestoneCount, storyCount]
+      properties:
+        code:
+          type: string
+        timelineCount:
+          type: integer
+        milestoneCount:
+          type: integer
+        storyCount:
+          type: integer
+        earliestEvent:
+          type: ["integer", "null"]
+        latestEvent:
+          type: ["integer", "null"]
+
+    CountryPhrase:
+      type: object
+      required: [id, countryCode, languageName]
+      properties:
+        id:
+          type: integer
+        countryCode:
+          type: string
+        languageName:
+          type: string
+        hello:
+          type: ["string", "null"]
+        helloRomanized:
+          type: ["string", "null"]
+        thankYou:
+          type: ["string", "null"]
+        thankYouRomanized:
+          type: ["string", "null"]
+        peace:
+          type: ["string", "null"]
+        peaceRomanized:
+          type: ["string", "null"]
+        friendship:
+          type: ["string", "null"]
+        friendshipRomanized:
+          type: ["string", "null"]
+        love:
+          type: ["string", "null"]
+        loveRomanized:
+          type: ["string", "null"]
+        welcome:
+          type: ["string", "null"]
+        welcomeRomanized:
+          type: ["string", "null"]
+
+    HumanityTimelineEra:
+      type: object
+      required: [era, label, yearRange, events]
+      properties:
+        era:
+          type: string
+        label:
+          type: string
+        yearRange:
+          type: string
+        events:
+          type: array
+          items:
+            $ref: "#/components/schemas/TimelineEvent"
+
+    TimelineSearchResult:
+      type: object
+      required: [id, countryCode, countryName, year, title, description]
+      properties:
+        id:
+          type: integer
+        countryCode:
+          type: string
+        countryName:
+          type: string
+        countryFlagUrl:
+          type: ["string", "null"]
+        year:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        category:
+          type: ["string", "null"]
+        era:
+          type: string
+
+    NationTimeline:
+      type: object
+      required: [code, name, events]
+      properties:
+        code:
+          type: string
+        name:
+          type: string
+        flagUrl:
+          type: ["string", "null"]
+        events:
+          type: array
+          items:
+            $ref: "#/components/schemas/TimelineEvent"
+
+    WalkInShoesRequest:
+      type: object
+      required: [country, occupation]
+      properties:
+        country:
+          type: string
+          description: Country code or name
+        region:
+          type: ["string", "null"]
+        age:
+          type: ["integer", "null"]
+        occupation:
+          type: string
+
+    WalkNarrativeResponse:
+      type: object
+      required: [narrative, country, occupation]
+      properties:
+        narrative:
+          type: string
+        country:
+          type: string
+        occupation:
+          type: string
+        age:
+          type: ["integer", "null"]
+
+    PledgeInput:
+      type: object
+      properties:
+        name:
+          type: ["string", "null"]
+        country:
+          type: ["string", "null"]
+
+    PledgeResponse:
+      type: object
+      required: [id, pledgedAt, totalCount]
+      properties:
+        id:
+          type: integer
+        pledgedAt:
+          type: string
+        totalCount:
+          type: integer
+
+    PledgeCount:
+      type: object
+      required: [count]
+      properties:
+        count:
+          type: integer
+
+    Profile:
+      type: object
+      required:
+        - id
+        - userId
+        - displayName
+        - languages
+        - interests
+        - favoriteBooks
+        - favoriteMusic
+        - countriesExplored
+        - humanityScore
+        - pledged
+        - createdAt
+        - updatedAt
+      properties:
+        id:
+          type: integer
+        userId:
+          type: string
+        username:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+        countryCode:
+          type: string
+          nullable: true
+        countryName:
+          type: string
+          nullable: true
+        countryFlagUrl:
+          type: string
+          nullable: true
+        photoUrl:
+          type: string
+          nullable: true
+        bio:
+          type: string
+          nullable: true
+        culturalBackground:
+          type: string
+          nullable: true
+        languages:
+          type: array
+          items:
+            type: string
+        interests:
+          type: array
+          items:
+            type: string
+        favoriteBooks:
+          type: array
+          items:
+            type: string
+        favoriteMusic:
+          type: array
+          items:
+            type: string
+        profileSong:
+          type: string
+          nullable: true
+        profileSongTitle:
+          type: string
+          nullable: true
+        profileSongArtist:
+          type: string
+          nullable: true
+        profileSongArtwork:
+          type: string
+          nullable: true
+        profileSongPreviewUrl:
+          type: string
+          nullable: true
+        profileSongUrl:
+          type: string
+          nullable: true
+        countriesExplored:
+          type: array
+          items:
+            type: string
+        humanityScore:
+          type: integer
+        pledged:
+          type: boolean
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+
+    ProfileInput:
+      type: object
+      required: [displayName]
+      properties:
+        displayName:
+          type: string
+          minLength: 1
+        username:
+          type: string
+          nullable: true
+        countryCode:
+          type: string
+          nullable: true
+        photoUrl:
+          type: string
+          nullable: true
+        bio:
+          type: string
+          nullable: true
+        culturalBackground:
+          type: string
+          nullable: true
+        languages:
+          type: array
+          items:
+            type: string
+        interests:
+          type: array
+          items:
+            type: string
+        favoriteBooks:
+          type: array
+          items:
+            type: string
+        favoriteMusic:
+          type: array
+          items:
+            type: string
+        profileSong:
+          type: string
+          nullable: true
+        profileSongTitle:
+          type: string
+          nullable: true
+        profileSongArtist:
+          type: string
+          nullable: true
+        profileSongArtwork:
+          type: string
+          nullable: true
+        profileSongPreviewUrl:
+          type: string
+          nullable: true
+        profileSongUrl:
+          type: string
+          nullable: true
+
+    UploadUrlRequest:
+      type: object
+      required: [name, size, contentType]
+      properties:
+        name:
+          type: string
+          minLength: 1
+          description: Original file name.
+        size:
+          type: integer
+          minimum: 1
+          description: File size in bytes.
+        contentType:
+          type: string
+          minLength: 1
+          description: MIME type of the file (e.g. `image/jpeg`).
+    UploadUrlResponse:
+      type: object
+      required: [uploadURL, objectPath]
+      properties:
+        uploadURL:
+          type: string
+          format: uri
+          description: Presigned GCS URL for PUT upload.
+        objectPath:
+          type: string
+          description: Normalized object path (e.g. `/objects/uploads/uuid`). Store this in your database.
+        metadata:
+          $ref: "#/components/schemas/UploadUrlRequest"
+    FinalizeUploadRequest:
+      type: object
+      required: [objectPath]
+      properties:
+        objectPath:
+          type: string
+          minLength: 1
+          description: Normalized object path returned by request-url (e.g. `/objects/uploads/uuid`).
+    FinalizedUploadResult:
+      type: object
+      required: [objectPath]
+      properties:
+        objectPath:
+          type: string
+          description: Normalized object path, now publicly served.
+    ErrorEnvelope:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string
+    MusicTrack:
+      type: object
+      required: [id, title, artist]
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        artist:
+          type: string
+        artwork:
+          type: string
+          nullable: true
+        previewUrl:
+          type: string
+          nullable: true
+        trackUrl:
+          type: string
+          nullable: true
+
+    DinnerAnswerAuthor:
+      type: object
+      required: [userId, displayName]
+      properties:
+        userId:
+          type: string
+        displayName:
+          type: string
+        photoUrl:
+          type: string
+          nullable: true
+        countryCode:
+          type: string
+          nullable: true
+        countryName:
+          type: string
+          nullable: true
+        countryFlagUrl:
+          type: string
+          nullable: true
+
+    DinnerAnswer:
+      type: object
+      required: [id, questionId, answer, createdAt, author]
+      properties:
+        id:
+          type: integer
+        questionId:
+          type: integer
+        answer:
+          type: string
+        createdAt:
+          type: string
+        author:
+          $ref: "#/components/schemas/DinnerAnswerAuthor"
+
+    DinnerAnswerInput:
+      type: object
+      required: [answer]
+      properties:
+        answer:
+          type: string
+          minLength: 1
+          maxLength: 2000
+
+    DinnerQuestionSummary:
+      type: object
+      required: [id, question, weekStart, answerCount]
+      properties:
+        id:
+          type: integer
+        question:
+          type: string
+        theme:
+          type: string
+          nullable: true
+        weekStart:
+          type: string
+        answerCount:
+          type: integer
+
+    DinnerQuestionDetail:
+      type: object
+      required: [question, answers, totalAnswers, hasAnswered]
+      properties:
+        question:
+          $ref: "#/components/schemas/DinnerQuestionSummary"
+        answers:
+          type: array
+          items:
+            $ref: "#/components/schemas/DinnerAnswer"
+        totalAnswers:
+          type: integer
+        hasAnswered:
+          type: boolean
+    ConnectionUser:
+      type: object
+      required: [userId, displayName, humanityScore, pledged]
+      properties:
+        userId:
+          type: string
+        username:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+        photoUrl:
+          type: string
+          nullable: true
+        countryName:
+          type: string
+          nullable: true
+        countryFlagUrl:
+          type: string
+          nullable: true
+        humanityScore:
+          type: integer
+        pledged:
+          type: boolean
+
+    UserSearchResult:
+      type: object
+      required: [userId, displayName, humanityScore, pledged, connectionStatus]
+      properties:
+        userId:
+          type: string
+        username:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+        photoUrl:
+          type: string
+          nullable: true
+        countryName:
+          type: string
+          nullable: true
+        countryFlagUrl:
+          type: string
+          nullable: true
+        humanityScore:
+          type: integer
+        pledged:
+          type: boolean
+        connectionStatus:
+          type: string
+          enum: [none, pending_outgoing, pending_incoming, connected]
+        connectionId:
+          type: integer
+          nullable: true
+
+    RecommendedUser:
+      type: object
+      required: [userId, displayName, humanityScore, pledged, matchScore, sharedInterests, sharedLanguages, sharedCountry, reasons]
+      properties:
+        userId:
+          type: string
+        username:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+        photoUrl:
+          type: string
+          nullable: true
+        countryName:
+          type: string
+          nullable: true
+        countryFlagUrl:
+          type: string
+          nullable: true
+        humanityScore:
+          type: integer
+        pledged:
+          type: boolean
+        matchScore:
+          type: integer
+        sharedInterests:
+          type: array
+          items:
+            type: string
+        sharedLanguages:
+          type: array
+          items:
+            type: string
+        sharedCountry:
+          type: boolean
+        reasons:
+          type: array
+          items:
+            type: string
+
+    NewsReactionCounts:
+      type: object
+      required: [inspired, hopeful, grateful, love]
+      properties:
+        inspired:
+          type: integer
+        hopeful:
+          type: integer
+        grateful:
+          type: integer
+        love:
+          type: integer
+
+    WorldNewsItem:
+      type: object
+      required:
+        [
+          id,
+          category,
+          title,
+          summary,
+          body,
+          region,
+          sourceName,
+          tone,
+          publishedAt,
+          reactionCounts,
+          totalReactions,
+          saved,
+        ]
+      properties:
+        id:
+          type: integer
+        category:
+          type: string
+        title:
+          type: string
+        summary:
+          type: string
+        body:
+          type: string
+        region:
+          type: string
+        countryCode:
+          type: string
+          nullable: true
+        countryName:
+          type: string
+          nullable: true
+        countryFlagUrl:
+          type: string
+          nullable: true
+        sourceName:
+          type: string
+        tone:
+          type: string
+        imageUrl:
+          type: string
+          nullable: true
+        publishedAt:
+          type: string
+        reactionCounts:
+          $ref: "#/components/schemas/NewsReactionCounts"
+        totalReactions:
+          type: integer
+        viewerReaction:
+          type: string
+          nullable: true
+          enum: [inspired, hopeful, grateful, love]
+        saved:
+          type: boolean
+
+    NewsReactionInput:
+      type: object
+      required: [reaction]
+      properties:
+        reaction:
+          type: string
+          enum: [inspired, hopeful, grateful, love]
+
+    ConnectionRequestItem:
+      type: object
+      required: [id, createdAt, user]
+      properties:
+        id:
+          type: integer
+        createdAt:
+          type: string
+        user:
+          $ref: "#/components/schemas/ConnectionUser"
+
+    ConnectionRequestsList:
+      type: object
+      required: [incoming, outgoing]
+      properties:
+        incoming:
+          type: array
+          items:
+            $ref: "#/components/schemas/ConnectionRequestItem"
+        outgoing:
+          type: array
+          items:
+            $ref: "#/components/schemas/ConnectionRequestItem"
+
+    ConnectionStatusResult:
+      type: object
+      required: [status]
+      properties:
+        status:
+          type: string
+          enum: [none, pending_outgoing, pending_incoming, connected]
+        connectionId:
+          type: integer
+          nullable: true
+
+    ConnectionRequestInput:
+      type: object
+      required: [userId]
+      properties:
+        userId:
+          type: string
+
+    DirectMessage:
+      type: object
+      required: [id, senderId, recipientId, body, createdAt, mine, read]
+      properties:
+        id:
+          type: integer
+        senderId:
+          type: string
+        recipientId:
+          type: string
+        body:
+          type: string
+        createdAt:
+          type: string
+        mine:
+          type: boolean
+        read:
+          type: boolean
+
+    ConversationSummary:
+      type: object
+      required: [user, unreadCount]
+      properties:
+        user:
+          $ref: "#/components/schemas/ConnectionUser"
+        lastMessage:
+          oneOf:
+            - $ref: "#/components/schemas/DirectMessage"
+            - type: "null"
+        unreadCount:
+          type: integer
+
+    MessageThread:
+      type: object
+      required: [user, messages]
+      properties:
+        user:
+          $ref: "#/components/schemas/ConnectionUser"
+        messages:
+          type: array
+          items:
+            $ref: "#/components/schemas/DirectMessage"
+
+    SendMessageInput:
+      type: object
+      required: [body]
+      properties:
+        body:
+          type: string
+          minLength: 1
+          maxLength: 4000
+
+    UnreadCount:
+      type: object
+      required: [count]
+      properties:
+        count:
+          type: integer
+
+    CurrentDinner:
+      type: object
+      required: [question, answers, totalAnswers, hasAnswered]
+      properties:
+        question:
+          oneOf:
+            - $ref: "#/components/schemas/DinnerQuestionSummary"
+            - type: "null"
+        answers:
+          type: array
+          items:
+            $ref: "#/components/schemas/DinnerAnswer"
+        totalAnswers:
+          type: integer
+        hasAnswered:
+          type: boolean

@@ -1,0 +1,716 @@
+[
+  {
+    "countryCode": "AU",
+    "year": -50000,
+    "title": "Aboriginal peoples settle Australia",
+    "description": "Indigenous Australians arrived on the continent at least 50,000 years ago, establishing one of the world's oldest continuous living cultures.",
+    "category": "social"
+  },
+  {
+    "countryCode": "AU",
+    "year": 1606,
+    "title": "First recorded European landing",
+    "description": "Dutch navigator Willem Janszoon made the first documented European landfall on the Australian coast aboard the Duyfken.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "AU",
+    "year": 1770,
+    "title": "James Cook charts the east coast",
+    "description": "British explorer James Cook charted Australia's eastern coastline and claimed it for Britain, naming it New South Wales.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "AU",
+    "year": 1788,
+    "title": "First Fleet arrives at Sydney Cove",
+    "description": "The British First Fleet established a penal colony at Sydney Cove, beginning permanent European settlement of Australia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AU",
+    "year": 1851,
+    "title": "Australian gold rushes begin",
+    "description": "Gold discoveries in New South Wales and Victoria triggered mass immigration and transformed the colonial economy.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "AU",
+    "year": 1901,
+    "title": "Federation of Australia",
+    "description": "Six British colonies united to form the Commonwealth of Australia, creating a single federal nation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AU",
+    "year": 1967,
+    "title": "Referendum on Aboriginal rights",
+    "description": "Over 90% of Australians voted to count Indigenous people in the census and allow federal laws for their benefit.",
+    "category": "social"
+  },
+  {
+    "countryCode": "AU",
+    "year": 2008,
+    "title": "National Apology to Stolen Generations",
+    "description": "Prime Minister Kevin Rudd delivered a formal parliamentary apology to Indigenous Australians removed from their families.",
+    "category": "social"
+  },
+  {
+    "countryCode": "FJ",
+    "year": -1000,
+    "title": "Lapita peoples settle Fiji",
+    "description": "Austronesian-speaking Lapita voyagers settled the Fijian islands, leaving distinctive pottery and founding lasting communities.",
+    "category": "social"
+  },
+  {
+    "countryCode": "FJ",
+    "year": 1643,
+    "title": "Abel Tasman sights Fiji",
+    "description": "Dutch explorer Abel Tasman became the first European to sight the Fijian islands while navigating the region.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "FJ",
+    "year": 1854,
+    "title": "Chief Cakobau converts to Christianity",
+    "description": "The powerful chief Cakobau adopted Christianity, accelerating the religion's spread across the Fijian islands.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "FJ",
+    "year": 1874,
+    "title": "Fiji becomes a British colony",
+    "description": "Chiefs ceded Fiji to Britain, beginning nearly a century of colonial rule and the later importation of Indian laborers.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FJ",
+    "year": 1879,
+    "title": "Indian indentured laborers arrive",
+    "description": "The first ship of indentured laborers from India arrived to work sugar plantations, reshaping Fiji's population.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "FJ",
+    "year": 1970,
+    "title": "Fiji gains independence",
+    "description": "Fiji became an independent nation within the Commonwealth after 96 years of British colonial rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FJ",
+    "year": 1987,
+    "title": "Fiji's first military coups",
+    "description": "Two military coups led by Sitiveni Rabuka overthrew the elected government and declared Fiji a republic.",
+    "category": "military"
+  },
+  {
+    "countryCode": "KI",
+    "year": -1000,
+    "title": "Austronesian settlement of the Gilberts",
+    "description": "Micronesian voyagers settled the Gilbert Islands, developing seafaring societies sustained by fishing and navigation.",
+    "category": "social"
+  },
+  {
+    "countryCode": "KI",
+    "year": 1820,
+    "title": "Islands named after Thomas Gilbert",
+    "description": "A Russian admiral named the Gilbert Islands after British captain Thomas Gilbert, who sighted them in 1788.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "KI",
+    "year": 1892,
+    "title": "British protectorate established",
+    "description": "Britain declared a protectorate over the Gilbert and Ellice Islands, later forming a unified colony.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KI",
+    "year": 1943,
+    "title": "Battle of Tarawa",
+    "description": "One of the Pacific War's bloodiest battles was fought on Tarawa atoll between US and Japanese forces.",
+    "category": "military"
+  },
+  {
+    "countryCode": "KI",
+    "year": 1979,
+    "title": "Kiribati gains independence",
+    "description": "Kiribati became an independent republic, ending British colonial rule over the Gilbert Islands.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KI",
+    "year": 1999,
+    "title": "Kiribati joins the United Nations",
+    "description": "Kiribati became a full member of the United Nations, strengthening its international voice.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KI",
+    "year": 2008,
+    "title": "Phoenix Islands Protected Area created",
+    "description": "Kiribati established one of the world's largest marine protected areas, later named a UNESCO World Heritage Site.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "MH",
+    "year": -2000,
+    "title": "Settlement of the Marshall Islands",
+    "description": "Micronesian seafarers settled the atolls, mastering stick-chart navigation to traverse the open ocean.",
+    "category": "social"
+  },
+  {
+    "countryCode": "MH",
+    "year": 1529,
+    "title": "Spanish explorers sight the islands",
+    "description": "Spanish navigator Álvaro de Saavedra recorded European contact with the Marshall Islands in the 16th century.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "MH",
+    "year": 1885,
+    "title": "Germany annexes the Marshalls",
+    "description": "The German Empire established a protectorate over the Marshall Islands for its lucrative copra trade.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "MH",
+    "year": 1944,
+    "title": "US captures the islands in WWII",
+    "description": "American forces seized the Marshall Islands from Japan during fierce Pacific campaigns such as the Battle of Kwajalein.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MH",
+    "year": 1946,
+    "title": "Bikini Atoll nuclear testing begins",
+    "description": "The US began nuclear weapons testing at Bikini Atoll, displacing islanders and causing lasting contamination.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MH",
+    "year": 1979,
+    "title": "Marshall Islands self-government",
+    "description": "The Republic of the Marshall Islands adopted its constitution and established self-government.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MH",
+    "year": 1986,
+    "title": "Compact of Free Association",
+    "description": "The Marshall Islands gained sovereignty under a Compact of Free Association with the United States.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MH",
+    "year": 1991,
+    "title": "Joins the United Nations",
+    "description": "The Marshall Islands became a full member of the United Nations, affirming its independence.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FM",
+    "year": -1500,
+    "title": "Settlement of the Caroline Islands",
+    "description": "Austronesian voyagers settled the islands of Micronesia, building seafaring and clan-based societies.",
+    "category": "social"
+  },
+  {
+    "countryCode": "FM",
+    "year": 1200,
+    "title": "Nan Madol stone city flourishes",
+    "description": "On Pohnpei, the megalithic city of Nan Madol served as the ceremonial seat of the Saudeleur dynasty.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "FM",
+    "year": 1899,
+    "title": "Germany purchases the Carolines",
+    "description": "Germany bought the Caroline Islands from Spain, incorporating them into its Pacific colonial holdings.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "FM",
+    "year": 1947,
+    "title": "US Trust Territory administration",
+    "description": "The islands became part of the US-administered Trust Territory of the Pacific Islands under the United Nations.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FM",
+    "year": 1979,
+    "title": "Federated States constitution adopted",
+    "description": "Four island states ratified a constitution forming the Federated States of Micronesia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FM",
+    "year": 1986,
+    "title": "Compact of Free Association",
+    "description": "Micronesia gained sovereignty in free association with the United States, ending trusteeship rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "FM",
+    "year": 1991,
+    "title": "Joins the United Nations",
+    "description": "The Federated States of Micronesia became a full member of the United Nations.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NR",
+    "year": -1000,
+    "title": "Micronesians and Polynesians settle Nauru",
+    "description": "Seafaring peoples settled the island, organizing into twelve traditional clans reflected in the modern flag.",
+    "category": "social"
+  },
+  {
+    "countryCode": "NR",
+    "year": 1798,
+    "title": "European first contact",
+    "description": "British captain John Fearn sighted Nauru, naming it Pleasant Island during a voyage through the Pacific.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "NR",
+    "year": 1888,
+    "title": "Germany annexes Nauru",
+    "description": "Nauru was annexed by Germany and incorporated into its Marshall Islands protectorate.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NR",
+    "year": 1907,
+    "title": "Phosphate mining begins",
+    "description": "Large-scale phosphate extraction began, exploiting rich deposits that would dominate Nauru's economy for a century.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "NR",
+    "year": 1968,
+    "title": "Nauru gains independence",
+    "description": "Nauru became the world's smallest independent republic, taking control of its phosphate resources.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NR",
+    "year": 1999,
+    "title": "Nauru joins the United Nations",
+    "description": "Nauru became a full member of the United Nations, expanding its diplomatic engagement.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NR",
+    "year": 2001,
+    "title": "Australian offshore detention centre",
+    "description": "Nauru began hosting an Australian-run offshore processing centre for asylum seekers under the Pacific Solution.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NZ",
+    "year": 1300,
+    "title": "Māori settlement of New Zealand",
+    "description": "Polynesian voyagers arrived in Aotearoa around 1300 CE, establishing the Māori people and their culture.",
+    "category": "social"
+  },
+  {
+    "countryCode": "NZ",
+    "year": 1642,
+    "title": "Abel Tasman sights New Zealand",
+    "description": "Dutch explorer Abel Tasman became the first European to record sighting New Zealand's coast.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "NZ",
+    "year": 1769,
+    "title": "James Cook charts New Zealand",
+    "description": "British explorer James Cook circumnavigated and mapped New Zealand, opening it to European contact.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "NZ",
+    "year": 1840,
+    "title": "Treaty of Waitangi signed",
+    "description": "Māori chiefs and the British Crown signed the Treaty of Waitangi, New Zealand's founding document.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NZ",
+    "year": 1893,
+    "title": "First nation with women's suffrage",
+    "description": "New Zealand became the first self-governing country to grant women the right to vote in parliamentary elections.",
+    "category": "social"
+  },
+  {
+    "countryCode": "NZ",
+    "year": 1907,
+    "title": "New Zealand becomes a Dominion",
+    "description": "New Zealand attained Dominion status, gaining greater self-government within the British Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NZ",
+    "year": 1947,
+    "title": "Full legislative independence",
+    "description": "New Zealand adopted the Statute of Westminster, achieving full legal autonomy from the British Parliament.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NZ",
+    "year": 1987,
+    "title": "Nuclear-free zone declared",
+    "description": "New Zealand passed legislation making the country a nuclear-free zone, banning nuclear-armed and powered ships.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PW",
+    "year": -1000,
+    "title": "Settlement of Palau",
+    "description": "Austronesian peoples settled the Palauan archipelago, developing matrilineal clan societies and stone villages.",
+    "category": "social"
+  },
+  {
+    "countryCode": "PW",
+    "year": 1783,
+    "title": "European contact via shipwreck",
+    "description": "British captain Henry Wilson was shipwrecked on Palau, establishing early sustained contact with Europeans.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "PW",
+    "year": 1899,
+    "title": "Germany acquires Palau",
+    "description": "Germany purchased Palau from Spain along with the rest of the Caroline Islands.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "PW",
+    "year": 1944,
+    "title": "Battle of Peleliu",
+    "description": "US and Japanese forces fought the costly Battle of Peleliu on Palau during the Pacific War.",
+    "category": "military"
+  },
+  {
+    "countryCode": "PW",
+    "year": 1981,
+    "title": "Republic of Palau established",
+    "description": "Palau adopted the world's first nuclear-free constitution and established its republic government.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PW",
+    "year": 1994,
+    "title": "Palau gains independence",
+    "description": "Palau became fully sovereign under a Compact of Free Association with the United States and joined the UN.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PW",
+    "year": 2009,
+    "title": "World's first shark sanctuary",
+    "description": "Palau created the world's first national shark sanctuary, banning commercial shark fishing in its waters.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "PG",
+    "year": -40000,
+    "title": "First peoples settle New Guinea",
+    "description": "Humans settled New Guinea at least 40,000 years ago, forming some of the world's most linguistically diverse societies.",
+    "category": "social"
+  },
+  {
+    "countryCode": "PG",
+    "year": -7000,
+    "title": "Early agriculture at Kuk Swamp",
+    "description": "Highlanders independently developed agriculture at Kuk Swamp, one of the earliest farming sites on Earth.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "PG",
+    "year": 1526,
+    "title": "European sighting of New Guinea",
+    "description": "Portuguese explorer Jorge de Menezes reached New Guinea, among the first Europeans to do so.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "PG",
+    "year": 1884,
+    "title": "Colonial partition of New Guinea",
+    "description": "Germany and Britain divided eastern New Guinea into protectorates, beginning formal colonial rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PG",
+    "year": 1942,
+    "title": "Kokoda Track campaign",
+    "description": "Allied and Japanese forces fought the grueling Kokoda Track campaign across Papua during World War II.",
+    "category": "military"
+  },
+  {
+    "countryCode": "PG",
+    "year": 1975,
+    "title": "Papua New Guinea independence",
+    "description": "Papua New Guinea gained independence from Australia, becoming a sovereign Commonwealth nation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PG",
+    "year": 1989,
+    "title": "Bougainville conflict erupts",
+    "description": "A secessionist conflict over the Panguna mine broke out on Bougainville, lasting nearly a decade.",
+    "category": "military"
+  },
+  {
+    "countryCode": "WS",
+    "year": -1000,
+    "title": "Lapita settlement of Samoa",
+    "description": "Lapita voyagers settled the Samoan islands, becoming a cradle of Polynesian culture and navigation.",
+    "category": "social"
+  },
+  {
+    "countryCode": "WS",
+    "year": 1722,
+    "title": "European sighting of Samoa",
+    "description": "Dutch explorer Jacob Roggeveen became the first European to sight the Samoan islands.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "WS",
+    "year": 1830,
+    "title": "Christianity arrives in Samoa",
+    "description": "Missionary John Williams of the London Missionary Society introduced Christianity, which became central to Samoan life.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "WS",
+    "year": 1899,
+    "title": "Samoa partitioned by powers",
+    "description": "The Tripartite Convention divided Samoa, with Germany taking the western islands and the US taking the east.",
+    "category": "political"
+  },
+  {
+    "countryCode": "WS",
+    "year": 1929,
+    "title": "Black Saturday and the Mau movement",
+    "description": "New Zealand police fired on a peaceful Mau independence march, killing high chief Tupua Tamasese and others.",
+    "category": "political"
+  },
+  {
+    "countryCode": "WS",
+    "year": 1962,
+    "title": "Samoa gains independence",
+    "description": "Samoa became the first Pacific island nation to achieve independence in the 20th century.",
+    "category": "political"
+  },
+  {
+    "countryCode": "WS",
+    "year": 2011,
+    "title": "Samoa crosses the date line",
+    "description": "Samoa shifted west of the International Date Line to align its trading days with Australia and New Zealand.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "SB",
+    "year": -1500,
+    "title": "Lapita settlement of the Solomons",
+    "description": "Austronesian Lapita peoples settled the Solomon Islands, joining earlier Papuan-speaking inhabitants.",
+    "category": "social"
+  },
+  {
+    "countryCode": "SB",
+    "year": 1568,
+    "title": "Spanish explorer Mendaña arrives",
+    "description": "Álvaro de Mendaña reached the islands and named them the Solomon Islands, hoping for legendary gold.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "SB",
+    "year": 1893,
+    "title": "British protectorate established",
+    "description": "Britain declared a protectorate over the southern Solomon Islands, later expanding its colonial control.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SB",
+    "year": 1942,
+    "title": "Battle of Guadalcanal",
+    "description": "The pivotal Guadalcanal campaign between Allied and Japanese forces marked a turning point in the Pacific War.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SB",
+    "year": 1978,
+    "title": "Solomon Islands independence",
+    "description": "The Solomon Islands gained independence from Britain, becoming a sovereign Commonwealth nation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SB",
+    "year": 1998,
+    "title": "Ethnic tensions and unrest",
+    "description": "Violent conflict known as 'the Tensions' erupted between rival island groups, destabilizing the nation.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SB",
+    "year": 2003,
+    "title": "Regional Assistance Mission deployed",
+    "description": "An Australian-led regional mission (RAMSI) arrived to restore order and rebuild state institutions.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TO",
+    "year": -900,
+    "title": "Lapita settlement of Tonga",
+    "description": "Lapita voyagers settled Tonga, which became a center of Polynesian society and seafaring power.",
+    "category": "social"
+  },
+  {
+    "countryCode": "TO",
+    "year": 1200,
+    "title": "Tuʻi Tonga maritime empire",
+    "description": "The Tuʻi Tonga dynasty extended influence across the central Pacific, building monuments like the Haʻamonga ʻa Maui.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TO",
+    "year": 1616,
+    "title": "Dutch explorers reach Tonga",
+    "description": "Dutch navigators Schouten and Le Maire became the first Europeans to make contact with Tonga.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "TO",
+    "year": 1845,
+    "title": "Tāufaʻāhau unites Tonga",
+    "description": "King George Tupou I unified the islands and founded the modern Tongan monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TO",
+    "year": 1875,
+    "title": "Tonga adopts a constitution",
+    "description": "King George Tupou I promulgated a constitution, establishing Tonga as a constitutional monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TO",
+    "year": 1900,
+    "title": "Treaty of Friendship with Britain",
+    "description": "Tonga became a British protected state while retaining its monarchy and never being formally colonized.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TO",
+    "year": 1970,
+    "title": "Tonga regains full sovereignty",
+    "description": "Tonga ended its protected status with Britain and became a fully independent member of the Commonwealth.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TO",
+    "year": 2010,
+    "title": "Democratic reforms enacted",
+    "description": "Tonga held elections under reforms that gave commoners majority control of parliament for the first time.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TV",
+    "year": -1000,
+    "title": "Polynesian settlement of Tuvalu",
+    "description": "Polynesian voyagers settled the atolls of Tuvalu, sustaining communities through fishing and navigation.",
+    "category": "social"
+  },
+  {
+    "countryCode": "TV",
+    "year": 1568,
+    "title": "European sighting by Mendaña",
+    "description": "Spanish explorer Álvaro de Mendaña sighted Nui, the first recorded European contact with Tuvalu.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "TV",
+    "year": 1892,
+    "title": "British protectorate over the Ellice Islands",
+    "description": "The Ellice Islands became part of a British protectorate, later joined with the Gilbert Islands as a colony.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TV",
+    "year": 1974,
+    "title": "Ellice Islanders vote to separate",
+    "description": "A referendum saw the Polynesian Ellice Islands vote to separate from the Micronesian Gilbert Islands.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TV",
+    "year": 1978,
+    "title": "Tuvalu gains independence",
+    "description": "Tuvalu became an independent nation within the Commonwealth, adopting its own name and flag.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TV",
+    "year": 2000,
+    "title": "Tuvalu joins the United Nations",
+    "description": "Tuvalu became a UN member, partly funded by leasing its '.tv' internet domain name.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "TV",
+    "year": 2021,
+    "title": "Climate advocacy on the world stage",
+    "description": "Tuvalu's foreign minister addressed COP26 standing knee-deep in seawater to highlight rising sea levels.",
+    "category": "social"
+  },
+  {
+    "countryCode": "VU",
+    "year": -1300,
+    "title": "Lapita settlement of Vanuatu",
+    "description": "Lapita voyagers settled the islands of Vanuatu, leaving behind some of the Pacific's richest archaeological sites.",
+    "category": "social"
+  },
+  {
+    "countryCode": "VU",
+    "year": 1606,
+    "title": "Quirós reaches Espiritu Santo",
+    "description": "Portuguese explorer Pedro Fernandes de Queirós landed on Espiritu Santo, the first European in Vanuatu.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "VU",
+    "year": 1774,
+    "title": "Cook names the New Hebrides",
+    "description": "British explorer James Cook charted the islands and named the archipelago the New Hebrides.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "VU",
+    "year": 1906,
+    "title": "Anglo-French Condominium",
+    "description": "Britain and France established a joint colonial administration over the New Hebrides, a unique shared rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VU",
+    "year": 1980,
+    "title": "Vanuatu gains independence",
+    "description": "The New Hebrides became the independent Republic of Vanuatu, ending Anglo-French colonial rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VU",
+    "year": 1981,
+    "title": "Vanuatu joins the United Nations",
+    "description": "Vanuatu became a full member of the United Nations, affirming its place among sovereign states.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VU",
+    "year": 2015,
+    "title": "Cyclone Pam devastates Vanuatu",
+    "description": "Cyclone Pam, one of the strongest storms in Pacific history, caused widespread destruction across Vanuatu.",
+    "category": "social"
+  }
+]

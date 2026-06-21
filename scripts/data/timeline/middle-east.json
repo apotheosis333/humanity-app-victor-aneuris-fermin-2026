@@ -1,0 +1,751 @@
+[
+  {
+    "countryCode": "BH",
+    "year": -2300,
+    "title": "Dilmun Civilization Flourishes",
+    "description": "The ancient Dilmun trading civilization thrived on Bahrain, serving as a key hub linking Mesopotamia and the Indus Valley.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "BH",
+    "year": 628,
+    "title": "Bahrain Embraces Islam",
+    "description": "Bahrain was among the first regions to adopt Islam during the lifetime of the Prophet Muhammad.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "BH",
+    "year": 1521,
+    "title": "Portuguese Conquest",
+    "description": "The Portuguese Empire seized Bahrain, controlling the islands and their lucrative pearl trade for about eight decades.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BH",
+    "year": 1783,
+    "title": "Al Khalifa Dynasty Established",
+    "description": "The Al Khalifa family captured Bahrain from Persian rule, founding the dynasty that still rules the country today.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BH",
+    "year": 1932,
+    "title": "First Gulf Oil Discovery",
+    "description": "Bahrain became the first country on the Arabian side of the Gulf to discover oil, transforming its economy.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "BH",
+    "year": 1971,
+    "title": "Independence from Britain",
+    "description": "Bahrain declared full independence, ending its status as a British protectorate.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BH",
+    "year": 2002,
+    "title": "Kingdom of Bahrain Proclaimed",
+    "description": "Bahrain adopted a new constitution and became a constitutional monarchy as the ruler took the title of King.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IR",
+    "year": -550,
+    "title": "Cyrus the Great Founds Persian Empire",
+    "description": "Cyrus the Great established the Achaemenid Empire, which became the largest empire of the ancient world.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IR",
+    "year": -539,
+    "title": "Conquest of Babylon",
+    "description": "Cyrus captured Babylon and issued the Cyrus Cylinder, often regarded as an early charter of human rights.",
+    "category": "military"
+  },
+  {
+    "countryCode": "IR",
+    "year": -330,
+    "title": "Fall of the Achaemenids to Alexander",
+    "description": "Alexander the Great defeated Darius III and burned Persepolis, ending the Achaemenid Empire.",
+    "category": "military"
+  },
+  {
+    "countryCode": "IR",
+    "year": 224,
+    "title": "Sasanian Empire Established",
+    "description": "Ardashir I founded the Sasanian Empire, the last Persian empire before the rise of Islam.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IR",
+    "year": 651,
+    "title": "Arab Conquest of Persia",
+    "description": "Muslim Arab armies defeated the Sasanians, leading to the gradual Islamization of Persia.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "IR",
+    "year": 1501,
+    "title": "Safavid Dynasty Founded",
+    "description": "Shah Ismail I established the Safavid dynasty and made Twelver Shia Islam the state religion of Persia.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "IR",
+    "year": 1935,
+    "title": "Persia Renamed Iran",
+    "description": "Reza Shah Pahlavi formally requested that the country be known internationally as Iran.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IR",
+    "year": 1979,
+    "title": "Islamic Revolution",
+    "description": "The monarchy was overthrown and Ayatollah Khomeini established the Islamic Republic of Iran.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IQ",
+    "year": -3500,
+    "title": "Sumerian Cities of Mesopotamia",
+    "description": "The Sumerians built the world's first cities such as Uruk in Mesopotamia, the cradle of civilization.",
+    "category": "social"
+  },
+  {
+    "countryCode": "IQ",
+    "year": -3200,
+    "title": "Invention of Cuneiform Writing",
+    "description": "Sumerians developed cuneiform, one of the earliest known writing systems in human history.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "IQ",
+    "year": -1754,
+    "title": "Code of Hammurabi",
+    "description": "Babylonian King Hammurabi issued one of the earliest and most complete written legal codes.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IQ",
+    "year": -605,
+    "title": "Neo-Babylonian Golden Age",
+    "description": "Under Nebuchadnezzar II, Babylon flourished and is associated with the legendary Hanging Gardens.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "IQ",
+    "year": 762,
+    "title": "Founding of Baghdad",
+    "description": "The Abbasid Caliph al-Mansur founded Baghdad, which became a leading center of learning in the Islamic Golden Age.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "IQ",
+    "year": 1258,
+    "title": "Mongol Sack of Baghdad",
+    "description": "Mongol forces destroyed Baghdad and ended the Abbasid Caliphate, devastating its libraries and population.",
+    "category": "military"
+  },
+  {
+    "countryCode": "IQ",
+    "year": 1932,
+    "title": "Kingdom of Iraq Independence",
+    "description": "Iraq gained independence from British mandate rule and joined the League of Nations.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IQ",
+    "year": 2003,
+    "title": "US-Led Invasion Topples Saddam",
+    "description": "A US-led coalition invaded Iraq and overthrew the regime of Saddam Hussein.",
+    "category": "military"
+  },
+  {
+    "countryCode": "IL",
+    "year": -1000,
+    "title": "Kingdom of Israel Under David",
+    "description": "According to biblical tradition, King David united the tribes of Israel and made Jerusalem his capital.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IL",
+    "year": -957,
+    "title": "Solomon's Temple in Jerusalem",
+    "description": "King Solomon is traditionally credited with building the First Temple in Jerusalem.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "IL",
+    "year": -586,
+    "title": "Destruction of the First Temple",
+    "description": "The Babylonians destroyed Jerusalem and its Temple, beginning the Babylonian exile of the Jews.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "IL",
+    "year": 70,
+    "title": "Roman Destruction of the Second Temple",
+    "description": "Roman forces under Titus destroyed the Second Temple in Jerusalem during the Jewish revolt.",
+    "category": "military"
+  },
+  {
+    "countryCode": "IL",
+    "year": 1948,
+    "title": "Declaration of the State of Israel",
+    "description": "David Ben-Gurion proclaimed the establishment of the modern State of Israel.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IL",
+    "year": 1967,
+    "title": "Six-Day War",
+    "description": "Israel fought neighboring Arab states and captured the West Bank, Gaza, Sinai, and the Golan Heights.",
+    "category": "military"
+  },
+  {
+    "countryCode": "IL",
+    "year": 1979,
+    "title": "Peace Treaty with Egypt",
+    "description": "Israel and Egypt signed a landmark peace treaty following the Camp David Accords.",
+    "category": "political"
+  },
+  {
+    "countryCode": "JO",
+    "year": -312,
+    "title": "Nabataeans Establish Petra",
+    "description": "The Nabataean kingdom made Petra its capital, a thriving caravan city carved into rose-colored rock.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "JO",
+    "year": 106,
+    "title": "Roman Annexation of Nabataea",
+    "description": "Rome annexed the Nabataean kingdom, incorporating the region into the province of Arabia Petraea.",
+    "category": "political"
+  },
+  {
+    "countryCode": "JO",
+    "year": 636,
+    "title": "Battle of Yarmouk",
+    "description": "Muslim armies decisively defeated the Byzantines near the Yarmouk River in present-day Jordan.",
+    "category": "military"
+  },
+  {
+    "countryCode": "JO",
+    "year": 1921,
+    "title": "Emirate of Transjordan Created",
+    "description": "The British established the Emirate of Transjordan under Emir Abdullah following World War I.",
+    "category": "political"
+  },
+  {
+    "countryCode": "JO",
+    "year": 1946,
+    "title": "Independence of Jordan",
+    "description": "Transjordan gained independence from Britain and became a sovereign kingdom under King Abdullah I.",
+    "category": "political"
+  },
+  {
+    "countryCode": "JO",
+    "year": 1994,
+    "title": "Peace Treaty with Israel",
+    "description": "Jordan signed a peace treaty with Israel, becoming the second Arab state to normalize relations.",
+    "category": "political"
+  },
+  {
+    "countryCode": "JO",
+    "year": 2007,
+    "title": "Petra Named a Wonder of the World",
+    "description": "Petra was selected as one of the New Seven Wonders of the World, boosting Jordanian tourism.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "KW",
+    "year": 1613,
+    "title": "Founding of Kuwait City",
+    "description": "Kuwait City was established as a settlement that grew into a major trading and pearling port.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "KW",
+    "year": 1752,
+    "title": "Al Sabah Dynasty Begins",
+    "description": "The Al Sabah family was chosen to lead Kuwait, founding the ruling dynasty that continues today.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KW",
+    "year": 1899,
+    "title": "Anglo-Kuwaiti Agreement",
+    "description": "Kuwait signed a protective agreement with Britain to safeguard against Ottoman influence.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KW",
+    "year": 1938,
+    "title": "Discovery of Major Oil Fields",
+    "description": "The vast Burgan oil field was discovered, eventually making Kuwait one of the world's leading oil exporters.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "KW",
+    "year": 1961,
+    "title": "Independence from Britain",
+    "description": "Kuwait gained full independence, ending the protectorate relationship with the United Kingdom.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KW",
+    "year": 1990,
+    "title": "Iraqi Invasion of Kuwait",
+    "description": "Iraq invaded and annexed Kuwait, triggering the Gulf War and an international coalition response.",
+    "category": "military"
+  },
+  {
+    "countryCode": "KW",
+    "year": 1991,
+    "title": "Liberation of Kuwait",
+    "description": "A US-led coalition expelled Iraqi forces, restoring Kuwait's sovereignty after months of occupation.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LB",
+    "year": -1500,
+    "title": "Phoenician Maritime Civilization",
+    "description": "Phoenician city-states like Tyre and Sidon became dominant Mediterranean traders and seafarers.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "LB",
+    "year": -1050,
+    "title": "Spread of the Phoenician Alphabet",
+    "description": "Phoenicians developed an alphabet that became the basis for Greek, Latin, and many modern scripts.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "LB",
+    "year": -64,
+    "title": "Roman Province of Phoenicia",
+    "description": "Pompey incorporated the region into the Roman Empire, and Berytus became a famed center of law.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LB",
+    "year": 1516,
+    "title": "Ottoman Rule Begins",
+    "description": "The Ottoman Empire took control of Mount Lebanon, ruling the region for four centuries.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LB",
+    "year": 1943,
+    "title": "Independence of Lebanon",
+    "description": "Lebanon gained full independence from French mandate rule and adopted its National Pact.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LB",
+    "year": 1975,
+    "title": "Lebanese Civil War Begins",
+    "description": "A devastating civil war erupted along sectarian lines, lasting fifteen years.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LB",
+    "year": 1990,
+    "title": "End of the Civil War",
+    "description": "The Taif Agreement brought an end to the Lebanese Civil War and reformed the political system.",
+    "category": "political"
+  },
+  {
+    "countryCode": "OM",
+    "year": -3000,
+    "title": "Magan Copper Trade",
+    "description": "Ancient Oman, known as Magan, was a key source of copper traded across Mesopotamia and the Indus.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "OM",
+    "year": 630,
+    "title": "Oman Adopts Islam",
+    "description": "Oman peacefully embraced Islam during the lifetime of the Prophet Muhammad.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "OM",
+    "year": 1507,
+    "title": "Portuguese Capture of Muscat",
+    "description": "Portuguese forces seized the coastal city of Muscat, controlling it for over a century.",
+    "category": "military"
+  },
+  {
+    "countryCode": "OM",
+    "year": 1650,
+    "title": "Expulsion of the Portuguese",
+    "description": "The Ya'rubid dynasty drove the Portuguese out of Muscat, restoring Omani control of the coast.",
+    "category": "military"
+  },
+  {
+    "countryCode": "OM",
+    "year": 1749,
+    "title": "Al Said Dynasty Founded",
+    "description": "Ahmad bin Said established the Al Said dynasty, which still rules Oman today.",
+    "category": "political"
+  },
+  {
+    "countryCode": "OM",
+    "year": 1970,
+    "title": "Sultan Qaboos Begins Modernization",
+    "description": "Sultan Qaboos came to power and launched sweeping modernization of Oman's economy and infrastructure.",
+    "category": "political"
+  },
+  {
+    "countryCode": "OM",
+    "year": 1971,
+    "title": "Oman Joins the United Nations",
+    "description": "Oman became a member of the United Nations, marking its emergence as a recognized modern state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PS",
+    "year": -1200,
+    "title": "Philistines Settle the Coast",
+    "description": "The Philistines established a confederation of city-states along the southern coast of Canaan.",
+    "category": "social"
+  },
+  {
+    "countryCode": "PS",
+    "year": 638,
+    "title": "Muslim Conquest of Jerusalem",
+    "description": "Caliph Umar took control of Jerusalem, beginning centuries of Islamic rule over the region.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "PS",
+    "year": 691,
+    "title": "Dome of the Rock Completed",
+    "description": "The Umayyads completed the Dome of the Rock in Jerusalem, an iconic masterpiece of Islamic architecture.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "PS",
+    "year": 1099,
+    "title": "Crusaders Capture Jerusalem",
+    "description": "European Crusaders seized Jerusalem and established the Crusader Kingdom of Jerusalem.",
+    "category": "military"
+  },
+  {
+    "countryCode": "PS",
+    "year": 1917,
+    "title": "British Mandate Era Begins",
+    "description": "Following World War I, Britain took control of Palestine, governing it under a League of Nations mandate.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PS",
+    "year": 1988,
+    "title": "Declaration of Independence",
+    "description": "The Palestine Liberation Organization proclaimed the State of Palestine in Algiers.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PS",
+    "year": 2012,
+    "title": "UN Non-Member Observer State",
+    "description": "The UN General Assembly granted Palestine non-member observer state status.",
+    "category": "political"
+  },
+  {
+    "countryCode": "QA",
+    "year": 1783,
+    "title": "Al Thani Family Settles Qatar",
+    "description": "The Al Thani family migrated to the Qatari peninsula and became its leading dynasty.",
+    "category": "social"
+  },
+  {
+    "countryCode": "QA",
+    "year": 1868,
+    "title": "Anglo-Qatari Treaty",
+    "description": "A treaty with Britain recognized Qatar as a distinct entity separate from Bahrain.",
+    "category": "political"
+  },
+  {
+    "countryCode": "QA",
+    "year": 1939,
+    "title": "Discovery of Oil",
+    "description": "Oil was discovered in Qatar at Dukhan, eventually transforming the nation's economy.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "QA",
+    "year": 1971,
+    "title": "Independence from Britain",
+    "description": "Qatar declared full independence, ending its status as a British protectorate.",
+    "category": "political"
+  },
+  {
+    "countryCode": "QA",
+    "year": 1996,
+    "title": "Launch of Al Jazeera",
+    "description": "Qatar launched the Al Jazeera satellite network, which became one of the most influential media outlets in the Arab world.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "QA",
+    "year": 1997,
+    "title": "North Field Gas Development",
+    "description": "Qatar began large-scale liquefied natural gas exports, becoming a global LNG leader.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "QA",
+    "year": 2022,
+    "title": "Qatar Hosts the FIFA World Cup",
+    "description": "Qatar became the first Arab nation to host the FIFA World Cup.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "SA",
+    "year": 570,
+    "title": "Birth of the Prophet Muhammad",
+    "description": "The Prophet Muhammad, founder of Islam, was born in Mecca around this year.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "SA",
+    "year": 622,
+    "title": "The Hijra to Medina",
+    "description": "Muhammad's migration from Mecca to Medina marks the start of the Islamic calendar.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "SA",
+    "year": 630,
+    "title": "Conquest of Mecca",
+    "description": "Muhammad and his followers peacefully took Mecca, establishing it as Islam's holiest city.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "SA",
+    "year": 1744,
+    "title": "First Saudi State Founded",
+    "description": "Muhammad ibn Saud allied with the reformer Muhammad ibn Abd al-Wahhab, founding the first Saudi state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SA",
+    "year": 1932,
+    "title": "Kingdom of Saudi Arabia Unified",
+    "description": "Abdulaziz ibn Saud unified the regions of the peninsula into the Kingdom of Saudi Arabia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SA",
+    "year": 1938,
+    "title": "Discovery of Oil",
+    "description": "Vast oil reserves were discovered, transforming Saudi Arabia into one of the world's wealthiest nations.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "SA",
+    "year": 2016,
+    "title": "Vision 2030 Launched",
+    "description": "Saudi Arabia announced Vision 2030, a plan to diversify its economy beyond oil.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "SY",
+    "year": -2400,
+    "title": "Kingdom of Ebla",
+    "description": "Ebla emerged as a powerful early city-state in northern Syria, known for its vast cuneiform archives.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "SY",
+    "year": -1400,
+    "title": "Ugarit and the Alphabet",
+    "description": "The city of Ugarit developed one of the earliest known alphabets, written in cuneiform script.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "SY",
+    "year": 64,
+    "title": "Roman Province of Syria",
+    "description": "Pompey made Syria a Roman province, with Antioch becoming one of the empire's greatest cities.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SY",
+    "year": 661,
+    "title": "Umayyad Caliphate in Damascus",
+    "description": "The Umayyads made Damascus the capital of a vast caliphate stretching across three continents.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SY",
+    "year": 1516,
+    "title": "Ottoman Conquest of Syria",
+    "description": "The Ottoman Empire took control of Syria, ruling the region for four centuries.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SY",
+    "year": 1946,
+    "title": "Independence of Syria",
+    "description": "Syria gained full independence as French mandate forces withdrew from the country.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SY",
+    "year": 2011,
+    "title": "Syrian Civil War Begins",
+    "description": "Anti-government protests escalated into a prolonged and devastating civil war.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TR",
+    "year": -7000,
+    "title": "Neolithic Settlement of Çatalhöyük",
+    "description": "Çatalhöyük flourished in Anatolia as one of the world's earliest and largest known urban settlements.",
+    "category": "social"
+  },
+  {
+    "countryCode": "TR",
+    "year": -1650,
+    "title": "Rise of the Hittite Empire",
+    "description": "The Hittites built a powerful empire centered in Anatolia, rivaling Egypt and Babylon.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TR",
+    "year": 330,
+    "title": "Founding of Constantinople",
+    "description": "Emperor Constantine refounded Byzantium as Constantinople, the new capital of the Roman Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TR",
+    "year": 1453,
+    "title": "Ottoman Conquest of Constantinople",
+    "description": "Mehmed II captured Constantinople, ending the Byzantine Empire and establishing the Ottoman capital.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TR",
+    "year": 1520,
+    "title": "Reign of Suleiman the Magnificent",
+    "description": "Suleiman led the Ottoman Empire to its political, military, and cultural golden age.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TR",
+    "year": 1923,
+    "title": "Republic of Turkey Founded",
+    "description": "Mustafa Kemal Atatürk proclaimed the Republic of Turkey and became its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TR",
+    "year": 1928,
+    "title": "Adoption of the Latin Alphabet",
+    "description": "Atatürk introduced sweeping reforms, including replacing the Arabic script with a Latin-based alphabet.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "AE",
+    "year": 630,
+    "title": "Arrival of Islam",
+    "description": "The tribes of the region that became the UAE embraced Islam during the early Islamic era.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "AE",
+    "year": 1820,
+    "title": "Treaty with Britain",
+    "description": "Coastal sheikhdoms signed a maritime truce with Britain, leading to the name Trucial States.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AE",
+    "year": 1958,
+    "title": "Discovery of Oil in Abu Dhabi",
+    "description": "Major oil reserves were discovered in Abu Dhabi, transforming the future federation's prospects.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "AE",
+    "year": 1971,
+    "title": "Formation of the United Arab Emirates",
+    "description": "Seven emirates united to form the UAE under founding president Sheikh Zayed bin Sultan Al Nahyan.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AE",
+    "year": 2010,
+    "title": "Burj Khalifa Opens",
+    "description": "Dubai inaugurated the Burj Khalifa, the tallest building in the world.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "AE",
+    "year": 2020,
+    "title": "Hope Mars Mission Launched",
+    "description": "The UAE launched the Hope probe, becoming the first Arab nation to send a mission to Mars.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "AE",
+    "year": 2020,
+    "title": "Abraham Accords Signed",
+    "description": "The UAE normalized relations with Israel under the US-brokered Abraham Accords.",
+    "category": "political"
+  },
+  {
+    "countryCode": "YE",
+    "year": -1000,
+    "title": "Kingdom of Saba (Sheba)",
+    "description": "The Sabaean kingdom rose in Yemen, growing wealthy from the incense and spice trade.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "YE",
+    "year": -700,
+    "title": "Great Dam of Marib",
+    "description": "The Sabaeans built the Marib Dam, an engineering marvel that irrigated a flourishing civilization.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "YE",
+    "year": 628,
+    "title": "Yemen Embraces Islam",
+    "description": "Yemen converted to Islam during the lifetime of the Prophet Muhammad.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "YE",
+    "year": 1538,
+    "title": "Ottoman Control of Yemen",
+    "description": "The Ottoman Empire extended its rule over Yemen, contesting control with local imams.",
+    "category": "military"
+  },
+  {
+    "countryCode": "YE",
+    "year": 1918,
+    "title": "North Yemen Independence",
+    "description": "North Yemen gained independence from the Ottoman Empire following World War I.",
+    "category": "political"
+  },
+  {
+    "countryCode": "YE",
+    "year": 1967,
+    "title": "South Yemen Independence",
+    "description": "South Yemen gained independence from Britain, becoming a separate socialist state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "YE",
+    "year": 1990,
+    "title": "Unification of Yemen",
+    "description": "North and South Yemen merged to form the unified Republic of Yemen.",
+    "category": "political"
+  }
+]

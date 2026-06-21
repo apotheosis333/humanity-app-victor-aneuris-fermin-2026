@@ -1,0 +1,639 @@
+[
+  {
+    "countryCode": "AR",
+    "year": -7000,
+    "title": "Cave of the Hands painted",
+    "description": "Hunter-gatherers created the famous Cueva de las Manos rock art in Patagonia, with stenciled handprints dated to roughly 7000 BCE.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "AR",
+    "year": 1536,
+    "title": "First founding of Buenos Aires",
+    "description": "Spanish conquistador Pedro de Mendoza established the first settlement at Buenos Aires, which was later abandoned and refounded in 1580.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "AR",
+    "year": 1810,
+    "title": "May Revolution",
+    "description": "The May Revolution in Buenos Aires deposed the Spanish viceroy and created the first local governing junta, beginning Argentina's independence process.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AR",
+    "year": 1816,
+    "title": "Declaration of Independence",
+    "description": "The Congress of Tucumán formally declared the independence of the United Provinces of the Río de la Plata from Spain.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AR",
+    "year": 1853,
+    "title": "Constitution of Argentina adopted",
+    "description": "Argentina adopted its national constitution, establishing a federal republic that, with amendments, remains in force today.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AR",
+    "year": 1947,
+    "title": "Women win the right to vote",
+    "description": "Under the influence of Eva Perón, Argentina enacted female suffrage, allowing women to vote in national elections from 1951.",
+    "category": "social"
+  },
+  {
+    "countryCode": "AR",
+    "year": 1986,
+    "title": "Argentina wins the FIFA World Cup",
+    "description": "Led by Diego Maradona, Argentina won the football World Cup in Mexico, a defining moment of national pride.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "AR",
+    "year": 1983,
+    "title": "Return to democracy",
+    "description": "Raúl Alfonsín was elected president, ending the military dictatorship and beginning Argentina's modern democratic era.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BO",
+    "year": -1500,
+    "title": "Rise of the Chiripa culture",
+    "description": "Early agricultural societies developed around Lake Titicaca, laying the foundation for later Andean civilizations in the Bolivian highlands.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "BO",
+    "year": 500,
+    "title": "Tiwanaku civilization flourishes",
+    "description": "The Tiwanaku state near Lake Titicaca became a major Andean political and religious center, famed for monumental stone architecture.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "BO",
+    "year": 1545,
+    "title": "Silver discovered at Potosí",
+    "description": "Spanish colonists found vast silver deposits at Cerro Rico in Potosí, which became one of the world's largest sources of silver.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "BO",
+    "year": 1825,
+    "title": "Bolivia declares independence",
+    "description": "Bolivia declared independence from Spain, taking its name in honor of liberator Simón Bolívar.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BO",
+    "year": 1879,
+    "title": "War of the Pacific begins",
+    "description": "Bolivia entered the War of the Pacific against Chile and ultimately lost its coastal territory, becoming landlocked.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BO",
+    "year": 1952,
+    "title": "National Revolution",
+    "description": "The Bolivian National Revolution brought universal suffrage, land reform, and the nationalization of major tin mines.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BO",
+    "year": 2006,
+    "title": "Evo Morales inaugurated",
+    "description": "Evo Morales became Bolivia's first indigenous president, leading major constitutional and social reforms.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BR",
+    "year": -8000,
+    "title": "Early settlement at Serra da Capivara",
+    "description": "Ancient peoples lived in what is now Piauí, leaving extensive rock paintings that are among the oldest evidence of humans in the Americas.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "BR",
+    "year": 1500,
+    "title": "Portuguese arrival",
+    "description": "Pedro Álvares Cabral landed on the Brazilian coast and claimed the territory for Portugal, beginning European colonization.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "BR",
+    "year": 1822,
+    "title": "Independence from Portugal",
+    "description": "Prince Pedro declared Brazil's independence, establishing the Empire of Brazil with himself as Emperor Pedro I.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BR",
+    "year": 1888,
+    "title": "Abolition of slavery",
+    "description": "Princess Isabel signed the Lei Áurea (Golden Law), abolishing slavery in Brazil, the last country in the Americas to do so.",
+    "category": "social"
+  },
+  {
+    "countryCode": "BR",
+    "year": 1889,
+    "title": "Proclamation of the Republic",
+    "description": "A military coup overthrew the monarchy and established the First Brazilian Republic, ending the imperial era.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BR",
+    "year": 1960,
+    "title": "Brasília becomes the capital",
+    "description": "The purpose-built modernist city of Brasília, designed by Oscar Niemeyer and Lúcio Costa, was inaugurated as the new capital.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BR",
+    "year": 1985,
+    "title": "Return to civilian rule",
+    "description": "Brazil ended over two decades of military dictatorship with a transition to civilian democratic government.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BR",
+    "year": 1970,
+    "title": "Third World Cup title",
+    "description": "Brazil won its third FIFA World Cup in Mexico, led by Pelé, earning permanent possession of the Jules Rimet Trophy.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "CL",
+    "year": -12000,
+    "title": "Monte Verde settlement",
+    "description": "The Monte Verde site in southern Chile provides some of the earliest evidence of human habitation in the Americas.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "CL",
+    "year": 1520,
+    "title": "Magellan sails the strait",
+    "description": "Ferdinand Magellan navigated the strait at the southern tip of South America that now bears his name, linking the Atlantic and Pacific.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "CL",
+    "year": 1818,
+    "title": "Chile declares independence",
+    "description": "Chile formally declared independence from Spain after victory at the Battle of Maipú, led by Bernardo O'Higgins and José de San Martín.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CL",
+    "year": 1879,
+    "title": "War of the Pacific",
+    "description": "Chile fought Bolivia and Peru in the War of the Pacific, gaining mineral-rich northern territories.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CL",
+    "year": 1970,
+    "title": "Salvador Allende elected",
+    "description": "Salvador Allende became the first Marxist elected president in Latin America through open democratic elections.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CL",
+    "year": 1973,
+    "title": "Military coup",
+    "description": "A coup led by Augusto Pinochet overthrew Allende, beginning a 17-year military dictatorship.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CL",
+    "year": 1990,
+    "title": "Return to democracy",
+    "description": "Chile transitioned back to civilian democratic rule with the inauguration of President Patricio Aylwin.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CL",
+    "year": 2010,
+    "title": "Rescue of 33 trapped miners",
+    "description": "Thirty-three miners trapped underground for 69 days at the San José mine were rescued in an operation watched worldwide.",
+    "category": "social"
+  },
+  {
+    "countryCode": "CO",
+    "year": -1200,
+    "title": "Early goldworking cultures",
+    "description": "Indigenous peoples in present-day Colombia began producing sophisticated gold artifacts, later inspiring the El Dorado legend.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "CO",
+    "year": 1525,
+    "title": "Founding of Santa Marta",
+    "description": "Spanish settlers founded Santa Marta, one of the oldest surviving European cities in South America.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "CO",
+    "year": 1810,
+    "title": "Cry of Independence",
+    "description": "The events of July 20 in Bogotá marked the start of Colombia's struggle for independence from Spain.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CO",
+    "year": 1819,
+    "title": "Battle of Boyacá",
+    "description": "Simón Bolívar's decisive victory at Boyacá secured the independence of New Granada and the founding of Gran Colombia.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CO",
+    "year": 1903,
+    "title": "Separation of Panama",
+    "description": "Panama seceded from Colombia with U.S. support, leading to the construction of the Panama Canal.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CO",
+    "year": 1948,
+    "title": "Bogotazo riots",
+    "description": "The assassination of leader Jorge Eliécer Gaitán sparked deadly riots in Bogotá and ushered in the period known as La Violencia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CO",
+    "year": 1982,
+    "title": "García Márquez wins Nobel Prize",
+    "description": "Colombian author Gabriel García Márquez received the Nobel Prize in Literature, celebrated for magical realism.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "CO",
+    "year": 2016,
+    "title": "Peace deal with the FARC",
+    "description": "The Colombian government signed a historic peace accord with the FARC guerrillas, ending decades of armed conflict.",
+    "category": "political"
+  },
+  {
+    "countryCode": "EC",
+    "year": -3500,
+    "title": "Valdivia culture pottery",
+    "description": "The Valdivia culture on Ecuador's coast produced some of the oldest known ceramics in the Americas.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "EC",
+    "year": 1463,
+    "title": "Inca conquest of the highlands",
+    "description": "The Inca Empire expanded into the Andean highlands of present-day Ecuador, making Quito a major regional center.",
+    "category": "military"
+  },
+  {
+    "countryCode": "EC",
+    "year": 1534,
+    "title": "Spanish found Quito",
+    "description": "Spanish conquistadors established the city of Quito on the site of an Inca settlement after the conquest.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "EC",
+    "year": 1822,
+    "title": "Battle of Pichincha",
+    "description": "Antonio José de Sucre's victory at Pichincha secured Ecuador's independence from Spanish rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "EC",
+    "year": 1830,
+    "title": "Ecuador becomes a republic",
+    "description": "Ecuador separated from Gran Colombia and established itself as an independent sovereign republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "EC",
+    "year": 1835,
+    "title": "Darwin visits the Galápagos",
+    "description": "Charles Darwin studied the unique wildlife of the Galápagos Islands, observations that informed his theory of evolution.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "EC",
+    "year": 2000,
+    "title": "Adoption of the US dollar",
+    "description": "Facing severe economic crisis, Ecuador abandoned the sucre and adopted the U.S. dollar as its official currency.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "EC",
+    "year": 2008,
+    "title": "Rights of Nature constitution",
+    "description": "Ecuador adopted a new constitution that became the first in the world to recognize legally enforceable rights of nature.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GY",
+    "year": 1616,
+    "title": "First Dutch settlement",
+    "description": "The Dutch established trading posts along the Essequibo River, beginning sustained European colonization of the region.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "GY",
+    "year": 1763,
+    "title": "Berbice slave rebellion",
+    "description": "Enslaved Africans led by Cuffy staged a major uprising in the Dutch colony of Berbice, a landmark in resistance to slavery.",
+    "category": "social"
+  },
+  {
+    "countryCode": "GY",
+    "year": 1814,
+    "title": "British take control",
+    "description": "Britain formally acquired the colonies of Essequibo, Demerara, and Berbice, later unified as British Guiana in 1831.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GY",
+    "year": 1838,
+    "title": "Indentured laborers arrive",
+    "description": "After slavery's abolition, indentured workers from India began arriving, reshaping Guyana's population and culture.",
+    "category": "social"
+  },
+  {
+    "countryCode": "GY",
+    "year": 1966,
+    "title": "Independence from Britain",
+    "description": "Guyana gained independence from the United Kingdom, becoming a sovereign nation within the Commonwealth.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GY",
+    "year": 1970,
+    "title": "Cooperative Republic declared",
+    "description": "Guyana became a republic, severing remaining constitutional ties to the British monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GY",
+    "year": 2015,
+    "title": "Major offshore oil discovery",
+    "description": "ExxonMobil announced a large oil discovery offshore, transforming Guyana into one of the world's fastest-growing economies.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "PY",
+    "year": 1537,
+    "title": "Founding of Asunción",
+    "description": "Spanish explorers founded Asunción, which became a key base for colonization of the Río de la Plata region.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "PY",
+    "year": 1609,
+    "title": "Jesuit missions established",
+    "description": "Jesuits founded reductions among the Guaraní people, creating communities that blended Christian and indigenous life.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "PY",
+    "year": 1811,
+    "title": "Paraguay declares independence",
+    "description": "Paraguay declared its independence from Spain, becoming one of the first South American nations to break free.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PY",
+    "year": 1864,
+    "title": "War of the Triple Alliance begins",
+    "description": "Paraguay entered a devastating war against Brazil, Argentina, and Uruguay that decimated its population.",
+    "category": "military"
+  },
+  {
+    "countryCode": "PY",
+    "year": 1932,
+    "title": "Chaco War with Bolivia",
+    "description": "Paraguay fought Bolivia over the Gran Chaco region, ultimately securing most of the disputed territory.",
+    "category": "military"
+  },
+  {
+    "countryCode": "PY",
+    "year": 1989,
+    "title": "End of Stroessner dictatorship",
+    "description": "A coup ended Alfredo Stroessner's 35-year rule, opening the way for democratic government in Paraguay.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PY",
+    "year": 1992,
+    "title": "Guaraní recognized officially",
+    "description": "A new constitution made Guaraní an official language alongside Spanish, reflecting the nation's bilingual identity.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "PE",
+    "year": -3000,
+    "title": "Caral, oldest city in the Americas",
+    "description": "The city of Caral in the Supe Valley arose as one of the oldest urban centers in the Americas, with monumental pyramids.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "PE",
+    "year": 1450,
+    "title": "Machu Picchu built",
+    "description": "The Inca constructed the mountain citadel of Machu Picchu during the reign of Pachacuti at the height of their empire.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "PE",
+    "year": 1532,
+    "title": "Spanish capture Atahualpa",
+    "description": "Francisco Pizarro captured the Inca emperor Atahualpa at Cajamarca, leading to the fall of the Inca Empire.",
+    "category": "military"
+  },
+  {
+    "countryCode": "PE",
+    "year": 1535,
+    "title": "Founding of Lima",
+    "description": "Pizarro founded Lima, which became the capital of the Spanish Viceroyalty of Peru and a center of colonial power.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PE",
+    "year": 1821,
+    "title": "Peru declares independence",
+    "description": "José de San Martín proclaimed Peru's independence from Spain in Lima, a key step in liberating South America.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PE",
+    "year": 1824,
+    "title": "Battle of Ayacucho",
+    "description": "Patriot forces under Sucre defeated the Spanish royalist army at Ayacucho, securing independence across the continent.",
+    "category": "military"
+  },
+  {
+    "countryCode": "PE",
+    "year": 1911,
+    "title": "Machu Picchu brought to global attention",
+    "description": "Explorer Hiram Bingham publicized Machu Picchu to the wider world, making it an international symbol of the Inca.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "PE",
+    "year": 2000,
+    "title": "Fall of the Fujimori government",
+    "description": "President Alberto Fujimori's authoritarian government collapsed amid corruption scandals, restoring democratic transition.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SR",
+    "year": 1650,
+    "title": "Early English settlement",
+    "description": "English colonists established plantations along the Suriname River, beginning sustained European settlement.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "SR",
+    "year": 1667,
+    "title": "Dutch acquire Suriname",
+    "description": "Under the Treaty of Breda, the Dutch gained Suriname from England in exchange for New Amsterdam (New York).",
+    "category": "political"
+  },
+  {
+    "countryCode": "SR",
+    "year": 1760,
+    "title": "Maroon peace treaties",
+    "description": "Escaped enslaved Africans known as Maroons secured treaties with the Dutch recognizing their autonomous communities.",
+    "category": "social"
+  },
+  {
+    "countryCode": "SR",
+    "year": 1863,
+    "title": "Abolition of slavery",
+    "description": "The Netherlands abolished slavery in Suriname, after which indentured laborers were recruited from Asia.",
+    "category": "social"
+  },
+  {
+    "countryCode": "SR",
+    "year": 1975,
+    "title": "Independence from the Netherlands",
+    "description": "Suriname gained full independence from the Netherlands, becoming a sovereign republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SR",
+    "year": 1980,
+    "title": "Military coup",
+    "description": "A military coup led by Dési Bouterse overthrew the government, beginning years of military-dominated rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SR",
+    "year": 1987,
+    "title": "New democratic constitution",
+    "description": "Suriname adopted a new constitution and held elections, restoring civilian democratic government.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UY",
+    "year": 1726,
+    "title": "Founding of Montevideo",
+    "description": "The Spanish founded Montevideo as a military stronghold to counter Portuguese expansion in the region.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "UY",
+    "year": 1811,
+    "title": "Artigas leads independence movement",
+    "description": "José Gervasio Artigas led the struggle for autonomy, becoming the revered national hero of Uruguay.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UY",
+    "year": 1828,
+    "title": "Independence recognized",
+    "description": "The Treaty of Montevideo established Uruguay as an independent buffer state between Argentina and Brazil.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UY",
+    "year": 1903,
+    "title": "Batlle y Ordóñez reforms",
+    "description": "President José Batlle y Ordóñez launched progressive reforms that made Uruguay one of the most advanced welfare states.",
+    "category": "social"
+  },
+  {
+    "countryCode": "UY",
+    "year": 1930,
+    "title": "First FIFA World Cup hosted and won",
+    "description": "Uruguay hosted and won the inaugural FIFA World Cup, defeating Argentina in the final in Montevideo.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "UY",
+    "year": 1985,
+    "title": "Return to democracy",
+    "description": "Uruguay returned to civilian democratic rule after years of military dictatorship.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UY",
+    "year": 2013,
+    "title": "Legalization of cannabis",
+    "description": "Uruguay became the first country in the world to fully legalize and regulate the cannabis market.",
+    "category": "social"
+  },
+  {
+    "countryCode": "VE",
+    "year": 1498,
+    "title": "Columbus reaches the coast",
+    "description": "On his third voyage, Christopher Columbus became the first European to reach the coast of present-day Venezuela.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "VE",
+    "year": 1567,
+    "title": "Founding of Caracas",
+    "description": "Spanish colonists founded Santiago de León de Caracas, which grew into Venezuela's capital city.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VE",
+    "year": 1811,
+    "title": "Venezuela declares independence",
+    "description": "Venezuela became the first Spanish American colony to formally declare its independence from Spain.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VE",
+    "year": 1821,
+    "title": "Battle of Carabobo",
+    "description": "Simón Bolívar's victory at Carabobo effectively secured Venezuelan independence from Spanish rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "VE",
+    "year": 1830,
+    "title": "Separation from Gran Colombia",
+    "description": "Venezuela seceded from Gran Colombia to become a fully independent sovereign republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VE",
+    "year": 1914,
+    "title": "Start of the oil era",
+    "description": "Commercial oil production began, transforming Venezuela into one of the world's leading petroleum exporters.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "VE",
+    "year": 1960,
+    "title": "Co-founder of OPEC",
+    "description": "Venezuela helped found the Organization of the Petroleum Exporting Countries to coordinate oil policy.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "VE",
+    "year": 1999,
+    "title": "Hugo Chávez becomes president",
+    "description": "Hugo Chávez took office and launched the Bolivarian Revolution, reshaping Venezuela's politics and economy.",
+    "category": "political"
+  }
+]

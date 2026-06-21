@@ -1,0 +1,884 @@
+[
+  {
+    "countryCode": "LA",
+    "year": 1353,
+    "title": "Founding of the Lan Xang Kingdom",
+    "description": "Fa Ngum united Lao principalities to found Lan Xang, the 'Land of a Million Elephants', the first unified Lao kingdom.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LA",
+    "year": 1560,
+    "title": "Vientiane Becomes Capital",
+    "description": "King Setthathirath moved the Lan Xang capital to Vientiane and built the That Luang stupa, a national symbol of Laos.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "LA",
+    "year": 1707,
+    "title": "Division of Lan Xang",
+    "description": "The kingdom fragmented into the rival realms of Luang Prabang, Vientiane, and later Champasak.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LA",
+    "year": 1893,
+    "title": "French Protectorate Established",
+    "description": "Following the Franco-Siamese War, Laos became a French protectorate within French Indochina.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LA",
+    "year": 1953,
+    "title": "Independence from France",
+    "description": "Laos gained full independence from France, becoming the Kingdom of Laos under King Sisavang Vong.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LA",
+    "year": 1975,
+    "title": "Lao People's Democratic Republic Founded",
+    "description": "The Pathet Lao abolished the monarchy and established a communist state, the Lao People's Democratic Republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LA",
+    "year": 1997,
+    "title": "Laos Joins ASEAN",
+    "description": "Laos became a member of the Association of Southeast Asian Nations, deepening regional integration.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "MY",
+    "year": 1400,
+    "title": "Founding of the Malacca Sultanate",
+    "description": "Parameswara founded Malacca, which became a powerful trading port and center for the spread of Islam in the region.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MY",
+    "year": 1511,
+    "title": "Portuguese Capture of Malacca",
+    "description": "Portuguese forces under Afonso de Albuquerque conquered Malacca, beginning European colonial influence in the area.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MY",
+    "year": 1641,
+    "title": "Dutch Capture of Malacca",
+    "description": "The Dutch East India Company seized Malacca from the Portuguese, controlling the vital strait's trade.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "MY",
+    "year": 1786,
+    "title": "British Settlement of Penang",
+    "description": "Francis Light established a British trading post on Penang, expanding British presence on the Malay Peninsula.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "MY",
+    "year": 1957,
+    "title": "Independence of Malaya",
+    "description": "The Federation of Malaya gained independence from Britain, with Tunku Abdul Rahman as its first prime minister.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MY",
+    "year": 1963,
+    "title": "Formation of Malaysia",
+    "description": "Malaya, Singapore, Sabah, and Sarawak merged to form Malaysia, though Singapore left two years later.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MY",
+    "year": 1998,
+    "title": "Petronas Towers Completed",
+    "description": "Kuala Lumpur's Petronas Twin Towers became the world's tallest buildings, symbolizing Malaysia's rapid development.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "MV",
+    "year": 1153,
+    "title": "Conversion to Islam",
+    "description": "The Maldives converted to Islam, traditionally credited to a visiting scholar, ending the earlier Buddhist era.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "MV",
+    "year": 1558,
+    "title": "Portuguese Occupation",
+    "description": "The Portuguese briefly occupied the Maldives until Muhammad Thakurufaanu led a successful rebellion in 1573.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MV",
+    "year": 1887,
+    "title": "British Protectorate",
+    "description": "The Maldives became a British protectorate, retaining internal self-rule while Britain managed defense and foreign affairs.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MV",
+    "year": 1965,
+    "title": "Independence from Britain",
+    "description": "The Maldives gained full independence from the United Kingdom and later joined the United Nations.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MV",
+    "year": 1968,
+    "title": "Republic Declared",
+    "description": "Following a referendum, the sultanate was abolished and the Maldives became a republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MV",
+    "year": 2004,
+    "title": "Indian Ocean Tsunami",
+    "description": "The devastating tsunami struck the low-lying Maldives, highlighting the nation's vulnerability to rising seas.",
+    "category": "social"
+  },
+  {
+    "countryCode": "MV",
+    "year": 2008,
+    "title": "First Multiparty Election",
+    "description": "Mohamed Nasheed won the Maldives' first multiparty presidential election, ending decades of single-party rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MN",
+    "year": -209,
+    "title": "Rise of the Xiongnu Confederation",
+    "description": "Modu Chanyu unified nomadic tribes of the Mongolian steppe into the powerful Xiongnu confederation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MN",
+    "year": 1206,
+    "title": "Genghis Khan Unites the Mongols",
+    "description": "Temujin was proclaimed Genghis Khan, founding the Mongol Empire that would become history's largest contiguous empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MN",
+    "year": 1271,
+    "title": "Kublai Khan Founds the Yuan Dynasty",
+    "description": "Genghis Khan's grandson Kublai established the Yuan dynasty, ruling China as part of the Mongol realm.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MN",
+    "year": 1578,
+    "title": "Adoption of Tibetan Buddhism",
+    "description": "Altan Khan granted the title 'Dalai Lama', cementing Tibetan Buddhism as the dominant Mongolian faith.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "MN",
+    "year": 1911,
+    "title": "Declaration of Independence from Qing",
+    "description": "Outer Mongolia declared independence from the collapsing Qing dynasty under the Bogd Khan.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MN",
+    "year": 1924,
+    "title": "Mongolian People's Republic",
+    "description": "Mongolia became a communist state, the world's second, closely aligned with the Soviet Union.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MN",
+    "year": 1990,
+    "title": "Democratic Revolution",
+    "description": "Peaceful protests ended one-party rule, leading Mongolia to adopt multiparty democracy and a market economy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MM",
+    "year": 1044,
+    "title": "Founding of the Pagan Kingdom",
+    "description": "King Anawrahta unified Myanmar under the Pagan Empire and promoted Theravada Buddhism across the land.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MM",
+    "year": 1057,
+    "title": "Spread of Theravada Buddhism",
+    "description": "Anawrahta's conquest of Thaton brought Buddhist scriptures to Pagan, shaping Burmese religious culture for centuries.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "MM",
+    "year": 1752,
+    "title": "Founding of the Konbaung Dynasty",
+    "description": "Alaungpaya founded the Konbaung dynasty, the last Burmese royal dynasty, reunifying the country.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MM",
+    "year": 1885,
+    "title": "British Annexation of Burma",
+    "description": "After the Third Anglo-Burmese War, Britain annexed all of Burma, ending the monarchy and exiling King Thibaw.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MM",
+    "year": 1948,
+    "title": "Independence from Britain",
+    "description": "Burma gained independence from the United Kingdom, becoming a sovereign republic outside the Commonwealth.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MM",
+    "year": 1962,
+    "title": "Military Coup",
+    "description": "General Ne Win seized power, beginning decades of military-dominated socialist rule in Burma.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MM",
+    "year": 1991,
+    "title": "Aung San Suu Kyi Nobel Peace Prize",
+    "description": "Pro-democracy leader Aung San Suu Kyi won the Nobel Peace Prize while under house arrest.",
+    "category": "social"
+  },
+  {
+    "countryCode": "NP",
+    "year": -563,
+    "title": "Birth of the Buddha at Lumbini",
+    "description": "Siddhartha Gautama, the Buddha, was traditionally born at Lumbini in present-day Nepal, founding Buddhism.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "NP",
+    "year": 464,
+    "title": "Licchavi Dynasty Inscriptions",
+    "description": "The Licchavi kingdom flourished in the Kathmandu Valley, leaving Nepal's earliest dated inscriptions under Manadeva.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "NP",
+    "year": 1769,
+    "title": "Unification of Nepal",
+    "description": "Prithvi Narayan Shah conquered the Kathmandu Valley, unifying the modern state of Nepal under the Shah dynasty.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NP",
+    "year": 1816,
+    "title": "Treaty of Sugauli",
+    "description": "After the Anglo-Nepalese War, Nepal ceded territory to Britain but retained independence, defining its borders.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NP",
+    "year": 1951,
+    "title": "End of Rana Rule",
+    "description": "A revolution ended the century-long autocratic Rana regime and restored power to the Shah monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NP",
+    "year": 1953,
+    "title": "First Ascent of Mount Everest",
+    "description": "Tenzing Norgay and Edmund Hillary reached the summit of Everest, the world's highest peak on Nepal's border.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "NP",
+    "year": 2008,
+    "title": "Abolition of the Monarchy",
+    "description": "Nepal's constituent assembly abolished the 240-year-old monarchy and declared a federal democratic republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KP",
+    "year": -2333,
+    "title": "Legendary Founding of Gojoseon",
+    "description": "Korean tradition dates the founding of Gojoseon, the first Korean kingdom, by Dangun on the peninsula.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KP",
+    "year": 37,
+    "title": "Founding of Goguryeo",
+    "description": "The kingdom of Goguryeo arose in the north, centered on territory that includes present-day North Korea.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KP",
+    "year": 1910,
+    "title": "Japanese Annexation of Korea",
+    "description": "Japan annexed the entire Korean Peninsula, beginning 35 years of colonial rule over the future North Korea.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KP",
+    "year": 1948,
+    "title": "Founding of North Korea",
+    "description": "The Democratic People's Republic of Korea was established under Kim Il-sung following the peninsula's division.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KP",
+    "year": 1950,
+    "title": "Outbreak of the Korean War",
+    "description": "North Korean forces invaded the South, triggering the Korean War that devastated the peninsula until 1953.",
+    "category": "military"
+  },
+  {
+    "countryCode": "KP",
+    "year": 1953,
+    "title": "Korean Armistice Agreement",
+    "description": "An armistice halted the Korean War, establishing the Demilitarized Zone but leaving the two Koreas technically at war.",
+    "category": "military"
+  },
+  {
+    "countryCode": "KP",
+    "year": 2006,
+    "title": "First Nuclear Test",
+    "description": "North Korea conducted its first underground nuclear weapons test, drawing international sanctions.",
+    "category": "military"
+  },
+  {
+    "countryCode": "PK",
+    "year": -2600,
+    "title": "Indus Valley Civilization at Mohenjo-daro",
+    "description": "The advanced urban Indus Valley Civilization flourished at sites like Mohenjo-daro and Harappa in present-day Pakistan.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "PK",
+    "year": -518,
+    "title": "Achaemenid Conquest of Gandhara",
+    "description": "Darius I incorporated Gandhara and the Indus region into the Persian Achaemenid Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PK",
+    "year": -326,
+    "title": "Alexander Reaches the Indus",
+    "description": "Alexander the Great fought King Porus at the Hydaspes River, bringing Greek influence to the region.",
+    "category": "military"
+  },
+  {
+    "countryCode": "PK",
+    "year": 712,
+    "title": "Arab Conquest of Sindh",
+    "description": "Muhammad bin Qasim conquered Sindh, introducing Islam to the Indus region and shaping its religious future.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "PK",
+    "year": 1947,
+    "title": "Independence and Partition",
+    "description": "Pakistan was created as a homeland for South Asian Muslims when British India was partitioned, led by Muhammad Ali Jinnah.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PK",
+    "year": 1971,
+    "title": "Independence of Bangladesh",
+    "description": "East Pakistan seceded after civil war to become Bangladesh, splitting the country in two.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PK",
+    "year": 1998,
+    "title": "Nuclear Weapons Tests",
+    "description": "Pakistan conducted its first nuclear tests in response to India's, becoming a declared nuclear power.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "PH",
+    "year": 900,
+    "title": "Laguna Copperplate Inscription",
+    "description": "The earliest known Philippine document records a debt settlement, showing early literacy and Indianized trade links.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "PH",
+    "year": 1521,
+    "title": "Arrival of Ferdinand Magellan",
+    "description": "Magellan reached the islands during his circumnavigation; he was killed by Lapulapu at the Battle of Mactan.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "PH",
+    "year": 1565,
+    "title": "Spanish Colonization Begins",
+    "description": "Miguel López de Legazpi established the first permanent Spanish settlement, starting over three centuries of colonial rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PH",
+    "year": 1898,
+    "title": "Declaration of Independence from Spain",
+    "description": "Emilio Aguinaldo proclaimed Philippine independence, though the U.S. soon took control after the Spanish-American War.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PH",
+    "year": 1946,
+    "title": "Independence from the United States",
+    "description": "The Philippines gained full sovereignty from the United States, becoming an independent republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PH",
+    "year": 1965,
+    "title": "Marcos Era Begins",
+    "description": "Ferdinand Marcos was elected president and later declared martial law, ruling for over two decades.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PH",
+    "year": 1986,
+    "title": "People Power Revolution",
+    "description": "Peaceful EDSA protests ousted Marcos and restored democracy under Corazon Aquino.",
+    "category": "social"
+  },
+  {
+    "countryCode": "SG",
+    "year": 1819,
+    "title": "Founding of Modern Singapore",
+    "description": "Stamford Raffles established a British trading post on Singapore, transforming it into a key commercial port.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "SG",
+    "year": 1867,
+    "title": "Singapore Becomes a Crown Colony",
+    "description": "The Straits Settlements, including Singapore, came under direct British colonial administration.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SG",
+    "year": 1942,
+    "title": "Fall of Singapore",
+    "description": "Japanese forces captured Singapore during World War II, beginning a harsh occupation until 1945.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SG",
+    "year": 1959,
+    "title": "Self-Government Achieved",
+    "description": "Singapore gained internal self-government from Britain, with Lee Kuan Yew becoming its first prime minister.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SG",
+    "year": 1963,
+    "title": "Merger with Malaysia",
+    "description": "Singapore joined the Federation of Malaysia, ending British colonial rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SG",
+    "year": 1965,
+    "title": "Independence as a Republic",
+    "description": "Singapore separated from Malaysia to become an independent sovereign nation under Lee Kuan Yew.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SG",
+    "year": 1990,
+    "title": "Goh Chok Tong Succeeds Lee Kuan Yew",
+    "description": "Lee Kuan Yew stepped down after 31 years, marking a peaceful leadership transition for the prosperous city-state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KR",
+    "year": -2333,
+    "title": "Legendary Founding of Gojoseon",
+    "description": "Korean tradition credits Dangun with founding Gojoseon, regarded as the first Korean kingdom.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KR",
+    "year": 668,
+    "title": "Silla Unifies Korea",
+    "description": "The kingdom of Silla, allied with Tang China, unified most of the Korean Peninsula for the first time.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KR",
+    "year": 1443,
+    "title": "Creation of Hangul",
+    "description": "King Sejong the Great promulgated Hangul, the Korean alphabet, to promote widespread literacy.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "KR",
+    "year": 1910,
+    "title": "Japanese Annexation of Korea",
+    "description": "Japan formally annexed Korea, beginning 35 years of colonial rule that ended in 1945.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KR",
+    "year": 1948,
+    "title": "Founding of the Republic of Korea",
+    "description": "South Korea was established as the Republic of Korea, with Syngman Rhee as its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KR",
+    "year": 1988,
+    "title": "Seoul Summer Olympics",
+    "description": "Seoul hosted the Summer Olympics, showcasing South Korea's rapid economic rise and democratization.",
+    "category": "social"
+  },
+  {
+    "countryCode": "KR",
+    "year": 1953,
+    "title": "Korean War Armistice",
+    "description": "An armistice ended active fighting in the Korean War, leaving South Korea divided from the North along the DMZ.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LK",
+    "year": -377,
+    "title": "Founding of Anuradhapura Kingdom",
+    "description": "The Anuradhapura Kingdom was established, becoming a long-lasting center of Sinhalese civilization and Buddhism.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LK",
+    "year": -247,
+    "title": "Introduction of Buddhism",
+    "description": "The monk Mahinda, son of Emperor Ashoka, introduced Buddhism to Sri Lanka, which became central to its culture.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "LK",
+    "year": 1505,
+    "title": "Arrival of the Portuguese",
+    "description": "Portuguese traders arrived and gradually established control over coastal Sri Lanka and its spice trade.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "LK",
+    "year": 1815,
+    "title": "Fall of the Kingdom of Kandy",
+    "description": "The British annexed the Kingdom of Kandy, bringing the entire island under colonial rule as Ceylon.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LK",
+    "year": 1948,
+    "title": "Independence as Ceylon",
+    "description": "Ceylon gained independence from Britain, later renaming itself Sri Lanka in 1972.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LK",
+    "year": 1960,
+    "title": "World's First Female Prime Minister",
+    "description": "Sirimavo Bandaranaike became the world's first elected female head of government.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LK",
+    "year": 2009,
+    "title": "End of the Civil War",
+    "description": "The government defeated the Tamil Tigers, ending a devastating 26-year civil war.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TJ",
+    "year": -329,
+    "title": "Alexander Conquers Sogdiana",
+    "description": "Alexander the Great campaigned through Sogdiana, in present-day Tajikistan, founding Hellenistic settlements.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TJ",
+    "year": 819,
+    "title": "Rise of the Samanid Dynasty",
+    "description": "The Persian Samanid dynasty flourished, fostering a revival of Persian culture honored by Tajiks today.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "TJ",
+    "year": 1868,
+    "title": "Russian Conquest of Central Asia",
+    "description": "The Russian Empire extended its control over the region that would become Tajikistan.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TJ",
+    "year": 1929,
+    "title": "Tajik Soviet Republic Formed",
+    "description": "Tajikistan became a full constituent republic of the Soviet Union, separate from Uzbekistan.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TJ",
+    "year": 1991,
+    "title": "Independence from the Soviet Union",
+    "description": "Tajikistan declared independence as the USSR collapsed, becoming a sovereign nation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TJ",
+    "year": 1992,
+    "title": "Outbreak of Civil War",
+    "description": "A devastating civil war erupted shortly after independence, lasting until a peace accord in 1997.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TJ",
+    "year": 1997,
+    "title": "Peace Accord Ends Civil War",
+    "description": "A UN-brokered peace agreement ended the Tajik civil war, paving the way for national reconciliation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TH",
+    "year": 1238,
+    "title": "Founding of the Sukhothai Kingdom",
+    "description": "The Sukhothai Kingdom emerged as the first major Thai state, often seen as the cradle of Thai civilization.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TH",
+    "year": 1283,
+    "title": "Creation of the Thai Script",
+    "description": "King Ramkhamhaeng is traditionally credited with creating the Thai alphabet at Sukhothai.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "TH",
+    "year": 1351,
+    "title": "Founding of Ayutthaya",
+    "description": "The Ayutthaya Kingdom was founded and grew into a powerful and prosperous Siamese empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TH",
+    "year": 1782,
+    "title": "Founding of the Chakri Dynasty",
+    "description": "Rama I founded the Chakri dynasty and established Bangkok as the capital, which rules Thailand to this day.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TH",
+    "year": 1932,
+    "title": "Transition to Constitutional Monarchy",
+    "description": "A bloodless revolution ended absolute monarchy, establishing a constitutional monarchy in Siam.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TH",
+    "year": 1939,
+    "title": "Renamed Thailand",
+    "description": "Siam was officially renamed Thailand, meaning 'Land of the Free', reflecting national identity.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "TH",
+    "year": 1946,
+    "title": "Reign of King Bhumibol Begins",
+    "description": "Bhumibol Adulyadej ascended the throne and reigned for 70 years, the longest in Thai history.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TL",
+    "year": 1515,
+    "title": "Portuguese Arrival in Timor",
+    "description": "Portuguese traders arrived in Timor seeking sandalwood, beginning centuries of colonial presence.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "TL",
+    "year": 1769,
+    "title": "Establishment of Dili",
+    "description": "The Portuguese established Dili as the colonial capital of Portuguese Timor.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TL",
+    "year": 1975,
+    "title": "Independence Declared and Invaded",
+    "description": "Timor-Leste declared independence from Portugal, but Indonesia invaded and annexed the territory days later.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TL",
+    "year": 1991,
+    "title": "Santa Cruz Massacre",
+    "description": "Indonesian forces killed protesters in Dili, drawing global attention to the East Timorese independence struggle.",
+    "category": "social"
+  },
+  {
+    "countryCode": "TL",
+    "year": 1999,
+    "title": "Independence Referendum",
+    "description": "East Timorese voted overwhelmingly for independence from Indonesia in a UN-supervised referendum.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TL",
+    "year": 2002,
+    "title": "Full Independence Restored",
+    "description": "Timor-Leste became a fully independent nation, the first new sovereign state of the 21st century.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TL",
+    "year": 1996,
+    "title": "Nobel Peace Prize for Belo and Ramos-Horta",
+    "description": "Bishop Belo and José Ramos-Horta won the Nobel Peace Prize for their work toward a just resolution in East Timor.",
+    "category": "social"
+  },
+  {
+    "countryCode": "TM",
+    "year": -500,
+    "title": "Achaemenid Rule over Margiana",
+    "description": "The region of Margiana, around Merv, became part of the Persian Achaemenid Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TM",
+    "year": 651,
+    "title": "Merv Becomes Islamic Center",
+    "description": "Arab conquest brought Islam to Merv, which grew into a major center of learning on the Silk Road.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "TM",
+    "year": 1221,
+    "title": "Mongol Destruction of Merv",
+    "description": "Genghis Khan's Mongol armies sacked Merv, then one of the world's largest cities.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TM",
+    "year": 1881,
+    "title": "Russian Conquest of Turkmen Lands",
+    "description": "The Russian Empire defeated Turkmen tribes at Geok Tepe, incorporating the region into Russian Central Asia.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TM",
+    "year": 1924,
+    "title": "Turkmen Soviet Republic Formed",
+    "description": "Turkmenistan was established as a constituent republic of the Soviet Union.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TM",
+    "year": 1991,
+    "title": "Independence from the Soviet Union",
+    "description": "Turkmenistan declared independence as the USSR dissolved, with Saparmurat Niyazov becoming its leader.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TM",
+    "year": 1995,
+    "title": "Recognized as Neutral State",
+    "description": "The United Nations recognized Turkmenistan's status of permanent neutrality.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UZ",
+    "year": -329,
+    "title": "Alexander Conquers Samarkand",
+    "description": "Alexander the Great captured Samarkand (Maracanda), one of Central Asia's oldest continuously inhabited cities.",
+    "category": "military"
+  },
+  {
+    "countryCode": "UZ",
+    "year": 751,
+    "title": "Battle of Talas",
+    "description": "Arab and Tang Chinese forces clashed near the region, after which Islam and papermaking spread through Central Asia.",
+    "category": "military"
+  },
+  {
+    "countryCode": "UZ",
+    "year": 1370,
+    "title": "Timur Establishes His Empire",
+    "description": "Timur (Tamerlane) made Samarkand the capital of a vast empire, sponsoring magnificent architecture and learning.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UZ",
+    "year": 1428,
+    "title": "Ulugh Beg's Observatory",
+    "description": "Timur's grandson Ulugh Beg built a great observatory in Samarkand, producing influential astronomical tables.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "UZ",
+    "year": 1865,
+    "title": "Russian Conquest of Tashkent",
+    "description": "The Russian Empire captured Tashkent, extending its rule across the Uzbek lands.",
+    "category": "military"
+  },
+  {
+    "countryCode": "UZ",
+    "year": 1924,
+    "title": "Uzbek Soviet Republic Formed",
+    "description": "Uzbekistan was created as a constituent republic of the Soviet Union.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UZ",
+    "year": 1991,
+    "title": "Independence from the Soviet Union",
+    "description": "Uzbekistan declared independence as the USSR collapsed, becoming a sovereign state under Islam Karimov.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VN",
+    "year": -257,
+    "title": "Founding of Âu Lạc Kingdom",
+    "description": "An Dương Vương founded the kingdom of Âu Lạc, building the fortified citadel of Cổ Loa in the Red River Delta.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VN",
+    "year": -111,
+    "title": "Chinese Han Conquest",
+    "description": "The Han dynasty conquered northern Vietnam, beginning roughly a thousand years of Chinese domination.",
+    "category": "military"
+  },
+  {
+    "countryCode": "VN",
+    "year": 938,
+    "title": "Battle of Bạch Đằng",
+    "description": "Ngô Quyền defeated Chinese forces on the Bạch Đằng River, securing Vietnamese independence.",
+    "category": "military"
+  },
+  {
+    "countryCode": "VN",
+    "year": 1802,
+    "title": "Founding of the Nguyễn Dynasty",
+    "description": "Emperor Gia Long unified Vietnam and founded the Nguyễn dynasty, the country's last imperial dynasty.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VN",
+    "year": 1945,
+    "title": "Declaration of Independence",
+    "description": "Hồ Chí Minh declared Vietnam's independence from France, founding the Democratic Republic of Vietnam.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VN",
+    "year": 1954,
+    "title": "Battle of Dien Bien Phu",
+    "description": "Vietnamese forces decisively defeated the French, ending colonial rule and dividing the country at the 17th parallel.",
+    "category": "military"
+  },
+  {
+    "countryCode": "VN",
+    "year": 1975,
+    "title": "Fall of Saigon and Reunification",
+    "description": "The Vietnam War ended with the fall of Saigon, leading to the reunification of Vietnam in 1976.",
+    "category": "political"
+  }
+]

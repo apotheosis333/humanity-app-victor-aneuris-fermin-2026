@@ -1,0 +1,723 @@
+[
+  {
+    "countryCode": "LY",
+    "year": -630,
+    "title": "Greeks Found Cyrene",
+    "description": "Greek colonists from Thera founded the city of Cyrene in eastern Libya, which became a major center of Hellenic culture and learning.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "LY",
+    "year": -201,
+    "title": "Carthaginian Control of Tripolitania",
+    "description": "The coastal cities of Tripolitania, including Leptis Magna, flourished under Carthaginian and Phoenician trade networks in the western region.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "LY",
+    "year": 643,
+    "title": "Arab Conquest of Libya",
+    "description": "Arab armies under Amr ibn al-As conquered the region, bringing Islam and Arabic language to Libya and ending Byzantine rule.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "LY",
+    "year": 1551,
+    "title": "Ottoman Conquest of Tripoli",
+    "description": "The Ottoman Empire captured Tripoli from the Knights of St. John, beginning centuries of Ottoman influence over Libya.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LY",
+    "year": 1911,
+    "title": "Italian Invasion of Libya",
+    "description": "Italy invaded Ottoman Libya during the Italo-Turkish War, beginning Italian colonial rule that lasted until World War II.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LY",
+    "year": 1951,
+    "title": "Independence of Libya",
+    "description": "Libya gained independence as the United Kingdom of Libya under King Idris I, becoming the first country to achieve independence through the UN.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LY",
+    "year": 1969,
+    "title": "Gaddafi's Coup",
+    "description": "Muammar Gaddafi led a military coup that overthrew the monarchy, establishing a republic and ruling Libya for over four decades.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LY",
+    "year": 2011,
+    "title": "Libyan Revolution",
+    "description": "A popular uprising during the Arab Spring, backed by NATO intervention, led to the fall and death of Muammar Gaddafi.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MG",
+    "year": 700,
+    "title": "Austronesian Settlement",
+    "description": "Seafarers from Southeast Asia settled Madagascar, bringing crops, language and culture that shaped the Malagasy people.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "MG",
+    "year": 1500,
+    "title": "Portuguese Sight Madagascar",
+    "description": "Portuguese navigator Diogo Dias became the first European to sight Madagascar, opening the island to European contact.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "MG",
+    "year": 1787,
+    "title": "Rise of the Merina Kingdom",
+    "description": "King Andrianampoinimerina began unifying the central highlands, laying the foundation for the powerful Kingdom of Madagascar.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MG",
+    "year": 1817,
+    "title": "Radama I Recognized as King",
+    "description": "King Radama I expanded the Merina kingdom over most of the island and welcomed British missionaries who introduced a written Malagasy script.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MG",
+    "year": 1896,
+    "title": "French Colonization",
+    "description": "France annexed Madagascar as a colony, abolishing the monarchy and exiling Queen Ranavalona III.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MG",
+    "year": 1947,
+    "title": "Malagasy Uprising",
+    "description": "A major nationalist revolt against French colonial rule was suppressed with heavy loss of life, fueling the independence movement.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MG",
+    "year": 1960,
+    "title": "Independence of Madagascar",
+    "description": "Madagascar gained full independence from France, becoming the Malagasy Republic with Philibert Tsiranana as its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MW",
+    "year": 1480,
+    "title": "Maravi Kingdom Forms",
+    "description": "The Maravi Confederacy emerged around Lake Malawi, giving the country its later name and dominating regional trade.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MW",
+    "year": 1859,
+    "title": "Livingstone Reaches Lake Malawi",
+    "description": "Scottish explorer David Livingstone reached Lake Malawi, drawing European attention to the region and its slave trade.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "MW",
+    "year": 1891,
+    "title": "British Central Africa Protectorate",
+    "description": "Britain established a protectorate over the territory, later known as Nyasaland, bringing colonial administration.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MW",
+    "year": 1915,
+    "title": "Chilembwe Uprising",
+    "description": "Reverend John Chilembwe led an armed revolt against colonial rule, becoming an enduring symbol of Malawian resistance.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MW",
+    "year": 1964,
+    "title": "Independence of Malawi",
+    "description": "Nyasaland gained independence as Malawi under Hastings Banda, who later became its long-ruling president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MW",
+    "year": 1994,
+    "title": "First Multiparty Elections",
+    "description": "Malawi held its first multiparty democratic elections, ending decades of one-party rule and electing Bakili Muluzi president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MW",
+    "year": 2012,
+    "title": "Joyce Banda Becomes President",
+    "description": "Joyce Banda became Malawi's first female president, one of the few women to lead an African nation.",
+    "category": "social"
+  },
+  {
+    "countryCode": "ML",
+    "year": 1235,
+    "title": "Founding of the Mali Empire",
+    "description": "Sundiata Keita defeated the Sosso and founded the Mali Empire, which grew into one of West Africa's wealthiest states.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ML",
+    "year": 1324,
+    "title": "Mansa Musa's Pilgrimage",
+    "description": "Emperor Mansa Musa undertook a famous pilgrimage to Mecca, distributing immense gold and showcasing Mali's wealth.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "ML",
+    "year": 1327,
+    "title": "Djinguereber Mosque Built",
+    "description": "Commissioned under Mansa Musa, the Djinguereber Mosque in Timbuktu became a center of Islamic learning and architecture.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "ML",
+    "year": 1468,
+    "title": "Songhai Captures Timbuktu",
+    "description": "The rising Songhai Empire under Sunni Ali captured Timbuktu, eclipsing the declining Mali Empire.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ML",
+    "year": 1893,
+    "title": "French Conquest",
+    "description": "France captured Timbuktu and incorporated the region into French Sudan, part of French West Africa.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ML",
+    "year": 1960,
+    "title": "Independence of Mali",
+    "description": "Mali gained independence from France under Modibo Keita, taking its name from the historic medieval empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ML",
+    "year": 1991,
+    "title": "Democratic Transition",
+    "description": "A popular uprising overthrew dictator Moussa Traore, leading to a new constitution and multiparty democracy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ML",
+    "year": 2012,
+    "title": "Northern Mali Conflict",
+    "description": "A Tuareg rebellion and Islamist insurgency seized northern Mali, prompting French and international military intervention.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MR",
+    "year": 1040,
+    "title": "Almoravid Movement Begins",
+    "description": "The Almoravid religious and military movement arose among Sanhaja Berbers in the region, later conquering Morocco and Spain.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "MR",
+    "year": 1076,
+    "title": "Almoravids Sack Koumbi Saleh",
+    "description": "Almoravid forces are said to have captured the capital of the Ghana Empire, reshaping power across the western Sahara.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MR",
+    "year": 1644,
+    "title": "Char Bouba War",
+    "description": "A thirty-year war among Berber and Arab tribes ended with Arab Hassani dominance, shaping Mauritanian society.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MR",
+    "year": 1904,
+    "title": "French Protectorate",
+    "description": "France established a protectorate over Mauritania, incorporating it into French West Africa.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MR",
+    "year": 1960,
+    "title": "Independence of Mauritania",
+    "description": "Mauritania gained independence from France under Moktar Ould Daddah, its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MR",
+    "year": 1981,
+    "title": "Abolition of Slavery",
+    "description": "Mauritania became the last country in the world to formally abolish slavery, though the practice persisted afterward.",
+    "category": "social"
+  },
+  {
+    "countryCode": "MR",
+    "year": 1989,
+    "title": "Mauritania-Senegal Border Conflict",
+    "description": "Ethnic and border tensions erupted into violent conflict with Senegal, causing mass expulsions and displacement.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MU",
+    "year": 1507,
+    "title": "Portuguese Arrival",
+    "description": "Portuguese sailors became the first Europeans to visit the uninhabited island of Mauritius in the early 16th century.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "MU",
+    "year": 1598,
+    "title": "Dutch Claim Mauritius",
+    "description": "The Dutch took possession of the island and named it after Prince Maurice of Nassau, beginning European settlement attempts.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MU",
+    "year": 1681,
+    "title": "Extinction of the Dodo",
+    "description": "The flightless dodo bird, found only on Mauritius, became extinct due to hunting and introduced species, a famous symbol of human impact.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "MU",
+    "year": 1715,
+    "title": "French Colonization",
+    "description": "France claimed the island as Isle de France, developing sugar plantations worked by enslaved Africans.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "MU",
+    "year": 1810,
+    "title": "British Capture Mauritius",
+    "description": "Britain seized the island during the Napoleonic Wars, restoring the name Mauritius and ruling it for over 150 years.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MU",
+    "year": 1835,
+    "title": "Abolition of Slavery",
+    "description": "Slavery was abolished, after which indentured laborers from India were brought to work the sugar estates, reshaping the population.",
+    "category": "social"
+  },
+  {
+    "countryCode": "MU",
+    "year": 1968,
+    "title": "Independence of Mauritius",
+    "description": "Mauritius gained independence from Britain, with Seewoosagur Ramgoolam becoming its first prime minister.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MU",
+    "year": 1992,
+    "title": "Mauritius Becomes a Republic",
+    "description": "Mauritius became a republic within the Commonwealth, replacing the British monarch with a president as head of state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MA",
+    "year": 788,
+    "title": "Founding of the Idrisid Dynasty",
+    "description": "Idris I founded the Idrisid dynasty, establishing the first Moroccan Islamic state and the city of Fez.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MA",
+    "year": 859,
+    "title": "University of al-Qarawiyyin Founded",
+    "description": "Fatima al-Fihri founded al-Qarawiyyin in Fez, considered the world's oldest continuously operating university.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "MA",
+    "year": 1062,
+    "title": "Marrakesh Founded by Almoravids",
+    "description": "The Almoravids founded Marrakesh as their capital, building a vast empire spanning North Africa and Muslim Spain.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MA",
+    "year": 1578,
+    "title": "Battle of Alcacer Quibir",
+    "description": "Moroccan forces decisively defeated a Portuguese invasion, killing King Sebastian and preserving Moroccan independence.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MA",
+    "year": 1912,
+    "title": "French and Spanish Protectorates",
+    "description": "The Treaty of Fez established French and Spanish protectorates over Morocco, ending its full sovereignty.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MA",
+    "year": 1956,
+    "title": "Independence of Morocco",
+    "description": "Morocco regained independence from France and Spain, with Sultan Mohammed V leading the restored monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MA",
+    "year": 1975,
+    "title": "The Green March",
+    "description": "King Hassan II led 350,000 Moroccans into Western Sahara to claim the territory as Spain withdrew.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MA",
+    "year": 2011,
+    "title": "Constitutional Reform",
+    "description": "Following Arab Spring protests, King Mohammed VI introduced a new constitution expanding parliamentary powers.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MZ",
+    "year": 1000,
+    "title": "Swahili Coast Trade",
+    "description": "Coastal settlements like Sofala became part of the Indian Ocean trade network, exporting gold, ivory and slaves.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "MZ",
+    "year": 1498,
+    "title": "Vasco da Gama Lands",
+    "description": "Portuguese explorer Vasco da Gama reached the Mozambican coast en route to India, beginning Portuguese involvement.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "MZ",
+    "year": 1505,
+    "title": "Portuguese Establish Sofala",
+    "description": "Portugal built a fort at Sofala to control the gold trade, beginning centuries of colonial presence in Mozambique.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "MZ",
+    "year": 1752,
+    "title": "Mozambique Becomes Separate Colony",
+    "description": "Portugal made Mozambique a distinct colonial administration, separating it from its Indian holdings.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MZ",
+    "year": 1964,
+    "title": "War of Independence Begins",
+    "description": "The FRELIMO liberation movement launched an armed struggle against Portuguese colonial rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MZ",
+    "year": 1975,
+    "title": "Independence of Mozambique",
+    "description": "Mozambique gained independence from Portugal, with Samora Machel becoming its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MZ",
+    "year": 1992,
+    "title": "End of the Civil War",
+    "description": "The Rome General Peace Accords ended a devastating 15-year civil war between FRELIMO and RENAMO.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NA",
+    "year": 1486,
+    "title": "Portuguese Reach the Coast",
+    "description": "Explorer Diogo Cao reached the Namibian coast, erecting a stone cross at Cape Cross.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "NA",
+    "year": 1884,
+    "title": "German South West Africa",
+    "description": "Germany declared a protectorate over the territory, beginning colonial rule over present-day Namibia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NA",
+    "year": 1904,
+    "title": "Herero and Nama Genocide",
+    "description": "German colonial forces carried out a genocide against the Herero and Nama peoples, killing tens of thousands.",
+    "category": "military"
+  },
+  {
+    "countryCode": "NA",
+    "year": 1915,
+    "title": "South African Occupation",
+    "description": "South Africa took control of the territory during World War I, later administering it under a League of Nations mandate.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NA",
+    "year": 1966,
+    "title": "Namibian War of Independence",
+    "description": "SWAPO launched an armed struggle against South African rule, beginning a decades-long liberation war.",
+    "category": "military"
+  },
+  {
+    "countryCode": "NA",
+    "year": 1990,
+    "title": "Independence of Namibia",
+    "description": "Namibia gained independence from South African control, with Sam Nujoma becoming its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NA",
+    "year": 2021,
+    "title": "Germany Recognizes the Genocide",
+    "description": "Germany officially recognized the colonial-era genocide of the Herero and Nama and pledged development aid.",
+    "category": "social"
+  },
+  {
+    "countryCode": "NE",
+    "year": 1000,
+    "title": "Trans-Saharan Trade Hub",
+    "description": "Towns like Agadez grew as key stops on trans-Saharan caravan routes carrying gold, salt and goods.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "NE",
+    "year": 1449,
+    "title": "Sultanate of Agadez",
+    "description": "The Tuareg Sultanate of Agadez was established, becoming an important center of trade and Islamic scholarship.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NE",
+    "year": 1515,
+    "title": "Songhai Conquest of Agadez",
+    "description": "The Songhai Empire under Askia Muhammad annexed Agadez, extending its power into the region.",
+    "category": "military"
+  },
+  {
+    "countryCode": "NE",
+    "year": 1922,
+    "title": "French Colony of Niger",
+    "description": "France formally established Niger as a colony within French West Africa after suppressing local resistance.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NE",
+    "year": 1960,
+    "title": "Independence of Niger",
+    "description": "Niger gained independence from France, with Hamani Diori becoming its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NE",
+    "year": 1968,
+    "title": "Uranium Mining Begins",
+    "description": "Large-scale uranium mining began at Arlit, making Niger one of the world's leading uranium producers.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "NE",
+    "year": 1993,
+    "title": "First Democratic Elections",
+    "description": "Niger held its first free multiparty elections following a national conference and new constitution.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NG",
+    "year": -500,
+    "title": "Nok Culture Flourishes",
+    "description": "The Nok civilization in central Nigeria produced sophisticated terracotta sculptures and was among the earliest to smelt iron in the region.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "NG",
+    "year": 1000,
+    "title": "Rise of Ife and Igbo-Ukwu",
+    "description": "The Yoruba city of Ife and the Igbo-Ukwu culture produced renowned bronze and artistic works, marking advanced civilizations.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "NG",
+    "year": 1440,
+    "title": "Golden Age of the Benin Empire",
+    "description": "Under Oba Ewuare, the Kingdom of Benin expanded into a powerful state famed for its bronze plaques and walled city.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NG",
+    "year": 1804,
+    "title": "Sokoto Caliphate Founded",
+    "description": "Usman dan Fodio led a jihad establishing the Sokoto Caliphate, one of the largest states in 19th-century Africa.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "NG",
+    "year": 1914,
+    "title": "Amalgamation of Nigeria",
+    "description": "Britain merged its northern and southern protectorates into the single colony of Nigeria.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NG",
+    "year": 1960,
+    "title": "Independence of Nigeria",
+    "description": "Nigeria gained independence from Britain, becoming Africa's most populous nation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NG",
+    "year": 1967,
+    "title": "Biafran Civil War",
+    "description": "The southeastern region's secession as Biafra triggered a brutal three-year civil war with widespread famine.",
+    "category": "military"
+  },
+  {
+    "countryCode": "NG",
+    "year": 1999,
+    "title": "Return to Democracy",
+    "description": "After years of military rule, Nigeria returned to civilian democratic government with the election of Olusegun Obasanjo.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RW",
+    "year": 1100,
+    "title": "Early Kingdom of Rwanda",
+    "description": "The Kingdom of Rwanda emerged in the Great Lakes region, gradually consolidating power under the Nyiginya dynasty.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RW",
+    "year": 1860,
+    "title": "Reign of Kigeli IV Rwabugiri",
+    "description": "King Rwabugiri centralized and expanded the Rwandan kingdom, strengthening the monarchy before colonial contact.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RW",
+    "year": 1897,
+    "title": "German Colonial Rule",
+    "description": "Rwanda became part of German East Africa, with the Germans ruling indirectly through the existing monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RW",
+    "year": 1916,
+    "title": "Belgian Administration",
+    "description": "Belgium occupied Rwanda during World War I and later administered it, deepening ethnic divisions through identity policies.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RW",
+    "year": 1962,
+    "title": "Independence of Rwanda",
+    "description": "Rwanda gained independence from Belgium as a republic, following the abolition of the monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RW",
+    "year": 1994,
+    "title": "Rwandan Genocide",
+    "description": "Around 800,000 Tutsi and moderate Hutu were killed in a genocide over roughly 100 days, ended by the RPF's military victory.",
+    "category": "military"
+  },
+  {
+    "countryCode": "RW",
+    "year": 2003,
+    "title": "New Constitution Adopted",
+    "description": "Rwanda adopted a new constitution and held post-genocide elections, beginning national reconciliation and rebuilding.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SN",
+    "year": 1050,
+    "title": "Takrur and Trans-Saharan Trade",
+    "description": "The Kingdom of Takrur along the Senegal River became an early Islamic state and important trade center.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "SN",
+    "year": 1350,
+    "title": "Jolof Empire Forms",
+    "description": "The Wolof states united into the Jolof Empire, dominating much of present-day Senegal.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SN",
+    "year": 1444,
+    "title": "Portuguese Reach Senegal",
+    "description": "Portuguese navigators reached the Senegalese coast, beginning European trade and later the Atlantic slave trade.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "SN",
+    "year": 1659,
+    "title": "French Found Saint-Louis",
+    "description": "France established Saint-Louis at the mouth of the Senegal River, its first permanent settlement in West Africa.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SN",
+    "year": 1895,
+    "title": "Capital of French West Africa",
+    "description": "Senegal became the administrative heart of French West Africa, with Dakar later serving as its capital.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SN",
+    "year": 1960,
+    "title": "Independence of Senegal",
+    "description": "Senegal gained independence from France, with poet and statesman Leopold Sedar Senghor as its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SN",
+    "year": 2000,
+    "title": "First Democratic Power Transfer",
+    "description": "Abdoulaye Wade won the presidency, marking Senegal's first peaceful transfer of power between parties.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SC",
+    "year": 1502,
+    "title": "Portuguese Sight the Islands",
+    "description": "Portuguese explorers, including Vasco da Gama's fleet, recorded the uninhabited Seychelles islands in the Indian Ocean.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "SC",
+    "year": 1756,
+    "title": "French Claim Seychelles",
+    "description": "France took possession of the islands, naming them after finance minister Jean Moreau de Sechelles.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SC",
+    "year": 1770,
+    "title": "First Permanent Settlement",
+    "description": "French settlers and enslaved Africans established the first permanent settlement, founding plantation agriculture.",
+    "category": "social"
+  },
+  {
+    "countryCode": "SC",
+    "year": 1814,
+    "title": "British Rule Established",
+    "description": "The Treaty of Paris formally ceded Seychelles to Britain, beginning over 150 years of British administration.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SC",
+    "year": 1835,
+    "title": "Abolition of Slavery",
+    "description": "Britain abolished slavery in Seychelles, transforming the islands' plantation society and labor system.",
+    "category": "social"
+  },
+  {
+    "countryCode": "SC",
+    "year": 1976,
+    "title": "Independence of Seychelles",
+    "description": "Seychelles gained independence from Britain, becoming a republic with James Mancham as its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SC",
+    "year": 1993,
+    "title": "Return to Multiparty Democracy",
+    "description": "Seychelles adopted a new constitution restoring multiparty democracy after years of one-party socialist rule.",
+    "category": "political"
+  }
+]

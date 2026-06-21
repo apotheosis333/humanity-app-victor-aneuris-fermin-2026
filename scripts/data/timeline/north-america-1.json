@@ -1,0 +1,527 @@
+[
+  {
+    "countryCode": "AG",
+    "year": 1493,
+    "title": "Columbus Sights Antigua",
+    "description": "During his second voyage, Christopher Columbus sighted the island in 1493 and named it Santa Maria la Antigua.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "AG",
+    "year": 1632,
+    "title": "English Colonization Begins",
+    "description": "English settlers from St. Kitts established the first permanent European colony on Antigua in 1632.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AG",
+    "year": 1674,
+    "title": "Codrington Sugar Plantations",
+    "description": "Christopher Codrington founded the first large sugar estate, launching an economy built on sugar and enslaved African labor.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "AG",
+    "year": 1834,
+    "title": "Abolition of Slavery",
+    "description": "Britain abolished slavery and Antigua emancipated its enslaved population immediately in 1834 without an apprenticeship period.",
+    "category": "social"
+  },
+  {
+    "countryCode": "AG",
+    "year": 1981,
+    "title": "Independence from Britain",
+    "description": "Antigua and Barbuda gained full independence from the United Kingdom on November 1, 1981, with Vere Bird as first prime minister.",
+    "category": "political"
+  },
+  {
+    "countryCode": "AG",
+    "year": 2004,
+    "title": "End of the Bird Era",
+    "description": "Baldwin Spencer's UPP won elections in 2004, ending decades of political dominance by the Bird family.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BS",
+    "year": 1492,
+    "title": "Columbus's First Landfall",
+    "description": "Columbus made his first landfall in the Americas on a Bahamian island he named San Salvador in October 1492.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "BS",
+    "year": 1648,
+    "title": "Eleutheran Adventurers Settle",
+    "description": "English Puritans known as the Eleutheran Adventurers founded the first European settlement in the Bahamas.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BS",
+    "year": 1718,
+    "title": "End of the Pirate Republic",
+    "description": "Woodes Rogers became royal governor and suppressed the pirate haven of Nassau, making the Bahamas a British crown colony.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BS",
+    "year": 1834,
+    "title": "Abolition of Slavery",
+    "description": "Slavery was abolished throughout the Bahamas in 1834 as part of British emancipation.",
+    "category": "social"
+  },
+  {
+    "countryCode": "BS",
+    "year": 1973,
+    "title": "Independence from Britain",
+    "description": "The Bahamas became an independent nation within the Commonwealth on July 10, 1973, led by Lynden Pindling.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BS",
+    "year": 1992,
+    "title": "First Transfer of Power",
+    "description": "The Free National Movement won elections, ending 25 years of Pindling's rule in the country's first peaceful change of government.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BB",
+    "year": 1627,
+    "title": "English Settlement Founded",
+    "description": "English colonists landed at Holetown in 1627, beginning continuous British settlement of Barbados.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BB",
+    "year": 1640,
+    "title": "The Sugar Revolution",
+    "description": "In the 1640s Barbados shifted to large-scale sugar plantations worked by enslaved Africans, transforming its economy and society.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "BB",
+    "year": 1816,
+    "title": "Bussa's Rebellion",
+    "description": "Bussa led the largest slave uprising in Barbadian history in April 1816, a milestone in the struggle against slavery.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BB",
+    "year": 1834,
+    "title": "Abolition of Slavery",
+    "description": "Slavery was abolished in 1834, followed by an apprenticeship period that ended with full emancipation in 1838.",
+    "category": "social"
+  },
+  {
+    "countryCode": "BB",
+    "year": 1966,
+    "title": "Independence from Britain",
+    "description": "Barbados gained independence on November 30, 1966, with Errol Barrow as its first prime minister.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BB",
+    "year": 2021,
+    "title": "Barbados Becomes a Republic",
+    "description": "On November 30, 2021, Barbados removed Queen Elizabeth II as head of state and became a parliamentary republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BZ",
+    "year": 600,
+    "title": "Classic Maya Civilization",
+    "description": "Maya city-states such as Caracol and Lamanai flourished across present-day Belize during the Classic period.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "BZ",
+    "year": 1638,
+    "title": "British Baymen Settle",
+    "description": "English buccaneers and loggers, the Baymen, began cutting logwood along the coast in the 17th century.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "BZ",
+    "year": 1798,
+    "title": "Battle of St. George's Caye",
+    "description": "British settlers and the Royal Navy defeated a Spanish fleet in September 1798, securing British control of the territory.",
+    "category": "military"
+  },
+  {
+    "countryCode": "BZ",
+    "year": 1862,
+    "title": "British Honduras Colony",
+    "description": "The settlement was formally declared the crown colony of British Honduras in 1862.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BZ",
+    "year": 1973,
+    "title": "Renamed Belize",
+    "description": "British Honduras was officially renamed Belize in 1973 as the country moved toward independence.",
+    "category": "political"
+  },
+  {
+    "countryCode": "BZ",
+    "year": 1981,
+    "title": "Independence from Britain",
+    "description": "Belize achieved full independence on September 21, 1981, with George Price as its first prime minister.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CA",
+    "year": 1000,
+    "title": "Norse at L'Anse aux Meadows",
+    "description": "Norse explorers established a short-lived settlement at L'Anse aux Meadows in Newfoundland around 1000 CE.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "CA",
+    "year": 1534,
+    "title": "Cartier Claims for France",
+    "description": "Jacques Cartier explored the Gulf of St. Lawrence in 1534 and claimed the land for France.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "CA",
+    "year": 1608,
+    "title": "Founding of Quebec City",
+    "description": "Samuel de Champlain founded Quebec City in 1608, establishing the heart of New France.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CA",
+    "year": 1759,
+    "title": "Battle of the Plains of Abraham",
+    "description": "British forces defeated the French at Quebec in 1759, a turning point that led to British control of Canada.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CA",
+    "year": 1867,
+    "title": "Canadian Confederation",
+    "description": "The British North America Act united the provinces into the Dominion of Canada on July 1, 1867.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CA",
+    "year": 1885,
+    "title": "Canadian Pacific Railway Completed",
+    "description": "The transcontinental railway was completed in 1885, linking eastern Canada to the Pacific coast.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "CA",
+    "year": 1917,
+    "title": "Battle of Vimy Ridge",
+    "description": "Canadian forces captured Vimy Ridge in April 1917, a defining moment often seen as forging national identity.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CA",
+    "year": 1982,
+    "title": "Patriation of the Constitution",
+    "description": "Canada patriated its constitution in 1982, adding the Charter of Rights and Freedoms and gaining full legal autonomy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CR",
+    "year": 1502,
+    "title": "Columbus Reaches Costa Rica",
+    "description": "On his fourth voyage in 1502, Columbus landed near present-day Limón on the Caribbean coast.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "CR",
+    "year": 1563,
+    "title": "Founding of Cartago",
+    "description": "Juan Vázquez de Coronado founded Cartago in 1563 as the first permanent Spanish colonial capital.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CR",
+    "year": 1821,
+    "title": "Independence from Spain",
+    "description": "Costa Rica gained independence from Spain in 1821 as part of the broader Central American independence movement.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CR",
+    "year": 1869,
+    "title": "Free Public Education",
+    "description": "Costa Rica made primary education free and obligatory in 1869, an early commitment to universal schooling.",
+    "category": "social"
+  },
+  {
+    "countryCode": "CR",
+    "year": 1949,
+    "title": "Abolition of the Army",
+    "description": "Following the 1948 civil war, Costa Rica's new constitution abolished its standing army in 1949.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CR",
+    "year": 1987,
+    "title": "Arias Wins Nobel Peace Prize",
+    "description": "President Óscar Arias received the Nobel Peace Prize in 1987 for his Central American peace plan.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CU",
+    "year": 1492,
+    "title": "Columbus Lands in Cuba",
+    "description": "Christopher Columbus reached the coast of Cuba in October 1492, claiming the island for Spain.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "CU",
+    "year": 1511,
+    "title": "Spanish Conquest Begins",
+    "description": "Diego Velázquez led the Spanish conquest and colonization of Cuba beginning in 1511.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CU",
+    "year": 1762,
+    "title": "British Capture Havana",
+    "description": "Britain seized Havana in 1762 during the Seven Years' War before returning it to Spain a year later.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CU",
+    "year": 1902,
+    "title": "Cuban Republic Established",
+    "description": "Cuba became an independent republic in 1902 following the Spanish-American War and US occupation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CU",
+    "year": 1959,
+    "title": "Cuban Revolution",
+    "description": "Fidel Castro's rebels overthrew Fulgencio Batista in January 1959, establishing a socialist government.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CU",
+    "year": 1962,
+    "title": "Cuban Missile Crisis",
+    "description": "The discovery of Soviet missiles in Cuba in October 1962 brought the world to the brink of nuclear war.",
+    "category": "military"
+  },
+  {
+    "countryCode": "DM",
+    "year": 1493,
+    "title": "Columbus Names Dominica",
+    "description": "Columbus sighted the island on a Sunday in November 1493 and named it Dominica after the Latin for Sunday.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "DM",
+    "year": 1763,
+    "title": "Ceded to Britain",
+    "description": "France ceded Dominica to Britain under the Treaty of Paris in 1763 after the Seven Years' War.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DM",
+    "year": 1834,
+    "title": "Abolition of Slavery",
+    "description": "Slavery was abolished in Dominica in 1834 as part of British emancipation across the empire.",
+    "category": "social"
+  },
+  {
+    "countryCode": "DM",
+    "year": 1978,
+    "title": "Independence from Britain",
+    "description": "Dominica became an independent republic within the Commonwealth on November 3, 1978.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DM",
+    "year": 1979,
+    "title": "Hurricane David Devastates",
+    "description": "Hurricane David struck in August 1979, killing dozens and destroying much of the island's housing and agriculture.",
+    "category": "social"
+  },
+  {
+    "countryCode": "DM",
+    "year": 1980,
+    "title": "Caribbean's First Female PM",
+    "description": "Eugenia Charles became prime minister in 1980, the first woman to lead a Caribbean nation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DO",
+    "year": 1492,
+    "title": "Columbus Lands on Hispaniola",
+    "description": "Columbus arrived on the island of Hispaniola in December 1492, establishing the first Spanish presence in the Americas.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "DO",
+    "year": 1496,
+    "title": "Founding of Santo Domingo",
+    "description": "Santo Domingo was founded in 1496, becoming the oldest continuously inhabited European city in the Americas.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DO",
+    "year": 1697,
+    "title": "Treaty of Ryswick",
+    "description": "Spain ceded the western third of Hispaniola to France in 1697, dividing the island that became Haiti and the Dominican Republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DO",
+    "year": 1844,
+    "title": "Independence from Haiti",
+    "description": "Juan Pablo Duarte and La Trinitaria led the proclamation of Dominican independence from Haiti on February 27, 1844.",
+    "category": "political"
+  },
+  {
+    "countryCode": "DO",
+    "year": 1865,
+    "title": "Restoration of Independence",
+    "description": "The War of Restoration ended Spanish recolonization, restoring Dominican sovereignty in 1865.",
+    "category": "military"
+  },
+  {
+    "countryCode": "DO",
+    "year": 1961,
+    "title": "Assassination of Trujillo",
+    "description": "Dictator Rafael Trujillo was assassinated in 1961, ending more than three decades of authoritarian rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SV",
+    "year": 600,
+    "title": "Joya de Cerén Buried",
+    "description": "A volcanic eruption around 600 CE buried the Maya farming village of Joya de Cerén, preserving daily life remarkably well.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "SV",
+    "year": 1525,
+    "title": "Spanish Conquest",
+    "description": "Pedro de Alvarado's forces conquered the region and the city of San Salvador was founded in the 1520s.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SV",
+    "year": 1821,
+    "title": "Independence from Spain",
+    "description": "El Salvador declared independence from Spain in 1821 along with the rest of Central America.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SV",
+    "year": 1841,
+    "title": "Sovereign Republic",
+    "description": "El Salvador became a fully independent republic in 1841 after the dissolution of the Central American Federation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SV",
+    "year": 1932,
+    "title": "La Matanza Massacre",
+    "description": "A peasant and indigenous uprising in 1932 was suppressed in a massacre that killed tens of thousands.",
+    "category": "social"
+  },
+  {
+    "countryCode": "SV",
+    "year": 1992,
+    "title": "Chapultepec Peace Accords",
+    "description": "The 1992 accords ended a brutal 12-year civil war between the government and the FMLN.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GD",
+    "year": 1498,
+    "title": "Columbus Sights Grenada",
+    "description": "Columbus sighted Grenada in 1498 during his third voyage to the Americas.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "GD",
+    "year": 1649,
+    "title": "French Settlement",
+    "description": "French colonists established a settlement on Grenada in 1649 after conflict with the indigenous Caribs.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GD",
+    "year": 1763,
+    "title": "Ceded to Britain",
+    "description": "Grenada was ceded to Britain under the Treaty of Paris in 1763.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GD",
+    "year": 1834,
+    "title": "Abolition of Slavery",
+    "description": "Slavery was abolished in Grenada in 1834 as part of British emancipation.",
+    "category": "social"
+  },
+  {
+    "countryCode": "GD",
+    "year": 1974,
+    "title": "Independence from Britain",
+    "description": "Grenada gained independence on February 7, 1974, with Eric Gairy as its first prime minister.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GD",
+    "year": 1983,
+    "title": "US-Led Invasion",
+    "description": "After a coup and the killing of PM Maurice Bishop, US-led forces invaded Grenada in October 1983.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GT",
+    "year": -1500,
+    "title": "Early Maya Civilization",
+    "description": "Maya culture began developing in the Guatemalan lowlands around 1500 BCE, laying foundations for later great cities.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "GT",
+    "year": 250,
+    "title": "Tikal Rises in the Petén",
+    "description": "The great Maya city of Tikal flourished during the Classic period, becoming a dominant political and cultural center.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "GT",
+    "year": 1524,
+    "title": "Spanish Conquest",
+    "description": "Pedro de Alvarado led the Spanish conquest of the Maya kingdoms in Guatemala beginning in 1524.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GT",
+    "year": 1821,
+    "title": "Independence from Spain",
+    "description": "Guatemala declared independence from Spain in 1821 and became the seat of the Central American Federation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GT",
+    "year": 1944,
+    "title": "October Revolution",
+    "description": "The 1944 revolution overthrew dictator Jorge Ubico and ushered in a decade of democratic reform.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GT",
+    "year": 1960,
+    "title": "Civil War Begins",
+    "description": "A 36-year civil war began in 1960, causing massive loss of life before peace accords were signed in 1996.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GT",
+    "year": 1996,
+    "title": "Peace Accords Signed",
+    "description": "The 1996 peace accords ended decades of civil war between the government and leftist guerrillas.",
+    "category": "political"
+  }
+]

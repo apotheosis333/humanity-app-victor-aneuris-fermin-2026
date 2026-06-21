@@ -1,0 +1,779 @@
+[
+  {
+    "countryCode": "HU",
+    "year": 9,
+    "title": "Romans Establish Pannonia",
+    "description": "Rome conquered the region west of the Danube, organizing it as the province of Pannonia, which included much of present-day western Hungary.",
+    "category": "military"
+  },
+  {
+    "countryCode": "HU",
+    "year": 895,
+    "title": "Magyar Conquest of the Carpathian Basin",
+    "description": "Led by Árpád, the Magyar tribes settled the Carpathian Basin, an event traditionally remembered as the Hungarian homeland-taking (honfoglalás).",
+    "category": "political"
+  },
+  {
+    "countryCode": "HU",
+    "year": 1000,
+    "title": "Coronation of Saint Stephen I",
+    "description": "Stephen I was crowned the first Christian king of Hungary, founding the kingdom and establishing the Catholic Church across the realm.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "HU",
+    "year": 1526,
+    "title": "Battle of Mohács",
+    "description": "The Ottoman Empire crushed the Hungarian army and killed King Louis II, leading to the partition of Hungary and over a century of Ottoman rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "HU",
+    "year": 1867,
+    "title": "Austro-Hungarian Compromise",
+    "description": "The Ausgleich created the dual monarchy of Austria-Hungary, granting Hungary self-government within the Habsburg empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HU",
+    "year": 1920,
+    "title": "Treaty of Trianon",
+    "description": "Following World War I, Hungary lost about two-thirds of its territory and population, reshaping the modern Hungarian state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HU",
+    "year": 1956,
+    "title": "Hungarian Revolution",
+    "description": "A nationwide uprising against Soviet-imposed communist rule was crushed by Soviet forces, becoming a symbol of resistance to oppression.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HU",
+    "year": 2004,
+    "title": "Hungary Joins the European Union",
+    "description": "Hungary became a member of the European Union, integrating with Western European political and economic institutions.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "IS",
+    "year": 874,
+    "title": "Norse Settlement of Iceland",
+    "description": "Ingólfr Arnarson is traditionally credited as the first permanent Norse settler, founding what became Reykjavík.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "IS",
+    "year": 930,
+    "title": "Founding of the Althing",
+    "description": "Icelanders established the Althing at Þingvellir, one of the world's oldest surviving parliamentary institutions.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IS",
+    "year": 1000,
+    "title": "Adoption of Christianity",
+    "description": "The Althing peacefully agreed that Iceland would convert to Christianity, avoiding civil conflict between pagans and Christians.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "IS",
+    "year": 1262,
+    "title": "Old Covenant with Norway",
+    "description": "Iceland accepted the rule of the Norwegian crown through the Gamli sáttmáli, ending the Commonwealth period.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IS",
+    "year": 1944,
+    "title": "Republic of Iceland Founded",
+    "description": "Iceland formally declared independence from Denmark and established a republic during World War II.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IS",
+    "year": 1980,
+    "title": "Vigdís Finnbogadóttir Elected President",
+    "description": "Vigdís became the world's first democratically directly elected female head of state.",
+    "category": "social"
+  },
+  {
+    "countryCode": "IS",
+    "year": 2008,
+    "title": "Icelandic Financial Crisis",
+    "description": "The collapse of Iceland's major banks triggered a severe economic crisis and sweeping reforms.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "IE",
+    "year": -3200,
+    "title": "Construction of Newgrange",
+    "description": "The Neolithic passage tomb at Newgrange was built, predating the Egyptian pyramids and aligned with the winter solstice.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "IE",
+    "year": 432,
+    "title": "Mission of Saint Patrick",
+    "description": "Saint Patrick is traditionally said to have begun his Christian mission in Ireland, spreading Christianity across the island.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "IE",
+    "year": 1169,
+    "title": "Norman Invasion of Ireland",
+    "description": "Anglo-Norman forces landed in Ireland, beginning centuries of English involvement and rule on the island.",
+    "category": "military"
+  },
+  {
+    "countryCode": "IE",
+    "year": 1845,
+    "title": "Great Famine Begins",
+    "description": "Potato blight caused a catastrophic famine that killed roughly a million people and drove mass emigration.",
+    "category": "social"
+  },
+  {
+    "countryCode": "IE",
+    "year": 1916,
+    "title": "Easter Rising",
+    "description": "Irish republicans staged an armed rebellion against British rule in Dublin, a pivotal moment toward independence.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IE",
+    "year": 1922,
+    "title": "Irish Free State Established",
+    "description": "The Anglo-Irish Treaty created the Irish Free State, granting most of Ireland self-government as a dominion.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IE",
+    "year": 1973,
+    "title": "Ireland Joins the EEC",
+    "description": "Ireland became a member of the European Economic Community, transforming its economy and society.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "IE",
+    "year": 1998,
+    "title": "Good Friday Agreement",
+    "description": "A landmark peace accord largely ended the Troubles in Northern Ireland and established power-sharing institutions.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IT",
+    "year": -753,
+    "title": "Traditional Founding of Rome",
+    "description": "Tradition dates the founding of the city of Rome to this year, attributed to Romulus, beginning Roman history.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IT",
+    "year": -27,
+    "title": "Roman Empire Established",
+    "description": "Augustus became the first Roman emperor, transforming the Republic into the Roman Empire that dominated the Mediterranean.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IT",
+    "year": 476,
+    "title": "Fall of the Western Roman Empire",
+    "description": "The deposition of Romulus Augustulus by Odoacer is commonly marked as the end of the Western Roman Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IT",
+    "year": 1300,
+    "title": "Flourishing of the Renaissance",
+    "description": "Italian city-states like Florence became cradles of the Renaissance, producing figures such as Dante, Leonardo, and Michelangelo.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "IT",
+    "year": 1861,
+    "title": "Unification of Italy",
+    "description": "The Kingdom of Italy was proclaimed under Victor Emmanuel II, uniting most of the peninsula into a single state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IT",
+    "year": 1922,
+    "title": "Mussolini's March on Rome",
+    "description": "Benito Mussolini seized power, establishing a Fascist dictatorship that lasted until World War II.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IT",
+    "year": 1946,
+    "title": "Italy Becomes a Republic",
+    "description": "Italians voted in a referendum to abolish the monarchy and establish the Italian Republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "IT",
+    "year": 1957,
+    "title": "Treaty of Rome Signed",
+    "description": "Italy was a founding signatory of the Treaty of Rome, which created the European Economic Community.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "XK",
+    "year": 1389,
+    "title": "Battle of Kosovo",
+    "description": "Serbian and Ottoman forces clashed at the Field of Blackbirds, a battle that became central to regional historical memory.",
+    "category": "military"
+  },
+  {
+    "countryCode": "XK",
+    "year": 1455,
+    "title": "Ottoman Rule Established",
+    "description": "Kosovo was incorporated into the Ottoman Empire, beginning centuries of Ottoman administration and Islamic influence.",
+    "category": "political"
+  },
+  {
+    "countryCode": "XK",
+    "year": 1912,
+    "title": "End of Ottoman Rule",
+    "description": "The Balkan Wars ended Ottoman control of Kosovo, which was incorporated into Serbia and later Yugoslavia.",
+    "category": "military"
+  },
+  {
+    "countryCode": "XK",
+    "year": 1989,
+    "title": "Autonomy Revoked",
+    "description": "Serbian authorities under Slobodan Milošević stripped Kosovo of its autonomy, escalating ethnic tensions.",
+    "category": "political"
+  },
+  {
+    "countryCode": "XK",
+    "year": 1999,
+    "title": "Kosovo War and NATO Intervention",
+    "description": "NATO's air campaign ended the conflict, and Kosovo was placed under United Nations administration.",
+    "category": "military"
+  },
+  {
+    "countryCode": "XK",
+    "year": 2008,
+    "title": "Declaration of Independence",
+    "description": "Kosovo declared independence from Serbia, becoming the youngest country in Europe to do so.",
+    "category": "political"
+  },
+  {
+    "countryCode": "XK",
+    "year": 2016,
+    "title": "Stabilisation Agreement with EU",
+    "description": "A Stabilisation and Association Agreement with the European Union entered into force, deepening ties with Europe.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "LV",
+    "year": 1201,
+    "title": "Founding of Riga",
+    "description": "Bishop Albert founded Riga, which became a key Baltic trading city and later joined the Hanseatic League.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "LV",
+    "year": 1282,
+    "title": "Riga Joins the Hanseatic League",
+    "description": "Riga became a member of the Hanseatic League, growing into a major commercial hub on the Baltic Sea.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "LV",
+    "year": 1721,
+    "title": "Incorporation into Russian Empire",
+    "description": "After the Great Northern War, Livonia including Riga passed to the Russian Empire under the Treaty of Nystad.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LV",
+    "year": 1918,
+    "title": "Latvia Declares Independence",
+    "description": "Latvia proclaimed its independence, establishing a sovereign republic after the collapse of empires in World War I.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LV",
+    "year": 1940,
+    "title": "Soviet Occupation",
+    "description": "The Soviet Union occupied and annexed Latvia, beginning decades of foreign rule interrupted by Nazi occupation.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LV",
+    "year": 1991,
+    "title": "Restoration of Independence",
+    "description": "Latvia restored its independence amid the dissolution of the Soviet Union.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LV",
+    "year": 2004,
+    "title": "Latvia Joins EU and NATO",
+    "description": "Latvia became a member of both the European Union and NATO, anchoring itself in Western institutions.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LI",
+    "year": 1719,
+    "title": "Principality of Liechtenstein Created",
+    "description": "Emperor Charles VI united the lordships of Schellenberg and Vaduz into the Principality of Liechtenstein.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LI",
+    "year": 1806,
+    "title": "Sovereignty under Napoleon",
+    "description": "Liechtenstein gained sovereignty as a member of the Napoleonic Confederation of the Rhine.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LI",
+    "year": 1866,
+    "title": "Full Independence",
+    "description": "With the dissolution of the German Confederation, Liechtenstein became fully independent and later disbanded its army.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LI",
+    "year": 1923,
+    "title": "Customs Union with Switzerland",
+    "description": "Liechtenstein formed a customs and monetary union with Switzerland, adopting the Swiss franc.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "LI",
+    "year": 1984,
+    "title": "Women Gain the Vote",
+    "description": "Liechtenstein granted women the right to vote in national elections following a referendum.",
+    "category": "social"
+  },
+  {
+    "countryCode": "LI",
+    "year": 1990,
+    "title": "Joins the United Nations",
+    "description": "Liechtenstein became a member of the United Nations, expanding its international engagement.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LT",
+    "year": 1253,
+    "title": "Coronation of King Mindaugas",
+    "description": "Mindaugas was crowned the first and only King of Lithuania, uniting the Lithuanian lands into a Christian kingdom.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LT",
+    "year": 1410,
+    "title": "Battle of Grunwald",
+    "description": "Polish-Lithuanian forces decisively defeated the Teutonic Knights, one of medieval Europe's largest battles.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LT",
+    "year": 1569,
+    "title": "Union of Lublin",
+    "description": "Lithuania and Poland formed the Polish-Lithuanian Commonwealth, a major European power for over two centuries.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LT",
+    "year": 1795,
+    "title": "Annexation by Russian Empire",
+    "description": "The third partition of the Commonwealth brought most of Lithuania under Russian imperial rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LT",
+    "year": 1918,
+    "title": "Restoration of Independence",
+    "description": "Lithuania declared the re-establishment of its independent state with the Act of February 16.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LT",
+    "year": 1990,
+    "title": "First to Break from USSR",
+    "description": "Lithuania became the first Soviet republic to declare the restoration of its independence from the Soviet Union.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LT",
+    "year": 2004,
+    "title": "Joins EU and NATO",
+    "description": "Lithuania joined the European Union and NATO, completing its integration with the West.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LU",
+    "year": 963,
+    "title": "Founding of Luxembourg",
+    "description": "Count Siegfried acquired the rock of Lucilinburhuc, around which the city and county of Luxembourg grew.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LU",
+    "year": 1354,
+    "title": "Elevated to a Duchy",
+    "description": "Luxembourg was raised to the status of a duchy under Emperor Charles IV of the House of Luxembourg.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LU",
+    "year": 1815,
+    "title": "Grand Duchy Created",
+    "description": "The Congress of Vienna established Luxembourg as a Grand Duchy in personal union with the Netherlands.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LU",
+    "year": 1867,
+    "title": "Treaty of London Guarantees Neutrality",
+    "description": "The Treaty of London affirmed Luxembourg's independence and neutrality, ordering the dismantling of its fortress.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LU",
+    "year": 1890,
+    "title": "Own Ruling Dynasty",
+    "description": "Luxembourg gained its own ruling house when the crown passed to the House of Nassau-Weilburg, ending union with the Netherlands.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LU",
+    "year": 1951,
+    "title": "Founding Member of European Community",
+    "description": "Luxembourg helped found the European Coal and Steel Community, becoming a core builder of the European Union.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "LU",
+    "year": 1995,
+    "title": "Schengen Agreement Namesake",
+    "description": "The Schengen Agreement, signed in Luxembourg's village of Schengen in 1985, came into force abolishing internal border checks.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MT",
+    "year": -3600,
+    "title": "Megalithic Temples Built",
+    "description": "Malta's prehistoric temples such as Ġgantija were constructed, among the oldest free-standing structures in the world.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "MT",
+    "year": 60,
+    "title": "Shipwreck of Saint Paul",
+    "description": "According to tradition, the Apostle Paul was shipwrecked on Malta, introducing Christianity to the islands.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "MT",
+    "year": 1530,
+    "title": "Knights of St John Arrive",
+    "description": "The Knights Hospitaller were granted Malta by Emperor Charles V, ruling and fortifying the islands for centuries.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MT",
+    "year": 1565,
+    "title": "Great Siege of Malta",
+    "description": "The Knights and Maltese repelled a massive Ottoman invasion, a celebrated victory in Mediterranean history.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MT",
+    "year": 1800,
+    "title": "British Take Control",
+    "description": "Malta came under British control after Maltese rebels and British forces expelled Napoleon's garrison.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MT",
+    "year": 1942,
+    "title": "George Cross Awarded",
+    "description": "Malta was awarded the George Cross for its endurance under heavy Axis bombardment in World War II.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MT",
+    "year": 1964,
+    "title": "Malta Gains Independence",
+    "description": "Malta became an independent state within the Commonwealth, later becoming a republic in 1974.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MT",
+    "year": 2004,
+    "title": "Malta Joins the European Union",
+    "description": "Malta became a member of the European Union, the smallest member state by population at the time.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "MD",
+    "year": 1359,
+    "title": "Founding of the Principality of Moldavia",
+    "description": "The medieval Principality of Moldavia emerged under Bogdan I, becoming a significant power in the region.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MD",
+    "year": 1457,
+    "title": "Reign of Stephen the Great Begins",
+    "description": "Stephen the Great ruled Moldavia, defending it against the Ottomans and founding numerous churches and monasteries.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MD",
+    "year": 1812,
+    "title": "Bessarabia Ceded to Russia",
+    "description": "The Treaty of Bucharest transferred the eastern part of Moldavia, Bessarabia, to the Russian Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MD",
+    "year": 1918,
+    "title": "Union with Romania",
+    "description": "Bessarabia proclaimed union with Romania following the collapse of the Russian Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MD",
+    "year": 1940,
+    "title": "Soviet Annexation",
+    "description": "The Soviet Union annexed Bessarabia and created the Moldavian Soviet Socialist Republic.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MD",
+    "year": 1991,
+    "title": "Independence from Soviet Union",
+    "description": "Moldova declared independence amid the dissolution of the Soviet Union.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MD",
+    "year": 2014,
+    "title": "EU Association Agreement",
+    "description": "Moldova signed an Association Agreement with the European Union, deepening political and economic ties with Europe.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "MC",
+    "year": 1215,
+    "title": "Genoese Fortress Founded",
+    "description": "Genoa began building a fortress on the Rock of Monaco, marking the origin of the modern settlement.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MC",
+    "year": 1297,
+    "title": "Grimaldi Seizes Monaco",
+    "description": "François Grimaldi captured the fortress of Monaco, beginning the Grimaldi dynasty's enduring rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MC",
+    "year": 1612,
+    "title": "Title of Prince Adopted",
+    "description": "Honoré II took the title of Prince of Monaco, formalizing the principality's status.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MC",
+    "year": 1861,
+    "title": "Independence Recognized",
+    "description": "A treaty with France recognized Monaco's sovereignty while it ceded Menton and Roquebrune.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MC",
+    "year": 1863,
+    "title": "Monte Carlo Casino Opens",
+    "description": "The famous casino opened, helping transform Monaco into a renowned destination for tourism and gaming.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "MC",
+    "year": 1929,
+    "title": "First Monaco Grand Prix",
+    "description": "The inaugural Monaco Grand Prix was held, becoming one of the most prestigious motor races in the world.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "MC",
+    "year": 1993,
+    "title": "Monaco Joins the United Nations",
+    "description": "Monaco became a full member of the United Nations, affirming its place in the international community.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ME",
+    "year": 1042,
+    "title": "Battle of Bar and Duklja's Rise",
+    "description": "The Slavic state of Duklja, a forerunner of Montenegro, secured autonomy after defeating Byzantine forces.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ME",
+    "year": 1496,
+    "title": "Ottoman Pressure on Zeta",
+    "description": "The Crnojević rulers of Zeta lost their lowland holdings to the Ottomans, with resistance continuing in the mountains.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ME",
+    "year": 1516,
+    "title": "Prince-Bishopric Established",
+    "description": "Montenegro became a theocratic prince-bishopric (vladika), blending religious and political leadership.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "ME",
+    "year": 1878,
+    "title": "Independence Recognized",
+    "description": "The Congress of Berlin formally recognized Montenegro's independence after centuries of resistance to Ottoman rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ME",
+    "year": 1910,
+    "title": "Kingdom of Montenegro Proclaimed",
+    "description": "Prince Nicholas I declared Montenegro a kingdom, elevating his title to king.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ME",
+    "year": 1918,
+    "title": "Union with Yugoslavia",
+    "description": "Montenegro joined the newly formed Kingdom of Serbs, Croats and Slovenes, later Yugoslavia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ME",
+    "year": 2006,
+    "title": "Restoration of Independence",
+    "description": "Montenegrins voted in a referendum to restore independence, peacefully separating from Serbia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ME",
+    "year": 2017,
+    "title": "Montenegro Joins NATO",
+    "description": "Montenegro became a member of NATO, marking a major step in its Euro-Atlantic integration.",
+    "category": "military"
+  },
+  {
+    "countryCode": "NL",
+    "year": -57,
+    "title": "Roman Conquest of the Low Countries",
+    "description": "Julius Caesar's campaigns brought the southern Low Countries under Roman control during the Gallic Wars.",
+    "category": "military"
+  },
+  {
+    "countryCode": "NL",
+    "year": 1581,
+    "title": "Act of Abjuration",
+    "description": "The northern provinces renounced allegiance to Spain's King Philip II, a foundational step toward Dutch independence.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NL",
+    "year": 1602,
+    "title": "Dutch East India Company Founded",
+    "description": "The VOC was established, becoming the world's first publicly traded company and a global trading power.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "NL",
+    "year": 1648,
+    "title": "Peace of Westphalia",
+    "description": "Spain formally recognized Dutch independence, ending the Eighty Years' War and confirming the Dutch Republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NL",
+    "year": 1648,
+    "title": "Dutch Golden Age",
+    "description": "The 17th century saw extraordinary Dutch achievements in trade, science, and art, including Rembrandt and Vermeer.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "NL",
+    "year": 1815,
+    "title": "Kingdom of the Netherlands Founded",
+    "description": "Following Napoleon's defeat, the Congress of Vienna established the Kingdom of the Netherlands under the House of Orange.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NL",
+    "year": 1944,
+    "title": "Hunger Winter",
+    "description": "A severe famine struck the Nazi-occupied western Netherlands during the final winter of World War II.",
+    "category": "social"
+  },
+  {
+    "countryCode": "NL",
+    "year": 2001,
+    "title": "First Country to Legalize Same-Sex Marriage",
+    "description": "The Netherlands became the first nation in the world to legalize same-sex marriage.",
+    "category": "social"
+  },
+  {
+    "countryCode": "MK",
+    "year": -808,
+    "title": "Rise of the Ancient Macedonian Kingdom",
+    "description": "The ancient kingdom of Macedon emerged in the region, later becoming a major power under Philip II and Alexander the Great.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MK",
+    "year": -148,
+    "title": "Roman Province of Macedonia",
+    "description": "Rome organized Macedonia as a province after defeating the Macedonian kingdom, integrating it into the empire.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MK",
+    "year": 886,
+    "title": "Ohrid Literary School",
+    "description": "Saints Clement and Naum established a major center of Slavic literacy and learning at Ohrid, spreading Christianity and writing.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "MK",
+    "year": 1903,
+    "title": "Ilinden Uprising",
+    "description": "Revolutionaries rose against Ottoman rule and briefly proclaimed the Kruševo Republic, a key event in national memory.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MK",
+    "year": 1944,
+    "title": "Founding of Macedonian Republic in Yugoslavia",
+    "description": "A Macedonian republic was established within socialist Yugoslavia, recognizing a distinct Macedonian nationhood.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MK",
+    "year": 1991,
+    "title": "Independence from Yugoslavia",
+    "description": "Macedonia peacefully declared independence following a referendum as Yugoslavia dissolved.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MK",
+    "year": 2019,
+    "title": "Renamed North Macedonia",
+    "description": "Under the Prespa Agreement with Greece, the country was renamed North Macedonia, resolving a long-running dispute.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MK",
+    "year": 2020,
+    "title": "North Macedonia Joins NATO",
+    "description": "North Macedonia became a member of NATO after settling its name dispute with Greece.",
+    "category": "military"
+  }
+]

@@ -1,0 +1,541 @@
+[
+  {
+    "countryCode": "HT",
+    "year": 1492,
+    "title": "Columbus lands on Hispaniola",
+    "description": "Christopher Columbus reached the island of Hispaniola, beginning European contact with the territory that would become Haiti.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "HT",
+    "year": 1697,
+    "title": "France gains western Hispaniola",
+    "description": "Under the Treaty of Ryswick, Spain ceded the western third of Hispaniola to France, creating the colony of Saint-Domingue.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HT",
+    "year": 1791,
+    "title": "Haitian Revolution begins",
+    "description": "Enslaved Africans launched a massive uprising against French rule, igniting the only successful large-scale slave revolt in history.",
+    "category": "military"
+  },
+  {
+    "countryCode": "HT",
+    "year": 1804,
+    "title": "Haiti declares independence",
+    "description": "Haiti proclaimed independence from France, becoming the first independent Black republic and the first nation born of a slave revolt.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HT",
+    "year": 1825,
+    "title": "France imposes independence indemnity",
+    "description": "France recognized Haiti's independence only in exchange for a crippling indemnity payment, burdening the new nation with decades of debt.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "HT",
+    "year": 1915,
+    "title": "United States occupation begins",
+    "description": "U.S. Marines landed in Haiti, beginning a military occupation that would last nearly two decades.",
+    "category": "military"
+  },
+  {
+    "countryCode": "HT",
+    "year": 1934,
+    "title": "End of U.S. occupation",
+    "description": "American forces withdrew, restoring Haitian sovereignty after nineteen years of occupation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HT",
+    "year": 2010,
+    "title": "Catastrophic earthquake",
+    "description": "A magnitude 7.0 earthquake struck near Port-au-Prince, killing over 200,000 people and devastating the capital.",
+    "category": "social"
+  },
+  {
+    "countryCode": "HN",
+    "year": 426,
+    "title": "Copán dynasty founded",
+    "description": "K'inich Yax K'uk' Mo' founded the Maya dynasty at Copán, which became a major center of Classic Maya art and science.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "HN",
+    "year": 1502,
+    "title": "Columbus reaches Honduras",
+    "description": "On his fourth voyage, Columbus reached the Caribbean coast of Honduras, the first European to do so.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "HN",
+    "year": 1524,
+    "title": "Spanish conquest begins",
+    "description": "Spanish forces under Cristóbal de Olid and others began the conquest and colonization of Honduras.",
+    "category": "military"
+  },
+  {
+    "countryCode": "HN",
+    "year": 1821,
+    "title": "Independence from Spain",
+    "description": "Honduras declared independence from Spain alongside the other Central American provinces.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HN",
+    "year": 1838,
+    "title": "Honduras becomes a sovereign republic",
+    "description": "Honduras seceded from the United Provinces of Central America to become a fully independent republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "HN",
+    "year": 1998,
+    "title": "Hurricane Mitch devastates Honduras",
+    "description": "One of the deadliest Atlantic hurricanes killed thousands and destroyed much of the country's infrastructure.",
+    "category": "social"
+  },
+  {
+    "countryCode": "HN",
+    "year": 2009,
+    "title": "Coup ousts President Zelaya",
+    "description": "President Manuel Zelaya was removed from office and expelled from the country in a coup d'état, triggering a political crisis.",
+    "category": "political"
+  },
+  {
+    "countryCode": "JM",
+    "year": 1494,
+    "title": "Columbus arrives in Jamaica",
+    "description": "Christopher Columbus landed on Jamaica during his second voyage, claiming the island for Spain.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "JM",
+    "year": 1655,
+    "title": "England seizes Jamaica from Spain",
+    "description": "English forces captured Jamaica, beginning more than three centuries of British colonial rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "JM",
+    "year": 1692,
+    "title": "Port Royal earthquake",
+    "description": "A devastating earthquake and tsunami sank much of Port Royal, then one of the busiest ports in the Caribbean.",
+    "category": "social"
+  },
+  {
+    "countryCode": "JM",
+    "year": 1834,
+    "title": "Abolition of slavery",
+    "description": "Britain abolished slavery across its empire, beginning emancipation for Jamaica's enslaved population.",
+    "category": "social"
+  },
+  {
+    "countryCode": "JM",
+    "year": 1962,
+    "title": "Independence from Britain",
+    "description": "Jamaica gained full independence from the United Kingdom, becoming a sovereign nation within the Commonwealth.",
+    "category": "political"
+  },
+  {
+    "countryCode": "JM",
+    "year": 1981,
+    "title": "Bob Marley and reggae's global rise",
+    "description": "The death of Bob Marley marked the global ascent of Jamaican reggae, one of the island's most influential cultural exports.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "JM",
+    "year": 2008,
+    "title": "Usain Bolt's Olympic triumph",
+    "description": "Sprinter Usain Bolt won triple gold at the Beijing Olympics, setting world records and elevating Jamaica's sporting prestige.",
+    "category": "social"
+  },
+  {
+    "countryCode": "MX",
+    "year": -1200,
+    "title": "Olmec civilization flourishes",
+    "description": "The Olmec, considered the mother culture of Mesoamerica, built early cities such as San Lorenzo and carved colossal stone heads.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "MX",
+    "year": 100,
+    "title": "Rise of Teotihuacan",
+    "description": "Teotihuacan grew into one of the largest cities of the ancient world, home to the great Pyramids of the Sun and Moon.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "MX",
+    "year": 1325,
+    "title": "Founding of Tenochtitlan",
+    "description": "The Mexica (Aztecs) founded Tenochtitlan on an island in Lake Texcoco, the future capital of a powerful empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MX",
+    "year": 1521,
+    "title": "Fall of the Aztec Empire",
+    "description": "Spanish forces led by Hernán Cortés, with Indigenous allies, conquered Tenochtitlan, ending the Aztec Empire.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MX",
+    "year": 1810,
+    "title": "War of Independence begins",
+    "description": "Father Miguel Hidalgo's Grito de Dolores launched Mexico's war of independence against Spanish colonial rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "MX",
+    "year": 1821,
+    "title": "Independence from Spain achieved",
+    "description": "Mexico secured its independence from Spain, ending three centuries of colonial rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "MX",
+    "year": 1910,
+    "title": "Mexican Revolution begins",
+    "description": "A decade-long revolution erupted against the Díaz dictatorship, reshaping Mexican society, land rights, and government.",
+    "category": "social"
+  },
+  {
+    "countryCode": "MX",
+    "year": 1994,
+    "title": "NAFTA takes effect",
+    "description": "The North American Free Trade Agreement opened Mexico's economy to free trade with the United States and Canada.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "NI",
+    "year": 1502,
+    "title": "Columbus reaches the coast",
+    "description": "Christopher Columbus sailed along the Caribbean coast of Nicaragua during his fourth voyage.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "NI",
+    "year": 1524,
+    "title": "Spanish found Granada and León",
+    "description": "Francisco Hernández de Córdoba established the cities of Granada and León, among the oldest colonial cities in the Americas.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NI",
+    "year": 1821,
+    "title": "Independence from Spain",
+    "description": "Nicaragua declared independence from Spain as part of the broader Central American emancipation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NI",
+    "year": 1856,
+    "title": "Defeat of William Walker",
+    "description": "Central American forces defeated American filibuster William Walker, who had seized power and declared himself president of Nicaragua.",
+    "category": "military"
+  },
+  {
+    "countryCode": "NI",
+    "year": 1912,
+    "title": "United States occupation",
+    "description": "U.S. Marines occupied Nicaragua to protect American interests, beginning years of intervention in the country's affairs.",
+    "category": "military"
+  },
+  {
+    "countryCode": "NI",
+    "year": 1979,
+    "title": "Sandinista Revolution",
+    "description": "The Sandinista National Liberation Front overthrew the Somoza dictatorship, ending decades of dynastic rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NI",
+    "year": 1990,
+    "title": "Democratic election ends civil war",
+    "description": "Violeta Chamorro won the presidency in free elections, helping bring the Contra war to a close.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PA",
+    "year": 1513,
+    "title": "Balboa reaches the Pacific",
+    "description": "Vasco Núñez de Balboa crossed the Isthmus of Panama and became the first European to sight the Pacific Ocean from the Americas.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "PA",
+    "year": 1519,
+    "title": "Founding of Panama City",
+    "description": "The Spanish founded Panama City, which became a key hub for trade and the transport of treasure across the isthmus.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PA",
+    "year": 1821,
+    "title": "Independence from Spain",
+    "description": "Panama declared independence from Spain and voluntarily joined Simón Bolívar's Gran Colombia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PA",
+    "year": 1903,
+    "title": "Independence from Colombia",
+    "description": "Panama separated from Colombia with U.S. support, paving the way for construction of the interoceanic canal.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PA",
+    "year": 1914,
+    "title": "Panama Canal opens",
+    "description": "The Panama Canal opened, linking the Atlantic and Pacific Oceans and transforming global maritime trade.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "PA",
+    "year": 1989,
+    "title": "U.S. invasion ousts Noriega",
+    "description": "The United States invaded Panama and removed military leader Manuel Noriega from power.",
+    "category": "military"
+  },
+  {
+    "countryCode": "PA",
+    "year": 1999,
+    "title": "Canal handed over to Panama",
+    "description": "The United States transferred full control of the Panama Canal to Panama under the Torrijos-Carter Treaties.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KN",
+    "year": 1493,
+    "title": "Columbus sights the islands",
+    "description": "Christopher Columbus sighted the islands of Saint Kitts and Nevis during his second voyage.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "KN",
+    "year": 1623,
+    "title": "First English Caribbean colony",
+    "description": "English settlers established Saint Kitts as the first English colony in the Caribbean, a base for further expansion.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KN",
+    "year": 1783,
+    "title": "Treaty of Paris confirms British rule",
+    "description": "The Treaty of Paris ended Anglo-French rivalry over the islands, securing them firmly under British control.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KN",
+    "year": 1834,
+    "title": "Abolition of slavery",
+    "description": "Slavery was abolished across the British Empire, beginning emancipation on the sugar plantations of Saint Kitts and Nevis.",
+    "category": "social"
+  },
+  {
+    "countryCode": "KN",
+    "year": 1967,
+    "title": "Associated statehood with Britain",
+    "description": "Saint Kitts and Nevis gained internal self-government as an associated state of the United Kingdom.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KN",
+    "year": 1983,
+    "title": "Independence from Britain",
+    "description": "Saint Kitts and Nevis became fully independent, the youngest sovereign nation in the Americas.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LC",
+    "year": 1605,
+    "title": "Early English settlement attempt",
+    "description": "Shipwrecked English colonists made an early attempt to settle Saint Lucia but were driven off by the Indigenous Kalinago.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "LC",
+    "year": 1650,
+    "title": "French establish a colony",
+    "description": "The French established a lasting settlement on Saint Lucia, beginning long colonial rivalry with Britain over the island.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LC",
+    "year": 1814,
+    "title": "Britain gains permanent control",
+    "description": "The Treaty of Paris confirmed British possession of Saint Lucia after the island had changed hands many times.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LC",
+    "year": 1834,
+    "title": "Abolition of slavery",
+    "description": "Britain's abolition of slavery began emancipation for the enslaved people of Saint Lucia.",
+    "category": "social"
+  },
+  {
+    "countryCode": "LC",
+    "year": 1979,
+    "title": "Independence from Britain",
+    "description": "Saint Lucia gained full independence from the United Kingdom, remaining within the Commonwealth.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LC",
+    "year": 1992,
+    "title": "Derek Walcott wins Nobel Prize",
+    "description": "Saint Lucian poet Derek Walcott was awarded the Nobel Prize in Literature, a landmark for Caribbean culture.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "VC",
+    "year": 1498,
+    "title": "Columbus sights Saint Vincent",
+    "description": "Christopher Columbus is said to have sighted Saint Vincent during his third voyage to the Americas.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "VC",
+    "year": 1763,
+    "title": "Island ceded to Britain",
+    "description": "The Treaty of Paris ceded Saint Vincent to Britain, intensifying European settlement and conflict with the Indigenous people.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VC",
+    "year": 1795,
+    "title": "Second Carib War",
+    "description": "The Garifuna (Black Caribs) fought British forces; their defeat led to the deportation of thousands from the island.",
+    "category": "military"
+  },
+  {
+    "countryCode": "VC",
+    "year": 1834,
+    "title": "Abolition of slavery",
+    "description": "Slavery was abolished across the British Empire, beginning emancipation in Saint Vincent and the Grenadines.",
+    "category": "social"
+  },
+  {
+    "countryCode": "VC",
+    "year": 1979,
+    "title": "Independence from Britain",
+    "description": "Saint Vincent and the Grenadines became an independent nation within the Commonwealth.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VC",
+    "year": 2021,
+    "title": "La Soufrière volcano erupts",
+    "description": "The La Soufrière volcano erupted explosively, forcing the evacuation of thousands of residents from the north of the island.",
+    "category": "social"
+  },
+  {
+    "countryCode": "TT",
+    "year": 1498,
+    "title": "Columbus reaches Trinidad",
+    "description": "Christopher Columbus arrived at Trinidad during his third voyage, naming the island for the Holy Trinity.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "TT",
+    "year": 1797,
+    "title": "Britain captures Trinidad",
+    "description": "British forces captured Trinidad from Spain, later adding Tobago to form a single colony.",
+    "category": "military"
+  },
+  {
+    "countryCode": "TT",
+    "year": 1834,
+    "title": "Abolition of slavery",
+    "description": "Britain abolished slavery, beginning emancipation for the enslaved Africans on Trinidad's plantations.",
+    "category": "social"
+  },
+  {
+    "countryCode": "TT",
+    "year": 1845,
+    "title": "Indian indentured laborers arrive",
+    "description": "The first ship of indentured workers from India arrived, profoundly shaping Trinidad's population and culture.",
+    "category": "social"
+  },
+  {
+    "countryCode": "TT",
+    "year": 1939,
+    "title": "Invention of the steelpan",
+    "description": "The steelpan, the only acoustic instrument invented in the 20th century, emerged from Trinidad's working-class communities.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "TT",
+    "year": 1962,
+    "title": "Independence from Britain",
+    "description": "Trinidad and Tobago gained independence from the United Kingdom, becoming a sovereign nation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "TT",
+    "year": 1976,
+    "title": "Trinidad and Tobago becomes a republic",
+    "description": "The nation adopted a republican constitution, replacing the British monarch with a president as head of state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "US",
+    "year": 1607,
+    "title": "Founding of Jamestown",
+    "description": "English settlers established Jamestown in Virginia, the first permanent English colony in North America.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "US",
+    "year": 1776,
+    "title": "Declaration of Independence",
+    "description": "The thirteen American colonies declared independence from Great Britain, founding the United States.",
+    "category": "political"
+  },
+  {
+    "countryCode": "US",
+    "year": 1787,
+    "title": "U.S. Constitution drafted",
+    "description": "Delegates drafted the Constitution, establishing the framework of the federal government still in use today.",
+    "category": "political"
+  },
+  {
+    "countryCode": "US",
+    "year": 1861,
+    "title": "Civil War begins",
+    "description": "The American Civil War erupted between the Union and the Confederacy, largely over slavery and states' rights.",
+    "category": "military"
+  },
+  {
+    "countryCode": "US",
+    "year": 1863,
+    "title": "Emancipation Proclamation",
+    "description": "President Lincoln declared enslaved people in Confederate states to be free, a turning point toward abolition.",
+    "category": "social"
+  },
+  {
+    "countryCode": "US",
+    "year": 1920,
+    "title": "Women win the right to vote",
+    "description": "The Nineteenth Amendment was ratified, guaranteeing American women the constitutional right to vote.",
+    "category": "social"
+  },
+  {
+    "countryCode": "US",
+    "year": 1964,
+    "title": "Civil Rights Act",
+    "description": "Landmark legislation outlawed discrimination based on race, color, religion, sex, or national origin.",
+    "category": "social"
+  },
+  {
+    "countryCode": "US",
+    "year": 1969,
+    "title": "Apollo 11 Moon landing",
+    "description": "NASA's Apollo 11 mission landed the first humans on the Moon, a milestone in science and exploration.",
+    "category": "scientific"
+  }
+]

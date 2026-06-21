@@ -1,0 +1,800 @@
+[
+  {
+    "countryCode": "NO",
+    "year": 793,
+    "title": "Viking Raid on Lindisfarne",
+    "description": "Norse raiders attacked the monastery of Lindisfarne in England, an event traditionally marking the start of the Viking Age.",
+    "category": "military"
+  },
+  {
+    "countryCode": "NO",
+    "year": 872,
+    "title": "Unification under Harald Fairhair",
+    "description": "Harald Fairhair won the Battle of Hafrsfjord, traditionally credited with unifying Norway into a single kingdom.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NO",
+    "year": 1000,
+    "title": "Christianization of Norway",
+    "description": "Around the turn of the millennium, kings such as Olav Tryggvason and later Olav Haraldsson promoted the conversion of Norway to Christianity.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "NO",
+    "year": 1397,
+    "title": "Kalmar Union Formed",
+    "description": "Norway joined Denmark and Sweden under a single monarch in the Kalmar Union, beginning centuries of union with neighbors.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NO",
+    "year": 1814,
+    "title": "Norwegian Constitution Signed",
+    "description": "Norway adopted its constitution at Eidsvoll on 17 May, asserting independence before entering a union with Sweden.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NO",
+    "year": 1905,
+    "title": "Independence from Sweden",
+    "description": "Norway peacefully dissolved its union with Sweden and became a fully sovereign kingdom under Haakon VII.",
+    "category": "political"
+  },
+  {
+    "countryCode": "NO",
+    "year": 1969,
+    "title": "North Sea Oil Discovered",
+    "description": "The Ekofisk field discovery launched Norway's petroleum industry, transforming it into one of the world's wealthiest nations.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "PL",
+    "year": 966,
+    "title": "Baptism of Mieszko I",
+    "description": "Duke Mieszko I adopted Christianity, an event regarded as the founding moment of the Polish state.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "PL",
+    "year": 1025,
+    "title": "Coronation of Bolesław I",
+    "description": "Bolesław I the Brave was crowned the first King of Poland, elevating the duchy to a kingdom.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PL",
+    "year": 1410,
+    "title": "Battle of Grunwald",
+    "description": "Polish-Lithuanian forces decisively defeated the Teutonic Knights, one of the largest battles of medieval Europe.",
+    "category": "military"
+  },
+  {
+    "countryCode": "PL",
+    "year": 1569,
+    "title": "Union of Lublin",
+    "description": "Poland and Lithuania formed the Polish-Lithuanian Commonwealth, creating one of Europe's largest states.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PL",
+    "year": 1795,
+    "title": "Third Partition of Poland",
+    "description": "Russia, Prussia, and Austria completed the partitions, erasing Poland from the map for 123 years.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PL",
+    "year": 1918,
+    "title": "Poland Regains Independence",
+    "description": "After World War I, Poland was reconstituted as a sovereign republic, ending over a century of partition.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PL",
+    "year": 1980,
+    "title": "Solidarity Movement Founded",
+    "description": "The Solidarity trade union emerged at the Gdańsk shipyard, becoming a key force against communist rule.",
+    "category": "social"
+  },
+  {
+    "countryCode": "PL",
+    "year": 2004,
+    "title": "Poland Joins the European Union",
+    "description": "Poland became a member of the European Union, deepening its integration with Western Europe.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PT",
+    "year": 1139,
+    "title": "Kingdom of Portugal Founded",
+    "description": "Afonso Henriques proclaimed himself King of Portugal after victory at the Battle of Ourique, establishing the kingdom.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PT",
+    "year": 1143,
+    "title": "Treaty of Zamora",
+    "description": "The Kingdom of León recognized Portuguese independence under Afonso Henriques in the Treaty of Zamora.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PT",
+    "year": 1415,
+    "title": "Capture of Ceuta",
+    "description": "Portugal seized the North African city of Ceuta, marking the beginning of the Portuguese Age of Discovery.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "PT",
+    "year": 1498,
+    "title": "Vasco da Gama Reaches India",
+    "description": "Vasco da Gama completed the first sea voyage from Europe to India, opening a maritime trade route.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "PT",
+    "year": 1755,
+    "title": "Great Lisbon Earthquake",
+    "description": "A devastating earthquake and tsunami destroyed much of Lisbon, profoundly affecting Portugal and Enlightenment thought.",
+    "category": "social"
+  },
+  {
+    "countryCode": "PT",
+    "year": 1910,
+    "title": "Proclamation of the Republic",
+    "description": "A revolution overthrew the monarchy and established the Portuguese First Republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PT",
+    "year": 1974,
+    "title": "Carnation Revolution",
+    "description": "A largely peaceful military coup ended the Estado Novo dictatorship and restored democracy to Portugal.",
+    "category": "political"
+  },
+  {
+    "countryCode": "PT",
+    "year": 1986,
+    "title": "Portugal Joins the EEC",
+    "description": "Portugal became a member of the European Economic Community, integrating with the broader European market.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "RO",
+    "year": -82,
+    "title": "Dacian Kingdom under Burebista",
+    "description": "Burebista unified the Dacian tribes into a powerful kingdom in the region of modern Romania.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RO",
+    "year": 106,
+    "title": "Roman Conquest of Dacia",
+    "description": "Emperor Trajan defeated the Dacians, making Dacia a Roman province and shaping Romania's Latin heritage.",
+    "category": "military"
+  },
+  {
+    "countryCode": "RO",
+    "year": 1600,
+    "title": "Union under Michael the Brave",
+    "description": "Michael the Brave briefly united Wallachia, Moldavia, and Transylvania, an enduring symbol of Romanian unity.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RO",
+    "year": 1859,
+    "title": "Union of the Principalities",
+    "description": "Wallachia and Moldavia united under Alexandru Ioan Cuza, forming the basis of modern Romania.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RO",
+    "year": 1877,
+    "title": "Romania Declares Independence",
+    "description": "Romania declared independence from the Ottoman Empire, internationally recognized after the Russo-Turkish War.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RO",
+    "year": 1918,
+    "title": "Great Union of Transylvania",
+    "description": "Transylvania, Bessarabia, and Bukovina united with the Kingdom of Romania, forming Greater Romania.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RO",
+    "year": 1989,
+    "title": "Romanian Revolution",
+    "description": "A popular uprising overthrew the communist regime of Nicolae Ceaușescu, ending decades of dictatorship.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RO",
+    "year": 2007,
+    "title": "Romania Joins the European Union",
+    "description": "Romania became a full member of the European Union, advancing its post-communist integration with Europe.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RU",
+    "year": 882,
+    "title": "Founding of Kievan Rus",
+    "description": "Oleg of Novgorod established Kiev as the capital, forming the medieval state of Kievan Rus.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RU",
+    "year": 988,
+    "title": "Christianization of Rus",
+    "description": "Vladimir the Great adopted Orthodox Christianity, shaping the religious and cultural identity of the East Slavs.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "RU",
+    "year": 1547,
+    "title": "Ivan IV Crowned Tsar",
+    "description": "Ivan the Terrible became the first crowned Tsar of all Russia, centralizing power in Moscow.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RU",
+    "year": 1703,
+    "title": "Founding of Saint Petersburg",
+    "description": "Peter the Great founded Saint Petersburg as a new capital, opening Russia toward Europe.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "RU",
+    "year": 1812,
+    "title": "Napoleon's Invasion Repelled",
+    "description": "Russia withstood Napoleon's invasion, whose Grande Armée was destroyed during the retreat from Moscow.",
+    "category": "military"
+  },
+  {
+    "countryCode": "RU",
+    "year": 1917,
+    "title": "Russian Revolution",
+    "description": "The Bolshevik Revolution overthrew the provisional government, leading to the creation of the Soviet state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RU",
+    "year": 1961,
+    "title": "First Human in Space",
+    "description": "Soviet cosmonaut Yuri Gagarin became the first person to orbit the Earth aboard Vostok 1.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "RU",
+    "year": 1991,
+    "title": "Dissolution of the Soviet Union",
+    "description": "The USSR collapsed and the Russian Federation emerged as an independent sovereign state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SM",
+    "year": 301,
+    "title": "Traditional Founding of San Marino",
+    "description": "According to tradition, the stonemason Saint Marinus founded a community on Monte Titano, the basis of the republic.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "SM",
+    "year": 1243,
+    "title": "First Captains Regent",
+    "description": "San Marino established the office of the Captains Regent, the foundation of its enduring republican government.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SM",
+    "year": 1600,
+    "title": "Statutes of San Marino Adopted",
+    "description": "San Marino codified its constitutional statutes, among the oldest written governing documents still in use.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SM",
+    "year": 1631,
+    "title": "Independence Recognized by Papacy",
+    "description": "The Papacy formally recognized San Marino's independence, securing the small republic's sovereignty.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SM",
+    "year": 1862,
+    "title": "Treaty of Friendship with Italy",
+    "description": "San Marino signed a treaty of friendship and cooperation with the newly unified Kingdom of Italy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SM",
+    "year": 1992,
+    "title": "San Marino Joins the United Nations",
+    "description": "San Marino became a member of the United Nations, gaining a presence in international diplomacy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SM",
+    "year": 2008,
+    "title": "Monte Titano Named World Heritage Site",
+    "description": "UNESCO inscribed San Marino's historic centre and Monte Titano on the World Heritage List.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "RS",
+    "year": 1217,
+    "title": "Kingdom of Serbia Established",
+    "description": "Stefan Nemanjić was crowned king, founding the medieval Serbian kingdom under the Nemanjić dynasty.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RS",
+    "year": 1219,
+    "title": "Serbian Orthodox Church Autocephaly",
+    "description": "Saint Sava secured autocephaly for the Serbian Orthodox Church, becoming its first archbishop.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "RS",
+    "year": 1389,
+    "title": "Battle of Kosovo",
+    "description": "Serbian forces fought the Ottoman Empire at Kosovo, a defining event in Serbian national memory.",
+    "category": "military"
+  },
+  {
+    "countryCode": "RS",
+    "year": 1804,
+    "title": "First Serbian Uprising",
+    "description": "Led by Karađorđe, Serbs rose against Ottoman rule, beginning the path toward modern Serbian statehood.",
+    "category": "military"
+  },
+  {
+    "countryCode": "RS",
+    "year": 1878,
+    "title": "Serbia Gains Independence",
+    "description": "The Congress of Berlin recognized Serbia as a fully independent state from the Ottoman Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RS",
+    "year": 1918,
+    "title": "Kingdom of Yugoslavia Formed",
+    "description": "Serbia joined other South Slavs in the Kingdom of Serbs, Croats and Slovenes, later Yugoslavia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "RS",
+    "year": 2006,
+    "title": "Serbia Becomes Independent",
+    "description": "After Montenegro's referendum, the state union dissolved and Serbia became an independent republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SK",
+    "year": 833,
+    "title": "Great Moravia Emerges",
+    "description": "The Slavic state of Great Moravia rose, encompassing much of present-day Slovakia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SK",
+    "year": 863,
+    "title": "Mission of Cyril and Methodius",
+    "description": "The brothers Cyril and Methodius brought Christianity and Slavic literacy to Great Moravia.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "SK",
+    "year": 1467,
+    "title": "Universitas Istropolitana Founded",
+    "description": "The first university on Slovak territory was established in Bratislava (Pressburg) by Matthias Corvinus.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "SK",
+    "year": 1918,
+    "title": "Czechoslovakia Founded",
+    "description": "Slovaks joined Czechs to form the independent state of Czechoslovakia after World War I.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SK",
+    "year": 1944,
+    "title": "Slovak National Uprising",
+    "description": "Slovak resistance forces rose against Nazi German occupation and the collaborationist regime.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SK",
+    "year": 1993,
+    "title": "Independent Slovakia Established",
+    "description": "The peaceful 'Velvet Divorce' split Czechoslovakia, creating the sovereign Slovak Republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SK",
+    "year": 2004,
+    "title": "Slovakia Joins the EU and NATO",
+    "description": "Slovakia became a member of both the European Union and NATO, anchoring it in Western institutions.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SK",
+    "year": 2009,
+    "title": "Slovakia Adopts the Euro",
+    "description": "Slovakia joined the eurozone, replacing the koruna with the euro currency.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "SI",
+    "year": 623,
+    "title": "Principality of Carantania",
+    "description": "Carantania, an early Slavic principality, emerged in the region encompassing modern Slovenia.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SI",
+    "year": 1550,
+    "title": "First Books in Slovene",
+    "description": "Primož Trubar published the first printed books in Slovene, founding the Slovene literary language.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "SI",
+    "year": 1918,
+    "title": "Joins Kingdom of Yugoslavia",
+    "description": "Slovenia joined the Kingdom of Serbs, Croats and Slovenes after the collapse of Austria-Hungary.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SI",
+    "year": 1991,
+    "title": "Slovenia Declares Independence",
+    "description": "Slovenia declared independence from Yugoslavia, followed by the brief Ten-Day War.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SI",
+    "year": 1992,
+    "title": "International Recognition",
+    "description": "Slovenia gained widespread international recognition and joined the United Nations as a sovereign state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SI",
+    "year": 2004,
+    "title": "Slovenia Joins the EU and NATO",
+    "description": "Slovenia became a member of the European Union and NATO, integrating with Western Europe.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SI",
+    "year": 2007,
+    "title": "Slovenia Adopts the Euro",
+    "description": "Slovenia became the first former Yugoslav state to join the eurozone, adopting the euro.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "ES",
+    "year": -1100,
+    "title": "Phoenicians Found Cádiz",
+    "description": "Phoenician traders established Gadir (Cádiz), one of the oldest continuously inhabited cities in Western Europe.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "ES",
+    "year": -218,
+    "title": "Roman Conquest of Hispania Begins",
+    "description": "Rome began its conquest of the Iberian Peninsula during the Second Punic War, founding Hispania.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ES",
+    "year": 711,
+    "title": "Umayyad Conquest of Hispania",
+    "description": "Muslim forces crossed from North Africa and conquered most of the Iberian Peninsula, founding Al-Andalus.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ES",
+    "year": 1492,
+    "title": "Granada Falls and Columbus Sails",
+    "description": "The Catholic Monarchs completed the Reconquista and sponsored Columbus's voyage to the Americas.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "ES",
+    "year": 1516,
+    "title": "Habsburg Spain Unified",
+    "description": "Charles I became king, uniting the Spanish crowns and launching a vast global empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ES",
+    "year": 1936,
+    "title": "Spanish Civil War Begins",
+    "description": "A military uprising sparked a civil war that led to the dictatorship of Francisco Franco.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ES",
+    "year": 1978,
+    "title": "Democratic Constitution Adopted",
+    "description": "Spain adopted a democratic constitution after Franco's death, establishing a parliamentary monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ES",
+    "year": 1986,
+    "title": "Spain Joins the EEC",
+    "description": "Spain became a member of the European Economic Community, consolidating its return to democratic Europe.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "SE",
+    "year": 1397,
+    "title": "Kalmar Union Formed",
+    "description": "Sweden joined Denmark and Norway under one monarch in the Kalmar Union.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SE",
+    "year": 1523,
+    "title": "Gustav Vasa Becomes King",
+    "description": "Gustav Vasa led Sweden out of the Kalmar Union and was crowned king, founding the modern Swedish state.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SE",
+    "year": 1611,
+    "title": "Reign of Gustavus Adolphus",
+    "description": "Gustavus Adolphus began his reign, turning Sweden into a leading European military power.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SE",
+    "year": 1721,
+    "title": "End of the Great Northern War",
+    "description": "The Treaty of Nystad ended the Great Northern War, marking the decline of the Swedish Empire.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SE",
+    "year": 1814,
+    "title": "Sweden's Last War",
+    "description": "Sweden entered a long period of peace and neutrality after a brief war with Norway, unbroken since.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SE",
+    "year": 1901,
+    "title": "First Nobel Prizes Awarded",
+    "description": "The first Nobel Prizes were awarded in Stockholm under the will of Alfred Nobel.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "SE",
+    "year": 1995,
+    "title": "Sweden Joins the European Union",
+    "description": "Sweden became a member of the European Union following a national referendum.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CH",
+    "year": 1291,
+    "title": "Founding of the Swiss Confederation",
+    "description": "The cantons of Uri, Schwyz, and Unterwalden formed a pact, traditionally seen as the origin of Switzerland.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CH",
+    "year": 1499,
+    "title": "Swabian War Won",
+    "description": "The Swiss Confederation gained de facto independence from the Holy Roman Empire after the Swabian War.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CH",
+    "year": 1648,
+    "title": "Formal Independence Recognized",
+    "description": "The Peace of Westphalia formally recognized Swiss independence from the Holy Roman Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CH",
+    "year": 1815,
+    "title": "Swiss Neutrality Guaranteed",
+    "description": "The Congress of Vienna recognized Switzerland's perpetual neutrality and confirmed its borders.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CH",
+    "year": 1848,
+    "title": "Federal Constitution Adopted",
+    "description": "Switzerland adopted a federal constitution, creating the modern federal state and central government.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CH",
+    "year": 1863,
+    "title": "Red Cross Founded in Geneva",
+    "description": "Henry Dunant helped found the International Committee of the Red Cross in Geneva.",
+    "category": "social"
+  },
+  {
+    "countryCode": "CH",
+    "year": 1971,
+    "title": "Women Gain the Vote Nationally",
+    "description": "Swiss women won the right to vote in federal elections following a national referendum.",
+    "category": "social"
+  },
+  {
+    "countryCode": "CH",
+    "year": 2002,
+    "title": "Switzerland Joins the United Nations",
+    "description": "Switzerland became a full member of the United Nations after a national referendum.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UA",
+    "year": 882,
+    "title": "Kievan Rus Centered on Kyiv",
+    "description": "Oleg established Kyiv as the center of Kievan Rus, a foundational state in Ukrainian history.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UA",
+    "year": 988,
+    "title": "Baptism of Kievan Rus",
+    "description": "Vladimir the Great adopted Orthodox Christianity in Kyiv, shaping the region's religious culture.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "UA",
+    "year": 1648,
+    "title": "Khmelnytsky Uprising",
+    "description": "Bohdan Khmelnytsky led a Cossack uprising that created the Cossack Hetmanate, a Ukrainian state.",
+    "category": "military"
+  },
+  {
+    "countryCode": "UA",
+    "year": 1932,
+    "title": "Holodomor Famine",
+    "description": "A man-made famine under Soviet policy killed millions of Ukrainians, remembered as a national tragedy.",
+    "category": "social"
+  },
+  {
+    "countryCode": "UA",
+    "year": 1986,
+    "title": "Chernobyl Disaster",
+    "description": "A reactor explosion at the Chernobyl nuclear plant caused history's worst nuclear accident.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "UA",
+    "year": 1991,
+    "title": "Ukraine Declares Independence",
+    "description": "Ukraine declared independence from the Soviet Union, confirmed by an overwhelming referendum.",
+    "category": "political"
+  },
+  {
+    "countryCode": "UA",
+    "year": 2004,
+    "title": "Orange Revolution",
+    "description": "Mass protests over a disputed election led to a rerun and a peaceful transfer of power.",
+    "category": "social"
+  },
+  {
+    "countryCode": "UA",
+    "year": 2014,
+    "title": "Revolution of Dignity",
+    "description": "The Euromaidan protests ousted the president and reoriented Ukraine toward closer ties with Europe.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GB",
+    "year": -43,
+    "title": "Roman Conquest of Britain",
+    "description": "Emperor Claudius launched the Roman conquest of Britain in AD 43, founding the province of Britannia.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GB",
+    "year": 1066,
+    "title": "Norman Conquest of England",
+    "description": "William the Conqueror defeated King Harold at the Battle of Hastings, transforming English society.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GB",
+    "year": 1215,
+    "title": "Magna Carta Sealed",
+    "description": "King John sealed Magna Carta, limiting royal power and influencing later constitutional law.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GB",
+    "year": 1707,
+    "title": "Acts of Union Create Great Britain",
+    "description": "England and Scotland united to form the Kingdom of Great Britain under a single parliament.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GB",
+    "year": 1760,
+    "title": "Industrial Revolution Begins",
+    "description": "Around this time Britain pioneered the Industrial Revolution, transforming manufacturing and society.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "GB",
+    "year": 1837,
+    "title": "Victorian Era Begins",
+    "description": "Queen Victoria's reign began a period of imperial expansion, industry, and global influence.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GB",
+    "year": 1945,
+    "title": "Founding Member of the UN",
+    "description": "The United Kingdom became a founding member of the United Nations after World War II.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GB",
+    "year": 2020,
+    "title": "United Kingdom Leaves the EU",
+    "description": "The UK formally left the European Union following the 2016 Brexit referendum.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VA",
+    "year": 64,
+    "title": "Traditional Martyrdom of Saint Peter",
+    "description": "Saint Peter is traditionally believed to have been martyred in Rome, where St. Peter's Basilica now stands.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "VA",
+    "year": 326,
+    "title": "Old St. Peter's Basilica Begun",
+    "description": "Emperor Constantine began constructing the original basilica over the tomb of Saint Peter.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "VA",
+    "year": 756,
+    "title": "Papal States Established",
+    "description": "The Donation of Pepin granted territories to the Pope, founding the Papal States in central Italy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VA",
+    "year": 1506,
+    "title": "New St. Peter's Basilica Begun",
+    "description": "Pope Julius II laid the foundation for the present St. Peter's Basilica, a masterpiece of Renaissance art.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "VA",
+    "year": 1870,
+    "title": "End of the Papal States",
+    "description": "The Kingdom of Italy annexed Rome, ending the temporal rule of the Papal States.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VA",
+    "year": 1929,
+    "title": "Vatican City Founded",
+    "description": "The Lateran Treaty between the Holy See and Italy created the independent state of Vatican City.",
+    "category": "political"
+  },
+  {
+    "countryCode": "VA",
+    "year": 1962,
+    "title": "Second Vatican Council Opens",
+    "description": "Pope John XXIII convened the Second Vatican Council, leading to major reforms in the Catholic Church.",
+    "category": "religious"
+  }
+]

@@ -1,0 +1,709 @@
+[
+  {
+    "countryCode": "EG",
+    "year": -3100,
+    "title": "Unification of Upper and Lower Egypt",
+    "description": "King Narmer (Menes) unified Upper and Lower Egypt, founding the First Dynasty and one of history's earliest nation-states.",
+    "category": "political"
+  },
+  {
+    "countryCode": "EG",
+    "year": -2560,
+    "title": "Great Pyramid of Giza built",
+    "description": "Pharaoh Khufu completed the Great Pyramid, the largest of the Giza pyramids and the last surviving Wonder of the Ancient World.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "EG",
+    "year": -1332,
+    "title": "Reign of Tutankhamun begins",
+    "description": "The boy-king Tutankhamun took the throne, restoring traditional polytheism after Akhenaten's religious reforms.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "EG",
+    "year": -332,
+    "title": "Alexander the Great conquers Egypt",
+    "description": "Alexander took Egypt from Persia and founded Alexandria, ushering in the Greek Ptolemaic dynasty.",
+    "category": "military"
+  },
+  {
+    "countryCode": "EG",
+    "year": -30,
+    "title": "Death of Cleopatra and Roman annexation",
+    "description": "The death of Cleopatra VII ended Ptolemaic rule, and Egypt became a province of the Roman Empire.",
+    "category": "political"
+  },
+  {
+    "countryCode": "EG",
+    "year": 969,
+    "title": "Founding of Cairo by the Fatimids",
+    "description": "The Fatimid dynasty founded Cairo as their capital and established al-Azhar, a center of Islamic learning.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "EG",
+    "year": 1869,
+    "title": "Opening of the Suez Canal",
+    "description": "The Suez Canal opened, linking the Mediterranean and Red Seas and transforming global maritime trade.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "EG",
+    "year": 1952,
+    "title": "Egyptian Revolution and end of monarchy",
+    "description": "The Free Officers Movement overthrew King Farouk, leading to a republic with Nasser later rising to power.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GQ",
+    "year": 1471,
+    "title": "Portuguese reach Bioko island",
+    "description": "Portuguese explorer Fernão do Pó sighted the island later named Fernando Pó (now Bioko), beginning European contact.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "GQ",
+    "year": 1778,
+    "title": "Spain acquires the territory",
+    "description": "Under the Treaty of El Pardo, Portugal ceded the islands and mainland rights to Spain, forming Spanish Guinea.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GQ",
+    "year": 1968,
+    "title": "Independence from Spain",
+    "description": "Equatorial Guinea gained independence from Spain, with Francisco Macías Nguema becoming its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GQ",
+    "year": 1979,
+    "title": "Obiang seizes power in a coup",
+    "description": "Teodoro Obiang Nguema overthrew his uncle Macías, beginning one of the world's longest-running presidencies.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GQ",
+    "year": 1991,
+    "title": "Major offshore oil discoveries",
+    "description": "Discovery of large offshore oil reserves transformed the economy, making the country a significant petroleum exporter.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "GQ",
+    "year": 2011,
+    "title": "Capital relocation project at Oyala",
+    "description": "The government began building a planned new capital, later named Ciudad de la Paz, in the mainland interior.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ER",
+    "year": -100,
+    "title": "Rise of the Kingdom of Aksum",
+    "description": "The Aksumite kingdom flourished across present-day Eritrea and Ethiopia, controlling Red Sea trade through the port of Adulis.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "ER",
+    "year": 1557,
+    "title": "Ottomans establish Habesh province",
+    "description": "The Ottoman Empire seized the port of Massawa and coastal areas, ruling parts of the Eritrean coast for centuries.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ER",
+    "year": 1890,
+    "title": "Italy proclaims the colony of Eritrea",
+    "description": "Italy consolidated its coastal holdings into the colony of Eritrea, with Asmara later becoming the capital.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ER",
+    "year": 1952,
+    "title": "Federation with Ethiopia",
+    "description": "A UN resolution federated Eritrea with Ethiopia, which Ethiopia later dissolved by annexing the territory in 1962.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ER",
+    "year": 1961,
+    "title": "Start of the war of independence",
+    "description": "The Eritrean armed struggle for independence began, lasting three decades against Ethiopian rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ER",
+    "year": 1991,
+    "title": "EPLF takes Asmara",
+    "description": "The Eritrean People's Liberation Front captured Asmara, ending the long war and establishing de facto independence.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ER",
+    "year": 1993,
+    "title": "Independence after referendum",
+    "description": "An overwhelming referendum vote led to formal independence, and Eritrea joined the United Nations.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ER",
+    "year": 1998,
+    "title": "Eritrean-Ethiopian War begins",
+    "description": "A border dispute erupted into a deadly war with Ethiopia, lasting until a peace agreement in 2000.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SZ",
+    "year": 1750,
+    "title": "Swazi nation consolidates under Ngwane III",
+    "description": "Ngwane III led the Swazi people into the region, traditionally regarded as a founder of the Swazi kingdom.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SZ",
+    "year": 1840,
+    "title": "Reign of King Mswati II",
+    "description": "King Mswati II expanded the kingdom and strengthened the Swazi military, lending his name to the modern monarchy.",
+    "category": "military"
+  },
+  {
+    "countryCode": "SZ",
+    "year": 1903,
+    "title": "British protectorate established",
+    "description": "Following the Boer War, Swaziland became a British protectorate administered as a high commission territory.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SZ",
+    "year": 1968,
+    "title": "Independence under King Sobhuza II",
+    "description": "Swaziland gained independence from Britain as a constitutional monarchy led by King Sobhuza II.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SZ",
+    "year": 1973,
+    "title": "Sobhuza II suspends the constitution",
+    "description": "The king repealed the independence constitution and banned political parties, consolidating royal power.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SZ",
+    "year": 1986,
+    "title": "Coronation of King Mswati III",
+    "description": "Mswati III was crowned king, becoming one of the world's last absolute monarchs.",
+    "category": "political"
+  },
+  {
+    "countryCode": "SZ",
+    "year": 2018,
+    "title": "Renamed the Kingdom of Eswatini",
+    "description": "King Mswati III renamed the country Eswatini, meaning 'land of the Swazis,' on the 50th anniversary of independence.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "ET",
+    "year": -980,
+    "title": "Tradition of the Solomonic dynasty's origins",
+    "description": "Ethiopian tradition traces the imperial line to Menelik I, son of King Solomon and the Queen of Sheba.",
+    "category": "cultural"
+  },
+  {
+    "countryCode": "ET",
+    "year": 100,
+    "title": "Kingdom of Aksum at its height",
+    "description": "Aksum became a major trading empire minting its own coinage and ranked among the great powers of the ancient world.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "ET",
+    "year": 330,
+    "title": "Aksum adopts Christianity",
+    "description": "King Ezana converted to Christianity, making Aksum one of the earliest Christian states in the world.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "ET",
+    "year": 1137,
+    "title": "Rise of the Zagwe dynasty",
+    "description": "The Zagwe dynasty came to power and later built the famous rock-hewn churches of Lalibela.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "ET",
+    "year": 1270,
+    "title": "Restoration of the Solomonic dynasty",
+    "description": "Yekuno Amlak overthrew the Zagwe and restored the Solomonic line, which ruled Ethiopia for centuries.",
+    "category": "political"
+  },
+  {
+    "countryCode": "ET",
+    "year": 1896,
+    "title": "Battle of Adwa",
+    "description": "Emperor Menelik II's forces decisively defeated Italy, securing Ethiopia's independence and inspiring anti-colonial movements.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ET",
+    "year": 1936,
+    "title": "Italian occupation under Mussolini",
+    "description": "Fascist Italy invaded and briefly occupied Ethiopia, forcing Emperor Haile Selassie into exile until 1941.",
+    "category": "military"
+  },
+  {
+    "countryCode": "ET",
+    "year": 1974,
+    "title": "Fall of Haile Selassie and the Derg",
+    "description": "A Marxist military junta, the Derg, deposed Emperor Haile Selassie, ending centuries of monarchy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GA",
+    "year": 1472,
+    "title": "Portuguese explorers reach the coast",
+    "description": "Portuguese navigators reached the Gabon estuary, naming the region after the Portuguese word 'gabão' for a cloak.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "GA",
+    "year": 1839,
+    "title": "France establishes a foothold",
+    "description": "France signed treaties with coastal Mpongwe chiefs, beginning its colonial presence on the Gabon estuary.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GA",
+    "year": 1849,
+    "title": "Founding of Libreville",
+    "description": "Freed slaves settled the site that became Libreville, 'free town,' the future capital of Gabon.",
+    "category": "social"
+  },
+  {
+    "countryCode": "GA",
+    "year": 1913,
+    "title": "Albert Schweitzer founds Lambaréné hospital",
+    "description": "Physician Albert Schweitzer established his renowned hospital at Lambaréné, later earning him the Nobel Peace Prize.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "GA",
+    "year": 1960,
+    "title": "Independence from France",
+    "description": "Gabon gained independence from France, with Léon M'ba becoming its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GA",
+    "year": 1967,
+    "title": "Omar Bongo becomes president",
+    "description": "Omar Bongo took power and ruled Gabon for over four decades, presiding over an oil-driven economy.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GA",
+    "year": 2002,
+    "title": "Creation of 13 national parks",
+    "description": "Gabon established a network of national parks covering about 11% of its territory to protect rainforest wildlife.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "GM",
+    "year": 1455,
+    "title": "Portuguese explore the Gambia River",
+    "description": "Portuguese navigators explored the Gambia River, opening the region to European trade.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "GM",
+    "year": 1651,
+    "title": "Early European trading settlements",
+    "description": "Courland and later English traders established posts along the river to trade in gold, ivory, and enslaved people.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "GM",
+    "year": 1816,
+    "title": "Founding of Bathurst (Banjul)",
+    "description": "The British established Bathurst, now Banjul, as a trading base and post to suppress the slave trade.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GM",
+    "year": 1965,
+    "title": "Independence from Britain",
+    "description": "The Gambia gained independence from the United Kingdom, with Dawda Jawara as its first leader.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GM",
+    "year": 1970,
+    "title": "The Gambia becomes a republic",
+    "description": "The Gambia became a republic within the Commonwealth, with Dawda Jawara as its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GM",
+    "year": 1994,
+    "title": "Jammeh seizes power in a coup",
+    "description": "Yahya Jammeh led a military coup, beginning a 22-year authoritarian rule over the country.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GM",
+    "year": 2017,
+    "title": "Democratic transition to Adama Barrow",
+    "description": "After losing elections, Jammeh left power under regional pressure, allowing Adama Barrow to take office.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GH",
+    "year": 1000,
+    "title": "Akan states and gold trade flourish",
+    "description": "Akan peoples developed states across the forest region, trading gold along trans-Saharan routes.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "GH",
+    "year": 1482,
+    "title": "Portuguese build Elmina Castle",
+    "description": "The Portuguese constructed Elmina Castle, the first European fort in sub-Saharan Africa, on the Gold Coast.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "GH",
+    "year": 1701,
+    "title": "Rise of the Ashanti Empire",
+    "description": "Osei Tutu unified Akan states into the powerful Ashanti Empire, symbolized by the Golden Stool.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GH",
+    "year": 1874,
+    "title": "Britain forms the Gold Coast colony",
+    "description": "After wars with the Ashanti, Britain established the Gold Coast as a crown colony.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GH",
+    "year": 1957,
+    "title": "First sub-Saharan colony to gain independence",
+    "description": "Led by Kwame Nkrumah, Ghana became the first sub-Saharan African nation to win independence from colonial rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GH",
+    "year": 1966,
+    "title": "Coup overthrows Nkrumah",
+    "description": "A military and police coup ousted President Kwame Nkrumah while he was abroad, ending his rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GH",
+    "year": 1992,
+    "title": "Return to multiparty democracy",
+    "description": "Ghana adopted a new constitution and held multiparty elections, establishing a stable democratic system.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GN",
+    "year": 1235,
+    "title": "Region within the Mali Empire",
+    "description": "Much of present-day Guinea fell under the Mali Empire founded by Sundiata Keita, a hub of gold and trade.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GN",
+    "year": 1725,
+    "title": "Imamate of Futa Jallon established",
+    "description": "Fulani Muslims founded a theocratic state in the Futa Jallon highlands, a major center of Islamic scholarship.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "GN",
+    "year": 1898,
+    "title": "Capture of Samori Touré",
+    "description": "French forces captured the resistance leader Samori Touré, completing colonial conquest of the region.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GN",
+    "year": 1958,
+    "title": "Independence by rejecting French Community",
+    "description": "Guinea voted 'No' in a referendum and became independent under Ahmed Sékou Touré, the only colony to do so immediately.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GN",
+    "year": 1984,
+    "title": "Military takes power after Sékou Touré's death",
+    "description": "Following the death of Sékou Touré, the military seized power with Lansana Conté becoming president.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GN",
+    "year": 2010,
+    "title": "First free presidential election",
+    "description": "Guinea held its first democratic presidential election, won by Alpha Condé after decades of authoritarian rule.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GN",
+    "year": 2014,
+    "title": "Ebola epidemic begins in Guinea",
+    "description": "The deadliest Ebola outbreak in history was first detected in southeastern Guinea before spreading across West Africa.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "GW",
+    "year": 1446,
+    "title": "Portuguese reach the coast",
+    "description": "Portuguese navigators reached the rivers and coast of present-day Guinea-Bissau, beginning European trade contacts.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "GW",
+    "year": 1588,
+    "title": "Cacheu becomes a trading hub",
+    "description": "The Portuguese established Cacheu as a major slave-trading port on the Upper Guinea coast.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "GW",
+    "year": 1879,
+    "title": "Portuguese Guinea formed as a colony",
+    "description": "Portugal separated the territory from Cape Verde, establishing Portuguese Guinea as a distinct colony.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GW",
+    "year": 1956,
+    "title": "Amílcar Cabral founds the PAIGC",
+    "description": "Amílcar Cabral co-founded the PAIGC, which led the armed struggle for independence from Portugal.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GW",
+    "year": 1973,
+    "title": "Unilateral declaration of independence",
+    "description": "The PAIGC declared independence after a long liberation war; Portugal recognized it in 1974.",
+    "category": "political"
+  },
+  {
+    "countryCode": "GW",
+    "year": 1980,
+    "title": "Coup led by João Bernardo Vieira",
+    "description": "A military coup brought João Bernardo Vieira to power, beginning decades of political instability.",
+    "category": "military"
+  },
+  {
+    "countryCode": "GW",
+    "year": 1998,
+    "title": "Civil war erupts",
+    "description": "A brief but devastating civil war broke out between government forces and a military junta.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CI",
+    "year": 1637,
+    "title": "First French missionaries arrive",
+    "description": "French missionaries landed on the coast, marking early European contact with the region.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "CI",
+    "year": 1843,
+    "title": "France establishes coastal protectorates",
+    "description": "France signed treaties with coastal kings, building forts and beginning its colonial presence.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CI",
+    "year": 1893,
+    "title": "Ivory Coast becomes a French colony",
+    "description": "France formally declared Côte d'Ivoire a colony within French West Africa.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CI",
+    "year": 1960,
+    "title": "Independence under Houphouët-Boigny",
+    "description": "Côte d'Ivoire gained independence from France, with Félix Houphouët-Boigny as its first president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "CI",
+    "year": 1989,
+    "title": "Basilica of Our Lady of Peace completed",
+    "description": "The vast Basilica of Our Lady of Peace was completed in Yamoussoukro, among the largest churches in the world.",
+    "category": "religious"
+  },
+  {
+    "countryCode": "CI",
+    "year": 2002,
+    "title": "Civil war divides the country",
+    "description": "A failed coup sparked a civil war that split Côte d'Ivoire between a rebel-held north and government-held south.",
+    "category": "military"
+  },
+  {
+    "countryCode": "CI",
+    "year": 2011,
+    "title": "Post-election crisis ends",
+    "description": "A violent crisis following disputed 2010 elections ended with Alassane Ouattara taking office.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KE",
+    "year": -8000,
+    "title": "Early human settlement around Lake Turkana",
+    "description": "The Lake Turkana region preserves some of the earliest evidence of human ancestors and prehistoric life.",
+    "category": "scientific"
+  },
+  {
+    "countryCode": "KE",
+    "year": 800,
+    "title": "Rise of Swahili coastal city-states",
+    "description": "Trading cities like Mombasa and Malindi flourished along the coast, blending African, Arab, and Persian cultures.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "KE",
+    "year": 1498,
+    "title": "Vasco da Gama reaches the coast",
+    "description": "Portuguese explorer Vasco da Gama landed at Malindi and Mombasa en route to India.",
+    "category": "exploration"
+  },
+  {
+    "countryCode": "KE",
+    "year": 1895,
+    "title": "British East Africa Protectorate",
+    "description": "Britain established the East Africa Protectorate, later building the Uganda Railway through Kenya.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KE",
+    "year": 1952,
+    "title": "Mau Mau uprising begins",
+    "description": "The Mau Mau rebellion against British colonial rule erupted, prompting a state of emergency and violent suppression.",
+    "category": "military"
+  },
+  {
+    "countryCode": "KE",
+    "year": 1963,
+    "title": "Independence under Jomo Kenyatta",
+    "description": "Kenya gained independence from Britain, with Jomo Kenyatta becoming its first prime minister and later president.",
+    "category": "political"
+  },
+  {
+    "countryCode": "KE",
+    "year": 2004,
+    "title": "Wangari Maathai wins Nobel Peace Prize",
+    "description": "Environmentalist Wangari Maathai became the first African woman to win the Nobel Peace Prize.",
+    "category": "social"
+  },
+  {
+    "countryCode": "KE",
+    "year": 2010,
+    "title": "New constitution adopted",
+    "description": "Kenyans approved a new constitution introducing devolved county government and a bill of rights.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LS",
+    "year": 1822,
+    "title": "Moshoeshoe I founds the Basotho nation",
+    "description": "King Moshoeshoe I united Sotho-speaking peoples at Thaba Bosiu during the upheavals of the Mfecane.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LS",
+    "year": 1858,
+    "title": "Free State-Basotho War",
+    "description": "Conflict erupted between the Basotho and Boer settlers of the Orange Free State over land.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LS",
+    "year": 1868,
+    "title": "British protectorate of Basutoland",
+    "description": "Moshoeshoe sought British protection, and Basutoland became a protectorate to avoid Boer annexation.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LS",
+    "year": 1966,
+    "title": "Independence as the Kingdom of Lesotho",
+    "description": "Basutoland gained independence from Britain as the Kingdom of Lesotho under King Moshoeshoe II.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LS",
+    "year": 1986,
+    "title": "Military coup",
+    "description": "A military coup overthrew the government of Leabua Jonathan, beginning a period of army rule.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LS",
+    "year": 1998,
+    "title": "Election unrest and regional intervention",
+    "description": "Disputed elections triggered unrest, prompting a military intervention by South Africa and Botswana.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LS",
+    "year": 2004,
+    "title": "Lesotho Highlands Water Project phase opens",
+    "description": "Major dams of the Lesotho Highlands Water Project exported water to South Africa, a key economic resource.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "LR",
+    "year": 1822,
+    "title": "American Colonization Society settles freed slaves",
+    "description": "The American Colonization Society established a settlement of freed African Americans at Cape Mesurado.",
+    "category": "social"
+  },
+  {
+    "countryCode": "LR",
+    "year": 1847,
+    "title": "Liberia declares independence",
+    "description": "Liberia declared itself an independent republic, becoming Africa's first independent republic.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LR",
+    "year": 1926,
+    "title": "Firestone rubber concession",
+    "description": "Firestone established a vast rubber plantation, making rubber central to Liberia's economy for decades.",
+    "category": "economic"
+  },
+  {
+    "countryCode": "LR",
+    "year": 1980,
+    "title": "Samuel Doe seizes power in a coup",
+    "description": "Master Sergeant Samuel Doe led a coup that ended over a century of Americo-Liberian political dominance.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LR",
+    "year": 1989,
+    "title": "First Liberian Civil War begins",
+    "description": "Charles Taylor's rebellion launched a brutal civil war that devastated the country for years.",
+    "category": "military"
+  },
+  {
+    "countryCode": "LR",
+    "year": 2003,
+    "title": "End of the Second Civil War",
+    "description": "A peace agreement ended Liberia's civil wars and led to Charles Taylor's exile and a transitional government.",
+    "category": "political"
+  },
+  {
+    "countryCode": "LR",
+    "year": 2006,
+    "title": "Ellen Johnson Sirleaf inaugurated",
+    "description": "Ellen Johnson Sirleaf became Africa's first elected female head of state and later won the Nobel Peace Prize.",
+    "category": "political"
+  }
+]
