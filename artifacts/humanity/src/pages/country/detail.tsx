@@ -10,6 +10,7 @@ import { ArrowLeft, MapPin, Users, Building, Activity, Languages, Globe, Shield,
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { apiUrl } from "@/lib/api-config";
 import { useHumanityScore } from "@/hooks/useHumanityScore";
 
 const IMAGE_ON_ERROR = (e: React.SyntheticEvent<HTMLImageElement>) => {
@@ -60,7 +61,7 @@ export default function CountryDetail() {
   const fetchPhrases = async () => {
     setLoadingPhrases(true);
     try {
-      const res = await fetch(`/api/countries/${code}/phrases`);
+      const res = await fetch(apiUrl(`/api/countries/${code}/phrases`));
       const data = await res.json();
       setPhrases(data);
     } catch (e) {

@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { CountryCombobox } from "@/components/country-combobox";
+import { apiUrl } from "@/lib/api-config";
 import {
   Loader2,
   User,
@@ -90,7 +91,7 @@ export default function Walk() {
     setNarrative(null);
     setLoadingMsg(LOADING_MESSAGES[0]);
     try {
-      const response = await fetch("/api/walk-in-shoes", {
+      const response = await fetch(apiUrl("/api/walk-in-shoes"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

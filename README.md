@@ -81,6 +81,14 @@ This project is not currently licensed for public use. All rights reserved unles
 
 Created by **Victor Aneuris Fermin**.
 
+## API Configuration
+
+Local web development can leave `VITE_API_BASE_URL` empty so frontend requests continue to use same-origin `/api` paths.
+
+Mobile or Capacitor builds must set `VITE_API_BASE_URL` to the deployed backend origin, for example `https://api.example.com`. The frontend will then call paths such as `/api/me/profile` through that backend origin.
+
+Only client-safe public values belong in `VITE_` variables. Private secrets such as database URLs, Clerk secret keys, OpenAI keys, and storage credentials must stay in backend/deployment environment settings and must never be committed.
+
 ## Closing Statement
 
 HuMANity is more than an app. It is a vision for a more connected world — one where technology helps people recognize each other, communicate across boundaries, and see humanity as one global family.

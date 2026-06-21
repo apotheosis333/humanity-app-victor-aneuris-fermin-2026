@@ -15,6 +15,7 @@ import {
   ApiError,
 } from "@workspace/api-client-react";
 import { PlayPreviewButton } from "../components/song-preview";
+import { apiUrl } from "@/lib/api-config";
 
 const toArray = (value: string) =>
   value
@@ -80,16 +81,17 @@ export default function ProfileEdit() {
   const [photoError, setPhotoError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { uploadFile, isUploading } = useUpload({
+    basePath: apiUrl("/api/storage"),
     onSuccess: async (res) => {
       try {
-        const finalizeRes = await fetch("/api/storage/uploads/finalize", {
+        const finalizeRes = await fetch(apiUrl("/api/storage/uploads/finalize"), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ objectPath: res.objectPath }),
         });
         if (!finalizeRes.ok) throw new Error("finalize failed");
         const data: { objectPath: string } = await finalizeRes.json();
-        setPhotoUrl(`/api/storage${data.objectPath}`);
+        setPhotoUrl(apiUrl(`/api/storage${data.objectPath}`));
         setPhotoError(null);
       } catch {
         setPhotoError("Upload failed. Please try again.");

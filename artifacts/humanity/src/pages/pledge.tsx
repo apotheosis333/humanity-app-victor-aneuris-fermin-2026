@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useHumanityScore } from "@/hooks/useHumanityScore";
+import { apiUrl } from "@/lib/api-config";
 import { Loader2, Heart, ShieldCheck, Users, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -26,7 +27,7 @@ export default function Pledge() {
     e.preventDefault();
     setLoading(true);
     try {
-      await fetch('/api/pledge', {
+      await fetch(apiUrl("/api/pledge"), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
