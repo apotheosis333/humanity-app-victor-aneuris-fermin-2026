@@ -630,7 +630,7 @@ function isNotFoundError(error: unknown): boolean {
   return maybeError.name === "NotFound" || maybeError.$metadata?.httpStatusCode === 404;
 }
 
-function toWebReadableStream(body: unknown): BodyInit | null {
+function toWebReadableStream(body: unknown): ConstructorParameters<typeof Response>[0] {
   if (!body) {
     return null;
   }
@@ -643,5 +643,5 @@ function toWebReadableStream(body: unknown): BodyInit | null {
   if (typeof body === "object" && "transformToWebStream" in body) {
     return (body as { transformToWebStream(): ReadableStream }).transformToWebStream();
   }
-  return body as BodyInit;
+  return body as ConstructorParameters<typeof Response>[0];
 }

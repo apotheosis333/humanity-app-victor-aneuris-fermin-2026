@@ -165,6 +165,42 @@ For Cloudflare R2 or another S3-compatible provider:
 6. Keep the bucket private unless a deliberate CDN/public object strategy is chosen.
 7. Verify profile photo upload, finalize, profile save, profile view, and object read behavior.
 
+## Manual Cloudflare R2 / S3 Smoke Test Checklist
+
+Use placeholder names in documentation and real values only in local ignored env files or deployment provider secrets.
+
+Provider setup:
+
+1. Create a private bucket for uploaded user media.
+2. Create least-privilege access keys for the bucket.
+3. Set `STORAGE_PROVIDER=s3`.
+4. Set `STORAGE_BUCKET`.
+5. Set `STORAGE_REGION`.
+6. Set `STORAGE_ENDPOINT`.
+7. Set `STORAGE_ACCESS_KEY_ID`.
+8. Set `STORAGE_SECRET_ACCESS_KEY`.
+9. Set `STORAGE_PUBLIC_BASE_URL` only if using a public CDN/base URL.
+10. Configure bucket CORS for browser/mobile direct PUT uploads.
+11. Include allowed origins for local web, deployed web, and future mobile origins.
+12. Allow the `PUT` method.
+13. Allow the `Content-Type` request header.
+
+Backend/API smoke test:
+
+1. Start the backend with `STORAGE_PROVIDER=s3` and placeholder-free local secrets.
+2. Sign in through the frontend so storage requests include Clerk auth.
+3. Upload a JPG, PNG, or WEBP under 5 MB from the profile edit screen.
+4. Confirm `POST /api/storage/uploads/request-url` returns an `uploadURL`, `objectPath`, and metadata.
+5. Confirm the browser direct `PUT` upload to the signed URL succeeds.
+6. Confirm `POST /api/storage/uploads/finalize` succeeds and returns an `/objects/...` path.
+7. Save the profile with the returned `/api/storage/objects/...` image URL.
+8. Confirm `GET /api/storage/objects/...` returns the uploaded image.
+9. Confirm the image is visible on the profile page.
+10. Confirm an unsupported file type is rejected.
+11. Confirm a file over 5 MB is rejected.
+12. Confirm missing S3 env vars fail with clear startup/request errors and do not log secrets.
+13. Confirm `STORAGE_PROVIDER=` or `STORAGE_PROVIDER=replit` still uses the Replit adapter.
+
 ## Cost And Complexity
 
 - Cloudflare R2: low to moderate complexity, generally low cost for this use case.
