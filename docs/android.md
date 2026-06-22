@@ -1,6 +1,6 @@
 # Android Build Readiness
 
-Step 16 prepares the generated Capacitor Android project for local testing and future Google Play Internal Testing.
+Steps 16 and 17 prepare the generated Capacitor Android project for local testing and future Google Play Internal Testing.
 
 ## Project Location
 
@@ -39,7 +39,24 @@ pnpm run android:build:debug
 
 `pnpm run android:build:debug` runs the Android Gradle wrapper from `artifacts/humanity/android` and builds a debug APK when a compatible JDK and Android Gradle tooling are available.
 
-On the current Windows validation machine, the command is wired up but cannot complete until Java is installed and `JAVA_HOME` points to the JDK.
+This command has been validated on the Windows development machine after Android tooling setup.
+
+## Local Tooling Setup
+
+Installed/validated tooling:
+
+- Android Studio: `C:\Program Files\Android\Android Studio`
+- JDK/JBR: `C:\Program Files\Android\Android Studio\jbr`
+- `JAVA_HOME`: `C:\Program Files\Android\Android Studio\jbr`
+- `ANDROID_HOME`: `C:\Users\jawso\AppData\Local\Android\Sdk`
+- `ANDROID_SDK_ROOT`: `C:\Users\jawso\AppData\Local\Android\Sdk`
+- Android SDK Platform: `platforms;android-36`
+- Android SDK Build-Tools: `build-tools;36.0.0`
+- Android SDK Platform-Tools: `platform-tools` 37.0.0
+- Android Emulator: installed
+- Android command-line tools: `cmdline-tools;latest`
+
+PowerShell sessions may need to be restarted before user-level environment variable changes are visible automatically.
 
 ## Required Mobile Environment
 
@@ -61,16 +78,14 @@ ionic://localhost
 
 ## Android Studio Debug Steps
 
-1. Install Android Studio and the Android SDK.
-2. Install a JDK compatible with the Android Gradle plugin used by this project.
-3. Run `pnpm install`.
-4. Set mobile-safe frontend env vars for the build.
-5. Run `pnpm run cap:sync`.
-6. Run `pnpm run cap:open:android`.
-7. Let Android Studio sync Gradle.
-8. Select an emulator or connected Android device.
-9. Run the `app` configuration.
-10. Test sign-in, profile editing, messaging, reporting/blocking, account deletion request, uploads, and legal/support links.
+1. Run `pnpm install`.
+2. Set mobile-safe frontend env vars for the build.
+3. Run `pnpm run cap:sync`.
+4. Run `pnpm run cap:open:android`.
+5. Let Android Studio sync Gradle.
+6. Select an emulator or connected Android device.
+7. Run the `app` configuration.
+8. Test sign-in, profile editing, messaging, reporting/blocking, account deletion request, uploads, and legal/support links.
 
 ## Debug APK
 
@@ -87,6 +102,37 @@ artifacts/humanity/android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
 Debug APKs are build artifacts and must not be committed.
+
+Validated output on this machine:
+
+```text
+artifacts/humanity/android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+## Emulator Testing
+
+1. Open Android Studio.
+2. Open `artifacts/humanity/android`.
+3. Open Device Manager.
+4. Create an Android Virtual Device if one does not exist.
+5. Use an image compatible with API 36 or a recent stable API.
+6. Start the emulator.
+7. Run the `app` configuration from Android Studio, or run a debug APK install with `adb install`.
+
+## Physical Device Testing
+
+1. Enable Developer Options on the Android phone.
+2. Enable USB debugging.
+3. Connect the phone with USB.
+4. Approve the device trust prompt on the phone.
+5. Run `adb devices` and confirm the device is listed.
+6. Run from Android Studio or install the debug APK:
+
+```bash
+adb install -r artifacts/humanity/android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+The mobile app still requires a deployed backend URL through `VITE_API_BASE_URL` for meaningful end-to-end testing.
 
 ## Release AAB Notes
 
