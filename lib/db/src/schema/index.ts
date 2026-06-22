@@ -24,3 +24,4 @@ export * from "./messages";
 export * from "./profiles";
 export * from "./dinner-table";
 export * from "./world-news";
+export * from "./compliance";

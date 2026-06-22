@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation, Link } from "wouter";
-import { useUser } from "@clerk/react";
+import { useAuth, useUser } from "@clerk/react";
 import { useQueryClient } from "@tanstack/react-query";
-import { Loader2, LogIn, Check, X, Search, Globe2, Upload, Trash2, Music2 } from "lucide-react";
+import { Loader2, LogIn, Check, X, Search, Globe2, Upload, Trash2, Music2, AlertTriangle } from "lucide-react";
 import { useUpload } from "@workspace/object-storage-web";
 import {
   useGetMyProfile,
@@ -16,6 +16,7 @@ import {
 } from "@workspace/api-client-react";
 import { PlayPreviewButton } from "../components/song-preview";
 import { apiUrl } from "@/lib/api-config";
+import { useToast } from "@/hooks/use-toast";
 
 const toArray = (value: string) =>
   value
@@ -57,8 +58,10 @@ const inputClass =
 
 export default function ProfileEdit() {
   const { isSignedIn, isLoaded, user } = useUser();
+  const { getToken } = useAuth();
   const [, setLocation] = useLocation();
   const qc = useQueryClient();
+  const { toast } = useToast();
 
   const { data: profile, isLoading } = useGetMyProfile({
     query: { enabled: isLoaded && isSignedIn === true, retry: false, queryKey: getGetMyProfileQueryKey() },
@@ -79,6 +82,7 @@ export default function ProfileEdit() {
   const [prefilled, setPrefilled] = useState(false);
 
   const [photoError, setPhotoError] = useState<string | null>(null);
+  const [deleteRequestPending, setDeleteRequestPending] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { uploadFile, isUploading } = useUpload({
     basePath: apiUrl("/api/storage"),
@@ -230,6 +234,30 @@ export default function ProfileEdit() {
     });
     await qc.invalidateQueries({ queryKey: getGetMyProfileQueryKey() });
     setLocation("/profile");
+  };
+
+  const requestAccountDeletion = async () => {
+    if (!window.confirm("Request account deletion? The team will review and complete deletion manually.")) {
+      return;
+    }
+    setDeleteRequestPending(true);
+    try {
+      const token = await getToken();
+      const headers = new Headers({ "Content-Type": "application/json" });
+      if (token) headers.set("Authorization", `Bearer ${token}`);
+      const response = await fetch(apiUrl("/api/account/delete-request"), {
+        method: "POST",
+        headers,
+        credentials: "include",
+        body: JSON.stringify({ reason: "Requested from profile settings" }),
+      });
+      if (!response.ok) throw new Error("delete request failed");
+      toast({ title: "Account deletion requested" });
+    } catch {
+      toast({ title: "Request failed", description: "Please try again or contact support." });
+    } finally {
+      setDeleteRequestPending(false);
+    }
   };
 
   return (
@@ -531,6 +559,29 @@ export default function ProfileEdit() {
           </Link>
         </div>
       </form>
+
+      <section className="mt-6 glass-panel rounded-3xl p-6 border border-red-400/20">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h2 className="text-lg font-semibold text-white flex items-center gap-2">
+              <AlertTriangle className="h-4 w-4 text-red-300" />
+              Account deletion
+            </h2>
+            <p className="text-sm text-white/55 mt-1 max-w-xl">
+              Request deletion of your HuMANity account and local app data. Clerk identity deletion is completed manually after review.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={requestAccountDeletion}
+            disabled={deleteRequestPending}
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-red-400/40 px-5 py-2.5 text-sm font-semibold text-red-200 hover:bg-red-500/10 transition-colors disabled:opacity-50"
+          >
+            {deleteRequestPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
+            Request deletion
+          </button>
+        </div>
+      </section>
     </section>
   );
 }

@@ -25,6 +25,7 @@ import ProfileEdit from "@/pages/profile-edit";
 import ProfileView from "@/pages/profile-view";
 import Connections from "@/pages/connections";
 import Messages from "@/pages/messages";
+import { LegalPage } from "@/pages/legal";
 import { Layout } from "@/components/layout";
 
 const clerkPubKey = publishableKeyFromHost(
@@ -153,6 +154,9 @@ function AppRoutes() {
         <Route path="/profile" component={MyProfile} />
         <Route path="/profile/edit" component={ProfileEdit} />
         <Route path="/profile/:userId">{(params) => <ProfileView userId={params.userId} />}</Route>
+        <Route path="/privacy">{() => <LegalPage kind="privacy" />}</Route>
+        <Route path="/terms">{() => <LegalPage kind="terms" />}</Route>
+        <Route path="/support">{() => <LegalPage kind="support" />}</Route>
         <Route component={NotFound} />
       </Switch>
     </Layout>

@@ -285,6 +285,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
             <div className="space-y-4 md:text-right flex flex-col md:items-end">
               <h4 className="label-eyebrow text-[#FBBF24]/80">{t("footer.legal")}</h4>
+              <div className="flex flex-col gap-2 md:items-end">
+                <Link href="/privacy" className="hover:text-[#FBBF24] transition-colors inline-block w-fit">Privacy Policy</Link>
+                <Link href="/terms" className="hover:text-[#FBBF24] transition-colors inline-block w-fit">Terms of Service</Link>
+                <Link href="/support" className="hover:text-[#FBBF24] transition-colors inline-block w-fit">Support</Link>
+              </div>
               <p>{t("footer.copyright", { year: new Date().getFullYear() })}</p>
               <p>{t("footer.builtFor")}</p>
             </div>

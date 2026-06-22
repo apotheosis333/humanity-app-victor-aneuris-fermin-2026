@@ -5,6 +5,7 @@ import {
   countriesTable,
   connectionsTable,
   messagesTable,
+  blocksTable,
   type Message,
 } from "@workspace/db";
 import { SendMessageBody } from "@workspace/api-zod";
@@ -24,6 +25,25 @@ interface ConnectionUserDTO {
   countryFlagUrl: string | null;
   humanityScore: number;
   pledged: boolean;
+}
+
+function noBlockBetweenSql(me: string, otherSql: unknown) {
+  return sql`NOT EXISTS (
+    SELECT 1 FROM ${blocksTable}
+    WHERE (${blocksTable.blockerId} = ${me} AND ${blocksTable.blockedUserId} = ${otherSql})
+       OR (${blocksTable.blockerId} = ${otherSql} AND ${blocksTable.blockedUserId} = ${me})
+  )`;
+}
+
+async function isBlockedPair(me: string, other: string): Promise<boolean> {
+  const result = await db.execute<{ blocked: boolean }>(sql`
+    SELECT EXISTS (
+      SELECT 1 FROM ${blocksTable}
+      WHERE (${blocksTable.blockerId} = ${me} AND ${blocksTable.blockedUserId} = ${other})
+         OR (${blocksTable.blockerId} = ${other} AND ${blocksTable.blockedUserId} = ${me})
+    ) AS blocked
+  `);
+  return Boolean(result.rows[0]?.blocked);
 }
 
 const CLERK_CACHE_TTL_MS = 5 * 60 * 1000;
@@ -173,6 +193,7 @@ router.get("/messages", requireAuth, async (req, res) => {
               OR (${connectionsTable.addresseeId} = ${me} AND ${connectionsTable.requesterId} = ${counterpart})
             )
         )`,
+        noBlockBetweenSql(me, counterpart),
       ),
     )
     .orderBy(desc(messagesTable.createdAt));
@@ -221,6 +242,7 @@ router.get("/messages/unread-count", requireAuth, async (req, res) => {
               OR (${connectionsTable.addresseeId} = ${me} AND ${connectionsTable.requesterId} = ${messagesTable.senderId})
             )
         )`,
+        noBlockBetweenSql(me, messagesTable.senderId),
       ),
     );
   res.json({ count: row?.count ?? 0 });
@@ -230,6 +252,10 @@ router.get("/messages/unread-count", requireAuth, async (req, res) => {
 router.get("/messages/:userId", requireAuth, async (req, res) => {
   const me = req.userId!;
   const other = String(req.params.userId);
+  if (await isBlockedPair(me, other)) {
+    res.status(403).json({ error: "Messaging unavailable." });
+    return;
+  }
 
   // Atomic: lock the accepted-connection row (FOR SHARE) for the duration of
   // the transaction so a concurrent disconnect cannot race between the gate
@@ -303,6 +329,10 @@ router.get("/messages/:userId", requireAuth, async (req, res) => {
 router.post("/messages/:userId", requireAuth, authWriteLimiter, async (req, res) => {
   const me = req.userId!;
   const other = String(req.params.userId);
+  if (await isBlockedPair(me, other)) {
+    res.status(403).json({ error: "Messaging unavailable." });
+    return;
+  }
   const body = SendMessageBody.safeParse(req.body);
   if (!body.success) {
     res.status(400).json({ error: "Invalid message" });
@@ -359,6 +389,10 @@ router.post("/messages/:userId", requireAuth, authWriteLimiter, async (req, res)
 router.post("/messages/:userId/read", requireAuth, async (req, res) => {
   const me = req.userId!;
   const other = String(req.params.userId);
+  if (await isBlockedPair(me, other)) {
+    res.status(403).json({ error: "Messaging unavailable." });
+    return;
+  }
   // Atomic: a single statement gates the read-mark on an accepted connection
   // and reports whether the pair is connected, so a concurrent disconnect
   // cannot slip a mark-read through after removal (no TOCTOU). 403 if not.

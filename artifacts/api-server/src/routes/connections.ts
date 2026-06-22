@@ -4,6 +4,7 @@ import {
   profilesTable,
   countriesTable,
   connectionsTable,
+  blocksTable,
   type Connection,
 } from "@workspace/db";
 import { SendConnectionRequestBody } from "@workspace/api-zod";
@@ -29,6 +30,21 @@ interface ConnectionUserDTO {
   countryFlagUrl: string | null;
   humanityScore: number;
   pledged: boolean;
+}
+
+function blockExistsSql(me: string, other: string) {
+  return sql`EXISTS (
+    SELECT 1 FROM ${blocksTable}
+    WHERE (${blocksTable.blockerId} = ${me} AND ${blocksTable.blockedUserId} = ${other})
+       OR (${blocksTable.blockerId} = ${other} AND ${blocksTable.blockedUserId} = ${me})
+  )`;
+}
+
+async function isBlockedPair(me: string, other: string): Promise<boolean> {
+  const result = await db.execute<{ blocked: boolean }>(sql`
+    SELECT ${blockExistsSql(me, other)} AS blocked
+  `);
+  return Boolean(result.rows[0]?.blocked);
 }
 
 const CLERK_CACHE_TTL_MS = 5 * 60 * 1000;
@@ -183,6 +199,11 @@ router.get("/users/search", requireAuth, async (req, res) => {
           ilike(profilesTable.username, like),
           ilike(profilesTable.email, q),
         ),
+        sql`NOT EXISTS (
+          SELECT 1 FROM ${blocksTable}
+          WHERE (${blocksTable.blockerId} = ${me} AND ${blocksTable.blockedUserId} = ${profilesTable.userId})
+             OR (${blocksTable.blockerId} = ${profilesTable.userId} AND ${blocksTable.blockedUserId} = ${me})
+        )`,
       ),
     )
     .limit(20);
@@ -272,6 +293,13 @@ router.get("/connections/recommendations", requireAuth, async (req, res) => {
   const excluded = new Set<string>([me]);
   for (const c of existing) {
     excluded.add(c.requesterId === me ? c.addresseeId : c.requesterId);
+  }
+  const blocks = await db
+    .select({ blockerId: blocksTable.blockerId, blockedUserId: blocksTable.blockedUserId })
+    .from(blocksTable)
+    .where(or(eq(blocksTable.blockerId, me), eq(blocksTable.blockedUserId, me)));
+  for (const block of blocks) {
+    excluded.add(block.blockerId === me ? block.blockedUserId : block.blockerId);
   }
 
   // Lowercase + trim the viewer's array attributes so prefilter and scoring
@@ -446,6 +474,13 @@ router.get("/connections", requireAuth, async (req, res) => {
           eq(connectionsTable.requesterId, me),
           eq(connectionsTable.addresseeId, me),
         ),
+        sql`NOT EXISTS (
+          SELECT 1 FROM ${blocksTable}
+          WHERE (${blocksTable.blockerId} = ${me} AND ${blocksTable.blockedUserId} = ${connectionsTable.requesterId})
+             OR (${blocksTable.blockerId} = ${me} AND ${blocksTable.blockedUserId} = ${connectionsTable.addresseeId})
+             OR (${blocksTable.blockedUserId} = ${me} AND ${blocksTable.blockerId} = ${connectionsTable.requesterId})
+             OR (${blocksTable.blockedUserId} = ${me} AND ${blocksTable.blockerId} = ${connectionsTable.addresseeId})
+        )`,
       ),
     );
   const otherIds = conns.map((c) => (c.requesterId === me ? c.addresseeId : c.requesterId));
@@ -466,6 +501,13 @@ router.get("/connections/requests", requireAuth, async (req, res) => {
           eq(connectionsTable.requesterId, me),
           eq(connectionsTable.addresseeId, me),
         ),
+        sql`NOT EXISTS (
+          SELECT 1 FROM ${blocksTable}
+          WHERE (${blocksTable.blockerId} = ${me} AND ${blocksTable.blockedUserId} = ${connectionsTable.requesterId})
+             OR (${blocksTable.blockerId} = ${me} AND ${blocksTable.blockedUserId} = ${connectionsTable.addresseeId})
+             OR (${blocksTable.blockedUserId} = ${me} AND ${blocksTable.blockerId} = ${connectionsTable.requesterId})
+             OR (${blocksTable.blockedUserId} = ${me} AND ${blocksTable.blockerId} = ${connectionsTable.addresseeId})
+        )`,
       ),
     );
   const incoming = conns.filter((c) => c.addresseeId === me);
@@ -500,6 +542,10 @@ router.post("/connections/requests", requireAuth, authWriteLimiter, async (req, 
   const target = body.data.userId;
   if (target === me) {
     res.status(400).json({ error: "You cannot connect with yourself." });
+    return;
+  }
+  if (await isBlockedPair(me, target)) {
+    res.status(403).json({ error: "Connection unavailable." });
     return;
   }
   const [targetProfile] = await db
@@ -634,6 +680,10 @@ router.get("/connections/status/:userId", requireAuth, async (req, res) => {
   const me = req.userId!;
   const other = String(req.params.userId);
   if (other === me) {
+    res.json({ status: "none", connectionId: null });
+    return;
+  }
+  if (await isBlockedPair(me, other)) {
     res.json({ status: "none", connectionId: null });
     return;
   }

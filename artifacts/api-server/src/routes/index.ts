@@ -14,6 +14,7 @@ import dinnerTableRouter from "./dinner-table";
 import storageRouter from "./storage";
 import musicRouter from "./music";
 import worldNewsRouter from "./world-news";
+import complianceRouter from "./compliance";
 
 const router: IRouter = Router();
 
@@ -28,6 +29,7 @@ router.use(connectionsRouter);
 router.use(messagesRouter);
 router.use(dinnerTableRouter);
 router.use(worldNewsRouter);
+router.use(complianceRouter);
 router.use(countriesRouter);
 router.use(timelineRouter);
 router.use(milestonesRouter);

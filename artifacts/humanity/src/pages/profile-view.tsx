@@ -2,6 +2,7 @@ import { Loader2 } from "lucide-react";
 import { useGetProfile, getGetProfileQueryKey, ApiError } from "@workspace/api-client-react";
 import { ProfileCard } from "@/components/profile-card";
 import { ConnectButton } from "@/components/connect-button";
+import { ReportBlockControls } from "@/components/report-block-controls";
 
 export default function ProfileView({ userId }: { userId: string }) {
   const { data: profile, isLoading, error } = useGetProfile(userId, {
@@ -38,7 +39,15 @@ export default function ProfileView({ userId }: { userId: string }) {
 
   return (
     <section className="w-full px-6 py-12 md:py-16">
-      <ProfileCard profile={profile} action={<ConnectButton userId={userId} />} />
+      <ProfileCard
+        profile={profile}
+        action={
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <ConnectButton userId={userId} />
+            <ReportBlockControls userId={userId} />
+          </div>
+        }
+      />
     </section>
   );
 }
