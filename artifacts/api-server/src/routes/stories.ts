@@ -3,6 +3,7 @@ import { db } from "@workspace/db";
 import { storiesTable, countriesTable } from "@workspace/db";
 import { CreateStoryBody, CreateStoryParams, ListStoriesParams } from "@workspace/api-zod";
 import { eq, desc } from "drizzle-orm";
+import { requireAuth } from "../middlewares/auth";
 
 const router = Router();
 
@@ -22,7 +23,9 @@ router.get("/countries/:code/stories", async (req, res) => {
   res.json(rows.map(mapStory));
 });
 
-router.post("/countries/:code/stories", async (req, res) => {
+// TODO: Replace requireAuth with admin-role enforcement before production
+// content management is exposed outside trusted operators.
+router.post("/countries/:code/stories", requireAuth, async (req, res) => {
   const params = CreateStoryParams.safeParse(req.params);
   if (!params.success) {
     res.status(400).json({ error: "Invalid params" });

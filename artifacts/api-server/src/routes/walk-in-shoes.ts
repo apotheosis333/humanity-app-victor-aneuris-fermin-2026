@@ -1,9 +1,11 @@
 import { Router } from "express";
 import { openai } from "@workspace/integrations-openai-ai-server";
+import { requireAuth } from "../middlewares/auth";
 
 const router = Router();
 
-router.post("/walk-in-shoes", async (req, res) => {
+// TODO: Add per-user rate limiting before broad production/mobile launch.
+router.post("/walk-in-shoes", requireAuth, async (req, res) => {
   const { country, region, age, occupation, gender } = req.body as {
     country: string;
     region?: string;

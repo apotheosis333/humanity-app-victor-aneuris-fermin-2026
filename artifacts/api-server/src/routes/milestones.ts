@@ -3,6 +3,7 @@ import { db } from "@workspace/db";
 import { culturalMilestonesTable, countriesTable } from "@workspace/db";
 import { CreateMilestoneBody, CreateMilestoneParams, ListMilestonesParams } from "@workspace/api-zod";
 import { eq, asc } from "drizzle-orm";
+import { requireAuth } from "../middlewares/auth";
 
 const router = Router();
 
@@ -22,7 +23,9 @@ router.get("/countries/:code/milestones", async (req, res) => {
   res.json(rows.map(mapMilestone));
 });
 
-router.post("/countries/:code/milestones", async (req, res) => {
+// TODO: Replace requireAuth with admin-role enforcement before production
+// content management is exposed outside trusted operators.
+router.post("/countries/:code/milestones", requireAuth, async (req, res) => {
   const params = CreateMilestoneParams.safeParse(req.params);
   if (!params.success) {
     res.status(400).json({ error: "Invalid params" });

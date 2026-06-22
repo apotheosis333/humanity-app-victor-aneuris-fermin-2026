@@ -3,6 +3,7 @@ import { db } from "@workspace/db";
 import { timelineEventsTable, countriesTable } from "@workspace/db";
 import { CreateTimelineEventBody, CreateTimelineEventParams, ListTimelineParams } from "@workspace/api-zod";
 import { eq, asc } from "drizzle-orm";
+import { requireAuth } from "../middlewares/auth";
 
 const router = Router();
 
@@ -22,7 +23,9 @@ router.get("/countries/:code/timeline", async (req, res) => {
   res.json(rows.map(mapEvent));
 });
 
-router.post("/countries/:code/timeline", async (req, res) => {
+// TODO: Replace requireAuth with admin-role enforcement before production
+// content management is exposed outside trusted operators.
+router.post("/countries/:code/timeline", requireAuth, async (req, res) => {
   const params = CreateTimelineEventParams.safeParse(req.params);
   if (!params.success) {
     res.status(400).json({ error: "Invalid params" });
