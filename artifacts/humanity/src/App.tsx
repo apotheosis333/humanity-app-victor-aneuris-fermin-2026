@@ -1,9 +1,9 @@
-import { useEffect, useRef } from "react";
+import { Component, type ErrorInfo, type ReactNode, useEffect, useRef } from "react";
 import { Switch, Route, useLocation, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider, useQueryClient } from "@tanstack/react-query";
 import { ClerkProvider, SignIn, SignUp, useClerk } from "@clerk/react";
-import { publishableKeyFromHost } from "@clerk/react/internal";
 import { dark } from "@clerk/themes";
+import { Capacitor } from "@capacitor/core";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
@@ -28,12 +28,12 @@ import Messages from "@/pages/messages";
 import { LegalPage } from "@/pages/legal";
 import { Layout } from "@/components/layout";
 
-const clerkPubKey = publishableKeyFromHost(
-  window.location.hostname,
-  import.meta.env.VITE_CLERK_PUBLISHABLE_KEY,
-);
+const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY?.trim();
 
-const clerkProxyUrl = import.meta.env.VITE_CLERK_PROXY_URL;
+const isNativeMobile = Capacitor.isNativePlatform();
+const clerkProxyUrl = isNativeMobile
+  ? undefined
+  : import.meta.env.VITE_CLERK_PROXY_URL?.trim() || undefined;
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -41,10 +41,6 @@ function stripBase(path: string): string {
   return basePath && path.startsWith(basePath)
     ? path.slice(basePath.length) || "/"
     : path;
-}
-
-if (!clerkPubKey) {
-  throw new Error("Missing VITE_CLERK_PUBLISHABLE_KEY in .env file");
 }
 
 const clerkAppearance = {
@@ -95,6 +91,84 @@ const clerkAppearance = {
 };
 
 const queryClient = new QueryClient();
+
+function AppSetupFallback() {
+  return (
+    <main className="flex min-h-[100dvh] items-center justify-center bg-[#020617] px-4 py-10 text-white">
+      <section className="w-full max-w-lg rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl">
+        <img src={`${basePath}/logo.svg`} alt="HuMANity" className="mb-6 h-10 w-auto" />
+        <h1 className="text-2xl font-bold">HuMANity needs mobile app configuration</h1>
+        <p className="mt-3 text-sm leading-6 text-slate-300">
+          This build is missing a client-safe Clerk publishable key. Add
+          {" "}
+          <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-amber-200">
+            VITE_CLERK_PUBLISHABLE_KEY
+          </code>
+          {" "}
+          in a local ignored environment file before running the Android smoke test.
+        </p>
+        <p className="mt-3 text-sm leading-6 text-slate-400">
+          Real keys and backend URLs must stay out of source control.
+        </p>
+        <nav className="mt-6 flex flex-wrap gap-3 text-sm">
+          <a className="text-amber-300 underline-offset-4 hover:underline" href={`${basePath}/privacy`}>
+            Privacy
+          </a>
+          <a className="text-amber-300 underline-offset-4 hover:underline" href={`${basePath}/terms`}>
+            Terms
+          </a>
+          <a className="text-amber-300 underline-offset-4 hover:underline" href={`${basePath}/support`}>
+            Support
+          </a>
+        </nav>
+      </section>
+    </main>
+  );
+}
+
+function PublicConfigRoutes() {
+  return (
+    <Switch>
+      <Route path="/privacy">{() => <LegalPage kind="privacy" />}</Route>
+      <Route path="/terms">{() => <LegalPage kind="terms" />}</Route>
+      <Route path="/support">{() => <LegalPage kind="support" />}</Route>
+      <Route component={AppSetupFallback} />
+    </Switch>
+  );
+}
+
+class AppErrorBoundary extends Component<
+  { children: ReactNode },
+  { error: Error | null }
+> {
+  state: { error: Error | null } = { error: null };
+
+  static getDerivedStateFromError(error: Error) {
+    return { error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error("HuMANity app render error", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.error) {
+      return (
+        <main className="flex min-h-[100dvh] items-center justify-center bg-[#020617] px-4 py-10 text-white">
+          <section className="w-full max-w-lg rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl">
+            <img src={`${basePath}/logo.svg`} alt="HuMANity" className="mb-6 h-10 w-auto" />
+            <h1 className="text-2xl font-bold">HuMANity could not finish loading</h1>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              A startup error occurred. Check the Android WebView console or browser console for details.
+            </p>
+          </section>
+        </main>
+      );
+    }
+
+    return this.props.children;
+  }
+}
 
 function SignInPage() {
   return (
@@ -194,10 +268,20 @@ function ClerkProviderWithRoutes() {
 }
 
 function App() {
+  if (!clerkPubKey) {
+    return (
+      <WouterRouter base={basePath}>
+        <PublicConfigRoutes />
+      </WouterRouter>
+    );
+  }
+
   return (
-    <WouterRouter base={basePath}>
-      <ClerkProviderWithRoutes />
-    </WouterRouter>
+    <AppErrorBoundary>
+      <WouterRouter base={basePath}>
+        <ClerkProviderWithRoutes />
+      </WouterRouter>
+    </AppErrorBoundary>
   );
 }
 

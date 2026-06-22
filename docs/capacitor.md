@@ -43,6 +43,10 @@ VITE_CLERK_PUBLISHABLE_KEY=pk_live_or_test_placeholder
 
 Do not put private secrets in `VITE_` variables. Backend secrets such as `DATABASE_URL`, `CLERK_SECRET_KEY`, storage access keys, and OpenAI keys belong only in backend deployment environments.
 
+For Android/iOS smoke testing, put real local values only in an ignored frontend env file such as `artifacts/humanity/.env.local`, then rebuild and run `pnpm run cap:sync`. Do not commit that file.
+
+Do not use localhost or Replit Clerk proxy settings for Capacitor builds. Native WebViews run the app at `https://localhost`, so a Clerk proxy such as `https://clerk.localhost` will fail inside Android/iOS. The app only applies `VITE_CLERK_PROXY_URL` on non-native web builds.
+
 ## Android
 
 Android platform files live under `artifacts/humanity/android` after `cap add android`.
@@ -72,6 +76,7 @@ Manual iOS steps not performed in this repo:
 
 - `VITE_API_BASE_URL` must be set to the deployed API URL for Android/iOS builds.
 - Clerk authentication must be tested inside Android and iOS Capacitor WebViews.
+- Google/social OAuth may require Clerk provider redirect configuration and real-device testing.
 - Profile uploads require a deployed backend and configured S3-compatible storage such as Cloudflare R2.
 - CORS must allow the deployed web origin and mobile origins such as `capacitor://localhost` and `ionic://localhost`.
 

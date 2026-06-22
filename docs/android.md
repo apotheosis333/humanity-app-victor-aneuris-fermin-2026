@@ -69,6 +69,12 @@ VITE_CLERK_PUBLISHABLE_KEY=pk_live_or_test_placeholder
 
 Do not hardcode the Replit URL as the final production backend unless that is intentionally chosen for launch.
 
+For local Android smoke testing, place real values only in `artifacts/humanity/.env.local`, which must remain uncommitted, then rebuild and run `pnpm run cap:sync`. Do not commit real Clerk keys or backend URLs.
+
+Do not set `VITE_CLERK_PROXY_URL` for Android builds. Capacitor serves the app from `https://localhost`, so localhost/Replit Clerk proxy settings can make the WebView request `https://clerk.localhost` and fail before the app renders.
+
+Clerk email/password, magic-link, passkey, and social OAuth flows still need Android WebView and real-device testing. Google/social OAuth may require provider redirect settings in Clerk before release.
+
 Backend CORS must allow Android/Capacitor origins such as:
 
 ```bash
@@ -181,6 +187,25 @@ VITE_CLERK_PUBLISHABLE_KEY=pk_live_or_test_placeholder
 ```
 
 Do not commit real environment values. Keep them in local ignored env files or deployment/CI secret settings.
+
+## Step 19 Startup Fix
+
+Date: 2026-06-22
+
+The Android startup path now uses `VITE_CLERK_PUBLISHABLE_KEY` directly and disables `VITE_CLERK_PROXY_URL` on native Capacitor builds. If the publishable key is missing, the app renders a non-secret setup screen instead of throwing during startup.
+
+The startup fallback is only a configuration guard. Full Android auth testing still requires a real local, uncommitted `VITE_CLERK_PUBLISHABLE_KEY` and a deployed backend URL for `VITE_API_BASE_URL`.
+
+Retest result on `HuMANity_Pixel_API_36`:
+
+- APK reinstall: passed.
+- Native launch: passed.
+- Blank dark WebView: fixed.
+- Visible fallback UI: passed.
+- `https://clerk.localhost` requests: not observed.
+- Previous `t?.map is not a function` startup error: not observed.
+- Privacy route: verified through the WebView route state.
+- Full auth/home smoke test: still blocked until a real local `VITE_CLERK_PUBLISHABLE_KEY` is supplied outside source control.
 
 ## Release AAB Notes
 
