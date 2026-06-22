@@ -2,6 +2,8 @@
 
 These notes are for deploying the HuMANity Express API to Render or Railway. Do not put real secret values in this file.
 
+For the Step 22 mobile backend deployment handoff and Android API smoke-test checklist, see `docs/step22-backend-deployment-mobile-smoke-test.md`.
+
 ## Backend Package
 
 - Workspace package: `@workspace/api-server`
