@@ -134,6 +134,54 @@ adb install -r artifacts/humanity/android/app/build/outputs/apk/debug/app-debug.
 
 The mobile app still requires a deployed backend URL through `VITE_API_BASE_URL` for meaningful end-to-end testing.
 
+## Step 18 Smoke Test
+
+Date: 2026-06-22
+
+Device used:
+
+- Android emulator: `HuMANity_Pixel_API_36`
+- Model: `sdk_gphone64_x86_64`
+- Android API: 36
+
+Commands run from the repo root:
+
+```powershell
+pnpm --filter @workspace/humanity run typecheck
+$env:PORT='5173'; $env:BASE_PATH='/'; pnpm --filter @workspace/humanity run build
+pnpm --filter @workspace/humanity run cap:sync
+pnpm run android:build:debug
+adb install -r artifacts/humanity/android/app/build/outputs/apk/debug/app-debug.apk
+adb shell monkey -p com.humanity.app -c android.intent.category.LAUNCHER 1
+```
+
+Results:
+
+- APK install: passed.
+- Native app launch: passed.
+- Instant native crash: none found.
+- Unexpected native permission prompts: none.
+- Home screen rendering: failed; the app opened to a blank dark WebView screen.
+- Navigation, Privacy, Terms, Support, and Profile/Login smoke checks: blocked by the blank startup screen.
+
+Diagnostics:
+
+- The WebView loaded `https://localhost/` and the packaged `index.html`.
+- The React root stayed empty.
+- DevTools reported `TypeError: t?.map is not a function`.
+- Clerk JS failed to load from `https://clerk.localhost/npm/@clerk/clerk-js@6/dist/clerk.browser.js` with `net::ERR_CONNECTION_REFUSED`.
+
+Interpretation:
+
+This is not an Android packaging or native startup crash. The debug APK installs and launches, but the mobile WebView cannot render the app until the mobile build is configured with valid client-safe Clerk settings and a deployed backend URL. For real mobile testing, build with placeholder-free environment values supplied locally or by CI:
+
+```bash
+VITE_API_BASE_URL=https://your-deployed-backend-url.com
+VITE_CLERK_PUBLISHABLE_KEY=pk_live_or_test_placeholder
+```
+
+Do not commit real environment values. Keep them in local ignored env files or deployment/CI secret settings.
+
 ## Release AAB Notes
 
 Do not create or commit signing keys in this repository.
