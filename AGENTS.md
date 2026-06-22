@@ -55,6 +55,15 @@ pnpm --filter @workspace/humanity run typecheck
 ```
 
 The frontend Vite build output is configured under `artifacts/humanity/dist/public`.
+The Vite config currently requires `PORT` and `BASE_PATH`; for a local production
+build on PowerShell, use placeholders such as:
+
+```powershell
+$env:PORT='5173'; $env:BASE_PATH='/'; pnpm --filter @workspace/humanity run build
+```
+
+On Windows x64, do not exclude the `win32-x64-msvc` native optional packages for
+Rollup, Lightning CSS, or Tailwind Oxide; the Vite production build needs them.
 
 ### Backend Package
 
