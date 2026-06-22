@@ -207,6 +207,31 @@ Retest result on `HuMANity_Pixel_API_36`:
 - Privacy route: verified through the WebView route state.
 - Full auth/home smoke test: still blocked until a real local `VITE_CLERK_PUBLISHABLE_KEY` is supplied outside source control.
 
+## Step 20 Clerk Auth Smoke Test
+
+Date: 2026-06-22
+
+Local env file:
+
+- Path: `artifacts/humanity/.env.local`
+- Git status: ignored by `.gitignore`
+- Required value: `VITE_CLERK_PUBLISHABLE_KEY`
+- Optional value: `VITE_API_BASE_URL`
+
+Result on `HuMANity_Pixel_API_36`:
+
+- A Clerk publishable key was found from the currently deployed public frontend bundle and used only in the ignored local env file.
+- APK rebuild, sync, debug build, reinstall, and native launch passed.
+- The setup fallback no longer appeared, which confirms the Android build received `VITE_CLERK_PUBLISHABLE_KEY`.
+- Clerk auth UI did not load.
+- WebView diagnostics showed Clerk JS attempted to load from the deployed Replit Clerk proxy host and failed with a network connection-close error.
+- `https://clerk.localhost` requests were not observed.
+- The previous startup `t?.map is not a function` error reappeared after Clerk attempted to initialize with the proxy-bound publishable key, and the app-level error boundary showed the readable startup error fallback instead of a fully blank screen.
+
+Conclusion:
+
+The publishable key embedded in the deployed Replit app appears to be tied to the Replit Clerk proxy host. That is not sufficient for Android WebView auth testing. The next Android auth test needs the Clerk dashboard publishable key for the HuMANity application, preferably one whose frontend API is not the Replit proxy host, placed only in `artifacts/humanity/.env.local`.
+
 ## Release AAB Notes
 
 Do not create or commit signing keys in this repository.
