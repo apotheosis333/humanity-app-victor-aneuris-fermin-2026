@@ -261,7 +261,7 @@ export default function ProfileEdit() {
   };
 
   return (
-    <section className="w-full max-w-3xl mx-auto px-6 py-12 md:py-16">
+    <section className="w-full max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
       <div className="text-center mb-10 animate-fade-up">
         <span className="label-eyebrow text-[#FBBF24]/80">Your story</span>
         <h1 className="text-3xl md:text-5xl font-serif text-white mt-3">
@@ -272,9 +272,9 @@ export default function ProfileEdit() {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="glass-panel rounded-3xl p-8 md:p-10 space-y-7 animate-fade-up delay-100">
+      <form onSubmit={handleSubmit} className="glass-panel rounded-3xl p-5 sm:p-8 md:p-10 space-y-7 animate-fade-up delay-100">
         <Field label="Profile picture" hint="JPG, PNG, or WEBP. Up to 5 MB.">
-          <div className="flex items-center gap-5">
+          <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
             <div className="relative shrink-0">
               <div className="h-24 w-24 rounded-full glass border border-[#60A5FA]/40 overflow-hidden flex items-center justify-center glow-blue/40">
                 {photoUrl ? (
@@ -292,7 +292,7 @@ export default function ProfileEdit() {
               )}
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex w-full flex-col gap-2 sm:w-auto">
               <input
                 ref={fileInputRef}
                 type="file"
@@ -304,7 +304,7 @@ export default function ProfileEdit() {
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 disabled={isUploading}
-                className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm text-white/85 border border-white/10 hover:border-[#60A5FA]/60 transition-colors disabled:opacity-50"
+                className="inline-flex min-h-11 items-center justify-center gap-2 glass rounded-full px-4 py-2.5 text-sm text-white/85 border border-white/10 hover:border-[#60A5FA]/60 transition-colors disabled:opacity-50"
               >
                 <Upload className="h-3.5 w-3.5" />
                 {photoUrl ? "Replace photo" : "Upload photo"}
@@ -313,7 +313,7 @@ export default function ProfileEdit() {
                 <button
                   type="button"
                   onClick={() => setPhotoUrl(null)}
-                  className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-red-400 transition-colors px-1"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 text-sm text-white/50 hover:text-red-400 transition-colors px-1"
                 >
                   <Trash2 className="h-3.5 w-3.5" />
                   Remove
@@ -545,16 +545,16 @@ export default function ProfileEdit() {
           </p>
         )}
 
-        <div className="flex items-center gap-3 pt-2">
+        <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
           <button
             type="submit"
             disabled={update.isPending || isUploading || !displayName.trim()}
-            className="inline-flex items-center gap-2 bg-[#FBBF24] text-[#0F172A] rounded-full px-6 py-3 font-semibold hover:glow-gold transition-all disabled:opacity-50"
+            className="inline-flex min-h-11 items-center justify-center gap-2 bg-[#FBBF24] text-[#0F172A] rounded-full px-6 py-3 font-semibold hover:glow-gold transition-all disabled:opacity-50"
           >
             {update.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}
             Save profile
           </button>
-          <Link href="/profile" className="text-white/60 hover:text-white px-4 py-3 transition-colors">
+          <Link href="/profile" className="inline-flex min-h-11 items-center justify-center text-white/60 hover:text-white px-4 py-3 transition-colors">
             Cancel
           </Link>
         </div>

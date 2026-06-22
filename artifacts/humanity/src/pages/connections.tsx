@@ -86,7 +86,7 @@ function UserMeta({ user }: { user: ConnectionUser | UserSearchResult | Recommen
 
 function Card({ children }: { children: React.ReactNode }) {
   return (
-    <div className="glass-panel rounded-2xl p-4 flex items-center gap-4">{children}</div>
+    <div className="glass-panel rounded-2xl p-4 flex flex-col gap-4 sm:flex-row sm:items-center">{children}</div>
   );
 }
 
@@ -103,7 +103,7 @@ function EmptyState({ icon: Icon, title, body }: { icon: React.ElementType; titl
 }
 
 const tabClass = (active: boolean) =>
-  `relative px-4 py-2 text-sm font-medium rounded-full transition-all ${
+  `relative min-h-11 px-4 py-2 text-sm font-medium rounded-full transition-all ${
     active ? "bg-white/10 text-[#FBBF24]" : "text-white/60 hover:text-white hover:bg-white/5"
   }`;
 
@@ -159,7 +159,7 @@ export default function Connections() {
 
   if (!isLoaded) {
     return (
-      <section className="w-full max-w-3xl mx-auto px-6 py-24 flex justify-center">
+      <section className="w-full max-w-3xl mx-auto px-4 sm:px-6 py-24 flex justify-center">
         <Loader2 className="h-8 w-8 text-[#60A5FA] animate-spin" />
       </section>
     );
@@ -167,14 +167,14 @@ export default function Connections() {
 
   if (!signedIn) {
     return (
-      <section className="w-full max-w-3xl mx-auto px-6 py-24 flex flex-col items-center text-center gap-6">
+      <section className="w-full max-w-3xl mx-auto px-4 sm:px-6 py-24 flex flex-col items-center text-center gap-6">
         <h1 className="text-3xl font-serif text-white">Sign in to find your people</h1>
         <p className="text-white/60 max-w-md">
           Human Connections let you find and connect with people from every corner of the world.
         </p>
         <Link
           href="/sign-in"
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white rounded-full px-6 py-3 font-semibold hover:glow-blue transition-all"
+          className="inline-flex min-h-11 items-center justify-center gap-2 bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white rounded-full px-6 py-3 font-semibold hover:glow-blue transition-all"
         >
           <LogIn className="h-4 w-4" />
           Sign in
@@ -188,7 +188,7 @@ export default function Connections() {
   const requestCount = incoming.length;
 
   return (
-    <section className="w-full max-w-3xl mx-auto px-6 py-12 md:py-16">
+    <section className="w-full max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
       <div className="text-center mb-10 animate-fade-up">
         <span className="label-eyebrow text-[#FBBF24]/80">One Humanity</span>
         <h1 className="text-3xl md:text-5xl font-serif text-white mt-3">Human Connections</h1>
@@ -197,7 +197,7 @@ export default function Connections() {
         </p>
       </div>
 
-      <div className="flex items-center justify-center flex-wrap gap-2 mb-8 glass rounded-full p-1.5 w-fit mx-auto animate-fade-up delay-100">
+      <div className="flex max-w-full items-center justify-start gap-2 overflow-x-auto mb-8 glass rounded-2xl p-1.5 w-fit mx-auto animate-fade-up delay-100 sm:justify-center sm:flex-wrap sm:rounded-full">
         <button type="button" className={tabClass(tab === "foryou")} onClick={() => setTab("foryou")}>
           For You
         </button>
@@ -231,14 +231,14 @@ export default function Connections() {
                 </p>
                 {recommendations.map((u) => (
                   <div key={u.userId} className="glass-panel rounded-2xl p-4 space-y-3">
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                       <Avatar user={u} size="sm" />
                       <UserMeta user={u} />
                       <button
                         type="button"
                         disabled={send.isPending}
                         onClick={() => send.mutate({ data: { userId: u.userId } })}
-                        className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white hover:glow-blue transition-all disabled:opacity-50"
+                        className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white hover:glow-blue transition-all disabled:opacity-50"
                       >
                         <UserPlus className="h-4 w-4" />
                         <span className="hidden sm:inline">Connect</span>
@@ -281,10 +281,10 @@ export default function Connections() {
                 <Card key={u.userId}>
                   <Avatar user={u} />
                   <UserMeta user={u} />
-                  <div className="flex items-center gap-2">
+                  <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto sm:justify-end">
                     <Link
                       href={`/messages/${u.userId}`}
-                      className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white hover:glow-blue transition-all"
+                      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white hover:glow-blue transition-all"
                     >
                       <MessageCircle className="h-4 w-4" />
                       <span className="hidden sm:inline">Message</span>
@@ -293,7 +293,7 @@ export default function Connections() {
                       type="button"
                       disabled={disconnect.isPending}
                       onClick={() => disconnect.mutate({ userId: u.userId })}
-                      className="group inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold glass border border-emerald-400/40 text-emerald-300 hover:border-red-400/50 hover:text-red-300 transition-all disabled:opacity-50"
+                      className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold glass border border-emerald-400/40 text-emerald-300 hover:border-red-400/50 hover:text-red-300 transition-all disabled:opacity-50"
                     >
                       <UserCheck className="h-4 w-4 group-hover:hidden" />
                       <X className="h-4 w-4 hidden group-hover:block" />
@@ -334,12 +334,12 @@ export default function Connections() {
                       <Card key={r.id}>
                         <Avatar user={r.user} size="sm" />
                         <UserMeta user={r.user} />
-                        <div className="flex items-center gap-2">
+                        <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto sm:justify-end">
                           <button
                             type="button"
                             disabled={accept.isPending}
                             onClick={() => accept.mutate({ id: r.id })}
-                            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold bg-[#FBBF24] text-[#0F172A] hover:glow-gold transition-all disabled:opacity-50"
+                            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold bg-[#FBBF24] text-[#0F172A] hover:glow-gold transition-all disabled:opacity-50"
                           >
                             <Check className="h-4 w-4" />
                             Accept
@@ -348,7 +348,7 @@ export default function Connections() {
                             type="button"
                             disabled={removeReq.isPending}
                             onClick={() => removeReq.mutate({ id: r.id })}
-                            className="inline-flex items-center justify-center h-9 w-9 rounded-full glass border border-white/10 text-white/60 hover:text-red-300 hover:border-red-400/50 transition-all disabled:opacity-50"
+                            className="inline-flex items-center justify-center h-11 w-11 rounded-full glass border border-white/10 text-white/60 hover:text-red-300 hover:border-red-400/50 transition-all disabled:opacity-50"
                             aria-label="Decline request"
                           >
                             <X className="h-4 w-4" />
@@ -369,7 +369,7 @@ export default function Connections() {
                           type="button"
                           disabled={removeReq.isPending}
                           onClick={() => removeReq.mutate({ id: r.id })}
-                          className="group inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold glass border border-[#FBBF24]/40 text-[#FBBF24] hover:border-red-400/50 hover:text-red-300 transition-all disabled:opacity-50"
+                          className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold glass border border-[#FBBF24]/40 text-[#FBBF24] hover:border-red-400/50 hover:text-red-300 transition-all disabled:opacity-50"
                         >
                           <Clock className="h-4 w-4 group-hover:hidden" />
                           <X className="h-4 w-4 hidden group-hover:block" />
@@ -454,7 +454,7 @@ function SearchAction({
   busy: boolean;
 }) {
   const base =
-    "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all disabled:opacity-50";
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all disabled:opacity-50";
 
   if (user.connectionStatus === "connected") {
     return (

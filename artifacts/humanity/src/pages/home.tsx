@@ -62,7 +62,7 @@ export default function Home() {
             <span className="label-eyebrow text-white/70">{t("hero.eyebrow")}</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.05] animate-fade-up delay-100">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.05] animate-fade-up delay-100">
             {t("hero.titleMain")} <br className="hidden md:block" />
             <span className="text-gradient-gold italic">{t("hero.titleAccent")}</span>
           </h1>
@@ -71,9 +71,9 @@ export default function Home() {
             {t("hero.subtitle")}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-up delay-300">
-            <Link href="/explore">
-              <Button size="lg" className="bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] hover:from-[#1d4ed8] hover:to-[#1e40af] text-white rounded-full px-9 h-14 text-lg glow-blue transition-transform hover:scale-[1.03] active:scale-95">
+          <div className="flex w-full flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-up delay-300">
+            <Link href="/explore" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] hover:from-[#1d4ed8] hover:to-[#1e40af] text-white rounded-full px-6 sm:px-9 h-14 text-base sm:text-lg glow-blue transition-transform hover:scale-[1.03] active:scale-95 sm:w-auto">
                 <Compass className="mr-2 h-5 w-5" /> {t("hero.ctaExplore")}
               </Button>
             </Link>
@@ -81,7 +81,7 @@ export default function Home() {
               variant="outline"
               size="lg"
               onClick={handleRandomExplore}
-              className="glass border-white/15 text-white hover:bg-white/10 hover:text-white rounded-full px-9 h-14 text-lg transition-transform hover:scale-[1.03] active:scale-95"
+              className="w-full glass border-white/15 text-white hover:bg-white/10 hover:text-white rounded-full px-6 sm:px-9 h-14 text-base sm:text-lg transition-transform hover:scale-[1.03] active:scale-95 sm:w-auto"
             >
               <Sparkles className="mr-2 h-5 w-5 text-[#FBBF24]" /> {t("hero.ctaDiscover")}
             </Button>
@@ -103,14 +103,14 @@ export default function Home() {
       </div>
 
       {/* ===== Mission ===== */}
-      <section className="w-full px-6 max-w-4xl mx-auto">
-        <div className="glass-panel rounded-3xl p-8 md:p-14 text-center animate-fade-up">
+      <section className="w-full px-4 sm:px-6 max-w-4xl mx-auto">
+        <div className="glass-panel rounded-3xl p-5 sm:p-8 md:p-14 text-center animate-fade-up">
           <span className="label-eyebrow text-[#FBBF24]/80">Our Mission</span>
           <h2 className="text-3xl md:text-5xl font-serif text-white mt-3">
             A living library of <span className="text-gradient-gold italic">human civilization.</span>
           </h2>
           <div className="accent-rule mx-auto mt-5" />
-          <div className="mt-8 space-y-6 text-lg md:text-xl text-white/70 leading-relaxed max-w-3xl mx-auto">
+          <div className="mt-8 space-y-6 text-base sm:text-lg md:text-xl text-white/70 leading-relaxed max-w-3xl mx-auto">
             <p>
               Our mission is to help people explore every culture, every nation, every belief system, and every chapter of human history through knowledge, curiosity, and respect.
             </p>
@@ -122,9 +122,9 @@ export default function Home() {
       </section>
 
       {/* ===== World Dinner Table ===== */}
-      <section className="w-full px-6 max-w-5xl mx-auto">
+      <section className="w-full px-4 sm:px-6 max-w-5xl mx-auto">
         <Link href="/dinner-table">
-          <div className="group relative overflow-hidden glass-panel rounded-3xl p-8 md:p-12 cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:glow-gold animate-fade-up">
+          <div className="group relative overflow-hidden glass-panel rounded-3xl p-5 sm:p-8 md:p-12 cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:glow-gold animate-fade-up">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.12)_0%,transparent_60%)] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center gap-8">
               <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl glass border border-[#FBBF24]/30 group-hover:border-[#FBBF24]/60 transition-colors">
@@ -155,12 +155,12 @@ export default function Home() {
       </section>
 
       {/* ===== Quick Links ===== */}
-      <div className="container mx-auto px-6 -mt-12 relative z-20">
+      <div className="container mx-auto px-4 sm:px-6 -mt-12 relative z-20">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {QUICK_LINKS.map((link, i) => (
             <Link key={i} href={link.href}>
               <div
-                className="group glass-panel rounded-2xl p-6 md:p-7 h-full cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:glow-blue animate-fade-up"
+                className="group glass-panel rounded-2xl p-4 sm:p-6 md:p-7 h-full cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:glow-blue animate-fade-up"
                 style={{ animationDelay: `${0.1 * i}s` }}
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl glass border border-[#2563EB]/30 mb-5 transition-colors group-hover:border-[#FBBF24]/40">
@@ -175,7 +175,7 @@ export default function Home() {
       </div>
 
       {/* ===== Globe + Daily Nation ===== */}
-      <section className="w-full px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+      <section className="w-full px-4 sm:px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
         <div className="lg:col-span-2 space-y-6">
           <div>
             <span className="label-eyebrow text-[#FBBF24]/80">From orbit</span>
@@ -241,7 +241,7 @@ export default function Home() {
       </section>
 
       {/* ===== Featured Nations ===== */}
-      <section className="w-full px-6 max-w-7xl mx-auto space-y-10">
+      <section className="w-full px-4 sm:px-6 max-w-7xl mx-auto space-y-10">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
           <div>
             <span className="label-eyebrow text-[#FBBF24]/80">Curated</span>

@@ -14,7 +14,7 @@ import {
 } from "@workspace/api-client-react";
 
 const baseClass =
-  "inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition-all disabled:opacity-50";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all disabled:opacity-50 sm:px-5";
 
 export function ConnectButton({ userId }: { userId: string }) {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -58,7 +58,7 @@ export function ConnectButton({ userId }: { userId: string }) {
 
   if (status.status === "connected") {
     return (
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center justify-center gap-2">
         <Link
           href={`/messages/${userId}`}
           className={`${baseClass} bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white hover:glow-blue`}

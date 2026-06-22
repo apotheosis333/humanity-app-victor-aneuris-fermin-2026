@@ -106,7 +106,7 @@ export default function DinnerTable() {
       </section>
 
       {question && (
-        <section className="w-full px-6 max-w-3xl mx-auto">
+        <section className="w-full px-4 sm:px-6 max-w-3xl mx-auto">
           {isSignedIn ? (
             hasAnswered ? (
               <div className="glass-panel rounded-2xl p-6 flex items-center gap-3 text-white/80">
@@ -124,13 +124,13 @@ export default function DinnerTable() {
                   placeholder="Take your time. Speak honestly. There are no wrong answers here."
                   className="w-full glass rounded-xl px-4 py-3 text-white placeholder:text-white/30 border border-white/10 focus:border-[#60A5FA]/60 focus:outline-none min-h-[120px] resize-y"
                 />
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <span className="text-xs text-white/40">{answer.length}/2000</span>
                   <button
                     type="button"
                     onClick={handleSubmit}
                     disabled={submit.isPending || !answer.trim()}
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white rounded-full px-6 py-2.5 font-semibold hover:glow-blue transition-all disabled:opacity-50"
+                    className="inline-flex min-h-11 items-center justify-center gap-2 bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white rounded-full px-6 py-2.5 font-semibold hover:glow-blue transition-all disabled:opacity-50"
                   >
                     {submit.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
                     Share at the table
@@ -146,7 +146,7 @@ export default function DinnerTable() {
               <p className="text-white/80">Sign in to pull up a chair and share your answer.</p>
               <Link
                 href="/sign-in"
-                className="inline-flex items-center gap-2 bg-[#FBBF24] text-[#0F172A] rounded-full px-6 py-2.5 font-semibold hover:glow-gold transition-all shrink-0"
+                className="inline-flex min-h-11 items-center justify-center gap-2 bg-[#FBBF24] text-[#0F172A] rounded-full px-6 py-2.5 font-semibold hover:glow-gold transition-all shrink-0"
               >
                 <LogIn className="h-4 w-4" />
                 Sign in
@@ -156,7 +156,7 @@ export default function DinnerTable() {
         </section>
       )}
 
-      <section className="w-full px-6 max-w-3xl mx-auto mt-14 space-y-6">
+      <section className="w-full px-4 sm:px-6 max-w-3xl mx-auto mt-14 space-y-6">
         <div className="flex items-center gap-3">
           <MessageCircleHeart className="h-5 w-5 text-[#FBBF24]" />
           <h2 className="text-2xl font-serif text-white">Voices at the table</h2>
@@ -173,12 +173,12 @@ export default function DinnerTable() {
       </section>
 
       {pastQuestions.length > 0 && (
-        <section className="w-full px-6 max-w-3xl mx-auto mt-16 mb-8 space-y-6">
+        <section className="w-full px-4 sm:px-6 max-w-3xl mx-auto mt-16 mb-8 space-y-6">
           <div className="accent-rule" />
           <h2 className="text-2xl font-serif text-white">Past questions</h2>
           <div className="space-y-3">
             {pastQuestions.map((q) => (
-              <div key={q.id} className="glass rounded-2xl p-5 flex items-center justify-between gap-4 border border-white/5">
+              <div key={q.id} className="glass rounded-2xl p-5 flex flex-col gap-4 border border-white/5 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   {q.theme && <p className="label-eyebrow text-[#60A5FA]/80 mb-1">{q.theme}</p>}
                   <p className="text-white/85">{q.question}</p>

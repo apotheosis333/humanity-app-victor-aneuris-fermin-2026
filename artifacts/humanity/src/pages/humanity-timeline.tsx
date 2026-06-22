@@ -112,10 +112,10 @@ export default function HumanityTimeline() {
   return (
     <div className="w-full flex flex-col items-center pb-28 space-y-12 pt-24 px-4">
       <div className="text-center space-y-6 max-w-4xl mx-auto relative z-10 animate-fade-up">
-        <h1 className="text-5xl md:text-7xl font-serif text-white tracking-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif text-white tracking-tight">
           Hu<span className="text-[#FBBF24] text-glow-gold">MAN</span>ity Timeline
         </h1>
-        <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
           Witness the parallel histories of our world's nations side-by-side.
         </p>
       </div>
@@ -147,7 +147,7 @@ export default function HumanityTimeline() {
               key={cat}
               onClick={() => setCategory(category === cat ? null : cat)}
               className={cn(
-                "px-4 py-1.5 rounded-full text-xs font-semibold capitalize border transition-all",
+                "min-h-9 px-4 py-1.5 rounded-full text-xs font-semibold capitalize border transition-all",
                 category === cat
                   ? CATEGORY_STYLES[cat] ?? "bg-white/15 text-white border-white/30"
                   : "bg-white/5 text-white/55 border-white/10 hover:text-white hover:bg-white/10",
@@ -209,7 +209,7 @@ export default function HumanityTimeline() {
                   ([countryName, data]: [string, any], i) => (
                     <div
                       key={countryName}
-                      className="min-w-[320px] md:min-w-[400px] snap-start flex-shrink-0 space-y-6 animate-fade-up"
+                      className="min-w-[calc(100vw-2rem)] sm:min-w-[320px] md:min-w-[400px] snap-start flex-shrink-0 space-y-6 animate-fade-up"
                       style={{ animationDelay: `${0.1 * i}s` }}
                     >
                       <div className="flex items-center gap-3 border-b border-white/10 pb-4 px-2 relative">

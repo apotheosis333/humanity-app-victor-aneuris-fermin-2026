@@ -52,8 +52,8 @@ export function ProfileCard({
 }) {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8 animate-fade-up">
-      <div className="glass-panel rounded-3xl p-8 md:p-10 glow-blue/30">
-        <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+      <div className="glass-panel rounded-3xl p-5 sm:p-6 md:p-10 glow-blue/30">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
           <div className="relative shrink-0">
             <div className="h-28 w-28 rounded-full glass border border-[#60A5FA]/40 overflow-hidden flex items-center justify-center glow-blue">
               {profile.photoUrl ? (
@@ -73,19 +73,19 @@ export function ProfileCard({
           </div>
 
           <div className="flex-1 text-center md:text-left space-y-3">
-            <div className="flex flex-col md:flex-row md:items-center gap-3 md:justify-between">
+            <div className="flex flex-col lg:flex-row lg:items-start gap-3 lg:justify-between">
               <div className="space-y-1">
                 <h1 className="text-3xl md:text-4xl font-serif text-white">{profile.displayName}</h1>
                 {profile.username && (
                   <p className="text-[#60A5FA] text-sm font-medium">@{profile.username}</p>
                 )}
               </div>
-              <div className="flex items-center gap-2 self-center md:self-auto">
+              <div className="flex w-full flex-wrap items-center justify-center gap-2 self-center md:w-auto md:justify-end md:self-auto">
                 {action}
                 {isOwn && (
                   <Link
                     href="/profile/edit"
-                    className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm text-white/80 hover:text-white border border-white/10 transition-colors"
+                    className="inline-flex min-h-11 items-center justify-center gap-2 glass rounded-full px-4 py-2 text-sm text-white/80 hover:text-white border border-white/10 transition-colors"
                   >
                     <Pencil className="h-3.5 w-3.5" />
                     Edit profile
@@ -117,7 +117,7 @@ export function ProfileCard({
       </div>
 
       {(profile.profileSongTitle || profile.profileSong) && (
-        <div className="glass-panel rounded-3xl p-6 md:p-7">
+        <div className="glass-panel rounded-3xl p-5 sm:p-6 md:p-7">
           <div className="flex items-center gap-2 label-eyebrow text-[#FBBF24] mb-4">
             <Music2 className="h-3.5 w-3.5" />
             <span>Profile song</span>
@@ -150,7 +150,7 @@ export function ProfileCard({
         profile.interests.length > 0 ||
         profile.favoriteBooks.length > 0 ||
         profile.favoriteMusic.length > 0) && (
-        <div className="glass-panel rounded-3xl p-8 md:p-10 space-y-8">
+        <div className="glass-panel rounded-3xl p-5 sm:p-6 md:p-10 space-y-8">
           {profile.culturalBackground && (
             <div className="space-y-3">
               <div className="flex items-center gap-2 label-eyebrow text-[#60A5FA]">

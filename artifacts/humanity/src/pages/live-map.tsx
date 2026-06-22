@@ -100,7 +100,7 @@ export default function LiveMap() {
   const stats = snapshot.stats;
 
   return (
-    <div className="container mx-auto px-4 md:px-6 py-10 md:py-14">
+    <div className="container mx-auto px-4 md:px-6 py-8 md:py-14">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto animate-fade-up">
         <div className="label-eyebrow text-[#FBBF24] inline-flex items-center gap-2">
@@ -110,18 +110,18 @@ export default function LiveMap() {
           </span>
           {t("liveMap.badge")}
         </div>
-        <h1 className="mt-3 font-serif text-4xl md:text-6xl font-bold text-white">
+        <h1 className="mt-3 font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-white">
           {t("liveMap.title")}
         </h1>
         <div className="accent-rule mt-4 mx-auto" />
-        <p className="mt-5 text-white/65 text-lg leading-relaxed">
+        <p className="mt-5 text-white/65 text-base sm:text-lg leading-relaxed">
           {t("liveMap.subtitle")}
         </p>
       </div>
 
       {/* Globe + side panels */}
       <div className="mt-10 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 items-start">
-        <div className="glass-panel rounded-3xl p-3 md:p-4 overflow-hidden glow-blue/30 animate-fade-up">
+        <div className="glass-panel rounded-3xl p-2 sm:p-3 md:p-4 overflow-hidden glow-blue/30 animate-fade-up">
           <LiveGlobe markers={snapshot.markers} enabled={enabled} />
         </div>
 

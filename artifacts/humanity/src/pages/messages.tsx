@@ -60,7 +60,7 @@ function SignInGate() {
       </p>
       <Link
         href="/sign-in"
-        className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white rounded-full px-6 py-3 font-semibold hover:glow-blue transition-all"
+        className="inline-flex min-h-11 items-center justify-center gap-2 bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] text-white rounded-full px-6 py-3 font-semibold hover:glow-blue transition-all"
       >
         <LogIn className="h-4 w-4" />
         Sign in
@@ -94,7 +94,7 @@ function ConversationList({ activeUserId }: { activeUserId?: string }) {
         </p>
         <Link
           href="/connections"
-          className="mt-2 inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold glass border border-white/10 text-white/80 hover:text-white hover:bg-white/5 transition-all"
+          className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold glass border border-white/10 text-white/80 hover:text-white hover:bg-white/5 transition-all"
         >
           Go to Connections
         </Link>
@@ -212,7 +212,7 @@ function Thread({ userId }: { userId: string }) {
         </p>
         <Link
           href={`/profile/${userId}`}
-          className="mt-1 inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold glass border border-white/10 text-white/80 hover:text-white hover:bg-white/5 transition-all"
+          className="mt-1 inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold glass border border-white/10 text-white/80 hover:text-white hover:bg-white/5 transition-all"
         >
           View profile
         </Link>
@@ -258,7 +258,7 @@ function Thread({ userId }: { userId: string }) {
         </Link>
       </div>
 
-      <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto px-4 py-6 space-y-2">
+      <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto px-3 py-5 space-y-2 sm:px-4 sm:py-6">
         {messages.length === 0 ? (
           <div className="h-full flex flex-col items-center justify-center text-center gap-2 text-white/50">
             <MessageCircle className="h-8 w-8 text-[#60A5FA]" />
@@ -274,7 +274,7 @@ function Thread({ userId }: { userId: string }) {
                 className={`flex ${m.mine ? "justify-end" : "justify-start"} ${grouped ? "mt-0.5" : "mt-3"}`}
               >
                 <div
-                  className={`max-w-[78%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed break-words ${
+                  className={`max-w-[88%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed break-words sm:max-w-[78%] ${
                     m.mine
                       ? "bg-gradient-to-br from-[#2563EB] to-[#1d4ed8] text-white rounded-br-md"
                       : "glass border border-white/10 text-white/90 rounded-bl-md"
@@ -292,7 +292,7 @@ function Thread({ userId }: { userId: string }) {
         <div ref={bottomRef} />
       </div>
 
-      <form onSubmit={submit} className="p-3 border-t border-white/10 flex items-end gap-2">
+      <form onSubmit={submit} className="flex items-end gap-2 border-t border-white/10 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
         <textarea
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
@@ -345,7 +345,7 @@ export default function Messages({ userId }: { userId?: string }) {
         <h1 className="text-3xl md:text-4xl font-serif text-white mt-2">Messages</h1>
       </div>
 
-      <div className="glass-panel rounded-3xl overflow-hidden animate-fade-up h-[calc(100dvh-220px)] min-h-[480px] grid grid-cols-1 md:grid-cols-[320px_1fr]">
+      <div className="glass-panel rounded-3xl overflow-hidden animate-fade-up h-[calc(100dvh-140px)] min-h-[420px] grid grid-cols-1 md:h-[calc(100dvh-220px)] md:min-h-[480px] md:grid-cols-[320px_1fr]">
         <aside
           className={`border-r border-white/10 overflow-y-auto p-3 ${
             activeUserId ? "hidden md:block" : "block"
@@ -369,7 +369,7 @@ export default function Messages({ userId }: { userId?: string }) {
               <button
                 type="button"
                 onClick={() => setLocation("/connections")}
-                className="mt-1 inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold glass border border-white/10 text-white/80 hover:text-white hover:bg-white/5 transition-all"
+                className="mt-1 inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold glass border border-white/10 text-white/80 hover:text-white hover:bg-white/5 transition-all"
               >
                 Go to Connections
               </button>

@@ -5,7 +5,7 @@ import { apiUrl } from "@/lib/api-config";
 import { useToast } from "@/hooks/use-toast";
 
 const buttonClass =
-  "inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm text-white/70 border border-white/10 hover:text-white hover:border-white/30 transition-colors disabled:opacity-50";
+  "inline-flex min-h-11 items-center justify-center gap-2 glass rounded-full px-4 py-2 text-sm text-white/70 border border-white/10 hover:text-white hover:border-white/30 transition-colors disabled:opacity-50";
 
 async function authedJson(
   getToken: () => Promise<string | null>,
@@ -75,7 +75,7 @@ export function ReportBlockControls({ userId }: { userId: string }) {
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div className="flex flex-wrap items-center justify-center gap-2">
       <button type="button" onClick={report} disabled={busy != null} className={buttonClass}>
         {busy === "report" ? <Loader2 className="h-4 w-4 animate-spin" /> : <Flag className="h-4 w-4" />}
         Report

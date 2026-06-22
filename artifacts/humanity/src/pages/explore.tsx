@@ -48,7 +48,7 @@ export default function Explore() {
         <div className="max-w-6xl mx-auto space-y-8 animate-fade-up">
           <div className="space-y-4">
             <span className="label-eyebrow text-[#FBBF24]/80">Discover</span>
-            <h1 className="text-5xl md:text-6xl font-serif text-white font-bold tracking-tight">Explore the World</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-white font-bold tracking-tight">Explore the World</h1>
             <div className="accent-rule mt-3" />
           </div>
           
@@ -103,7 +103,7 @@ export default function Explore() {
                     key={lang}
                     onClick={() => setLanguage(language === lang ? null : lang)}
                     className={cn(
-                      "text-xs px-3 py-1 rounded-full border transition-all",
+                      "min-h-9 text-xs px-3 py-1 rounded-full border transition-all",
                       language === lang ? "bg-[#FBBF24] border-[#FBBF24] text-[#0F172A] glow-gold" : "glass text-white/70 border-white/15 hover:border-[#FBBF24]/50"
                     )}
                    >
@@ -121,7 +121,7 @@ export default function Explore() {
                     key={rel}
                     onClick={() => setReligion(religion === rel ? null : rel)}
                     className={cn(
-                      "text-xs px-3 py-1 rounded-full border transition-all",
+                      "min-h-9 text-xs px-3 py-1 rounded-full border transition-all",
                       religion === rel ? "bg-[#FBBF24] border-[#FBBF24] text-[#0F172A] glow-gold" : "glass text-white/70 border-white/15 hover:border-[#FBBF24]/50"
                     )}
                    >

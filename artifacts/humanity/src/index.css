@@ -179,6 +179,12 @@
   * {
     @apply border-border;
   }
+  html,
+  body,
+  #root {
+    min-width: 0;
+    overflow-x: clip;
+  }
   body {
     @apply font-sans antialiased text-foreground;
     background-color: #080d1a;
@@ -315,3 +321,9 @@
 .border-gold { border-color: #FBBF24; }
 
 html { scroll-behavior: smooth; }
+
+@media (max-width: 767px) {
+  body {
+    background-attachment: scroll;
+  }
+}

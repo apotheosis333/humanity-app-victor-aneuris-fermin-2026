@@ -65,7 +65,9 @@ function LiveGlobeInner({ markers, enabled }: { markers: ActivityMarker[]; enabl
     if (!el) return;
     const update = () => {
       const w = el.clientWidth;
-      const h = Math.min(Math.max(w * 0.66, 380), window.innerHeight * 0.78);
+      const minHeight = window.innerWidth < 640 ? 320 : 380;
+      const viewportCap = window.innerWidth < 640 ? window.innerHeight * 0.58 : window.innerHeight * 0.78;
+      const h = Math.min(Math.max(w * 0.66, minHeight), viewportCap);
       setSize({ width: w, height: h });
     };
     update();
@@ -130,7 +132,7 @@ function LiveGlobeInner({ markers, enabled }: { markers: ActivityMarker[]; enabl
   return (
     <div
       ref={containerRef}
-      className="relative w-full rounded-2xl overflow-hidden bg-[#0F172A] select-none"
+      className="relative w-full touch-pan-y rounded-2xl overflow-hidden bg-[#0F172A] select-none"
       style={{ height: size.height }}
     >
       {!ready && (
@@ -189,8 +191,8 @@ function LiveGlobeInner({ markers, enabled }: { markers: ActivityMarker[]; enabl
         enablePointerInteraction
       />
 
-      <div className="pointer-events-none absolute top-4 left-1/2 -translate-x-1/2 z-10">
-        <div className="px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[11px] tracking-wide text-white/70 font-medium">
+      <div className="pointer-events-none absolute top-3 left-1/2 -translate-x-1/2 z-10 w-[calc(100%-1.5rem)] sm:top-4 sm:w-auto">
+        <div className="px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-center text-[10px] tracking-wide text-white/70 font-medium sm:px-4 sm:text-[11px]">
           Drag to spin · Scroll to zoom · Approximate regions only
         </div>
       </div>
