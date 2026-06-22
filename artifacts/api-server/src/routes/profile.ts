@@ -4,6 +4,7 @@ import { db } from "@workspace/db";
 import { profilesTable, countriesTable, type Profile } from "@workspace/db";
 import { UpdateMyProfileBody, GetProfileParams } from "@workspace/api-zod";
 import { eq } from "drizzle-orm";
+import { authWriteLimiter } from "../lib/rateLimit";
 import { requireAuth } from "../middlewares/auth";
 
 const router = Router();
@@ -93,7 +94,7 @@ router.get("/me/profile", requireAuth, async (req, res) => {
   res.json(await serializeProfile(profile));
 });
 
-router.put("/me/profile", requireAuth, async (req, res) => {
+router.put("/me/profile", requireAuth, authWriteLimiter, async (req, res) => {
   const body = UpdateMyProfileBody.safeParse(req.body);
   if (!body.success) {
     res.status(400).json({ error: "Invalid body" });
@@ -145,7 +146,7 @@ router.put("/me/profile", requireAuth, async (req, res) => {
   }
 });
 
-router.post("/me/pledge", requireAuth, async (req, res) => {
+router.post("/me/pledge", requireAuth, authWriteLimiter, async (req, res) => {
   const [profile] = await db
     .update(profilesTable)
     .set({ pledged: true })

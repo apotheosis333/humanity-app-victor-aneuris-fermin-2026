@@ -10,6 +10,7 @@ import {
 import { SendMessageBody } from "@workspace/api-zod";
 import { and, eq, or, asc, desc, sql, inArray, isNull } from "drizzle-orm";
 import { clerkClient } from "@clerk/express";
+import { authWriteLimiter } from "../lib/rateLimit";
 import { requireAuth } from "../middlewares/auth";
 
 const router = Router();
@@ -299,7 +300,7 @@ router.get("/messages/:userId", requireAuth, async (req, res) => {
 });
 
 // POST /messages/:userId — send a message to a connection.
-router.post("/messages/:userId", requireAuth, async (req, res) => {
+router.post("/messages/:userId", requireAuth, authWriteLimiter, async (req, res) => {
   const me = req.userId!;
   const other = String(req.params.userId);
   const body = SendMessageBody.safeParse(req.body);

@@ -8,6 +8,7 @@ import {
 } from "@workspace/db";
 import { ReactToWorldNewsBody } from "@workspace/api-zod";
 import { and, eq, desc, inArray, sql } from "drizzle-orm";
+import { authWriteLimiter } from "../lib/rateLimit";
 import { requireAuth, optionalAuth } from "../middlewares/auth";
 
 const router = Router();
@@ -185,7 +186,7 @@ router.get("/world-news/saved", requireAuth, async (req, res) => {
 });
 
 // POST /world-news/:id/react — set or change the viewer's reaction.
-router.post("/world-news/:id/react", requireAuth, async (req, res) => {
+router.post("/world-news/:id/react", requireAuth, authWriteLimiter, async (req, res) => {
   const userId = req.userId!;
   const id = Number(req.params.id);
   if (!Number.isInteger(id)) {
@@ -221,7 +222,7 @@ router.post("/world-news/:id/react", requireAuth, async (req, res) => {
 });
 
 // DELETE /world-news/:id/react — clear the viewer's reaction.
-router.delete("/world-news/:id/react", requireAuth, async (req, res) => {
+router.delete("/world-news/:id/react", requireAuth, authWriteLimiter, async (req, res) => {
   const userId = req.userId!;
   const id = Number(req.params.id);
   if (!Number.isInteger(id)) {
@@ -242,7 +243,7 @@ router.delete("/world-news/:id/react", requireAuth, async (req, res) => {
 });
 
 // POST /world-news/:id/save — save an item (idempotent).
-router.post("/world-news/:id/save", requireAuth, async (req, res) => {
+router.post("/world-news/:id/save", requireAuth, authWriteLimiter, async (req, res) => {
   const userId = req.userId!;
   const id = Number(req.params.id);
   if (!Number.isInteger(id)) {
@@ -269,7 +270,7 @@ router.post("/world-news/:id/save", requireAuth, async (req, res) => {
 });
 
 // DELETE /world-news/:id/save — remove a saved item.
-router.delete("/world-news/:id/save", requireAuth, async (req, res) => {
+router.delete("/world-news/:id/save", requireAuth, authWriteLimiter, async (req, res) => {
   const userId = req.userId!;
   const id = Number(req.params.id);
   if (!Number.isInteger(id)) {

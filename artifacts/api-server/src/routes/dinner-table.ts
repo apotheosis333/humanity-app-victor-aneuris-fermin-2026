@@ -9,6 +9,7 @@ import {
 } from "@workspace/db";
 import { SubmitDinnerAnswerBody, SubmitDinnerAnswerParams, GetDinnerQuestionParams } from "@workspace/api-zod";
 import { eq, desc, sql, lte } from "drizzle-orm";
+import { authWriteLimiter } from "../lib/rateLimit";
 import { requireAuth, optionalAuth } from "../middlewares/auth";
 
 const router = Router();
@@ -129,7 +130,7 @@ router.get("/dinner-table/questions/:id", optionalAuth, async (req, res) => {
   res.json(await buildDetail(question, req.userId));
 });
 
-router.post("/dinner-table/questions/:id/answers", requireAuth, async (req, res) => {
+router.post("/dinner-table/questions/:id/answers", requireAuth, authWriteLimiter, async (req, res) => {
   const params = SubmitDinnerAnswerParams.safeParse(req.params);
   if (!params.success) {
     res.status(400).json({ error: "Invalid params" });

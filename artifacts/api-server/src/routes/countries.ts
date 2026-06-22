@@ -14,6 +14,7 @@ import {
   GetCountryStatsParams,
 } from "@workspace/api-zod";
 import { eq, ilike, or, sql } from "drizzle-orm";
+import { authWriteLimiter } from "../lib/rateLimit";
 import { requireAuth } from "../middlewares/auth";
 
 const router = Router();
@@ -42,7 +43,7 @@ router.get("/countries", async (req, res) => {
 
 // TODO: Replace requireAuth with admin-role enforcement before production
 // content management is exposed outside trusted operators.
-router.post("/countries", requireAuth, async (req, res) => {
+router.post("/countries", requireAuth, authWriteLimiter, async (req, res) => {
   const body = CreateCountryBody.safeParse(req.body);
   if (!body.success) {
     res.status(400).json({ error: "Invalid body" });

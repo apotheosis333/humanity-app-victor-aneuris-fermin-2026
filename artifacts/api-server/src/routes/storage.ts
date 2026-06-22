@@ -8,6 +8,7 @@ import {
 } from "@workspace/api-zod";
 import { ObjectStorageService, ObjectNotFoundError } from "../lib/objectStorage";
 import { ObjectPermission } from "../lib/objectAcl";
+import { uploadLimiter } from "../lib/rateLimit";
 import { requireAuth, optionalAuth } from "../middlewares/auth";
 
 const router: IRouter = Router();
@@ -27,6 +28,7 @@ const MAX_UPLOAD_BYTES = 5 * 1024 * 1024;
 router.post(
   "/storage/uploads/request-url",
   requireAuth,
+  uploadLimiter,
   async (req: Request, res: Response) => {
     const parsed = RequestUploadUrlBody.safeParse(req.body);
     if (!parsed.success) {
@@ -73,6 +75,7 @@ router.post(
 router.post(
   "/storage/uploads/finalize",
   requireAuth,
+  uploadLimiter,
   async (req: Request, res: Response) => {
     const parsed = FinalizeUploadBody.safeParse(req.body);
     if (!parsed.success) {

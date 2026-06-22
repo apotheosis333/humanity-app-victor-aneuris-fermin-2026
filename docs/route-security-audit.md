@@ -12,8 +12,8 @@ with Clerk-backed `requireAuth`.
 | `POST /api/countries/:code/timeline` | Create timeline event | `requireAuth` | Needs future admin-role enforcement. |
 | `POST /api/countries/:code/milestones` | Create cultural milestone | `requireAuth` | Needs future admin-role enforcement. |
 | `POST /api/countries/:code/stories` | Create country story | `requireAuth` | Needs future admin-role enforcement. |
-| `POST /api/walk-in-shoes` | Generate OpenAI narrative | `requireAuth` | Needs per-user rate limiting before launch. |
-| `POST /api/pledge` | Public Humanity Pledge signature/counter | Public | Intentional visitor flow; needs bot/rate-limit protection. |
+| `POST /api/walk-in-shoes` | Generate OpenAI narrative | `requireAuth` | Rate-limited; still needs abuse monitoring and budget controls. |
+| `POST /api/pledge` | Public Humanity Pledge signature/counter | Public | Intentional visitor flow; rate-limited, but still needs bot protection. |
 | `POST /api/me/pledge` | Mark signed-in profile as pledged | `requireAuth` | User-specific profile write. |
 | `PUT /api/me/profile` | Create/update own profile | `requireAuth` | User-specific profile write. |
 | `POST /api/storage/uploads/request-url` | Request upload URL | `requireAuth` | Uploads are limited to image types and max size. |
@@ -49,7 +49,7 @@ user.
 - `POST /api/pledge` remains public because the current product flow allows
   visitors to sign the Humanity Pledge without creating an account. This route
   creates persistent aggregate pledge data, so it should receive bot protection
-  and rate limiting before production/mobile launch.
+  before production/mobile launch.
 
 ## Future Admin Gating
 
@@ -66,10 +66,15 @@ Routes needing admin checks:
 - `POST /api/countries/:code/milestones`
 - `POST /api/countries/:code/stories`
 
-## Future Rate Limiting
+## Rate Limiting Status
 
-No backend rate limiter was found. Add per-user and per-IP rate limiting before
-public mobile launch, especially for:
+Step 11 added basic in-memory rate limiting for the highest-risk public,
+authenticated, upload, and AI routes. See `docs/rate-limiting.md` for limits and
+deployment notes.
+
+Future rate-limit work before public mobile launch should include Redis-backed
+shared counters for multi-instance deployments and additional abuse monitoring,
+especially for:
 
 - `POST /api/walk-in-shoes`
 - `POST /api/pledge`

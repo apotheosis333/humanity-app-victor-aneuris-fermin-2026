@@ -2,10 +2,11 @@ import { Router } from "express";
 import { db } from "@workspace/db";
 import { humanityPledgesTable } from "@workspace/db";
 import { sql } from "drizzle-orm";
+import { publicWriteLimiter } from "../lib/rateLimit";
 
 const router = Router();
 
-router.post("/pledge", async (req, res) => {
+router.post("/pledge", publicWriteLimiter, async (req, res) => {
   const { name, country } = req.body as { name?: string; country?: string };
 
   const [pledge] = await db

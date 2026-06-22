@@ -9,6 +9,7 @@ import {
 import { SendConnectionRequestBody } from "@workspace/api-zod";
 import { and, eq, or, ilike, ne, inArray, desc, sql } from "drizzle-orm";
 import { clerkClient } from "@clerk/express";
+import { authWriteLimiter } from "../lib/rateLimit";
 import { requireAuth } from "../middlewares/auth";
 
 const router = Router();
@@ -489,7 +490,7 @@ router.get("/connections/requests", requireAuth, async (req, res) => {
 });
 
 // POST /connections/requests — send a request
-router.post("/connections/requests", requireAuth, async (req, res) => {
+router.post("/connections/requests", requireAuth, authWriteLimiter, async (req, res) => {
   const me = req.userId!;
   const body = SendConnectionRequestBody.safeParse(req.body);
   if (!body.success) {

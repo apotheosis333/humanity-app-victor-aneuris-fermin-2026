@@ -14,6 +14,14 @@ import {
 
 const app: Express = express();
 
+const trustProxyHops = Number.parseInt(
+  process.env.TRUST_PROXY_HOPS ?? (process.env.NODE_ENV === "production" ? "1" : "0"),
+  10,
+);
+if (Number.isFinite(trustProxyHops) && trustProxyHops > 0) {
+  app.set("trust proxy", trustProxyHops);
+}
+
 app.use(
   pinoHttp({
     logger,
