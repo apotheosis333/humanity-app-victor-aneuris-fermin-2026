@@ -8,6 +8,13 @@
     "backend:build": "pnpm --filter @workspace/api-server run build",
     "backend:start": "pnpm --filter @workspace/api-server run start",
     "backend:typecheck": "pnpm --filter @workspace/api-server run typecheck",
+    "mobile:build": "pnpm --filter @workspace/humanity run mobile:build",
+    "cap:copy": "pnpm --filter @workspace/humanity run cap:copy",
+    "cap:sync": "pnpm --filter @workspace/humanity run cap:sync",
+    "cap:add:android": "pnpm --filter @workspace/humanity run cap:add:android",
+    "cap:add:ios": "pnpm --filter @workspace/humanity run cap:add:ios",
+    "cap:open:android": "pnpm --filter @workspace/humanity run cap:open:android",
+    "cap:open:ios": "pnpm --filter @workspace/humanity run cap:open:ios",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
