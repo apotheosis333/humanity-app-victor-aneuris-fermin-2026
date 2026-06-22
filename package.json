@@ -15,6 +15,7 @@
     "cap:add:ios": "pnpm --filter @workspace/humanity run cap:add:ios",
     "cap:open:android": "pnpm --filter @workspace/humanity run cap:open:android",
     "cap:open:ios": "pnpm --filter @workspace/humanity run cap:open:ios",
+    "android:build:debug": "pnpm --filter @workspace/humanity run android:build:debug",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
