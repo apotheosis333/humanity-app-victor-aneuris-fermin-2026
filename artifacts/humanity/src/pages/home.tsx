@@ -8,6 +8,7 @@ import { Globe2, MapPin, Footprints, History, Heart, ArrowRightLeft, Sparkles, C
 import { useGetCurrentDinner } from "@workspace/api-client-react";
 import { WorldGlobe } from "@/components/globe";
 import { Button } from "@/components/ui/button";
+import type { Country } from "@workspace/api-client-react";
 
 const IMAGE_ON_ERROR = (e: React.SyntheticEvent<HTMLImageElement>) => {
   const t = e.currentTarget;
@@ -23,6 +24,10 @@ const QUICK_LINKS = [
   { label: "Compare Nations", desc: "Find what we share", icon: ArrowRightLeft, href: "/compare" },
 ];
 
+function toArray<T>(value: T[] | unknown): T[] {
+  return Array.isArray(value) ? value : [];
+}
+
 export default function Home() {
   const { t } = useTranslation();
   const [, setLocation] = useLocation();
@@ -34,6 +39,8 @@ export default function Home() {
   });
   void randomCountry;
   const { data: dinner } = useGetCurrentDinner();
+  const featuredCountryList = toArray<Country>(featuredCountries);
+  const allCountryList = toArray<Country>(allCountries);
 
   const handleRandomExplore = async () => {
     const { data } = await refetchRandom();
@@ -186,7 +193,7 @@ export default function Home() {
             {loadingAll ? (
               <Skeleton className="w-full aspect-[2/1] bg-white/5 rounded-2xl" />
             ) : (
-              <WorldGlobe countries={allCountries || []} />
+              <WorldGlobe countries={allCountryList} />
             )}
           </div>
         </div>
@@ -261,7 +268,7 @@ export default function Home() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredCountries?.map((country, i) => (
+            {featuredCountryList.map((country, i) => (
               <Link key={country.code} href={`/country/${country.code}`}>
                 <Card
                   className="group cursor-pointer overflow-hidden glass-panel rounded-3xl border-none p-0 gap-0 h-full flex flex-col transition-all duration-500 hover:-translate-y-2 hover:glow-blue animate-fade-up"

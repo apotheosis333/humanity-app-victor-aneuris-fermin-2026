@@ -232,6 +232,48 @@ Conclusion:
 
 The publishable key embedded in the deployed Replit app appears to be tied to the Replit Clerk proxy host. That is not sufficient for Android WebView auth testing. The next Android auth test needs the Clerk dashboard publishable key for the HuMANity application, preferably one whose frontend API is not the Replit proxy host, placed only in `artifacts/humanity/.env.local`.
 
+## Step 21 Mobile-Safe Clerk Key Retest
+
+Date: 2026-06-22
+
+Clerk setup:
+
+- A new Clerk application named `HuMANity` was created in the Clerk Dashboard after explicit approval.
+- The dashboard publishable key was copied only into `artifacts/humanity/.env.local`.
+- The key format was verified as a development publishable key.
+- `artifacts/humanity/.env.local` is ignored by Git and must remain uncommitted.
+
+Android retest on `HuMANity_Pixel_API_36`:
+
+- Frontend typecheck: passed.
+- Frontend production build with `PORT=5173` and `BASE_PATH=/`: passed.
+- Capacitor sync: passed.
+- Android debug build: passed.
+- Backend typecheck: passed.
+- Backend build: passed.
+- APK reinstall and native launch: passed.
+- Home screen rendering: passed.
+- Clerk sign-in route rendering: passed.
+- Google OAuth start: passed up to Chrome account setup handoff; no credentials were entered and no login was completed.
+
+WebView diagnostics:
+
+- Capacitor served the app from `https://localhost/`.
+- Clerk JS loaded from the Clerk application frontend API host.
+- No `https://clerk.localhost` requests were observed.
+- No Replit Clerk proxy requests were observed.
+
+Startup fix:
+
+The Android launch path exposed a home-page crash when country list API data was unavailable or not an array during mobile startup. The home page now normalizes country list values before rendering the globe and featured-country cards. This preserves normal API behavior and prevents the app-level error boundary from blocking the auth smoke test.
+
+Remaining auth risks:
+
+- Completed sign-in was not tested because no credentials were entered.
+- Google OAuth still needs real-device testing with the final Clerk app configuration.
+- Production builds should use a production Clerk application and publishable key.
+- Mobile builds still need `VITE_API_BASE_URL` set to the deployed backend for authenticated API flows, uploads, profile updates, messaging, reporting, blocking, and account deletion testing.
+
 ## Release AAB Notes
 
 Do not create or commit signing keys in this repository.
