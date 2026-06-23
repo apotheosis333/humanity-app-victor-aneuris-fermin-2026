@@ -276,6 +276,32 @@ Remaining auth risks:
 
 ## Release AAB Notes
 
+## Step 22B Backend API Smoke Test
+
+Date: 2026-06-23
+
+The Android debug build was rebuilt with the ignored local `artifacts/humanity/.env.local` pointing `VITE_API_BASE_URL` to the Railway backend:
+
+```text
+https://humanity-app-victor-aneuris-fermin-2026-production.up.railway.app
+```
+
+Result on `HuMANity_Pixel_API_36`:
+
+- Frontend typecheck: passed.
+- Frontend production build: passed.
+- Capacitor sync: passed.
+- Android debug build: passed.
+- APK reinstall and native launch: passed.
+- Home screen rendering: passed.
+- Backend `/health` request from inside the Android WebView: passed.
+- Railway API requests from the WebView: observed.
+- Clerk sign-in route rendering: passed.
+- `https://clerk.localhost` requests: not observed.
+- Replit Clerk proxy requests: not observed.
+
+Completed login was not tested because no test credentials were entered. Upload testing remains blocked until S3/R2 storage is configured.
+
 Do not create or commit signing keys in this repository.
 
 Manual release flow later:

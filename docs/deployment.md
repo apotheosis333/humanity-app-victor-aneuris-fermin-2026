@@ -4,6 +4,23 @@ These notes are for deploying the HuMANity Express API to Render or Railway. Do 
 
 For the Step 22 mobile backend deployment handoff and Android API smoke-test checklist, see `docs/step22-backend-deployment-mobile-smoke-test.md`.
 
+Step 22B deployed the backend to Railway:
+
+```text
+https://humanity-app-victor-aneuris-fermin-2026-production.up.railway.app
+```
+
+Current verified status:
+
+- Railway backend deployment: `SUCCESS`
+- `/health`: passing
+- `/api/healthz`: passing
+- Railway Postgres: provisioned
+- Initial schema: applied
+- Android WebView API smoke test: passed
+
+See `docs/step22-backend-deployment-mobile-smoke-test.md` for the exact deployment and smoke-test record.
+
 ## Backend Package
 
 - Workspace package: `@workspace/api-server`

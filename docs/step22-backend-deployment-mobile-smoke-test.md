@@ -1,35 +1,31 @@
-# Step 22 Backend Deployment And Mobile API Smoke Test
+# Step 22B Railway Backend Deployment And Android API Smoke Test
 
-Date: 2026-06-22
+Date: 2026-06-23
 
-This step could not complete an automated cloud deployment from this workstation because provider dashboard control was unavailable and no Railway/Render API token or required backend secrets were present in the local environment. This file is the safe handoff checklist for completing the deployment without committing secrets.
+This note records the backend deployment and Android API smoke test completed from the Windows development machine. Do not put real secret values in this file.
 
-## Deployment Target
+## Deployment Summary
 
-Preferred provider: Railway.
+- Provider: Railway
+- Railway project: `energetic-perception`
+- Backend service: `humanity-app-victor-aneuris-fermin-2026`
+- Postgres service: `Postgres`
+- GitHub repo: `apotheosis333/humanity-app-victor-aneuris-fermin-2026`
+- Branch: `replit-source-import`
+- Backend URL: `https://humanity-app-victor-aneuris-fermin-2026-production.up.railway.app`
+- Deployment status: `SUCCESS`
+- Deployment health check path: `/health`
 
-Fallback provider: Render.
+The backend service is connected to the `replit-source-import` branch. The first successful Railway deployment was completed from a local snapshot so the backend could be smoke-tested before this documentation commit reached GitHub.
 
-Repository:
+## Railway Build Configuration
 
-```text
-apotheosis333/humanity-app-victor-aneuris-fermin-2026
-```
-
-Branch:
-
-```text
-replit-source-import
-```
-
-## Backend Commands
-
-Configure the backend service from the repository root.
+Railway uses `railway.json` at the repository root.
 
 Build command:
 
 ```bash
-pnpm install && pnpm run backend:build
+corepack enable && corepack prepare pnpm@11.7.0 --activate && pnpm install --frozen-lockfile && pnpm run backend:build
 ```
 
 Start command:
@@ -38,32 +34,26 @@ Start command:
 pnpm run backend:start
 ```
 
-Health check path:
+Health check:
 
 ```text
 /health
 ```
 
-API health path:
+The root `package.json` pins `packageManager` to `pnpm@11.7.0` so Railway/Corepack uses the same major PNPM version as the local lockfile.
 
-```text
-/api/healthz
-```
+## Environment Variables
 
-The backend package is `@workspace/api-server` at `artifacts/api-server`.
+The Railway backend service was configured with provider-side variables only. Real values must stay in Railway, local ignored env files, or another secret manager.
 
-## Required Provider Environment Variables
-
-Set real values only in the Railway or Render dashboard. Do not put real values in GitHub, docs, committed files, or frontend env.
-
-Required for a useful backend deployment:
+Required:
 
 ```bash
 NODE_ENV=production
-DATABASE_URL=
+DATABASE_URL=${{Postgres.DATABASE_URL}}
 CLERK_SECRET_KEY=
 CLERK_PUBLISHABLE_KEY=
-CORS_ORIGINS=
+CORS_ORIGINS=https://localhost,capacitor://localhost,ionic://localhost
 ```
 
 Provider-managed:
@@ -72,7 +62,7 @@ Provider-managed:
 PORT=
 ```
 
-Optional but needed for full feature coverage:
+Optional for full feature coverage:
 
 ```bash
 AI_INTEGRATIONS_OPENAI_BASE_URL=
@@ -84,105 +74,19 @@ STORAGE_ENDPOINT=
 STORAGE_ACCESS_KEY_ID=
 STORAGE_SECRET_ACCESS_KEY=
 STORAGE_PUBLIC_BASE_URL=
-LOG_LEVEL=
-TRUST_PROXY_HOPS=
-RATE_LIMIT_WINDOW_MS=
-RATE_LIMIT_PUBLIC_MAX=
-RATE_LIMIT_AUTH_MAX=
-RATE_LIMIT_AI_MAX=
-RATE_LIMIT_UPLOAD_MAX=
 ```
 
-Do not set `CLERK_SECRET_KEY`, database URLs, OpenAI keys, or storage credentials in any `VITE_` frontend variable.
+`STORAGE_PROVIDER=s3` was intentionally not enabled during this smoke test because real S3/R2 values were not configured yet.
 
-## Suggested CORS_ORIGINS
+## Health And API Verification
 
-Use a comma-separated allowlist. Include only origins that should call the API with credentials.
+Verified backend endpoints:
 
-Placeholder pattern:
-
-```bash
-CORS_ORIGINS=https://localhost,capacitor://localhost,ionic://localhost,https://your-deployed-frontend-domain.com
-```
-
-Add local development origins only when intentionally needed:
-
-```bash
-http://localhost:5173,http://localhost:3000
-```
-
-Do not use wildcard CORS in production.
-
-## Railway Checklist
-
-1. Create a new Railway project.
-2. Add a PostgreSQL service if no production database exists.
-3. Create a backend service from the GitHub repository and select `replit-source-import`.
-4. Confirm the service uses the repository root.
-5. Set the build command to `pnpm install && pnpm run backend:build`.
-6. Set the start command to `pnpm run backend:start`.
-7. Set the health check path to `/health`.
-8. Add the required environment variables in Railway variables.
-9. Do not paste secret values into build logs, GitHub issues, docs, or source files.
-10. Deploy the backend service.
-11. Open the generated backend URL and verify `/health`.
-
-## Render Checklist
-
-1. Create a new Web Service.
-2. Connect the GitHub repository and select `replit-source-import`.
-3. Use the repository root as the root directory unless Render requires otherwise.
-4. Set the build command to `pnpm install && pnpm run backend:build`.
-5. Set the start command to `pnpm run backend:start`.
-6. Set the health check path to `/health`.
-7. Add a managed PostgreSQL database if no production database exists.
-8. Add the required environment variables in Render environment settings.
-9. Do not paste secret values into build logs, GitHub issues, docs, or source files.
-10. Deploy the backend service.
-11. Open the generated backend URL and verify `/health`.
-
-## Database Setup
-
-The backend uses PostgreSQL through Drizzle and requires `DATABASE_URL`.
-
-Before running schema push:
-
-1. Confirm the database is a new or intended production database.
-2. Confirm the provider/project/service name without revealing the connection string.
-3. Review the schema impact.
-4. Run the push only after explicit approval:
-
-```bash
-pnpm --filter @workspace/db run push
-```
-
-Do not run `push-force` against production without a schema review.
-
-## Storage Setup
-
-Basic health and auth smoke tests can proceed without S3/R2 storage if upload testing is deferred.
-
-For upload testing on Railway or Render, configure S3-compatible storage:
-
-```bash
-STORAGE_PROVIDER=s3
-STORAGE_BUCKET=
-STORAGE_REGION=
-STORAGE_ENDPOINT=
-STORAGE_ACCESS_KEY_ID=
-STORAGE_SECRET_ACCESS_KEY=
-STORAGE_PUBLIC_BASE_URL=
-```
-
-Cloudflare R2 remains the recommended first provider. Configure bucket CORS for browser/mobile direct PUT uploads before testing profile photo upload.
-
-## Backend Verification
-
-After deployment, verify only non-secret diagnostics:
-
-```bash
-curl https://your-backend.example.com/health
-curl https://your-backend.example.com/api/healthz
+```text
+GET /health -> 200
+GET /api/healthz -> 200
+GET /api/me/profile without auth -> 401
+GET /api/countries -> 200
 ```
 
 Expected `/health` shape:
@@ -195,38 +99,60 @@ Expected `/health` shape:
 }
 ```
 
-Expected unauthenticated protected endpoint behavior:
+`/api/healthz` is registered before Clerk middleware so provider health checks can verify API liveness without requiring Clerk configuration or a user session.
 
-```text
-401 or 403
+## Database Setup
+
+Railway Postgres was provisioned and linked through `DATABASE_URL`.
+
+The intended Drizzle command:
+
+```bash
+pnpm --filter @workspace/db run push
 ```
 
-Do not copy tokens, cookies, database URLs, or secret-bearing logs into chat or docs.
+The command connected to the Railway database but did not finish cleanly from the Railway run environment. After explicit approval, the initial schema was generated locally with Drizzle and applied to the Railway Postgres database through a temporary Railway TCP proxy.
+
+Result:
+
+```text
+Applied 39 schema statements.
+```
+
+The temporary public TCP proxy was deleted after schema setup. `railway tcp-proxy list` for the Postgres service returned an empty list afterward.
+
+## Storage Status
+
+Storage upload testing is still pending.
+
+The backend can start without S3/R2 values because Replit storage remains the default mode and S3 mode is enabled only when `STORAGE_PROVIDER=s3`. For Railway production upload testing, configure Cloudflare R2 or another S3-compatible provider before testing profile photos or object URLs.
+
+See `docs/storage-readiness.md` for the storage setup plan.
 
 ## Local Mobile Env
 
-After the backend URL is known, update only the ignored local file:
+The ignored local frontend env file was updated:
 
 ```text
 artifacts/humanity/.env.local
 ```
 
-Keep the existing frontend-safe Clerk publishable key and add:
+It contains the deployed backend URL:
 
 ```bash
-VITE_API_BASE_URL=https://your-deployed-backend-url.com
+VITE_API_BASE_URL=https://humanity-app-victor-aneuris-fermin-2026-production.up.railway.app
 ```
 
-Confirm the local env file is ignored:
+The file remains ignored by Git and must not be committed.
 
-```bash
-git check-ignore -v artifacts/humanity/.env.local
-git status --short
-```
+## Android API Smoke Test
 
-## Android Rebuild And Smoke Test
+Device:
 
-From the repository root:
+- Android emulator: `HuMANity_Pixel_API_36`
+- Package: `com.humanity.app`
+
+Commands run from the repository root:
 
 ```powershell
 pnpm --filter @workspace/humanity run typecheck
@@ -237,35 +163,29 @@ adb install -r artifacts/humanity/android/app/build/outputs/apk/debug/app-debug.
 adb shell monkey -p com.humanity.app -c android.intent.category.LAUNCHER 1
 ```
 
-Verify:
+Results:
 
-1. App opens.
-2. Home renders.
-3. Clerk sign-in UI loads.
-4. No `clerk.localhost` requests.
-5. No Replit Clerk proxy requests.
-6. Backend requests use `VITE_API_BASE_URL`.
-7. `/health` or another simple backend request succeeds from the device.
-8. Auth flow can start.
-9. Completed login is tested only with a real test account.
-10. Backend failures show a non-blank UI.
+- Frontend typecheck: passed
+- Frontend production build: passed
+- Capacitor sync: passed
+- Android debug build: passed
+- APK reinstall: passed
+- Native launch: passed
+- Home screen rendering: passed
+- Backend `/health` fetch from inside Android WebView: passed
+- Railway API requests from WebView: observed
+- Clerk sign-in route rendering: passed
+- `https://clerk.localhost` requests: not observed
+- Replit Clerk proxy requests: not observed
 
-## Current Step 22 Status
+The sign-in page rendered Clerk's development-mode sign-in UI. No credentials were entered and no completed login was tested.
 
-- Deployment provider used: none yet.
-- Backend service status: not created from this workstation.
-- Backend URL: pending.
-- Health check: pending deployed backend.
-- Database setup: pending provider database or existing production database.
-- DB schema push: not run.
-- Storage setup: pending R2/S3 credentials; upload smoke test deferred.
-- Local mobile `VITE_API_BASE_URL`: not updated because no deployed backend URL exists yet.
-- Android API smoke test: pending deployed backend URL.
+## Remaining Risks
 
-## Remaining Blockers
-
-- Railway or Render dashboard access is required.
-- A production PostgreSQL database URL is required.
-- Clerk backend secret and publishable keys are required in the backend provider dashboard.
-- Optional OpenAI and S3/R2 secrets are required for full feature coverage.
-- A deployed backend URL is required before Android backend-dependent flows can be smoke-tested.
+- Completed Android sign-in still needs a real test account.
+- Google OAuth needs final Clerk redirect/origin configuration and real-device testing.
+- Production Clerk keys should replace development keys before public launch.
+- S3/R2 storage must be configured before upload/profile-photo smoke testing.
+- OpenAI env vars are still needed before AI-backed features can be used in production.
+- A deployed web frontend origin should be added to `CORS_ORIGINS` before public web deployment.
+- The Railway service name can be renamed to a cleaner name later, but the current service is functional.
