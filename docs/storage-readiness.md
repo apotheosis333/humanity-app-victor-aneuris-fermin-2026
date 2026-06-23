@@ -201,6 +201,72 @@ Backend/API smoke test:
 12. Confirm missing S3 env vars fail with clear startup/request errors and do not log secrets.
 13. Confirm `STORAGE_PROVIDER=` or `STORAGE_PROVIDER=replit` still uses the Replit adapter.
 
+## Step 23 Cloudflare R2 Setup
+
+Date: 2026-06-23
+
+Provider used: Cloudflare R2.
+
+Bucket:
+
+```text
+humanity-profile-uploads
+```
+
+Bucket location:
+
+```text
+ENAM
+```
+
+Railway backend storage variables configured by name:
+
+```bash
+STORAGE_PROVIDER=s3
+STORAGE_BUCKET=humanity-profile-uploads
+STORAGE_REGION=auto
+STORAGE_ENDPOINT=https://<account-id>.r2.cloudflarestorage.com
+STORAGE_ACCESS_KEY_ID=
+STORAGE_SECRET_ACCESS_KEY=
+PRIVATE_OBJECT_DIR=objects
+```
+
+No storage credentials belong in frontend env, mobile env, source code, docs, or GitHub.
+
+R2 bucket CORS was configured for direct browser/mobile uploads:
+
+```text
+Allowed origins: https://localhost, http://localhost:5173
+Allowed methods: PUT, GET, HEAD
+Allowed headers: Content-Type, x-amz-*
+Exposed headers: ETag
+Max age: 3600 seconds
+```
+
+Before public web launch, add the deployed web frontend origin to the R2 CORS allowlist. Avoid wildcard production CORS unless there is a deliberate reason.
+
+Smoke test result:
+
+- Railway backend redeployed successfully with `STORAGE_PROVIDER=s3`.
+- `/health` passed.
+- `/api/healthz` passed.
+- Unauthenticated `POST /api/storage/uploads/request-url` returned `401`, as expected.
+- Direct R2 S3 write/read smoke test passed using Railway storage env.
+- Test object prefix: `objects/smoke-tests/`.
+
+Credential note:
+
+Cloudflare bucket-scoped token creation was attempted first, but the created tokens showed `Object Read only` in the dashboard and could not write objects. A broader Account API token with `Admin Read & Write` was created so storage could be smoke-tested. This works, but should be tightened later to an Object Read & Write token scoped to `humanity-profile-uploads` once the Cloudflare dashboard/API flow reliably creates that permission.
+
+Manual cleanup recommended:
+
+- Revoke the read-only R2 tokens created during setup if they are not needed.
+- Replace the broad Admin Read & Write token with a bucket-scoped Object Read & Write token before production launch.
+
+Profile-photo upload status:
+
+The full app upload flow still requires an authenticated user session. Android app launch was verified after the storage configuration, but profile-photo upload/save/display remains pending a completed login with a test account.
+
 ## Cost And Complexity
 
 - Cloudflare R2: low to moderate complexity, generally low cost for this use case.

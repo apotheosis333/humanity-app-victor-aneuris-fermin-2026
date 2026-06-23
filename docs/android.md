@@ -302,6 +302,26 @@ Result on `HuMANity_Pixel_API_36`:
 
 Completed login was not tested because no test credentials were entered. Upload testing remains blocked until S3/R2 storage is configured.
 
+## Step 23 R2 Storage Smoke Test
+
+Date: 2026-06-23
+
+Cloudflare R2 was configured for the Railway backend, and the Android debug APK was rebuilt, installed, and relaunched on `HuMANity_Pixel_API_36`.
+
+Result:
+
+- Frontend typecheck: passed.
+- Frontend production build: passed.
+- Capacitor sync: passed.
+- Android debug build: passed.
+- APK reinstall: passed.
+- Native launch: passed.
+- Home screen rendering: passed.
+- Backend `/health`: passed after R2-enabled Railway redeploy.
+- Direct R2 S3 write/read smoke test: passed.
+
+Profile photo upload from Android remains pending because it requires a completed authenticated login with a test account. Do not fake Clerk tokens for this test.
+
 Do not create or commit signing keys in this repository.
 
 Manual release flow later:

@@ -18,8 +18,11 @@ Current verified status:
 - Railway Postgres: provisioned
 - Initial schema: applied
 - Android WebView API smoke test: passed
+- Cloudflare R2 bucket: configured
+- R2 direct write/read smoke test: passed
 
 See `docs/step22-backend-deployment-mobile-smoke-test.md` for the exact deployment and smoke-test record.
+See `docs/storage-readiness.md` for the Step 23 R2 setup and remaining upload-test gap.
 
 ## Backend Package
 
@@ -131,3 +134,13 @@ AI_INTEGRATIONS_OPENAI_API_KEY=
 Object storage now supports the existing Replit sidecar mode and an S3-compatible mode selected by `STORAGE_PROVIDER`.
 
 For Render/Railway, use `STORAGE_PROVIDER=s3` with a provider such as Cloudflare R2, AWS S3, or Backblaze B2. Replit mode still depends on a Replit sidecar and is not suitable for normal Render/Railway deployment. See `docs/storage-readiness.md` for setup details.
+
+Step 23 configured Cloudflare R2 for the Railway backend:
+
+```text
+Bucket: humanity-profile-uploads
+Endpoint pattern: https://<account-id>.r2.cloudflarestorage.com
+Private object prefix: objects
+```
+
+The backend is deployed with the required Railway storage variables. Full profile-photo testing still needs a completed authenticated app login.
