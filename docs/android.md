@@ -18,6 +18,24 @@ Steps 16 and 17 prepare the generated Capacitor Android project for local testin
 
 The app ID is still a professional placeholder. Confirm the final package name before creating a Play Console app because package names cannot be changed after publication.
 
+## Branding Assets
+
+Android launcher and splash assets live under:
+
+- Launcher icons: `artifacts/humanity/android/app/src/main/res/mipmap-*`
+- Adaptive icon XML: `artifacts/humanity/android/app/src/main/res/mipmap-anydpi-v26`
+- Adaptive background color: `artifacts/humanity/android/app/src/main/res/values/ic_launcher_background.xml`
+- Splash images: `artifacts/humanity/android/app/src/main/res/drawable*`
+
+Step 27 replaced the default Capacitor/Android launcher and splash images with temporary HuMANity-branded assets generated from the existing app logo at `artifacts/humanity/public/logo.png`.
+
+These assets are launch-prep placeholders, not final designer-approved store assets. Before Play Store submission, replace them with a final brand package that includes:
+
+- 512x512 Play Store icon.
+- Adaptive icon foreground and background source artwork.
+- Splash artwork verified on small phones and tablets.
+- Feature graphic and screenshots for the Play Store listing.
+
 ## Permissions
 
 Current permissions:
@@ -139,6 +157,41 @@ adb install -r artifacts/humanity/android/app/build/outputs/apk/debug/app-debug.
 ```
 
 The mobile app still requires a deployed backend URL through `VITE_API_BASE_URL` for meaningful end-to-end testing.
+
+## Step 27 Android Branding Result
+
+Date: 2026-06-29
+
+Branding source:
+
+- Existing source asset: `artifacts/humanity/public/logo.png`
+- Style: dark HuMANity background with the blue-and-gold H mark.
+- Status: temporary launch-prep placeholder pending final designer-approved assets.
+
+Generated Android resources:
+
+- Replaced legacy launcher icons in `mipmap-mdpi`, `mipmap-hdpi`, `mipmap-xhdpi`, `mipmap-xxhdpi`, and `mipmap-xxxhdpi`.
+- Replaced round launcher icons in the same density folders.
+- Replaced adaptive icon foreground PNGs in the same density folders.
+- Replaced portrait and landscape splash PNGs under `drawable`, `drawable-port-*`, and `drawable-land-*`.
+- Replaced default icon XML fallback colors/artwork with HuMANity-branded dark background resources.
+
+Smoke-test result:
+
+- App name remained `HuMANity`.
+- Only native permission remained `android.permission.INTERNET`.
+- Android debug build passed.
+- Debug APK install/relaunch on the emulator passed.
+- App launched without a native crash.
+- No new native permission prompts appeared.
+- WebView loaded the app instead of a blank startup screen.
+- Existing Clerk session remained active.
+- `/sign-in` redirected back to home while authenticated, so an unauthenticated sign-in screen still needs one manual signed-out check.
+
+Remaining branding work:
+
+- Final Play Store icon and listing assets still need designer/founder approval.
+- The current splash uses the app logo only and should be checked on real Android devices before public release.
 
 ## Step 18 Smoke Test
 

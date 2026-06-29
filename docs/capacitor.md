@@ -51,11 +51,14 @@ Do not use localhost or Replit Clerk proxy settings for Capacitor builds. Native
 
 Android platform files live under `artifacts/humanity/android` after `cap add android`.
 
+Android launcher and splash resources are generated inside the Android project under `artifacts/humanity/android/app/src/main/res`. Step 27 replaced the default Capacitor assets with temporary HuMANity-branded launcher and splash assets generated from `artifacts/humanity/public/logo.png`.
+
 Manual Android steps not performed in this repo:
 
 - Install Android Studio and a supported JDK.
 - Open the project with `pnpm run cap:open:android`.
-- Configure final app icon, splash assets, package display name, and release signing.
+- Replace temporary icon/splash placeholders with final designer-approved assets.
+- Confirm package display name and release signing.
 - Generate signing keys outside the repo.
 - Build debug APKs and release AABs in Android Studio.
 - Upload only through Google Play Console when the account and listing are ready.
