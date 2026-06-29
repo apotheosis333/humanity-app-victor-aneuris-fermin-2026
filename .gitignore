@@ -51,6 +51,9 @@ Thumbs.db
 *.keystore
 *.p12
 *.pfx
+key.properties
+signing.properties
+release-signing/
 *secret*
 *credentials*
 *credential*

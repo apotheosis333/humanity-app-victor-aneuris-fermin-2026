@@ -14,6 +14,7 @@
     "cap:open:android": "cap open android",
     "cap:open:ios": "cap open ios",
     "android:build:debug": "node ./scripts/android-build-debug.mjs",
+    "android:bundle:release": "node ./scripts/android-bundle-release.mjs",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

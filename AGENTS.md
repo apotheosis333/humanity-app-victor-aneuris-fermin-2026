@@ -108,6 +108,13 @@ Known or likely required variables:
 - `LOG_LEVEL` - optional backend logging level.
 - `NODE_ENV` - runtime environment.
 
+Android release signing uses ignored local files only:
+
+- `artifacts/humanity/android/key.properties`
+- `artifacts/humanity/android/release-signing/`
+
+Never print or commit release signing passwords, keystores, or generated `.aab` files.
+
 Rules:
 
 - Never commit `.env` files.

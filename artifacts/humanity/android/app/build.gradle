@@ -1,5 +1,23 @@
 apply plugin: 'com.android.application'
 
+def releaseSigningPropertiesFile = rootProject.file('key.properties')
+def releaseSigningProperties = new Properties()
+if (releaseSigningPropertiesFile.exists()) {
+    releaseSigningProperties.load(new FileInputStream(releaseSigningPropertiesFile))
+}
+def requiredReleaseSigningKeys = ['storeFile', 'storePassword', 'keyAlias', 'keyPassword']
+def missingReleaseSigningKeys = requiredReleaseSigningKeys.findAll { !releaseSigningProperties.getProperty(it) }
+def hasReleaseSigningConfig = missingReleaseSigningKeys.isEmpty()
+
+gradle.taskGraph.whenReady { taskGraph ->
+    def needsReleaseSigning = taskGraph.allTasks.any { task ->
+        task.path.toLowerCase().contains('release')
+    }
+    if (needsReleaseSigning && !hasReleaseSigningConfig) {
+        throw new GradleException("Release signing is missing ${missingReleaseSigningKeys.join(', ')} in ignored key.properties. See docs/google-play-internal-testing.md.")
+    }
+}
+
 android {
     namespace = "com.humanity.app"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -16,9 +34,20 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        release {
+            if (hasReleaseSigningConfig) {
+                storeFile rootProject.file(releaseSigningProperties.getProperty('storeFile'))
+                storePassword releaseSigningProperties.getProperty('storePassword')
+                keyAlias releaseSigningProperties.getProperty('keyAlias')
+                keyPassword releaseSigningProperties.getProperty('keyPassword')
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

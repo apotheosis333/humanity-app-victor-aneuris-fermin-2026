@@ -24,6 +24,7 @@ pnpm run cap:add:android
 pnpm run cap:add:ios
 pnpm run cap:open:android
 pnpm run cap:open:ios
+pnpm run android:bundle:release
 ```
 
 From `artifacts/humanity`, the same scripts are available without the workspace filter.
@@ -52,6 +53,14 @@ Do not use localhost or Replit Clerk proxy settings for Capacitor builds. Native
 Android platform files live under `artifacts/humanity/android` after `cap add android`.
 
 Android launcher and splash resources are generated inside the Android project under `artifacts/humanity/android/app/src/main/res`. Step 27 replaced the default Capacitor assets with temporary HuMANity-branded launcher and splash assets generated from `artifacts/humanity/public/logo.png`.
+
+Step 28 added a signed Android App Bundle command for Google Play Internal Testing:
+
+```bash
+pnpm run android:bundle:release
+```
+
+Release signing uses ignored local files under `artifacts/humanity/android/key.properties` and `artifacts/humanity/android/release-signing/`. Do not commit those files or the generated `.aab`.
 
 Manual Android steps not performed in this repo:
 

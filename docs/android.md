@@ -53,9 +53,12 @@ pnpm run mobile:build
 pnpm run cap:sync
 pnpm run cap:open:android
 pnpm run android:build:debug
+pnpm run android:bundle:release
 ```
 
 `pnpm run android:build:debug` runs the Android Gradle wrapper from `artifacts/humanity/android` and builds a debug APK when a compatible JDK and Android Gradle tooling are available.
+
+`pnpm run android:bundle:release` runs Gradle `bundleRelease` and requires ignored local release signing files.
 
 This command has been validated on the Windows development machine after Android tooling setup.
 
@@ -132,6 +135,33 @@ Validated output on this machine:
 ```text
 artifacts/humanity/android/app/build/outputs/apk/debug/app-debug.apk
 ```
+
+## Release AAB And Signing
+
+Step 28 added release signing support for Google Play Internal Testing.
+
+Release signing files are local-only and ignored:
+
+```text
+artifacts/humanity/android/key.properties
+artifacts/humanity/android/release-signing/humanity-release.jks
+```
+
+The release signing alias is `humanity-release`. Passwords and keystore contents must never be printed or committed.
+
+Command:
+
+```bash
+pnpm run android:bundle:release
+```
+
+Expected signed AAB output:
+
+```text
+artifacts/humanity/android/app/build/outputs/bundle/release/app-release.aab
+```
+
+The `.aab` is ignored by Git and must not be committed. Upload it manually to Google Play Console Internal testing only after confirming the app listing, privacy policy, app access instructions, tester list, and Data Safety requirements.
 
 ## Emulator Testing
 
