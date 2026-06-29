@@ -267,6 +267,22 @@ Profile-photo upload status:
 
 The full app upload flow still requires an authenticated user session. Android app launch was verified after the storage configuration, but profile-photo upload/save/display remains pending a completed login with a test account.
 
+## Step 24 Android Authenticated Upload Result
+
+Date: 2026-06-29
+
+The Android authenticated profile photo upload smoke test was attempted after a
+successful Android rebuild and Clerk frontend login. The storage flow remains
+blocked before R2 because the Railway backend returned `401 Unauthorized` for
+the Android WebView Clerk bearer token on the authenticated profile and upload
+request endpoints.
+
+R2 direct PUT, finalize, profile save, image display, and persistence were not
+retested in Step 24. Fix Clerk mobile-to-backend token verification first, then
+rerun the complete upload flow. The Step 23 direct R2 backend smoke test remains
+valid, and the broader R2 token still must be replaced with a bucket-scoped
+Object Read & Write token before production.
+
 ## Cost And Complexity
 
 - Cloudflare R2: low to moderate complexity, generally low cost for this use case.

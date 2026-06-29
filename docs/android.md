@@ -322,6 +322,20 @@ Result:
 
 Profile photo upload from Android remains pending because it requires a completed authenticated login with a test account. Do not fake Clerk tokens for this test.
 
+## Step 24 Authenticated Upload Smoke Test
+
+Date: 2026-06-29
+
+The Android app was rebuilt with ignored local mobile environment values, installed on `HuMANity_Pixel_API_36`, and
+signed into a Clerk test account. The WebView had a Clerk frontend user/session and continued to use the Railway
+backend. No `https://clerk.localhost` or Replit Clerk proxy requests were observed.
+
+The end-to-end profile photo upload remains blocked because the Railway backend returned `401 Unauthorized` for the
+Android WebView Clerk bearer token on `GET /api/me/profile` and `POST /api/storage/uploads/request-url`. The upload
+flow did not reach the direct R2 PUT, finalize, profile save, or image-display stages.
+
+See `docs/android-auth-upload-smoke-test.md` for the redacted test record and follow-up checklist.
+
 Do not create or commit signing keys in this repository.
 
 Manual release flow later:
