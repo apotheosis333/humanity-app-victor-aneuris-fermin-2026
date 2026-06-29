@@ -169,3 +169,45 @@ Railway Clerk environment variables were not changed during this step. Clerk
 dashboard settings were not changed during this step. The remaining production
 Clerk work is to verify final production keys, allowed origins, and OAuth/deep
 link behavior before public launch.
+
+## Step 26 R2 Credential Hardening Retest
+
+Date: 2026-06-29
+
+The Cloudflare R2 credentials used by Railway were replaced with a bucket-scoped
+Object Read & Write token for `humanity-profile-uploads`. Credential values,
+signed upload URLs, Clerk tokens, cookies, and environment files were not printed
+or committed.
+
+Backend and Android validation after the Railway variable update:
+
+- Railway `/health`: passed.
+- Railway `/api/healthz`: passed.
+- Frontend typecheck: passed.
+- Frontend production build: passed.
+- Capacitor sync: passed.
+- Android debug build: passed.
+- APK reinstall and launch on emulator: passed.
+- Backend typecheck: passed.
+- Backend build: passed.
+
+Authenticated Android upload retest:
+
+- Clerk frontend session: present.
+- `GET /api/me/profile`: `200`.
+- `POST /api/storage/uploads/request-url`: `200`.
+- Direct R2 `PUT` to the signed upload URL: `200`.
+- `POST /api/storage/uploads/finalize`: `200`.
+- `PUT /api/me/profile`: `200`.
+- Profile readback: `200`, with saved `photoUrl` persisted.
+- Backend object read through `/api/storage/objects/...`: `200`, with `image/png`.
+- Profile reload/readback: persisted photo path still present.
+
+Cloudflare cleanup:
+
+- The old all-buckets `Admin Read & Write` token named
+  `humanity-railway-r2-admin-write` was deleted after the new bucket-scoped token
+  passed the upload test.
+- Two read-only R2 tokens remain visible in Cloudflare. They do not power the
+  current Railway backend write path and should be reviewed/revoked later if
+  unused.

@@ -21,7 +21,7 @@ Current profile image upload flow:
 5. The browser uploads the file directly to that signed URL.
 6. The frontend calls `POST /api/storage/uploads/finalize`.
 7. The backend stores ACL metadata on the object with the Clerk user as owner and public visibility.
-8. Profile photos are stored as `/api/storage/objects/...` URLs and are served through the backend ACL-aware object route.
+8. Profile photos are stored as `/objects/...` object paths and are served through the backend ACL-aware `/api/storage/objects/...` route.
 
 ## Storage Providers
 
@@ -193,7 +193,7 @@ Backend/API smoke test:
 4. Confirm `POST /api/storage/uploads/request-url` returns an `uploadURL`, `objectPath`, and metadata.
 5. Confirm the browser direct `PUT` upload to the signed URL succeeds.
 6. Confirm `POST /api/storage/uploads/finalize` succeeds and returns an `/objects/...` path.
-7. Save the profile with the returned `/api/storage/objects/...` image URL.
+7. Save the profile with the returned `/objects/...` object path.
 8. Confirm `GET /api/storage/objects/...` returns the uploaded image.
 9. Confirm the image is visible on the profile page.
 10. Confirm an unsupported file type is rejected.
@@ -258,14 +258,52 @@ Credential note:
 
 Cloudflare bucket-scoped token creation was attempted first, but the created tokens showed `Object Read only` in the dashboard and could not write objects. A broader Account API token with `Admin Read & Write` was created so storage could be smoke-tested. This works, but should be tightened later to an Object Read & Write token scoped to `humanity-profile-uploads` once the Cloudflare dashboard/API flow reliably creates that permission.
 
+## Step 26 R2 Credential Hardening
+
+Date: 2026-06-29
+
+A new Cloudflare R2 account token was created for production storage with least-privilege object access:
+
+- Token name: `humanity-profile-uploads-object-read-write-2026-06-29`
+- Bucket scope: `humanity-profile-uploads`
+- Permission: `Object Read & Write`
+
+Railway backend storage variables were updated with the new bucket-scoped access key values:
+
+```bash
+STORAGE_ACCESS_KEY_ID=
+STORAGE_SECRET_ACCESS_KEY=
+```
+
+No credential values, tokens, signed URLs, cookies, or environment files are stored in this repository.
+
+Validation after updating Railway:
+
+- Railway backend health check: passed.
+- `/api/healthz`: passed.
+- Authenticated Android `GET /api/me/profile`: passed.
+- `POST /api/storage/uploads/request-url`: passed.
+- Direct R2 `PUT` to the signed upload URL: passed.
+- `POST /api/storage/uploads/finalize`: passed.
+- `PUT /api/me/profile` with the returned `/objects/...` path: passed.
+- Profile readback persisted the saved `photoUrl`: passed.
+- Backend object serving through `/api/storage/objects/...`: passed with `image/png`.
+
+The old all-buckets `Admin Read & Write` token named `humanity-railway-r2-admin-write` was deleted after the bucket-scoped token passed the authenticated upload smoke test.
+
+Remaining Cloudflare cleanup:
+
+- `humanity-railway-r2-admin-smoke` is still an all-buckets `Object Read only` token.
+- `R2 Account Token` is still a bucket-scoped `Object Read only` token for `humanity-profile-uploads`.
+- These read-only tokens are not required by the current Railway backend credentials and should be reviewed/revoked later if they are unused.
+
 Manual cleanup recommended:
 
 - Revoke the read-only R2 tokens created during setup if they are not needed.
-- Replace the broad Admin Read & Write token with a bucket-scoped Object Read & Write token before production launch.
 
 Profile-photo upload status:
 
-The full app upload flow still requires an authenticated user session. Android app launch was verified after the storage configuration, but profile-photo upload/save/display remains pending a completed login with a test account.
+The authenticated Android profile-photo upload/save/read flow passed after the bucket-scoped R2 token was applied in Railway.
 
 ## Step 24 Android Authenticated Upload Result
 
@@ -297,9 +335,9 @@ storage upload helper, the authenticated Android profile-photo flow passed:
 - Profile readback and image endpoint: `200`.
 - Android profile page loaded the stored image.
 
-The R2 adapter and bucket CORS worked for the Android WebView flow. The Step 23
-credential caveat still applies: replace the broad R2 Admin Read & Write token
-with a bucket-scoped Object Read & Write token before production.
+The R2 adapter and bucket CORS worked for the Android WebView flow. Step 26
+replaced the broad R2 Admin Read & Write token with a bucket-scoped Object Read
+& Write token and retested the upload flow successfully.
 
 ## Cost And Complexity
 
