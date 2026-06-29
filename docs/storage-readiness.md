@@ -283,6 +283,24 @@ rerun the complete upload flow. The Step 23 direct R2 backend smoke test remains
 valid, and the broader R2 token still must be replaced with a bucket-scoped
 Object Read & Write token before production.
 
+## Step 25 Android Authenticated Upload Pass
+
+Date: 2026-06-29
+
+After wiring Clerk token forwarding into the generated API client and object
+storage upload helper, the authenticated Android profile-photo flow passed:
+
+- Backend upload URL request: `200`.
+- Direct R2 signed URL PUT: `200`.
+- Backend upload finalize: `200`.
+- Profile save with the uploaded object URL: `200`.
+- Profile readback and image endpoint: `200`.
+- Android profile page loaded the stored image.
+
+The R2 adapter and bucket CORS worked for the Android WebView flow. The Step 23
+credential caveat still applies: replace the broad R2 Admin Read & Write token
+with a bucket-scoped Object Read & Write token before production.
+
 ## Cost And Complexity
 
 - Cloudflare R2: low to moderate complexity, generally low cost for this use case.

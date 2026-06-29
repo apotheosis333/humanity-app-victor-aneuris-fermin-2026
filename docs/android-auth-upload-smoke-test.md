@@ -131,3 +131,41 @@ Before rerunning this upload smoke test:
 6. Then test upload URL request, direct R2 PUT, finalize, profile save, image
    display, and persistence after app relaunch.
 
+## Step 25 Retest Result
+
+Date: 2026-06-29
+
+Root cause found in the frontend: the generated `@workspace/api-client-react`
+client already supported an auth token getter, but the Vite app only configured
+the API base URL and never registered Clerk `getToken()`. The profile upload
+helper also requested backend upload URLs without a bearer token. As a result,
+mobile WebView sign-in succeeded, but authenticated API calls reached Railway
+without a usable `Authorization` header.
+
+Fixes:
+
+- Registered Clerk `getToken()` with the generated API client from inside the
+  `ClerkProvider`.
+- Added an optional backend auth token getter to `@workspace/object-storage-web`.
+- Passed Clerk tokens to backend upload request/finalize calls.
+- Preserved token-free direct PUT uploads to R2 signed URLs.
+
+Retest result on the Android emulator:
+
+- Clerk frontend session: present.
+- `GET /api/me/profile`: authenticated; returned `404` before profile creation,
+  then `200` after profile save.
+- `POST /api/storage/uploads/request-url`: `200`.
+- Direct R2 PUT to the signed URL: `200`.
+- `POST /api/storage/uploads/finalize`: `200`.
+- `PUT /api/me/profile`: `200`.
+- Profile readback: `200` with a saved photo URL.
+- Profile image endpoint: `200` with `image/png`.
+- Profile page display: storage image present and loaded in the Android WebView.
+- Persistence after reload: confirmed by reading the saved profile again after
+  WebView reload.
+
+Railway Clerk environment variables were not changed during this step. Clerk
+dashboard settings were not changed during this step. The remaining production
+Clerk work is to verify final production keys, allowed origins, and OAuth/deep
+link behavior before public launch.

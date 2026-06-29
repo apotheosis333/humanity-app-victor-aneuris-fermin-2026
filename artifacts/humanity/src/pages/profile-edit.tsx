@@ -86,11 +86,15 @@ export default function ProfileEdit() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { uploadFile, isUploading } = useUpload({
     basePath: apiUrl("/api/storage"),
+    authTokenGetter: getToken,
     onSuccess: async (res) => {
       try {
+        const token = await getToken();
+        const headers = new Headers({ "Content-Type": "application/json" });
+        if (token) headers.set("Authorization", `Bearer ${token}`);
         const finalizeRes = await fetch(apiUrl("/api/storage/uploads/finalize"), {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers,
           body: JSON.stringify({ objectPath: res.objectPath }),
         });
         if (!finalizeRes.ok) throw new Error("finalize failed");

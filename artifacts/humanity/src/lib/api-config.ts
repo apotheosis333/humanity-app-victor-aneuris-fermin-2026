@@ -1,4 +1,4 @@
-import { setBaseUrl } from "@workspace/api-client-react";
+import { setAuthTokenGetter, setBaseUrl } from "@workspace/api-client-react";
 
 const rawApiBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim() ?? "";
 
@@ -11,4 +11,10 @@ export function apiUrl(path: string): string {
 
 export function configureApiClient(): void {
   setBaseUrl(API_BASE_URL || null);
+}
+
+export function configureApiAuthTokenGetter(
+  getter: (() => Promise<string | null> | string | null) | null,
+): void {
+  setAuthTokenGetter(getter);
 }

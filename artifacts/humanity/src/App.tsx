@@ -1,7 +1,7 @@
 import { Component, type ErrorInfo, type ReactNode, useEffect, useRef } from "react";
 import { Switch, Route, useLocation, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider, useQueryClient } from "@tanstack/react-query";
-import { ClerkProvider, SignIn, SignUp, useClerk } from "@clerk/react";
+import { ClerkProvider, SignIn, SignUp, useAuth, useClerk } from "@clerk/react";
 import { dark } from "@clerk/themes";
 import { Capacitor } from "@capacitor/core";
 import { Toaster } from "@/components/ui/toaster";
@@ -27,6 +27,7 @@ import Connections from "@/pages/connections";
 import Messages from "@/pages/messages";
 import { LegalPage } from "@/pages/legal";
 import { Layout } from "@/components/layout";
+import { configureApiAuthTokenGetter } from "@/lib/api-config";
 
 const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY?.trim();
 
@@ -205,6 +206,17 @@ function ClerkQueryClientCacheInvalidator() {
   return null;
 }
 
+function ApiAuthTokenBridge() {
+  const { getToken } = useAuth();
+
+  useEffect(() => {
+    configureApiAuthTokenGetter(() => getToken());
+    return () => configureApiAuthTokenGetter(null);
+  }, [getToken]);
+
+  return null;
+}
+
 function AppRoutes() {
   return (
     <Layout>
@@ -251,6 +263,7 @@ function ClerkProviderWithRoutes() {
       routerReplace={(to) => setLocation(stripBase(to), { replace: true })}
     >
       <QueryClientProvider client={queryClient}>
+        <ApiAuthTokenBridge />
         <ClerkQueryClientCacheInvalidator />
         <TooltipProvider>
           <Switch>

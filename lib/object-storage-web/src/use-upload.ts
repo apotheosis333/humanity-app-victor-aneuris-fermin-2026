@@ -16,6 +16,8 @@ interface UploadResponse {
 interface UseUploadOptions {
   /** Base path where object storage routes are mounted (default: "/api/storage") */
   basePath?: string;
+  /** Optional bearer-token getter for authenticated backend upload routes. */
+  authTokenGetter?: () => Promise<string | null> | string | null;
   onSuccess?: (response: UploadResponse) => void;
   onError?: (error: Error) => void;
 }
@@ -59,13 +61,18 @@ export function useUpload(options: UseUploadOptions = {}) {
   const [error, setError] = useState<Error | null>(null);
   const [progress, setProgress] = useState(0);
 
+  const buildBackendHeaders = useCallback(async (): Promise<Headers> => {
+    const headers = new Headers({ "Content-Type": "application/json" });
+    const token = await options.authTokenGetter?.();
+    if (token) headers.set("Authorization", `Bearer ${token}`);
+    return headers;
+  }, [options.authTokenGetter]);
+
   const requestUploadUrl = useCallback(
     async (file: File): Promise<UploadResponse> => {
       const response = await fetch(`${basePath}/uploads/request-url`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: await buildBackendHeaders(),
         body: JSON.stringify({
           name: file.name,
           size: file.size,
@@ -80,7 +87,7 @@ export function useUpload(options: UseUploadOptions = {}) {
 
       return response.json();
     },
-    []
+    [basePath, buildBackendHeaders]
   );
 
   const uploadToPresignedUrl = useCallback(
@@ -138,9 +145,7 @@ export function useUpload(options: UseUploadOptions = {}) {
     }> => {
       const response = await fetch(`${basePath}/uploads/request-url`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: await buildBackendHeaders(),
         body: JSON.stringify({
           name: file.name,
           size: file.size,
@@ -159,7 +164,7 @@ export function useUpload(options: UseUploadOptions = {}) {
         headers: { "Content-Type": file.type || "application/octet-stream" },
       };
     },
-    []
+    [basePath, buildBackendHeaders]
   );
 
   return {

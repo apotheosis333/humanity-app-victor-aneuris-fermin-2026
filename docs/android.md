@@ -336,6 +336,26 @@ flow did not reach the direct R2 PUT, finalize, profile save, or image-display s
 
 See `docs/android-auth-upload-smoke-test.md` for the redacted test record and follow-up checklist.
 
+## Step 25 Clerk Mobile Backend Auth Fix
+
+Date: 2026-06-29
+
+The Android authenticated API failure was fixed in the frontend. The generated API client now receives Clerk
+`getToken()` from inside the `ClerkProvider`, and the profile-photo upload helper now sends bearer auth to backend
+upload request/finalize endpoints while keeping the direct R2 signed-URL PUT token-free.
+
+Retest on `HuMANity_Pixel_API_36`:
+
+- `/api/me/profile`: authenticated and returned `200` after profile creation.
+- Upload request URL: `200`.
+- Direct R2 PUT: `200`.
+- Upload finalize: `200`.
+- Profile save: `200`.
+- Profile image endpoint: `200`.
+- Android profile page displayed the saved storage image after reload.
+
+No Railway Clerk variables or Clerk dashboard settings were changed in this step.
+
 Do not create or commit signing keys in this repository.
 
 Manual release flow later:
