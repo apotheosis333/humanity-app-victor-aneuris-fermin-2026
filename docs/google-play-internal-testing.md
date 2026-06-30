@@ -148,3 +148,44 @@ Results:
 - AAB output ignored: confirmed.
 
 Google Play Console was not accessed and no upload/submission was performed in Step 28.
+
+## Step 29 Play Console Attempt
+
+Date: 2026-06-29
+
+Google Play Console was accessed with the developer account dashboard available.
+
+Status:
+
+- Developer account exists.
+- App creation is currently blocked by account verification.
+- Play Console shows identity verification in progress.
+- Play Console requires Android mobile device verification.
+- Contact phone verification is not available until other verification tasks are complete.
+- HuMANity app was not created.
+- Internal testing track was not created or opened.
+- Signed AAB was not uploaded.
+- No release was saved, submitted, rolled out, or published.
+- No production release action was taken.
+
+Manual action required before continuing Step 29:
+
+1. Wait for Google identity verification approval.
+2. Complete Android mobile device verification in Play Console or the Play Console mobile app if Google requires it.
+3. Complete contact phone verification when Google unlocks it.
+4. Return to the web Play Console app list.
+5. Confirm the `Create app` button is enabled.
+
+After account verification is complete, continue Step 29 from app creation:
+
+- Create/select app: `HuMANity`.
+- Default language: English (United States), if available.
+- App type: App.
+- Price: Free.
+- Package name after AAB upload: `com.humanity.app`.
+- Create/open internal testing track.
+- Upload `artifacts/humanity/android/app/build/outputs/bundle/release/app-release.aab`.
+- Add internal testing release notes.
+- Add tester list or pause for tester Gmail addresses if required.
+- Configure app access/sign-in instructions if Play Console asks.
+- Save as draft or ask before any final start-testing/review action.
