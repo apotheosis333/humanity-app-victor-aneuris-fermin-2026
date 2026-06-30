@@ -198,7 +198,7 @@ Google Play Console was accessed again to verify the current account blocker. No
 
 Current non-sensitive verification status:
 
-- Identity verification: pending/not submitted. Play Console shows a `Verify your identity` task with a `Get started` action and asks for an official document.
+- Identity verification: under review. Play Console says identity documents were uploaded and Google is verifying them. Google says the account owner will receive an email when verification is complete, and that this may take a few days.
 - Android mobile device verification: pending. Play Console requires signing in to the Google Play Console mobile app on a real Android device.
 - Contact phone verification: locked until other verification tasks are complete, including identity verification and document approval.
 - App creation: still locked. The `Create app` button is disabled.
@@ -224,3 +224,52 @@ Exact manual next actions:
 4. Return to the web Play Console app list and confirm `Create app` is enabled.
 
 Resume with Step 29B only after all required account verifications are complete and app creation is unlocked.
+
+## Step 29A-2 Android Device Verification Status
+
+Date: 2026-06-30
+
+Google Play Console was accessed to inspect the Android device verification blocker. No app was created, no AAB was uploaded, and no testing or production release action was started.
+
+Current non-sensitive status:
+
+- Identity verification: still under review.
+- Android mobile device verification: available and pending.
+- Play Console says the Play Console mobile app is required.
+- Play Console explicitly requires access to a real Android mobile device for developing and testing Android apps.
+- Play Console offers a QR code or URL to get the Play Console mobile app on the chosen Android device.
+- Contact phone verification: still gated until the other verification tasks are complete.
+- App creation: still locked. The `Create app` button remains disabled.
+
+Local device check:
+
+- ADB is available on this workstation.
+- The only Android device currently visible to ADB is an emulator.
+- No physical Android phone is currently connected to this computer.
+- Do not use an emulator to bypass this requirement unless Google explicitly accepts it in Play Console. The current Play Console wording requires a real Android mobile device.
+
+Safest manual next action:
+
+1. Use a real Android phone with Google Play Store support.
+2. Install or update the Google Play Console app from Google Play.
+3. Sign in with the same Google account that owns the Play Console developer account.
+4. Complete MFA only on the device or Google-owned screens.
+5. Select the developer account if prompted.
+6. Follow the Play Console mobile app verification steps.
+7. Return to web Play Console and confirm the Android device verification task disappears or is marked complete.
+
+If using a borrowed trusted phone:
+
+1. Do not save the Google password on the borrowed phone.
+2. After verification, sign out of the Play Console app.
+3. Remove the Google account from the borrowed phone.
+4. Check Google Account security settings and remove the borrowed device if needed.
+
+Safe device options:
+
+- Borrow a trusted friend or family Android phone for a short verification session.
+- Use an older Android phone that can install the Google Play Console app from Google Play.
+- Buy an inexpensive certified Android phone with Google Play Store support.
+- Avoid public or shared devices unless absolutely necessary.
+
+Resume Step 29B only after identity verification, Android mobile device verification, and contact phone verification are complete and web Play Console enables app creation.
