@@ -189,3 +189,38 @@ After account verification is complete, continue Step 29 from app creation:
 - Add tester list or pause for tester Gmail addresses if required.
 - Configure app access/sign-in instructions if Play Console asks.
 - Save as draft or ask before any final start-testing/review action.
+
+## Step 29A Verification Status Check
+
+Date: 2026-06-30
+
+Google Play Console was accessed again to verify the current account blocker. No app was created, no AAB was uploaded, and no release/testing action was started.
+
+Current non-sensitive verification status:
+
+- Identity verification: pending/not submitted. Play Console shows a `Verify your identity` task with a `Get started` action and asks for an official document.
+- Android mobile device verification: pending. Play Console requires signing in to the Google Play Console mobile app on a real Android device.
+- Contact phone verification: locked until other verification tasks are complete, including identity verification and document approval.
+- App creation: still locked. The `Create app` button is disabled.
+- Android developer verification/package registration: blocked until the outstanding Home-page verifications are complete.
+- Step 29 cannot continue yet.
+
+Exact manual next actions:
+
+1. On the web Play Console Home page, complete `Verify your identity`.
+   - Upload the official identity document Google requests.
+   - Do not edit or manipulate the document.
+   - Wait for Google to approve the uploaded document. Google says the process may take a few days.
+2. Complete Android mobile device verification.
+   - Install or open the Google Play Console mobile app on a real Android device.
+   - Sign in with the same Google account that owns the Play Console developer account.
+   - Select the developer account that owns the Play Console registration if prompted.
+   - Follow the on-device verification instructions.
+3. After identity approval and device verification, complete contact phone verification.
+   - Go to Play Console account details.
+   - Confirm the contact phone number.
+   - Choose SMS or phone call for the verification code.
+   - Enter the code only in Play Console.
+4. Return to the web Play Console app list and confirm `Create app` is enabled.
+
+Resume with Step 29B only after all required account verifications are complete and app creation is unlocked.
