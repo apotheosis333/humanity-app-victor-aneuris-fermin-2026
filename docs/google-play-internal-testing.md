@@ -273,3 +273,75 @@ Safe device options:
 - Avoid public or shared devices unless absolutely necessary.
 
 Resume Step 29B only after identity verification, Android mobile device verification, and contact phone verification are complete and web Play Console enables app creation.
+
+## Step 29A-3 Guided Android Device Verification Flow
+
+Date: 2026-06-30
+
+Google Play Console was accessed again to prepare a guided Android device verification session. No app was created, no AAB was uploaded, and no testing or production release action was started.
+
+Current exact blocker:
+
+- Identity verification remains under review.
+- Android mobile device verification is available and pending.
+- Contact phone verification remains locked until the other verification tasks are complete.
+- App creation remains locked; the `Create app` button is disabled.
+
+The device verification detail page shows:
+
+- Page title: `Verify that you have access to an Android mobile device`.
+- No separate `Get started` button was shown on the detail page.
+- A QR code is shown for installing or opening the Google Play Console mobile app.
+- A `Copy URL` button is shown for the same mobile-app link.
+- The page says to open the Google Play Console app on an Android mobile device.
+- The page says to sign in using the same Google account currently signed in to Play Console.
+- The page says to choose this developer account and follow the instructions on the device.
+- The page does not say identity verification must finish before starting device verification, but the overall account setup still requires identity approval before app creation and phone verification can be completed.
+
+Official Google help guidance for the mobile app flow:
+
+1. Log into Play Console on the web as the account owner.
+2. Find `Verify that you have access to an Android mobile device` and open `View details`.
+3. Scan the QR code to launch or install the Play Console mobile app on the real Android device.
+4. Open the Play Console mobile app and log in as the account owner.
+5. Select the developer account.
+6. Tap `Verify` and follow the instructions on screen.
+7. After device verification completes, the mobile device verification task should no longer be shown on the Home page in Play Console.
+
+Live phone-side steps when a real Android phone is available:
+
+1. Keep the web Play Console device verification detail page open.
+2. On the Android phone, open Google Play Store.
+3. Install or update `Google Play Console`.
+4. Scan the QR code from the web Play Console page if possible. If scanning is awkward, use `Copy URL` on the web page and open that URL on the phone using a safe method you control.
+5. In the Play Console mobile app, sign in with the same Google account that owns the paid Play Console developer account.
+6. Complete MFA only on Google-owned screens. Do not share codes in chat or save passwords on a borrowed phone.
+7. If the app shows multiple accounts or developer accounts, switch to the same developer account shown in web Play Console.
+8. Look for a card, banner, or task named `Verify that you have access to an Android mobile device`, `Device verification`, or similar.
+9. Tap `Verify`.
+10. Follow the on-device prompts.
+11. Return to web Play Console Home and refresh.
+12. Confirm the Android mobile device verification task is gone or marked complete.
+
+If the mobile app does not show verification:
+
+1. Confirm the phone is signed into the same Google account that owns the paid Play Console developer account.
+2. Update the Google Play Console app from Google Play.
+3. Fully close and reopen the Play Console app.
+4. Sign out of the Play Console app and sign back in.
+5. Switch accounts inside the app if another Google account is selected.
+6. Manually select the correct developer account if the app shows an account picker.
+7. Open the web verification detail page first, then scan the QR code again.
+8. Use the `Copy URL` button and open the copied URL on the real Android phone if QR scanning does not route correctly.
+9. Clear the Play Console app cache if the task still does not appear.
+10. Wait for identity verification to complete if Google begins gating the device task behind identity approval.
+11. Try another real Android device with Google Play Store support.
+
+Borrowed-phone cleanup:
+
+1. Sign out of the Play Console mobile app.
+2. Remove the Google account from the borrowed phone.
+3. Check Google Account security devices and remove the borrowed phone if needed.
+4. Do not leave passwords, passkeys, recovery prompts, screenshots, or account data on the borrowed phone.
+
+Resume Step 29B only after web Play Console shows device verification complete and app creation is enabled.
