@@ -1,4 +1,4 @@
-package com.humanity.app;
+package app.humanity.global;
 
 import static org.junit.Assert.*;
 

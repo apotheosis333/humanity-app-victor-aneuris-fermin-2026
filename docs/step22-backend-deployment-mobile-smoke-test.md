@@ -150,7 +150,7 @@ The file remains ignored by Git and must not be committed.
 Device:
 
 - Android emulator: `HuMANity_Pixel_API_36`
-- Package: `com.humanity.app`
+- Package: `app.humanity.global`
 
 Commands run from the repository root:
 
@@ -160,7 +160,7 @@ $env:PORT='5173'; $env:BASE_PATH='/'; pnpm --filter @workspace/humanity run buil
 pnpm --filter @workspace/humanity run cap:sync
 pnpm run android:build:debug
 adb install -r artifacts/humanity/android/app/build/outputs/apk/debug/app-debug.apk
-adb shell monkey -p com.humanity.app -c android.intent.category.LAUNCHER 1
+adb shell monkey -p app.humanity.global -c android.intent.category.LAUNCHER 1
 ```
 
 Results:

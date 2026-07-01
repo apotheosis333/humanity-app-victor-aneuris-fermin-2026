@@ -7,14 +7,14 @@ This document records the Step 28 Google Play Internal Testing preparation for H
 ## Android App Identity
 
 - App name: `HuMANity`
-- Application ID/package name: `com.humanity.app`
+- Application ID/package name: `app.humanity.global`
 - Version code: `1`
 - Version name: `1.0`
 - Min SDK: `24`
 - Target SDK: `36`
 - Compile SDK: `36`
 
-The package name is still the final Android identity once uploaded to Play Console. Confirm `com.humanity.app` before creating a Play app because package names cannot be changed after publication.
+The package name is still the final Android identity once uploaded to Play Console. Confirm `app.humanity.global` before creating a Play app because package names cannot be changed after publication.
 
 ## Release Signing
 
@@ -76,7 +76,7 @@ Verification completed:
 - Release AAB contains signature files.
 - `jarsigner -verify` reported `jar verified`.
 - Signer certificate subject is `CN=HuMANity, OU=Mobile, O=HuMANity, L=New York, ST=NY, C=US`.
-- Package metadata in Gradle remains `com.humanity.app`, version code `1`, version name `1.0`.
+- Package metadata in Gradle remains `app.humanity.global`, version code `1`, version name `1.0`.
 
 `jarsigner` reports expected self-signed certificate warnings for the local Android upload key. Do not confuse this with debug signing; the release bundle is signed by the local HuMANity release keystore.
 
@@ -85,7 +85,7 @@ Verification completed:
 Manual Play Console setup still required:
 
 - Create or open the Google Play Console app for `HuMANity`.
-- Confirm package name `com.humanity.app`.
+- Confirm package name `app.humanity.global`.
 - Upload `artifacts/humanity/android/app/build/outputs/bundle/release/app-release.aab` to an Internal testing release.
 - Add internal tester email list or Google Group.
 - Add app access/test account instructions because the app requires sign-in.
@@ -182,7 +182,7 @@ After account verification is complete, continue Step 29 from app creation:
 - Default language: English (United States), if available.
 - App type: App.
 - Price: Free.
-- Package name after AAB upload: `com.humanity.app`.
+- Package name after AAB upload: `app.humanity.global`.
 - Create/open internal testing track.
 - Upload `artifacts/humanity/android/app/build/outputs/bundle/release/app-release.aab`.
 - Add internal testing release notes.
@@ -390,3 +390,72 @@ Pending after this blocker is resolved:
 - Configure tester list.
 - Configure app access/sign-in instructions if Play Console asks.
 - Complete Privacy policy, Data Safety, Content rating, Target audience, Ads, data deletion/account deletion, store listing, app icon, feature graphic, screenshots, and any UGC/social moderation declarations required by Play Console.
+
+## Step 29C Package ID Change And Internal Test Draft
+
+Date: 2026-06-30
+
+The Android package/application ID was changed from `com.humanity.app` to `app.humanity.global` after Google Play Console reported the old package ID was already in use. The app was rebuilt, re-signed, validated, and uploaded only to the Play Console Internal testing release flow.
+
+Local validation completed before upload:
+
+- Frontend typecheck: passed.
+- Frontend production build with `PORT=5173` and `BASE_PATH=/`: passed.
+- Capacitor sync: passed.
+- Android debug build: passed.
+- Android debug APK install/relaunch on `HuMANity_Pixel_API_36`: passed.
+- Android app launched as package `app.humanity.global` and rendered the HuMANity home screen.
+- Clerk sign-in page rendered in the Android WebView.
+- Signed release AAB build: passed.
+- Backend typecheck: passed.
+- Backend build: passed.
+
+Release bundle verification:
+
+- Signed AAB output: `artifacts/humanity/android/app/build/outputs/bundle/release/app-release.aab`.
+- Release AAB remains ignored and must not be committed.
+- Local signing files remain ignored and must not be committed.
+- AAB manifest/resources/config references were checked for `app.humanity.global`; old `com.humanity.app` references were not present in the new release bundle metadata.
+- Debug APK package check confirmed `app.humanity.global`.
+
+Play Console result:
+
+- Play Console app created successfully for `HuMANity`.
+- Package/application ID: `app.humanity.global`.
+- Default language: English (United States).
+- App type: App.
+- Pricing: Free.
+- Google Play App Signing was accepted for the new app.
+- Google automatic protection was left enabled.
+- Internal testing track was opened.
+- Signed release AAB `app-release.aab` was uploaded to the Internal testing release.
+- Uploaded bundle version: `1 (1.0)`, min API `24+`, target SDK `36`.
+- Internal testing release notes were added for `en-US`.
+- Release was saved as a draft. It was not rolled out to testers and no production rollout was started.
+
+Tester status:
+
+- Tester list is still pending.
+- Do not invent tester email addresses. Ask the founder for tester Gmail addresses or a Google Group before rolling out internal testing.
+
+Pending Play Console checklist:
+
+- Add internal tester list.
+- Provide app access/sign-in instructions or test credentials if Google asks.
+- Add Privacy policy URL.
+- Complete Data Safety form.
+- Complete Content rating questionnaire.
+- Complete Target audience and content.
+- Complete Ads declaration.
+- Add data deletion/account deletion URL or instructions.
+- Complete store listing short description and full description.
+- Upload Play Store app icon, feature graphic, and phone screenshots.
+- Complete UGC/social moderation declarations if Google asks.
+- Review any closed testing requirement Google shows before production access.
+
+Next action:
+
+1. Collect tester Gmail addresses or create a Google Group for `HuMANity Internal Testers`.
+2. Finish the required Play Console setup checklist.
+3. Preview the draft Internal testing release.
+4. Roll out to Internal testing only after the tester list and required declarations are complete.

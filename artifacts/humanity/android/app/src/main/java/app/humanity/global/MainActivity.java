@@ -1,4 +1,4 @@
-package com.humanity.app;
+package app.humanity.global;
 
 import com.getcapacitor.BridgeActivity;
 

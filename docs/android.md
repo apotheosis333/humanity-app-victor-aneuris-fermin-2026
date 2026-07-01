@@ -11,8 +11,8 @@ Steps 16 and 17 prepare the generated Capacitor Android project for local testin
 
 ## Identity
 
-- Application ID: `com.humanity.app`
-- Android namespace: `com.humanity.app`
+- Application ID: `app.humanity.global`
+- Android namespace: `app.humanity.global`
 - App display name: `HuMANity`
 - Activity label: `HuMANity`
 
@@ -241,7 +241,7 @@ $env:PORT='5173'; $env:BASE_PATH='/'; pnpm --filter @workspace/humanity run buil
 pnpm --filter @workspace/humanity run cap:sync
 pnpm run android:build:debug
 adb install -r artifacts/humanity/android/app/build/outputs/apk/debug/app-debug.apk
-adb shell monkey -p com.humanity.app -c android.intent.category.LAUNCHER 1
+adb shell monkey -p app.humanity.global -c android.intent.category.LAUNCHER 1
 ```
 
 Results:
@@ -480,11 +480,13 @@ Needed assets:
 - Branded app icon and splash assets installed.
 - Privacy policy, terms, support, reporting, blocking, and account deletion flows tested.
 - Signed release AAB generated outside this repo.
-- Google Play Console app, internal testing track, testers, data safety, content rating, and store listing completed manually.
+- Google Play Console app created with package `app.humanity.global`.
+- Internal testing release draft created with the signed release AAB.
+- Testers, data safety, content rating, and store listing completed manually.
 
 ## Remaining Android Risks
 
 - Clerk redirect/deep-link behavior still needs real Android WebView testing.
 - Uploads need deployed backend plus configured S3-compatible storage.
 - Default Capacitor icons and splash assets are not launch-ready.
-- Final package name must be confirmed before Play Console creation.
+- Play Console package name is now `app.humanity.global`; future signed bundles must keep this application ID.

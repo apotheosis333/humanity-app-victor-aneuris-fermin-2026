@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "com.humanity.app",
+  appId: "app.humanity.global",
   appName: "HuMANity",
   webDir: "dist/public",
 };

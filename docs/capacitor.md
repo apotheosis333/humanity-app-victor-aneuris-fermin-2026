@@ -7,10 +7,10 @@ Step 15 adds Capacitor to the HuMANity Vite/React frontend without changing back
 - Frontend package: `artifacts/humanity`
 - Capacitor config: `artifacts/humanity/capacitor.config.ts`
 - App name: `HuMANity`
-- App ID placeholder: `com.humanity.app`
+- App ID: `app.humanity.global`
 - Web directory: `dist/public`
 
-The app ID is a professional placeholder. Replace it before store submission if the founder chooses a final domain or organization namespace.
+The app ID is the approved Play Console package identity as of Step 29C. Do not change it again after Play Console app creation unless a future migration plan explicitly requires a new app listing.
 
 ## Scripts
 
