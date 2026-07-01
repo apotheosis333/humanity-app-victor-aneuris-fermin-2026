@@ -459,3 +459,54 @@ Next action:
 2. Finish the required Play Console setup checklist.
 3. Preview the draft Internal testing release.
 4. Roll out to Internal testing only after the tester list and required declarations are complete.
+
+## Step 29D Internal Testing Rollout
+
+Date: 2026-07-01
+
+The Google Play Internal testing setup was completed for the existing HuMANity draft release. This was an internal testing rollout only; no production rollout was started and no production review was requested.
+
+Internal testing result:
+
+- Track: Internal testing.
+- Track status: Active.
+- Release: `1 (1.0)`.
+- Release status: Available to internal testers.
+- Release time shown by Play Console: July 1, 2026, 11:43 AM.
+- Review status shown by Play Console: Not reviewed.
+- Temporary app name shown by Play Console: `app.humanity.global (unreviewed)`.
+- Play Console showed one non-blocking warning about no deobfuscation file for the app bundle.
+
+Tester setup:
+
+- Tester list name: `HuMANity Internal Testers`.
+- Tester count: 1.
+- The private tester email address is intentionally not recorded in this repository.
+- The tester list is selected for the Internal testing track.
+
+Tester opt-in link:
+
+```text
+https://play.google.com/apps/internaltest/4701483710954512652
+```
+
+Pending before broader testing or production readiness:
+
+- Confirm the internal tester can open the opt-in link, join the test, install the app, and sign in.
+- Complete app access/test account instructions if Google requires them later.
+- Add Privacy policy URL.
+- Complete Data Safety form.
+- Complete Content rating questionnaire.
+- Complete Target audience and content.
+- Complete Ads declaration.
+- Add data deletion/account deletion URL or instructions.
+- Complete store listing short description and full description.
+- Upload Play Store app icon, feature graphic, and phone screenshots.
+- Complete any UGC/social moderation declarations Google asks for.
+- Keep production closed-testing requirements separate from this internal testing rollout.
+
+Next action:
+
+1. Use the opt-in link with the selected internal tester account.
+2. Install the HuMANity internal test build from Google Play.
+3. Run an end-to-end Android internal testing smoke test: launch, sign in, edit profile, upload profile photo, navigate core screens, and verify reporting/blocking/account deletion entry points.
