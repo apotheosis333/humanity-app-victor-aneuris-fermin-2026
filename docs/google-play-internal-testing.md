@@ -510,3 +510,15 @@ Next action:
 1. Use the opt-in link with the selected internal tester account.
 2. Install the HuMANity internal test build from Google Play.
 3. Run an end-to-end Android internal testing smoke test: launch, sign in, edit profile, upload profile photo, navigate core screens, and verify reporting/blocking/account deletion entry points.
+
+## Step 30 Play Internal Test Install Attempt
+
+Date: 2026-07-01
+
+The tester opt-in link was opened on the `HuMANity_Pixel_API_36` emulator. The tester account was accepted, and Google Play confirmed tester access for `app.humanity.global (unreviewed)`.
+
+The Play-distributed install was blocked because this emulator does not have a launchable native Google Play Store app. The Google Play web page reported that the account was not yet associated with a device and instructed that the Play Store app must be opened on the device before installing apps. ADB inspection showed only the `com.android.vending` license-checker package, not a full Play Store app with launcher or `market://` handling.
+
+The existing app on the emulator was a previous local install with no installer package, so it does not satisfy the Play-distributed internal testing requirement. No local debug APK was sideloaded for this Step 30 attempt.
+
+See `docs/google-play-internal-test-smoke-test.md` for the blocked smoke-test record and the required next path.
