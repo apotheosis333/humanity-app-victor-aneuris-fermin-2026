@@ -2,11 +2,11 @@
 
 Date: 2026-07-01
 
-This document records the Step 30 attempt to install and test the HuMANity Google Play Internal testing build. It contains no tester email addresses, passwords, tokens, cookies, Clerk keys, Railway tokens, R2 keys, signed URLs, `.env` values, signing keys, AABs/APKs, or private Google account data.
+This document records the Step 30B Google Play Internal testing smoke test for HuMANity. It contains no tester email addresses, passwords, tokens, cookies, Clerk keys, Railway tokens, R2 keys, signed URLs, `.env` values, signing keys, AABs/APKs, screenshots, or private Google account data.
 
 ## Play Internal Testing Status
 
-- Google Play Internal testing track: active.
+- Google Play Internal testing track: active enough for tester opt-in and Play Store install.
 - Release available to internal testers: `1 (1.0)`.
 - Package ID: `app.humanity.global`.
 - Tester opt-in link:
@@ -15,60 +15,142 @@ This document records the Step 30 attempt to install and test the HuMANity Googl
 https://play.google.com/apps/internaltest/4701483710954512652
 ```
 
-## Device Used
+Play status was confirmed through the internal-testing opt-in flow and a successful Play Store install. The Play Console was not used to publish, change testers, upload a new build, or start production rollout during this step.
 
-- Android emulator: `HuMANity_Pixel_API_36`.
-- Device model reported by ADB: `sdk_gphone64_x86_64`.
-- The emulator was signed into the tester Google account.
+## Google Play Store AVD
 
-## Result
+- New AVD created: `HuMANity_PlayStore_Test_API_36`.
+- Device profile: Pixel 8.
+- System image: `system-images;android-36;google_apis_playstore;x86_64`.
+- ADB online: passed.
+- Real Play Store support: passed.
+- Play Store package present: `com.android.vending`.
+- Google Play services present: `com.google.android.gms`.
+- Chrome present for OAuth/browser flows: `com.android.chrome`.
+- `market://details?id=app.humanity.global` resolves to Play Store: passed.
 
-Tester opt-in worked. The opt-in page confirmed the account is a tester for `app.humanity.global (unreviewed)` and showed the `Download test app` action.
+This was a legitimate Google Play Store-enabled Android Studio emulator image. The app was not sideloaded for this test.
 
-The Play Store install could not be completed on this emulator because the emulator does not have a launchable native Google Play Store app. ADB showed `com.android.vending` installed only as `/product/app/LicenseChecker/LicenseChecker.apk`, with no launcher activity and no `market://` handler. The Google Play web page reported that the Google account is not yet associated with a device and instructed that the Play Store app must be opened on the device before installing apps.
+## Play Store Install
 
-This means the current emulator is not valid for the required Play-distributed install test. The local debug build was not sideloaded for this smoke test.
+The emulator was signed into the tester Google account manually. No passwords, MFA codes, or account credentials were printed, saved, or committed.
 
-## Previous Local Install Note
+The HuMANity listing opened through Google Play Internal testing and showed the install action for `app.humanity.global (unreviewed)`. The app installed successfully from Google Play.
 
-ADB showed `app.humanity.global` was already present from an earlier local install with:
+ADB package verification:
 
+- Installed package ID: `app.humanity.global`.
 - Version code: `1`.
 - Version name: `1.0`.
-- Installer package: none.
+- Installer package: `com.android.vending`.
+- Initiating package: `com.android.vending`.
+- minSdk: `24`.
+- targetSdk: `36`.
+- Install permissions granted: `android.permission.INTERNET`, `com.android.vending.CHECK_LICENSE`.
 
-Because this install was not delivered by Google Play, it does not satisfy the Step 30 Play-distributed build requirement.
+## Launch Smoke Test
 
-## Smoke Test Coverage
+- Play-installed app launch: passed.
+- App opened to HuMANity home: passed.
+- Blank WebView check: passed; no blank screen observed.
+- Startup crash check: passed; no fatal crash observed in filtered logcat.
+- Unexpected permission prompts: none observed.
+- Public home content: passed.
+- Public side navigation: passed.
+- Public globe/home section rendering: passed.
+- Clerk sign-in route rendering: passed.
 
-- Tester opt-in: passed.
-- Play Store install: blocked by emulator image limitation.
-- Installed package ID from Play: not tested.
-- Play-installed app launch: not tested.
-- Clerk auth on Play build: not tested.
-- `/api/me/profile` on Play build: not tested.
-- Profile edit on Play build: not tested.
-- R2 profile photo upload on Play build: not tested.
-- Profile persistence on Play build: not tested.
-- Safety/support/privacy/terms smoke on Play build: not tested.
+Known UI note:
 
-## Required Next Path
+- Clerk renders with a visible `Development mode` label. This is acceptable for internal testing, but it should be removed before production submission by using production-ready Clerk configuration.
 
-Use one of these options:
+## Backend And Data Smoke Test
 
-1. Use a real Android phone with Google Play Store support, signed into the tester Google account.
-2. Create a fresh Android emulator image that explicitly includes the Google Play Store, not only Google APIs or license-checker components.
+Railway public endpoint checks from the workstation:
 
-Then:
+- `GET /health`: `200`.
+- `GET /api/countries`: `200`, but returned an empty array.
 
-1. Open the opt-in link on that device.
-2. Confirm tester access.
-3. Install HuMANity from Google Play.
-4. Confirm the installed package is `app.humanity.global`.
-5. Confirm version `1 (1.0)`.
-6. Launch the Play-installed app.
-7. Run the full end-to-end smoke test: home, Clerk sign-in, profile load, profile edit, profile photo upload, persistence, navigation, reporting/blocking, support, privacy, terms, and account deletion entry points.
+In the Play-installed app:
 
-## Follow-Up Task
+- Explore page opened: passed.
+- Explore data state: blocked by empty backend country data. The UI showed no loaded nations even though it references the expected total.
 
-`TASK: STEP 30B — RUN GOOGLE PLAY INTERNAL TEST BUILD SMOKE TEST ON REAL ANDROID DEVICE OR GOOGLE PLAY STORE AVD`
+The empty country response is a release blocker for a polished internal/production experience unless this is intentionally seeded later.
+
+## Clerk Auth Smoke Test
+
+The app opened the Clerk sign-in page in the Play-installed build and the Google account consent flow completed far enough to return from Google/Clerk.
+
+Auth did not complete in the app. Chrome landed on a localhost callback URL and showed `ERR_CONNECTION_REFUSED`. Relaunching HuMANity returned to the sign-in screen with no completed session.
+
+Result:
+
+- Google sign-in screen: passed.
+- Google account consent: passed.
+- Return to HuMANity app session: failed.
+- Clerk session in app: not established.
+- `/api/me/profile` authenticated check: blocked.
+
+Likely cause:
+
+- The mobile OAuth callback/deep-link configuration is still using a development/local callback path instead of returning cleanly to the Capacitor Android app.
+
+Do not treat authenticated Android Play testing as complete until the Clerk mobile OAuth callback issue is fixed and retested from the Play-installed app.
+
+## Profile, Upload, And Persistence
+
+These flows were not completed because authenticated login did not complete:
+
+- Profile load/create: blocked by auth callback failure.
+- Profile edit: blocked by auth callback failure.
+- Profile photo upload/R2: blocked by auth callback failure.
+- Profile save: blocked by auth callback failure.
+- Profile/photo persistence after relaunch: blocked by auth callback failure.
+
+The previously configured Railway/R2 backend remains the expected path for upload testing after auth is fixed.
+
+## Safety, Support, Privacy, And Terms Smoke
+
+Verified from source and prior implementation:
+
+- Privacy route exists: `/privacy`.
+- Terms route exists: `/terms`.
+- Support route exists: `/support`.
+- Reporting/blocking controls exist for signed-in profile views.
+- Account deletion request UI exists in profile edit.
+
+Verified in this Play-installed app session:
+
+- Public navigation opened: passed.
+- Authenticated reporting/blocking/account deletion UI: blocked by auth callback failure.
+- Footer/legal route UI: not fully verified in this session because authenticated testing was blocked and mobile scrolling was interrupted by interactive home/globe content.
+
+Before production submission, run a dedicated signed-in legal/safety pass after fixing Clerk mobile auth.
+
+## Issues Found
+
+1. Clerk mobile OAuth callback fails by redirecting to localhost in Chrome instead of completing inside the Capacitor Android app.
+2. Clerk is visibly in development mode in the Play-installed build.
+3. Railway `GET /api/countries` returns an empty array, so the Explore page has no country data in the mobile test build.
+4. Authenticated flows could not be tested from the Play-installed app: `/api/me/profile`, profile edit, R2 profile photo upload, persistence, reporting/blocking, and account deletion request.
+5. Legal/support route rendering should be manually rechecked after auth/data blockers are fixed.
+
+## Security Notes
+
+- No tester email address was documented.
+- No test credentials were requested or committed.
+- No Google credentials, cookies, tokens, Clerk keys, Railway tokens, R2 keys, signed URLs, `.env` values, keystores, signing properties, AABs, APKs, build outputs, or screenshots were committed.
+- The Play-installed package was verified through ADB metadata rather than by committing any build artifact.
+
+## Next Recommended Task
+
+`TASK: STEP 31 - FIX PLAY-INSTALLED ANDROID CLERK OAUTH CALLBACK AND SEED/VERIFY MOBILE DATA`
+
+Focus:
+
+1. Configure Clerk and the Capacitor app so Google OAuth returns to the installed Android app instead of `localhost` in Chrome.
+2. Remove Clerk development-mode presentation from the internal/release build if production Clerk keys are ready.
+3. Verify or seed production/Railway country data so Explore is not empty.
+4. Rebuild/sign/upload a new internal testing AAB only after the fixes are complete and approved.
+5. Reinstall/update from Google Play Internal testing and rerun the full authenticated smoke test.
