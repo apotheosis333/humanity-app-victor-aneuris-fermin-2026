@@ -345,3 +345,48 @@ Borrowed-phone cleanup:
 4. Do not leave passwords, passkeys, recovery prompts, screenshots, or account data on the borrowed phone.
 
 Resume Step 29B only after web Play Console shows device verification complete and app creation is enabled.
+
+## Step 29B Internal Testing Upload Attempt
+
+Date: 2026-06-30
+
+Google Play Console was accessed after account verification completed. No production rollout was started, no production review was requested, and no AAB was uploaded.
+
+Current status:
+
+- Account verification: complete enough for `Create app` to be enabled.
+- HuMANity app creation: attempted but blocked.
+- Requested app name: `HuMANity`.
+- Requested package/application ID: `com.humanity.app`.
+- Default language: English (United States).
+- App type: App.
+- Pricing: Free.
+- Play App Signing terms: accepted during the create-app form.
+- Developer Program Policies declaration: accepted during the create-app form.
+- US export laws declaration: accepted during the create-app form.
+
+Blocker:
+
+- Google Play Console reported that `com.humanity.app` is already in use.
+- The app list still showed no created app after the failed create attempt.
+- The signed AAB was not uploaded because the Play app could not be created with the existing package ID.
+
+Do not choose a different package ID without an explicit Android identity decision. The package ID is part of the Android app identity and must match the signed AAB. If the package ID changes, the Android project must be updated, rebuilt, re-signed, and revalidated before upload.
+
+Recommended next action:
+
+1. Confirm whether `com.humanity.app` is owned by another Google Play Console account, an earlier app draft, or another publisher.
+2. If it can be recovered/transferred, use the owning Play Console account or transfer path.
+3. If it cannot be recovered, choose a new final package ID, such as a reverse-domain ID owned by the project.
+4. Update Android `applicationId`/namespace through a dedicated step.
+5. Rebuild and sign a new release AAB.
+6. Return to Play Console app creation using the new approved package ID.
+
+Pending after this blocker is resolved:
+
+- Create the Play Console app.
+- Upload the signed AAB to Internal testing.
+- Configure the internal testing track.
+- Configure tester list.
+- Configure app access/sign-in instructions if Play Console asks.
+- Complete Privacy policy, Data Safety, Content rating, Target audience, Ads, data deletion/account deletion, store listing, app icon, feature graphic, screenshots, and any UGC/social moderation declarations required by Play Console.
