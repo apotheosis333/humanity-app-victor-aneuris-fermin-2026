@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "hello": "tsx ./src/hello.ts",
+    "seed-countries": "tsx ./src/seed-countries.ts",
     "seed-timeline": "tsx ./src/seed-timeline.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

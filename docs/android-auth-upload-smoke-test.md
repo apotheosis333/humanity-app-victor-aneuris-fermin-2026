@@ -211,3 +211,30 @@ Cloudflare cleanup:
 - Two read-only R2 tokens remain visible in Cloudflare. They do not power the
   current Railway backend write path and should be reviewed/revoked later if
   unused.
+
+## Step 31B Play-Installed Upload Regression
+
+Date: 2026-07-02
+
+The Play-installed Google Play Internal testing build `4 (1.0.3)` successfully
+completed Google OAuth with the native callback scheme and opened the profile
+edit form. A non-private local test PNG was selected through Android's photo
+picker.
+
+Observed upload behavior:
+
+- Android photo picker handoff to the app: passed.
+- Backend signed upload URL request: `200`.
+- Direct upload/finalize chain: failed before finalize.
+- App UI message: `Upload failed. Please try again.`
+
+Likely next investigation:
+
+1. Verify Cloudflare R2 bucket CORS allows direct browser/WebView `PUT` uploads
+   from the deployed app origin and the Capacitor WebView origin.
+2. Compare the signed URL upload headers expected by the backend with the
+   headers sent by `@workspace/object-storage-web`.
+3. Add non-sensitive client/backend logging around the direct upload failure
+   status without printing signed URLs or credentials.
+4. Retest `POST /api/storage/uploads/finalize` and profile photo persistence
+   after the direct upload succeeds.

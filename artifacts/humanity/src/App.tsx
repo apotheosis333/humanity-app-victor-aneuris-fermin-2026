@@ -1,8 +1,10 @@
-import { Component, type ErrorInfo, type ReactNode, useEffect, useRef } from "react";
+import { Component, type ErrorInfo, type ReactNode, useEffect, useRef, useState } from "react";
 import { Switch, Route, useLocation, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider, useQueryClient } from "@tanstack/react-query";
 import { ClerkProvider, SignIn, SignUp, useAuth, useClerk } from "@clerk/react";
+import { useSignIn } from "@clerk/react/legacy";
 import { dark } from "@clerk/themes";
+import { App as CapacitorApp } from "@capacitor/app";
 import { Capacitor } from "@capacitor/core";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -35,13 +37,63 @@ const isNativeMobile = Capacitor.isNativePlatform();
 const clerkProxyUrl = isNativeMobile
   ? undefined
   : import.meta.env.VITE_CLERK_PROXY_URL?.trim() || undefined;
+const mobileCallbackUrl = "app.humanity.global://callback";
+const ssoCallbackPath = "/sso-callback";
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const appHomePath = basePath || "/";
 
 function stripBase(path: string): string {
   return basePath && path.startsWith(basePath)
     ? path.slice(basePath.length) || "/"
     : path;
+}
+
+function normalizeAppPath(path: string): string {
+  if (!path.startsWith("/")) return "/";
+  return stripBase(path);
+}
+
+function useNativeDeepLinks() {
+  const [, setLocation] = useLocation();
+
+  useEffect(() => {
+    if (!isNativeMobile) return;
+
+    let removed = false;
+    let cleanup: (() => void) | undefined;
+
+    void CapacitorApp.addListener("appUrlOpen", ({ url }) => {
+      try {
+        const openedUrl = new URL(url);
+        if (openedUrl.protocol !== "app.humanity.global:" || openedUrl.host !== "callback") {
+          return;
+        }
+
+        if (openedUrl.search) {
+          setLocation(`${ssoCallbackPath}${openedUrl.search}`, { replace: true });
+          return;
+        }
+
+        const nextParam = openedUrl.searchParams.get("redirect_url") ?? openedUrl.searchParams.get("redirect_url_complete");
+        const nextPath = nextParam ? new URL(nextParam, window.location.origin).pathname : "/";
+        setLocation(normalizeAppPath(nextPath), { replace: true });
+      } catch {
+        setLocation("/", { replace: true });
+      }
+    }).then((handle) => {
+      if (removed) {
+        void handle.remove();
+        return;
+      }
+      cleanup = () => void handle.remove();
+    });
+
+    return () => {
+      removed = true;
+      cleanup?.();
+    };
+  }, [setLocation]);
 }
 
 const clerkAppearance = {
@@ -92,6 +144,120 @@ const clerkAppearance = {
 };
 
 const queryClient = new QueryClient();
+
+function NativeSignInPage() {
+  const { isLoaded, signIn } = useSignIn();
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const signInWithGoogle = async () => {
+    if (!isLoaded || !signIn || isSubmitting) return;
+
+    setError(null);
+    setIsSubmitting(true);
+    try {
+      await signIn.authenticateWithRedirect({
+        strategy: "oauth_google",
+        redirectUrl: mobileCallbackUrl,
+        redirectUrlComplete: appHomePath,
+      });
+    } catch (err) {
+      console.error("Native Google sign-in failed", err);
+      setError("Google sign-in could not start. Please try again.");
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="flex min-h-[100dvh] items-center justify-center bg-[#020617] px-4">
+      <section className="w-full max-w-md rounded-2xl border border-white/10 bg-[#0F172A]/95 p-6 text-center text-white shadow-2xl backdrop-blur-xl">
+        <img src={`${basePath}/logo.svg`} alt="HuMANity" className="mx-auto mb-5 h-9 w-auto" />
+        <h1 className="text-xl font-bold">Sign in to HuMANity</h1>
+        <p className="mt-2 text-sm text-slate-300">Welcome back. Please sign in to continue.</p>
+        {error ? (
+          <p className="mt-4 rounded-xl border border-red-400/30 bg-red-500/10 px-3 py-2 text-sm text-red-200">
+            {error}
+          </p>
+        ) : null}
+        <button
+          type="button"
+          onClick={signInWithGoogle}
+          disabled={!isLoaded || !signIn || isSubmitting}
+          className="mt-6 flex min-h-12 w-full items-center justify-center gap-3 rounded-xl border border-white/15 bg-white/[0.04] px-4 text-sm font-semibold text-white transition hover:bg-white/[0.08] disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-sm font-bold text-slate-900">
+            G
+          </span>
+          {isSubmitting ? "Opening Google..." : "Continue with Google"}
+        </button>
+        <p className="mt-6 text-xs text-slate-400">Secured by Clerk</p>
+        <p className="mt-2 text-xs text-amber-300">Development mode</p>
+      </section>
+    </div>
+  );
+}
+
+function SSOCallbackPage() {
+  const [, setLocation] = useLocation();
+  const clerk = useClerk();
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const completeCallback = async () => {
+      try {
+        await clerk.handleRedirectCallback(
+          {
+            signInUrl: `${basePath}/sign-in`,
+            signUpUrl: `${basePath}/sign-up`,
+            signInForceRedirectUrl: appHomePath,
+            signUpForceRedirectUrl: appHomePath,
+            signInFallbackRedirectUrl: appHomePath,
+            signUpFallbackRedirectUrl: appHomePath,
+            reloadResource: "signIn",
+          },
+          async (to) => {
+            setLocation(normalizeAppPath(to), { replace: true });
+          },
+        );
+
+        if (!cancelled) {
+          setLocation("/", { replace: true });
+        }
+      } catch (err) {
+        console.error("Native SSO callback failed", err);
+        if (!cancelled) {
+          setError("Sign in could not finish. Please go back and try again.");
+        }
+      }
+    };
+
+    void completeCallback();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [clerk, setLocation]);
+
+  return (
+    <main className="flex min-h-[100dvh] items-center justify-center bg-[#020617] px-4 text-white">
+      <section className="w-full max-w-md rounded-2xl border border-white/10 bg-white/[0.04] p-6 text-center shadow-2xl">
+        <img src={`${basePath}/logo.svg`} alt="HuMANity" className="mx-auto mb-5 h-9 w-auto" />
+        <p className="text-sm text-slate-300">{error ?? "Finishing sign in..."}</p>
+        {error ? (
+          <button
+            type="button"
+            onClick={() => setLocation("/sign-in", { replace: true })}
+            className="mt-5 min-h-11 rounded-xl bg-blue-600 px-4 text-sm font-semibold text-white"
+          >
+            Back to sign in
+          </button>
+        ) : null}
+      </section>
+    </main>
+  );
+}
 
 function AppSetupFallback() {
   return (
@@ -172,9 +338,21 @@ class AppErrorBoundary extends Component<
 }
 
 function SignInPage() {
+  if (isNativeMobile) {
+    return <NativeSignInPage />;
+  }
+
   return (
     <div className="flex min-h-[100dvh] items-center justify-center bg-[#020617] px-4">
-      <SignIn routing="path" path={`${basePath}/sign-in`} signUpUrl={`${basePath}/sign-up`} />
+      <SignIn
+        routing="path"
+        path={`${basePath}/sign-in`}
+        signUpUrl={`${basePath}/sign-up`}
+        forceRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
+        fallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
+        signUpForceRedirectUrl={isNativeMobile ? mobileCallbackUrl : `${basePath}/sign-up`}
+        signUpFallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : `${basePath}/sign-up`}
+      />
     </div>
   );
 }
@@ -182,7 +360,15 @@ function SignInPage() {
 function SignUpPage() {
   return (
     <div className="flex min-h-[100dvh] items-center justify-center bg-[#020617] px-4">
-      <SignUp routing="path" path={`${basePath}/sign-up`} signInUrl={`${basePath}/sign-in`} />
+      <SignUp
+        routing="path"
+        path={`${basePath}/sign-up`}
+        signInUrl={`${basePath}/sign-in`}
+        forceRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
+        fallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
+        signInForceRedirectUrl={isNativeMobile ? mobileCallbackUrl : `${basePath}/sign-in`}
+        signInFallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : `${basePath}/sign-in`}
+      />
     </div>
   );
 }
@@ -251,6 +437,7 @@ function AppRoutes() {
 
 function ClerkProviderWithRoutes() {
   const [, setLocation] = useLocation();
+  useNativeDeepLinks();
 
   return (
     <ClerkProvider
@@ -259,6 +446,10 @@ function ClerkProviderWithRoutes() {
       appearance={clerkAppearance}
       signInUrl={`${basePath}/sign-in`}
       signUpUrl={`${basePath}/sign-up`}
+      signInForceRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
+      signInFallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
+      signUpForceRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
+      signUpFallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
       routerPush={(to) => setLocation(stripBase(to))}
       routerReplace={(to) => setLocation(stripBase(to), { replace: true })}
     >
@@ -267,6 +458,7 @@ function ClerkProviderWithRoutes() {
         <ClerkQueryClientCacheInvalidator />
         <TooltipProvider>
           <Switch>
+            <Route path="/sso-callback/*?" component={SSOCallbackPage} />
             <Route path="/sign-in/*?" component={SignInPage} />
             <Route path="/sign-up/*?" component={SignUpPage} />
             <Route>

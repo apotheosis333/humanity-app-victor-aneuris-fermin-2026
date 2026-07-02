@@ -511,6 +511,40 @@ Next action:
 2. Install the HuMANity internal test build from Google Play.
 3. Run an end-to-end Android internal testing smoke test: launch, sign in, edit profile, upload profile photo, navigate core screens, and verify reporting/blocking/account deletion entry points.
 
+## Step 31B Internal Testing Release 4
+
+Date: 2026-07-02
+
+A new Google Play Internal testing release was uploaded and published after the
+Android OAuth callback fix.
+
+Internal testing result:
+
+- Track: Internal testing.
+- Release: `4 (1.0.3)`.
+- Release status: Available to internal testers.
+- Release time shown by Play Console: July 2, 2026, 12:29 PM.
+- Review status shown by Play Console: Not reviewed.
+- Temporary app name shown by Play Console: `app.humanity.global (unreviewed)`.
+- Production rollout: not started.
+
+Release focus:
+
+- Android package: `app.humanity.global`.
+- Android version code: `4`.
+- Android version name: `1.0.3`.
+- Native callback scheme: `app.humanity.global://callback`.
+- Google OAuth no longer redirects to a `localhost` callback in Chrome.
+
+Known warnings:
+
+- Play Console continued to show one non-blocking release warning during the
+  internal testing publish flow.
+- The app remains unreviewed and uses a temporary app name for internal testers
+  until the Play listing and review requirements are completed.
+- Clerk is still in Development mode and must be moved to production-ready
+  configuration before public launch.
+
 ## Step 30 Play Internal Test Install Attempt
 
 Date: 2026-07-01

@@ -154,3 +154,96 @@ Focus:
 3. Verify or seed production/Railway country data so Explore is not empty.
 4. Rebuild/sign/upload a new internal testing AAB only after the fixes are complete and approved.
 5. Reinstall/update from Google Play Internal testing and rerun the full authenticated smoke test.
+
+## Step 31B Play-Installed Retest
+
+Date: 2026-07-02
+
+Release tested:
+
+- Google Play Internal testing release: `4 (1.0.3)`.
+- Package ID: `app.humanity.global`.
+- Installer package: `com.android.vending`.
+- Android version code: `4`.
+- Android version name: `1.0.3`.
+
+Setup result:
+
+- Country seed: already complete; Railway `GET /api/countries` returns 24
+  baseline public country records.
+- Clerk Native application callback allowlist includes
+  `app.humanity.global://callback`.
+- Google social sign-in is enabled in Clerk.
+- The Play Store AVD updated from release `3 (1.0.2)` to release `4 (1.0.3)`
+  through Google Play.
+
+Auth result:
+
+- Play-installed app launch: passed.
+- Custom native Android sign-in screen: passed.
+- Google OAuth opened the Google sign-in/consent flow: passed.
+- OAuth returned to the installed Android app using the native callback scheme:
+  passed.
+- Localhost callback failure: not reproduced.
+- Clerk frontend session after callback: passed.
+- Signed-in navigation showed Profile, Connections, Messages, and Pledge:
+  passed.
+- Session persisted after app relaunch: passed.
+
+Profile and API result:
+
+- `/api/me/profile` via the authenticated app flow: passed enough to load the
+  profile route and show the create-profile state instead of an auth failure.
+- Profile create/edit form: opened successfully.
+- Existing Clerk account display name prefilled in the profile form.
+
+Explore/country result:
+
+- Explore page loaded in the Play-installed app.
+- Country cards rendered from production backend data; Egypt and Ethiopia were
+  visible during the smoke test.
+- The prior empty-country blocker is resolved for the baseline seed.
+
+Profile photo/R2 result:
+
+- Android photo picker opened from the profile form.
+- A local non-private test PNG was selected from the Android photo picker.
+- Backend `POST /api/storage/uploads/request-url` returned `200`.
+- The app displayed `Upload failed. Please try again.` before finalize.
+- Railway logs showed no matching finalize request after the successful upload
+  URL request, so the remaining failure is likely the direct signed PUT step to
+  R2 from the Android WebView/photo-picker flow.
+
+Safety/legal result:
+
+- Footer links for Privacy Policy, Terms of Service, and Support are visible in
+  the installed mobile UI.
+- Source routes exist for `/privacy`, `/terms`, and `/support`.
+- Reporting/blocking controls remain implemented for signed-in profile views.
+- Account deletion request remains implemented in profile edit.
+- A dedicated follow-up should retest legal route navigation and report/block
+  controls after the upload issue is resolved and a second test profile exists.
+
+Issues remaining:
+
+1. Profile photo upload still fails after the backend signed upload URL request.
+   Investigate R2 bucket CORS, signed PUT headers/content type, and Android
+   WebView direct-upload behavior.
+2. Clerk remains in Development mode.
+3. Username/password sign-in was not separately tested in this pass.
+4. Reporting/blocking UI needs two test accounts or another visible profile to
+   test end-to-end.
+5. Legal/support pages should be opened directly in a short follow-up pass after
+   the upload fix.
+
+Security notes:
+
+- No tester email address is recorded here.
+- No test credentials are recorded here.
+- No Google credentials, cookies, tokens, Clerk keys, Railway tokens, R2 keys,
+  signed URLs, `.env` values, keystores, signing properties, AABs, APKs, build
+  outputs, or screenshots are committed.
+
+Next recommended task:
+
+`TASK: STEP 31C - FIX ANDROID WEBVIEW R2 DIRECT UPLOAD AND RETEST PROFILE PHOTO`
