@@ -247,3 +247,27 @@ Security notes:
 Next recommended task:
 
 `TASK: STEP 31C - FIX ANDROID WEBVIEW R2 DIRECT UPLOAD AND RETEST PROFILE PHOTO`
+
+## Step 31C Internal Release Result
+
+Date: 2026-07-02
+
+Google Play Internal testing release `5 (1.0.4)` was uploaded and published to
+the internal testing track after approval. The Play Console showed the release
+as available to internal testers, and the Play Store AVD updated the installed
+app through Google Play.
+
+Installed package verification:
+
+- Package ID: `app.humanity.global`.
+- Version code: `5`.
+- Version name: `1.0.4`.
+- Installer package: `com.android.vending`.
+
+The release was not published to production, no production rollout was started,
+and no tester email addresses, Google credentials, signing keys, keystores,
+`.env` files, AABs/APKs, build outputs, tokens, cookies, Clerk keys, Railway
+tokens, R2 keys, or signed URLs were committed.
+
+See `docs/android-auth-upload-smoke-test.md` for the authenticated profile photo
+upload retest result.

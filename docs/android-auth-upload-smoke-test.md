@@ -238,3 +238,73 @@ Likely next investigation:
    status without printing signed URLs or credentials.
 4. Retest `POST /api/storage/uploads/finalize` and profile photo persistence
    after the direct upload succeeds.
+
+## Step 31C Play-Installed Upload Fix Retest
+
+Date: 2026-07-02
+
+Release tested:
+
+- Google Play Internal testing release: `5 (1.0.4)`.
+- Package ID: `app.humanity.global`.
+- Installer package: `com.android.vending`.
+- Android version code: `5`.
+- Android version name: `1.0.4`.
+
+Fix summary:
+
+- The Android WebView upload helper now normalizes picker `File` objects into a
+  plain `Blob` before direct signed URL upload.
+- The direct R2 `PUT` uses `credentials: "omit"` and sends only the expected
+  `Content-Type` header.
+- If WebView `fetch` fails before receiving an HTTP response, the helper retries
+  the same signed upload with an `XMLHttpRequest` fallback.
+- Client diagnostics are sanitized and include only upload stage, status, and a
+  generic message. Signed URLs, tokens, cookies, and credentials are not logged.
+
+R2 CORS:
+
+- No Cloudflare R2 CORS change was made in this step.
+- Existing R2 CORS configuration remained sufficient after the Android WebView
+  upload body/header handling was fixed.
+
+Play-installed retest result:
+
+- Google Play Internal testing track showed latest release `5 (1.0.4)`.
+- The Play Store AVD updated the installed app from `4 (1.0.3)` to `5 (1.0.4)`
+  through Google Play.
+- App launch after update: passed.
+- Existing authenticated session after update: passed.
+- `/api/me/profile` before profile creation: authenticated `404`, expected for
+  a signed-in account without a saved profile.
+- Profile edit/create form: opened successfully.
+- Android photo picker handoff: passed.
+- Backend `POST /api/storage/uploads/request-url`: `200`.
+- Direct R2 `PUT`: passed, inferred from successful finalize and object read.
+- Backend `POST /api/storage/uploads/finalize`: `200`.
+- Backend `GET /api/storage/objects/...`: `200`.
+- Backend `PUT /api/me/profile`: `200`.
+- Backend `GET /api/me/profile` after save: `200`.
+- Profile card displayed the uploaded non-private blue test image.
+- Uploaded profile photo persisted after app restart; the header avatar still
+  showed the uploaded test image.
+
+Additional smoke checks:
+
+- Public `GET /api/countries` returned 24 baseline country records.
+- Explore loaded production country data in the Play-installed app.
+- Privacy Policy, Terms of Service, and Support footer links were visible in the
+  installed mobile UI.
+- Account deletion request UI was visible in profile edit.
+- Reporting and blocking controls remain implemented, but an end-to-end mobile
+  test still needs a second visible test profile.
+
+Remaining risks:
+
+1. Clerk still displays development-mode presentation and should be moved to
+   final production configuration before public launch.
+2. Username/password sign-in was not separately tested in this pass.
+3. Report/block end-to-end testing needs a second test account or seeded visible
+   profile.
+4. Direct legal/support page navigation should be opened in a short follow-up
+   pass before production review.
