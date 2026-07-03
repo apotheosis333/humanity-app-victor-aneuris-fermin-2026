@@ -1,0 +1,199 @@
+# Final Internal QA Readiness
+
+Date: 2026-07-03
+
+This document records Step 32 final internal QA for the Google Play
+Internal testing build. It intentionally excludes tester email addresses,
+test credentials, Google credentials, Clerk keys, Railway tokens, R2 keys,
+database URLs, cookies, signed URLs, signing keys, AABs/APKs, build outputs,
+screenshots, and private account data.
+
+## Play-Installed Baseline
+
+- AVD: `HuMANity_PlayStore_Test_API_36`.
+- Package ID: `app.humanity.global`.
+- Installed version code: `5`.
+- Installed version name: `1.0.4`.
+- Installer package: `com.android.vending`.
+- Initiating package: `com.android.vending`.
+- Update owner: `com.android.vending`.
+- App launch: passed.
+- Blank WebView check: passed.
+- Unexpected permission prompts: none observed.
+- Android permissions observed: `android.permission.INTERNET`, Play license
+  check permission, and the app's dynamic receiver permission.
+
+Google Play Console status:
+
+- Internal testing track shows latest release `5 (1.0.4)`.
+- Release status is available to internal testers.
+- Production track is locked; Play Console says production access is not
+  available yet. No production rollout exists.
+- Temporary app name remains `app.humanity.global (unreviewed)` until app setup
+  and review are complete.
+
+## Clerk Development Mode Review
+
+Findings:
+
+- The Clerk dashboard is using the `HuMANity` app in the `Development`
+  environment.
+- The Clerk environment selector shows `Development` selected and offers
+  `Create production instance`.
+- The Android native sign-in page includes a visible `Development mode` label in
+  app source.
+- Prior setup notes confirm the mobile build uses a development Clerk
+  publishable key from an ignored local environment file.
+
+Development mode is acceptable for the current internal-only QA track, but it is
+not production-ready and should be resolved before closed testing with broader
+external testers or any production submission.
+
+Safe production migration recommendation:
+
+1. Create a Clerk production instance from the HuMANity Clerk dashboard.
+2. Configure Google OAuth/social connection in the production Clerk instance.
+3. Add native callback/deep-link redirect settings for
+   `app.humanity.global://callback`.
+4. Add allowed origins/redirects needed by deployed web and Capacitor WebViews.
+5. Set Railway backend environment variables to the production Clerk values:
+   `CLERK_SECRET_KEY` and `CLERK_PUBLISHABLE_KEY`.
+6. Set the mobile/frontend build environment to the production client-safe
+   `VITE_CLERK_PUBLISHABLE_KEY`.
+7. Remove or gate the native `Development mode` label.
+8. Rebuild, sync Capacitor, create a new signed AAB, upload only to Internal
+   testing, and retest Google OAuth, `/api/me/profile`, profile save, R2 upload,
+   report/block, and account deletion request before wider testing.
+
+Do not switch Clerk instances or update production keys without an explicit
+approval step.
+
+## Legal And Support Route Results
+
+Routes tested from the Play-installed app footer:
+
+- Privacy route/page: opened, readable on mobile, no blank screen.
+- Terms route/page: opened, readable on mobile, no blank screen.
+- Support route/page: opened, readable on mobile, no blank screen.
+- Android back navigation returned to the previous app page.
+- No private data was visible on the legal/support pages.
+
+Status:
+
+- These pages are draft placeholders, not launch-ready legal copy.
+- Privacy and Terms both say they require founder/legal review.
+- Support is a contact placeholder and still needs a final support email or
+  support form URL before store submission.
+
+## Account Deletion Request Result
+
+- Profile edit page opened in the Play-installed build.
+- Account deletion card is reachable on mobile.
+- The UI copy says deletion is request-only and manual-review based.
+- The backend route is `POST /api/account/delete-request` and creates or returns
+  a pending request rather than immediately deleting the Clerk user.
+- The request was not submitted in this pass because the active signed-in tester
+  account may be private. This avoids creating a deletion request for a real
+  tester account during QA.
+
+Before Play production review, provide a public data deletion URL or clear
+instructions that cover both Clerk identity deletion and app-owned data cleanup.
+
+## Second-Account Report And Block QA
+
+Attempted non-destructive setup:
+
+- Connections page opened in the Play-installed build.
+- Find People tab opened.
+- Search for an existing harmless test profile returned no visible second
+  profile.
+
+Result:
+
+- A second visible test profile was not available in the production backend data.
+- No new Clerk user or database profile was created in this step because that
+  would require persistent external account setup and/or database writes.
+- Report and block UI could not be tested end-to-end from the Play-installed app
+  without a second visible test profile.
+
+Implementation status from source:
+
+- `POST /api/reports` requires auth and creates a pending report.
+- `POST /api/blocks` requires auth, blocks the target user, and removes any
+  connection between the two accounts.
+- `DELETE /api/blocks/:blockedUserId` exists for unblock.
+- `ReportBlockControls` render on another user's profile and are hidden for the
+  viewer's own profile.
+
+Remaining blocker:
+
+- Create two dedicated QA accounts with completed public profiles, then test
+  report and block flows end-to-end. Keep credentials outside the repository.
+
+## Core Internal QA Checklist
+
+- Home renders: passed.
+- Explore renders country data: passed.
+- Public backend country count: `24`.
+- Country detail page: passed with Egypt detail content visible.
+- Profile page opens: passed.
+- Profile edit opens: passed.
+- Profile photo persists: passed from previous Step 31C retest and remained
+  visible in this QA session.
+- Navigation works on mobile: passed for Home, Explore, Profile, Connections,
+  legal routes, and country detail. The drawer is easiest to use from top-of-page
+  positions; deep footer navigation can be finicky.
+- Footer links work: passed for Privacy, Terms, and Support.
+- Connections UI opens: passed.
+- Messaging UI: not opened in this pass.
+- Dinner Table/social feature: not opened in this pass.
+- Sign out/sign back in: not retested in this pass to avoid disrupting the
+  existing tester session; Google OAuth already passed in Step 31C.
+- Unexpected native permissions: none observed.
+- Fatal Android/WebView log scan: no matching fatal/crash/error entries found in
+  the recent log window.
+- Sensitive tokens or signed URLs in normal UI: none observed.
+
+## Google Play Readiness Review
+
+Ready for continued internal testing:
+
+- Play Internal testing is active.
+- Play-installed build is verified from Google Play.
+- Google OAuth works in the internal build.
+- Backend, countries, profile save, R2 upload, and profile photo persistence are
+  working in the Play-installed build.
+
+Still required before wider closed testing or production:
+
+1. Move Clerk to a production instance and retest the full mobile auth/API/upload
+   path.
+2. Replace draft Privacy Policy and Terms with founder/legal-reviewed copy.
+3. Add final support/contact URL or email.
+4. Provide account deletion/data deletion URL or instructions for Play.
+5. Create two dedicated QA profiles and complete report/block end-to-end testing.
+6. Complete Play Store listing short description and full description.
+7. Upload final Play Store app icon, feature graphic, and phone screenshots.
+8. Complete Privacy policy URL, Data Safety, Content rating, Target audience and
+   content, Ads declaration, app access/test instructions, and any UGC/social
+   moderation declarations Google asks for.
+9. Resolve the temporary app name by completing app setup and review.
+10. Review Play Console requirements for personal developer accounts before
+    production access, including any closed-testing tester-count/duration
+    requirements shown by Google.
+
+Do not guess legal, policy, or Data Safety answers. Handle those in a dedicated
+founder/legal review step.
+
+## Remaining Blockers
+
+- Production Clerk migration is not done.
+- Legal/support pages are placeholders.
+- Report/block end-to-end QA is blocked by lack of a second visible QA profile.
+- Account deletion request was verified as reachable but not submitted.
+- Play Console store listing and policy declarations remain incomplete.
+- No new AAB was needed for this QA pass.
+
+## Next Recommended Task
+
+`TASK: STEP 33 - CREATE DEDICATED QA TEST PROFILES AND COMPLETE REPORT/BLOCK PLUS PLAY POLICY READINESS`

@@ -545,6 +545,31 @@ Known warnings:
 - Clerk is still in Development mode and must be moved to production-ready
   configuration before public launch.
 
+## Step 32 Final Internal QA
+
+Date: 2026-07-03
+
+Final internal QA was run against the Play-installed Internal testing build
+`5 (1.0.4)`.
+
+Summary:
+
+- Package `app.humanity.global` was verified as installed from Google Play.
+- Production track remains locked, so no production rollout exists.
+- Clerk is still using a Development environment; production migration is
+  required before broader testing or production.
+- Privacy, Terms, and Support routes opened in the Play-installed app, but they
+  are still draft/placeholders requiring founder/legal review.
+- Account deletion request UI is reachable and request-only; no deletion request
+  was submitted during this QA pass.
+- Connections and Find People opened, but no second visible QA profile was
+  available, so report/block end-to-end testing remains blocked.
+- Explore, country detail, profile, profile edit, footer links, and recent
+  Android fatal-log checks passed.
+
+See `docs/final-internal-qa.md` for the full Step 32 readiness record and next
+recommended task.
+
 ## Step 30 Play Internal Test Install Attempt
 
 Date: 2026-07-01
