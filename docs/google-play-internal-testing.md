@@ -570,6 +570,34 @@ Summary:
 See `docs/final-internal-qa.md` for the full Step 32 readiness record and next
 recommended task.
 
+## Step 33 Report/Block And Policy Readiness
+
+Date: 2026-07-08
+
+Step 33 did not upload a new AAB and did not change Play Console, Clerk,
+Railway, OAuth, signing, or production rollout settings.
+
+Result:
+
+- Find People and source inspection confirmed that discovery depends on
+  completed profile rows.
+- No second visible QA profile was available in the Play-installed build, so
+  report/block end-to-end testing remains blocked.
+- Report/block backend and UI implementation were reviewed from source.
+- Account deletion remains request-only/manual-review.
+- Google Play policy readiness and Clerk production migration checklists were
+  documented.
+
+New docs:
+
+- `docs/google-play-policy-readiness.md`
+- `docs/clerk-production-migration.md`
+
+Next recommended task:
+
+Create two dedicated QA accounts/profiles with credentials kept outside the
+repository, then retest report/block end-to-end before broader testing.
+
 ## Step 30 Play Internal Test Install Attempt
 
 Date: 2026-07-01

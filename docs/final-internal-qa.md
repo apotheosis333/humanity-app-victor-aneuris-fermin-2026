@@ -197,3 +197,68 @@ founder/legal review step.
 ## Next Recommended Task
 
 `TASK: STEP 33 - CREATE DEDICATED QA TEST PROFILES AND COMPLETE REPORT/BLOCK PLUS PLAY POLICY READINESS`
+
+## Step 33 Report/Block And Policy Readiness Update
+
+Date: 2026-07-08
+
+Second profile visibility finding:
+
+- Find People searches completed `profiles` rows, not every Clerk user.
+- Search excludes the current signed-in user.
+- Search excludes users where either side has blocked the other.
+- Recommendation matching also requires a completed viewer profile with overlap
+  data and completed candidate profiles.
+- Clerk users without completed profile rows do not appear in Find People.
+- In the Play-installed build, the known harmless search term did not return a
+  second visible QA profile.
+
+Production data inspection note:
+
+- A direct local read-only database count could not connect because the
+  PostgreSQL hostname is Railway-internal.
+- No direct database insert, seed, or destructive command was run.
+
+Second QA profile result:
+
+- A second dedicated QA profile was not created in this step.
+- Creating a second Clerk account/profile or inserting profile data directly
+  would be persistent external account/database setup and should happen in a
+  dedicated approved setup step with credentials kept outside the repository.
+
+Report/block result:
+
+- Report and block could not be completed end-to-end because no second visible
+  QA profile was available to target.
+- Source review confirms the backend endpoints exist and require auth:
+  - `POST /api/reports`
+  - `POST /api/blocks`
+  - `DELETE /api/blocks/:blockedUserId`
+- Source review confirms block records remove existing connection rows and
+  discovery/messaging/connection paths check block state.
+
+Account deletion request review:
+
+- UI remains reachable from Profile edit.
+- Copy says account deletion is request-only and manually reviewed.
+- Backend route `POST /api/account/delete-request` creates or returns a pending
+  request and does not immediately delete Clerk identity data.
+- A public data deletion URL or instructions are still needed for Play readiness.
+
+Policy readiness:
+
+- See `docs/google-play-policy-readiness.md`.
+- Privacy/Terms/Support are not launch-ready because they are placeholders.
+- Data Safety, Content Rating, Target Audience, Ads, App Access, UGC moderation,
+  account/data deletion, store listing, screenshots, icon, and feature graphic
+  still need owner/legal review and Play Console completion.
+
+Clerk production migration:
+
+- See `docs/clerk-production-migration.md`.
+- No Clerk environment, key, OAuth, Railway variable, or app binary was changed
+  in this step.
+
+Next recommended task:
+
+`TASK: STEP 34 - APPROVE QA ACCOUNT SETUP, CREATE TWO DEDICATED TEST PROFILES, AND RETEST REPORT/BLOCK`
