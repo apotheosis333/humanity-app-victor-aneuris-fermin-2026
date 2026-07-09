@@ -181,6 +181,46 @@ Important limitation:
   the Play-installed app unless they receive approved email/OAuth credentials or
   the app adds a safe reviewer sign-in path in a later code step.
 
+## Step 36 Legal, Data Deletion, And Data Safety Prep
+
+Date: 2026-07-09
+
+Step 36 prepared Play policy-readiness drafts only. No Play Console form was
+submitted, no AAB was uploaded, and no internal or production release action was
+taken.
+
+Current safe app access draft:
+
+```text
+HuMANity requires sign-in. A dedicated test account can be provided in Google
+Play Console App access credentials. After signing in, reviewers can test
+profile creation/editing, profile photo upload, Explore/countries,
+report/block controls, Privacy/Terms/Support/Data Deletion pages, and the
+account deletion request UI.
+```
+
+Status updates:
+
+- Privacy, Terms, Support, and Data Deletion routes now have launch-prep draft
+  copy.
+- `/data-deletion` exists as a public route for Google Play account/data
+  deletion instructions.
+- `docs/legal-copy-drafts.md` contains the current public legal/support/app
+  access drafts.
+- `docs/data-safety-readiness.md` contains the Data Safety preparation matrix
+  and Play Console readiness checklist.
+- The Play-installed internal build `5 (1.0.4)` will still show the older legal
+  copy until a future approved AAB release includes these route changes.
+
+Still needed before entering Play Console production policy forms:
+
+- Confirm final public web URLs.
+- Confirm final support contact.
+- Complete founder/legal review.
+- Decide how Play reviewers will sign in with the current Google OAuth-only
+  Android flow.
+- Move Clerk to production and retest before broader release.
+
 ## Step 28 Validation Result
 
 Commands run:

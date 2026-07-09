@@ -198,6 +198,31 @@ founder/legal review step.
 
 `TASK: STEP 33 - CREATE DEDICATED QA TEST PROFILES AND COMPLETE REPORT/BLOCK PLUS PLAY POLICY READINESS`
 
+## Step 36 Legal And Data Safety Prep Update
+
+Date: 2026-07-09
+
+Step 36 prepared the next layer of Play policy readiness after report/block QA:
+
+- Privacy, Terms, and Support routes now use launch-prep draft copy instead of
+  the earlier placeholders.
+- A public `/data-deletion` route was added for account/data deletion
+  instructions.
+- Footer legal links include Data Deletion.
+- App access instructions, legal copy drafts, data deletion instructions, and
+  Data Safety readiness are documented in:
+  - `docs/legal-copy-drafts.md`
+  - `docs/data-safety-readiness.md`
+  - `docs/google-play-policy-readiness.md`
+  - `docs/google-play-internal-testing.md`
+
+No Play Console forms were submitted, no AAB was uploaded, and no production
+release action was taken.
+
+Next after Step 36:
+
+`TASK: STEP 37 - FOUNDER/LEGAL REVIEW AND FINAL PLAY POLICY ANSWERS`
+
 ## Step 33 Report/Block And Policy Readiness Update
 
 Date: 2026-07-08

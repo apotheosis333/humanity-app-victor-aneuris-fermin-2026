@@ -40,11 +40,12 @@ data.
 
 ### Privacy Policy URL
 
-Status: not ready.
+Status: draft route exists; not ready for submission until public URL and
+founder/legal review are complete.
 
-The in-app Privacy page is currently a draft placeholder and explicitly requires
-founder/legal review. Play Console will need a public privacy policy URL before
-production review.
+The in-app Privacy page now has launch-prep draft copy instead of the earlier
+placeholder. Play Console will still need a public hosted privacy policy URL
+before production review.
 
 Needs owner/legal confirmation:
 
@@ -56,7 +57,8 @@ Needs owner/legal confirmation:
 
 ### Data Safety Form
 
-Status: not ready.
+Status: preparation matrix drafted; not ready for submission until owner/legal
+review is complete.
 
 Likely data categories to review:
 
@@ -67,6 +69,8 @@ Likely data categories to review:
   and community/social interactions.
 - Uploaded images stored through Cloudflare R2.
 - Backend diagnostics/logs from Railway.
+
+See `docs/data-safety-readiness.md` for the current preparation matrix.
 
 Needs owner/legal confirmation:
 
@@ -99,9 +103,8 @@ required before submitting the declaration.
 
 ### App Access Instructions
 
-Status: partially ready for internal testing; still needs Play Console-only
-reviewer credentials or a reviewer sign-in plan that works with the Android
-build.
+Status: draft ready; still needs Play Console-only reviewer credentials or a
+reviewer sign-in plan that works with the Android build.
 
 Because the app requires sign-in for profile, connections, messaging, reporting,
 blocking, uploads, and account deletion request testing, Play review may require
@@ -123,7 +126,7 @@ Recommended approach:
 
 ### Data Deletion / Account Deletion
 
-Status: not production-ready.
+Status: public draft route exists; workflow remains request-only/manual-review.
 
 Current app behavior:
 
@@ -132,10 +135,10 @@ Current app behavior:
   pending request.
 - Actual Clerk identity deletion and app-owned data cleanup remain manual/future
   work.
+- Public route `/data-deletion` now explains the current request-only process
+  and links users to Support.
 
-Play will need either a public data deletion URL or clear account deletion
-instructions. A dedicated public data deletion page is recommended before
-production review.
+Play will need the final public URL for this page before production review.
 
 ### UGC / Social Moderation
 
@@ -189,9 +192,9 @@ Do not submit listing copy until founder review.
 ## Remaining Play Readiness Blockers
 
 1. Production Clerk migration.
-2. Launch-ready Privacy Policy and Terms of Service.
+2. Founder/legal-reviewed Privacy Policy and Terms of Service.
 3. Final support/contact page or URL.
-4. Public data deletion instructions or URL.
+4. Final public hosted Privacy Policy and Data Deletion URLs.
 5. Play Console-only reviewer/test account credentials or instructions if Google
    requires app access.
 6. A dedicated reviewer sign-in path for the Android app, because the current
@@ -201,3 +204,32 @@ Do not submit listing copy until founder review.
 8. Store listing copy and graphics/screenshots.
 9. Review of any current Play personal-developer-account closed-testing
    requirements before production access.
+
+## Step 36 Play Legal And Data Safety Drafts
+
+Date: 2026-07-09
+
+Safe policy-prep changes:
+
+- Privacy, Terms, and Support public routes now use launch-prep draft copy.
+- A public `/data-deletion` route was added for account/data deletion
+  instructions.
+- Footer legal links now include Data Deletion.
+- App setup fallback legal links now include Data Deletion for missing-config
+  builds.
+- `docs/legal-copy-drafts.md` records app access, privacy, terms, support, and
+  data deletion drafts.
+- `docs/data-safety-readiness.md` records the Data Safety preparation matrix and
+  Play Console readiness checklist.
+
+No Play Console forms were submitted, no AAB was uploaded, no production rollout
+was started, and no credentials or private tester data were documented.
+
+Remaining owner/legal decisions:
+
+- Final public web domain for Privacy Policy and Data Deletion URLs.
+- Final support email or support form URL.
+- Deletion timeline, retention, and anonymization policy.
+- Play Data Safety answers.
+- Content rating, target audience/content, ads, and UGC/social declarations.
+- Reviewer sign-in path that works with the current Android Google OAuth flow.

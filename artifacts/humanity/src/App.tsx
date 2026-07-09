@@ -287,6 +287,9 @@ function AppSetupFallback() {
           <a className="text-amber-300 underline-offset-4 hover:underline" href={`${basePath}/support`}>
             Support
           </a>
+          <a className="text-amber-300 underline-offset-4 hover:underline" href={`${basePath}/data-deletion`}>
+            Data Deletion
+          </a>
         </nav>
       </section>
     </main>
@@ -299,6 +302,7 @@ function PublicConfigRoutes() {
       <Route path="/privacy">{() => <LegalPage kind="privacy" />}</Route>
       <Route path="/terms">{() => <LegalPage kind="terms" />}</Route>
       <Route path="/support">{() => <LegalPage kind="support" />}</Route>
+      <Route path="/data-deletion">{() => <LegalPage kind="dataDeletion" />}</Route>
       <Route component={AppSetupFallback} />
     </Switch>
   );
@@ -429,6 +433,7 @@ function AppRoutes() {
         <Route path="/privacy">{() => <LegalPage kind="privacy" />}</Route>
         <Route path="/terms">{() => <LegalPage kind="terms" />}</Route>
         <Route path="/support">{() => <LegalPage kind="support" />}</Route>
+        <Route path="/data-deletion">{() => <LegalPage kind="dataDeletion" />}</Route>
         <Route component={NotFound} />
       </Switch>
     </Layout>
