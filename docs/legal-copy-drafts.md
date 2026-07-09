@@ -69,3 +69,16 @@ A final founder-approved support email or support form URL is still required bef
 6. Will analytics, crash reporting, or additional diagnostics be added before submission?
 7. What age range should be selected for Play target audience?
 8. What legal entity, jurisdiction, and contact information should appear in final terms?
+
+## Step 37 Owner Review Reference
+
+See `docs/play-policy-owner-review.md` for:
+
+- Owner review checklist.
+- Proposed Play Console App Access wording.
+- Proposed Data Deletion wording.
+- Proposed Data Safety answer matrix.
+- Content rating, target audience, ads, and UGC notes.
+- Store listing draft.
+- Clerk production migration decision note.
+- AAB recommendation.

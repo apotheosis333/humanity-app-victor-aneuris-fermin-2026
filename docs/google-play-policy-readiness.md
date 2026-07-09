@@ -233,3 +233,30 @@ Remaining owner/legal decisions:
 - Play Data Safety answers.
 - Content rating, target audience/content, ads, and UGC/social declarations.
 - Reviewer sign-in path that works with the current Android Google OAuth flow.
+
+## Step 37 Founder/Legal Review And Proposed Policy Answers
+
+Date: 2026-07-09
+
+Step 37 reviewed the current legal/support/data-deletion copy against the
+backend routes and current QA status. The copy remains consistent with the app
+because it avoids promising automated deletion, final legal terms, or a complete
+moderation dashboard.
+
+New owner-review document:
+
+- `docs/play-policy-owner-review.md`
+
+It includes:
+
+- Final owner/legal question checklist.
+- Proposed Play Console App Access answer with credential placeholders only.
+- Proposed Data Deletion answer.
+- Proposed Data Safety answer matrix.
+- Content rating, target audience, ads, and UGC notes.
+- Store listing short/full description drafts.
+- Clerk production migration recommendation.
+- AAB recommendation.
+
+No Play Console forms were submitted, no AAB was uploaded, no production rollout
+was started, and no credentials or private data were added.

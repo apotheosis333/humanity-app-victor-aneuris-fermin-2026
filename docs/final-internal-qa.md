@@ -223,6 +223,33 @@ Next after Step 36:
 
 `TASK: STEP 37 - FOUNDER/LEGAL REVIEW AND FINAL PLAY POLICY ANSWERS`
 
+## Step 37 Founder/Legal Review Prep
+
+Date: 2026-07-09
+
+Step 37 prepared owner/legal review materials and proposed Play policy answers
+without submitting Play Console forms or uploading a new AAB.
+
+Result:
+
+- Legal/support/data-deletion copy was reviewed against current backend
+  behavior and remains appropriately cautious.
+- Account deletion is still request-only/manual-review.
+- Support contact, public web URLs, deletion timeline, Data Safety answers,
+  target audience, ads, UGC declarations, and reviewer sign-in path still need
+  owner confirmation.
+- Clerk production migration is recommended before broader closed testing,
+  Play policy submission that depends on stable reviewer access, or production
+  review.
+- The next AAB should likely bundle both the Step 36 legal/data-deletion copy
+  and Clerk production migration instead of releasing legal copy alone.
+
+See `docs/play-policy-owner-review.md`.
+
+Next after Step 37:
+
+`TASK: STEP 38 - ANSWER OWNER POLICY QUESTIONS AND PREPARE CLERK PRODUCTION MIGRATION`
+
 ## Step 33 Report/Block And Policy Readiness Update
 
 Date: 2026-07-08

@@ -45,3 +45,21 @@ This is a preparation matrix only. Do not submit Play Console Data Safety answer
 Reviewers should be able to sign in, create or edit a profile, upload a profile photo, open Explore/countries, view another profile, test report/block controls, open Privacy/Terms/Support/Data Deletion pages, and find the account deletion request UI under Profile edit.
 
 Because the current Android sign-in path uses Google OAuth, reviewer access needs a Google-account-compatible test path or a future approved reviewer sign-in improvement.
+
+## Step 37 Proposed Play Data Safety Answers
+
+See `docs/play-policy-owner-review.md` for the proposed owner-review Data Safety answer matrix. It expands this readiness matrix into draft Play Console-style answers for:
+
+- Account/profile information.
+- User identifiers.
+- Clerk authentication data.
+- Profile photos/uploads.
+- User-generated content.
+- Reports and blocks.
+- Connections/messages.
+- App activity/interactions.
+- Diagnostics/logs.
+- Device/network data.
+- Location, contacts, camera, microphone, and ads confirmation.
+
+Do not submit those draft answers until the owner confirms the open questions.

@@ -89,3 +89,30 @@ Pause for explicit approval before:
 - Changing OAuth provider credentials.
 - Removing or rotating Clerk keys.
 - Uploading/publishing a new Internal testing release.
+
+## Step 37 Decision Note
+
+Date: 2026-07-09
+
+Recommendation: complete Clerk production migration before broader closed
+testing, Play policy submission that depends on stable reviewer access, or
+production review.
+
+Rationale:
+
+- The current Play-installed internal build works with Clerk Development mode,
+  but the native sign-in UI still shows a visible `Development mode` label.
+- Reviewers may treat Development mode as unfinished or confusing.
+- Production OAuth callback/origin settings must be verified with
+  `app.humanity.global://callback`.
+- Railway backend Clerk variables and the mobile/frontend publishable key must
+  be switched together and retested.
+
+Packaging impact:
+
+- Clerk production migration should be bundled with the Step 36 legal and
+  `/data-deletion` route changes in the next Internal testing release.
+- The next likely Android version after current internal testing
+  `5 (1.0.4)` is `versionCode 6`, `versionName 1.0.5`, unless the release plan
+  changes.
+- Do not upload the new AAB until migration is approved, built, and retested.
