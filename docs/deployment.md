@@ -24,6 +24,51 @@ Current verified status:
 See `docs/step22-backend-deployment-mobile-smoke-test.md` for the exact deployment and smoke-test record.
 See `docs/storage-readiness.md` for the Step 23 R2 setup and remaining upload-test gap.
 
+## Public Frontend Deployment
+
+Step 39 deployed the current Vite/React frontend legal pages to a separate
+Railway service:
+
+```text
+https://humanity-frontend-legal-production.up.railway.app
+```
+
+Service name:
+
+```text
+humanity-frontend-legal
+```
+
+Verified public legal URLs:
+
+```text
+https://humanity-frontend-legal-production.up.railway.app/privacy
+https://humanity-frontend-legal-production.up.railway.app/terms
+https://humanity-frontend-legal-production.up.railway.app/support
+https://humanity-frontend-legal-production.up.railway.app/data-deletion
+```
+
+Deployment approach:
+
+- The frontend was built locally from `artifacts/humanity`.
+- Build env used the Railway backend URL through `VITE_API_BASE_URL`.
+- A temporary deploy bundle outside the repository served the generated
+  `dist/public` files with a small Node static server and SPA fallback.
+- No `.env` files, build output, signing files, tokens, or credentials were
+  committed.
+
+The Railway backend `CORS_ORIGINS` allowlist was updated to include the public
+frontend origin so `/api/countries` and other API calls can be made from the
+public web frontend.
+
+Known public web auth note:
+
+- The public frontend currently uses the same Clerk Development environment as
+  the internal testing build.
+- Browser console shows Clerk's expected development-key warning.
+- Clerk production migration is still required before broader testing or
+  production review.
+
 ## Backend Package
 
 - Workspace package: `@workspace/api-server`

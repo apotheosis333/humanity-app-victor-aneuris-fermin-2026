@@ -243,7 +243,6 @@ Recorded answers:
 
 Current blockers:
 
-- No confirmed public frontend URL for `/privacy` or `/data-deletion`.
 - Step 36 legal/data-deletion copy is not yet in a Play-installed release.
 - Clerk is still in Development mode.
 
@@ -254,6 +253,44 @@ Recommended next release:
   - Step 36 legal/data-deletion route changes.
   - Clerk production configuration.
   - Development mode label removed or gated.
+
+## Step 39 Public Frontend Legal URL Deployment
+
+Date: 2026-07-09
+
+Step 39 deployed the current frontend legal pages to Railway without uploading a
+new AAB or changing the Google Play track.
+
+Public frontend URL:
+
+```text
+https://humanity-frontend-legal-production.up.railway.app
+```
+
+Verified policy URLs:
+
+```text
+Privacy Policy: https://humanity-frontend-legal-production.up.railway.app/privacy
+Terms: https://humanity-frontend-legal-production.up.railway.app/terms
+Support: https://humanity-frontend-legal-production.up.railway.app/support
+Data Deletion: https://humanity-frontend-legal-production.up.railway.app/data-deletion
+```
+
+Verification:
+
+- Direct routes returned `200`.
+- Rendered legal pages showed current copy.
+- Support page showed the approved support contact.
+- Data Deletion page showed request-only/manual-review language and the 30-day
+  target after a verified request unless legal/security retention is required.
+- Public Explore route could call the Railway backend after adding the frontend
+  origin to backend CORS.
+- `/api/countries` returned `24` countries.
+
+Known warning:
+
+- Clerk still uses Development keys and shows Clerk's expected public web
+  warning. Production Clerk migration remains required before broader release.
 
 ## Step 28 Validation Result
 

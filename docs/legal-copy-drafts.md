@@ -100,9 +100,17 @@ Owner-approved draft values for policy preparation:
 
 Still not final:
 
-- Public website/domain.
-- Privacy Policy public URL.
-- Data Deletion public URL.
 - Whether a support form should be added in addition to email.
 - Exact retention/anonymization rules for reports, messages, logs, backups, and
   moderation records.
+
+Step 39 verified public frontend policy URLs:
+
+- Privacy Policy: `https://humanity-frontend-legal-production.up.railway.app/privacy`
+- Terms: `https://humanity-frontend-legal-production.up.railway.app/terms`
+- Support: `https://humanity-frontend-legal-production.up.railway.app/support`
+- Data Deletion: `https://humanity-frontend-legal-production.up.railway.app/data-deletion`
+
+These URLs are ready for owner approval before Play Console entry. A custom
+domain can replace them later if desired, but no DNS/domain change was made in
+Step 39.

@@ -84,19 +84,19 @@ Current status:
 
 - Backend public URL exists: `https://humanity-app-victor-aneuris-fermin-2026-production.up.railway.app`.
 - That URL is an API/backend service, not a confirmed current public frontend serving `/privacy` or `/data-deletion`.
-- The Step 36 `/data-deletion` route exists in source but is not yet included in a new Play release and is not confirmed on a public web frontend.
-- Do not use the old Replit app URL for Play policy URLs unless the current Step 36 legal build is deployed there and verified.
+- Step 39 deployed and verified a current public frontend on Railway:
+  `https://humanity-frontend-legal-production.up.railway.app`.
+- The Step 36 `/data-deletion` route is now confirmed on that public web
+  frontend. It is still not included in a new Play-installed Android release.
+- Do not use the old Replit app URL for Play policy URLs unless it is separately
+  redeployed and verified with the current legal build.
 
-Recommended public URL plan:
+Verified public policy URLs:
 
-1. Deploy the current `artifacts/humanity` frontend to a public web host such as Railway static hosting, Vercel, Netlify, or Cloudflare Pages.
-2. Configure it with the deployed backend URL through `VITE_API_BASE_URL`.
-3. Verify these routes publicly:
-   - `https://<public-domain>/privacy`
-   - `https://<public-domain>/terms`
-   - `https://<public-domain>/support`
-   - `https://<public-domain>/data-deletion`
-4. Use those verified public URLs in Play Console.
+- Privacy Policy: `https://humanity-frontend-legal-production.up.railway.app/privacy`
+- Terms: `https://humanity-frontend-legal-production.up.railway.app/terms`
+- Support: `https://humanity-frontend-legal-production.up.railway.app/support`
+- Data Deletion: `https://humanity-frontend-legal-production.up.railway.app/data-deletion`
 
 ## Proposed Play Console App Access Answer
 
@@ -191,8 +191,8 @@ Owner should review tone, audience, feature claims, and final screenshots/assets
 | Area | Proposed answer/status | Gate |
 | --- | --- | --- |
 | App Access | Google OAuth first; direct QA credentials only if Play requires and a safe path exists | Needs Play Console submission |
-| Privacy Policy URL | `https://<public-domain>/privacy` | Needs public frontend URL |
-| Data Deletion URL | `https://<public-domain>/data-deletion` | Needs public frontend URL |
+| Privacy Policy URL | `https://humanity-frontend-legal-production.up.railway.app/privacy` | Ready for Play Console entry after owner approval |
+| Data Deletion URL | `https://humanity-frontend-legal-production.up.railway.app/data-deletion` | Ready for Play Console entry after owner approval |
 | Support contact | `jawsofthetrap@gmail.com` | Ready as owner-approved draft contact |
 | Target audience | `16+` | Needs Play Console submission |
 | Ads | No ads | Needs Play Console submission |
@@ -239,11 +239,27 @@ Do not upload a new AAB for legal copy alone yet unless Play urgently requires t
 
 Recommended path:
 
-1. Deploy the public frontend/legal pages first so Play Privacy/Data Deletion URLs can be finalized.
+1. Use the verified public frontend legal URLs for Play policy prep when owner
+   approves entering them.
 2. Perform Clerk production migration.
 3. Bundle the updated legal/data-deletion copy and Clerk production changes into the next Android internal-testing release.
 4. Use next Android version after current `5 (1.0.4)`: `versionCode 6`, `versionName 1.0.5`, unless a different release plan is chosen.
 
 ## Exact Next Recommended Task
 
-`TASK: STEP 39 - DEPLOY PUBLIC FRONTEND LEGAL PAGES AND VERIFY PLAY POLICY URLS`
+`TASK: STEP 40 - PREPARE CLERK PRODUCTION MIGRATION AND ANDROID 1.0.5 INTERNAL RELEASE`
+
+## Step 39 Verification Summary
+
+Date: 2026-07-09
+
+- Railway frontend service: `humanity-frontend-legal`.
+- Public frontend URL: `https://humanity-frontend-legal-production.up.railway.app`.
+- Direct routes verified: `/privacy`, `/terms`, `/support`, `/data-deletion`.
+- Public web Explore route can call the Railway backend after adding the
+  frontend origin to `CORS_ORIGINS`.
+- `/api/countries` returned `24` countries from the public web origin.
+- Clerk public web warning remains because the app still uses Clerk Development
+  keys.
+- No Play Console submission, production rollout, AAB upload, Clerk production
+  migration, or custom domain/DNS change occurred.

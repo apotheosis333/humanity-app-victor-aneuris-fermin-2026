@@ -40,12 +40,14 @@ data.
 
 ### Privacy Policy URL
 
-Status: draft route exists; blocked by missing confirmed public frontend URL.
+Status: public URL verified for policy prep.
 
 The in-app Privacy page now has launch-prep draft copy instead of the earlier
-placeholder. Play Console will still need a public hosted privacy policy URL
-before production review. The backend Railway URL is not a confirmed frontend
-legal-page host.
+placeholder. Step 39 deployed and verified the public frontend legal route:
+
+```text
+https://humanity-frontend-legal-production.up.railway.app/privacy
+```
 
 Needs owner/legal confirmation:
 
@@ -140,6 +142,11 @@ Current app behavior:
   and links users to Support.
 
 Play will need the final public URL for this page before production review.
+Verified Step 39 data deletion URL:
+
+```text
+https://humanity-frontend-legal-production.up.railway.app/data-deletion
+```
 
 ### UGC / Social Moderation
 
@@ -304,3 +311,49 @@ Public URL gap:
   - `https://<public-domain>/data-deletion`
 
 See `docs/play-policy-owner-review.md` for the full Play Console answer pack.
+
+## Step 39 Public Frontend Legal URL Deployment
+
+Date: 2026-07-09
+
+Frontend hosting provider: Railway.
+
+Public frontend URL:
+
+```text
+https://humanity-frontend-legal-production.up.railway.app
+```
+
+Verified Play policy URLs:
+
+```text
+Privacy Policy: https://humanity-frontend-legal-production.up.railway.app/privacy
+Terms: https://humanity-frontend-legal-production.up.railway.app/terms
+Support: https://humanity-frontend-legal-production.up.railway.app/support
+Data Deletion: https://humanity-frontend-legal-production.up.railway.app/data-deletion
+```
+
+Verification results:
+
+- Direct route HTTP checks returned `200` for `/`, `/privacy`, `/terms`,
+  `/support`, and `/data-deletion`.
+- Rendered browser checks found current Privacy, Terms, Support, and Data
+  Deletion copy.
+- Support page includes the approved support contact.
+- Data Deletion page includes the request-only/manual-review wording and
+  30-day target after a verified deletion request, unless legal/security
+  retention is required.
+- Mobile viewport check found no horizontal overflow on legal pages.
+- Footer includes Data Deletion links.
+- Explore route loaded from the public frontend.
+- Browser fetch to Railway backend `/api/countries` returned `24` countries.
+- Backend CORS allowlist was updated to include the public frontend origin.
+- No Google Play production action, policy submission, or AAB upload occurred.
+
+Remaining blockers:
+
+- Clerk still uses Development keys and shows Clerk's expected public web
+  development warning.
+- Clerk production migration is still required before broader testing or
+  production review.
+- Play Console policy URLs have not been entered/submitted yet.
