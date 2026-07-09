@@ -447,3 +447,27 @@ Remaining blockers:
 Next recommended task:
 
 `TASK: STEP 36 - PREPARE GOOGLE PLAY APP ACCESS, DATA DELETION URL, AND LEGAL COPY DRAFTS`
+
+## Step 40 Clerk Production And Android 1.0.5 Prep
+
+Date: 2026-07-09
+
+Completed:
+
+- Clerk production instance was created.
+- Google OAuth was configured in Clerk production with a clean Google Cloud
+  OAuth client.
+- The first Google Cloud OAuth client created during setup was deleted after its
+  generated secret appeared in browser inspection output.
+- Android version metadata was advanced to `6 (1.0.5)`.
+- The native sign-in `Development mode` label is now hidden when the app uses a
+  Clerk live publishable key.
+
+Still required before final Play policy form work:
+
+- Switch Railway backend and frontend Clerk variables to production values.
+- Redeploy backend/frontend and verify public web plus API health.
+- Build and upload Android `1.0.5` to Internal testing.
+- Run Play-installed smoke tests for Google OAuth, profile load/save, R2 profile
+  photo upload, Explore/countries, privacy, terms, support, and data deletion.
+- Confirm the Clerk development warning is gone in the Play-installed build.

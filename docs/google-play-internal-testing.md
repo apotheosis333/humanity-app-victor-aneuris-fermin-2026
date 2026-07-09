@@ -780,3 +780,29 @@ The Play-distributed install was blocked because this emulator does not have a l
 The existing app on the emulator was a previous local install with no installer package, so it does not satisfy the Play-distributed internal testing requirement. No local debug APK was sideloaded for this Step 30 attempt.
 
 See `docs/google-play-internal-test-smoke-test.md` for the blocked smoke-test record and the required next path.
+
+## Step 40 Android 1.0.5 Prep
+
+Date: 2026-07-09
+
+The Android project was prepared for the next internal testing release:
+
+- Package ID remains `app.humanity.global`.
+- Version code is now `6`.
+- Version name is now `1.0.5`.
+- The native sign-in `Development mode` label is hidden for Clerk live
+  publishable keys and remains visible only for Clerk test publishable keys.
+
+The signed `1.0.5` AAB was not built or uploaded in this pass because Railway
+production Clerk environment switching and redeploy verification still need to
+be completed first.
+
+Before uploading `1.0.5` to Internal testing:
+
+1. Set production Clerk env vars on Railway backend and frontend services.
+2. Redeploy backend and frontend.
+3. Verify public web, backend health endpoints, and production Clerk sign-in.
+4. Build and sign the AAB with ignored local signing files.
+5. Upload only to Google Play Internal testing.
+6. Pause before any final Play Console publish button that immediately publishes
+   the internal testing release.

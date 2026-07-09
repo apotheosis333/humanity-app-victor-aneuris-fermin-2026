@@ -32,6 +32,7 @@ import { Layout } from "@/components/layout";
 import { configureApiAuthTokenGetter } from "@/lib/api-config";
 
 const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY?.trim();
+const isClerkDevelopmentKey = clerkPubKey?.startsWith("pk_test_") ?? false;
 
 const isNativeMobile = Capacitor.isNativePlatform();
 const clerkProxyUrl = isNativeMobile
@@ -191,7 +192,9 @@ function NativeSignInPage() {
           {isSubmitting ? "Opening Google..." : "Continue with Google"}
         </button>
         <p className="mt-6 text-xs text-slate-400">Secured by Clerk</p>
-        <p className="mt-2 text-xs text-amber-300">Development mode</p>
+        {isClerkDevelopmentKey ? (
+          <p className="mt-2 text-xs text-amber-300">Development mode</p>
+        ) : null}
       </section>
     </div>
   );

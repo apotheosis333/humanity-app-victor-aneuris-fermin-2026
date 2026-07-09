@@ -152,3 +152,53 @@ Recommended sequencing:
 
 1. Deploy public frontend/legal pages first so Play policy URLs can be finalized.
 2. Then perform Clerk production migration and Android `1.0.5` internal release.
+
+## Step 40 Production Migration Status
+
+Date: 2026-07-09
+
+Status:
+
+- Clerk production instance was created for HuMANity.
+- Production application domain was set to `app.humanity.global` because Clerk
+  does not allow `railway.app` as the production app domain.
+- Production Google OAuth was configured in Clerk with custom Google
+  credentials.
+- The required Google authorized redirect URI was configured as:
+
+```text
+https://clerk.humanity.global/v1/oauth_callback
+```
+
+- The initial Google OAuth client created during setup was deleted after its
+  generated secret appeared in the Google Cloud page controls during
+  inspection. A clean replacement client was created and used for Clerk.
+- The visible native Android `Development mode` label is now gated to Clerk
+  test publishable keys only.
+- Android Gradle metadata was bumped to `versionCode 6`, `versionName 1.0.5`.
+
+Not completed in this pass:
+
+- Railway backend/frontend Clerk env vars were not switched to production.
+- Public frontend/backend redeploy with production Clerk was not verified.
+- Signed Android `1.0.5` AAB was not built or uploaded.
+- Play-installed `1.0.5` smoke testing was not run.
+
+Remaining required env updates:
+
+Backend Railway service:
+
+```text
+CLERK_SECRET_KEY=<production Clerk secret key>
+CLERK_PUBLISHABLE_KEY=<production Clerk publishable key>
+```
+
+Frontend Railway service and local ignored mobile env:
+
+```text
+VITE_CLERK_PUBLISHABLE_KEY=<production Clerk publishable key>
+VITE_API_BASE_URL=https://humanity-app-victor-aneuris-fermin-2026-production.up.railway.app
+```
+
+Do not commit production Clerk keys, local `.env` files, Google OAuth client
+secrets, Railway tokens, signing files, AABs, APKs, or private account data.
