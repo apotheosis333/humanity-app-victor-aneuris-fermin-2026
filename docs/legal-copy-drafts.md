@@ -82,3 +82,27 @@ See `docs/play-policy-owner-review.md` for:
 - Store listing draft.
 - Clerk production migration decision note.
 - AAB recommendation.
+
+## Step 38 Owner Policy Answers
+
+Owner-approved draft values for policy preparation:
+
+- Support contact: `jawsofthetrap@gmail.com`.
+- Target age: `16+`.
+- Ads: no ads.
+- In-app purchases: no.
+- Native location, contacts, camera, microphone permissions: no.
+- Account deletion: request-only/manual review.
+- Deletion target: within 30 days after a verified request, unless
+  legal/security retention is required.
+- Reviewer access: Google OAuth first; QA credentials only in Play Console if
+  Google requires direct credentials.
+
+Still not final:
+
+- Public website/domain.
+- Privacy Policy public URL.
+- Data Deletion public URL.
+- Whether a support form should be added in addition to email.
+- Exact retention/anonymization rules for reports, messages, logs, backups, and
+  moderation records.

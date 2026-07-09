@@ -221,6 +221,40 @@ Still needed before entering Play Console production policy forms:
   Android flow.
 - Move Clerk to production and retest before broader release.
 
+## Step 38 Owner Policy Answers And Next Release Plan
+
+Date: 2026-07-09
+
+Owner draft policy answers were recorded without submitting Play Console forms,
+uploading an AAB, switching Clerk, or starting any production rollout.
+
+Recorded answers:
+
+- Support contact: `jawsofthetrap@gmail.com`.
+- Target audience draft: `16+`.
+- Ads: no ads.
+- In-app purchases: no.
+- Native location, contacts, camera, microphone permissions: no.
+- Account deletion: request-only/manual review.
+- Deletion target: within 30 days after a verified request, unless
+  legal/security retention is required.
+- Reviewer access: Google OAuth first; direct QA credentials only if Play
+  requires them and only inside Play Console.
+
+Current blockers:
+
+- No confirmed public frontend URL for `/privacy` or `/data-deletion`.
+- Step 36 legal/data-deletion copy is not yet in a Play-installed release.
+- Clerk is still in Development mode.
+
+Recommended next release:
+
+- After public legal URLs are deployed and Clerk production migration is
+  approved, build Internal testing version `6 (1.0.5)` with:
+  - Step 36 legal/data-deletion route changes.
+  - Clerk production configuration.
+  - Development mode label removed or gated.
+
 ## Step 28 Validation Result
 
 Commands run:

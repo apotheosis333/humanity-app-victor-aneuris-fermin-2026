@@ -116,3 +116,39 @@ Packaging impact:
   `5 (1.0.4)` is `versionCode 6`, `versionName 1.0.5`, unless the release plan
   changes.
 - Do not upload the new AAB until migration is approved, built, and retested.
+
+## Step 38 Prepared Migration Plan
+
+Date: 2026-07-09
+
+Planning approval exists, but production Clerk settings and keys must not be
+switched until an explicit migration step.
+
+Exact migration plan for the next Clerk implementation step:
+
+1. Create Clerk production instance.
+2. Configure Google OAuth in Clerk production.
+3. Add native callback:
+
+```text
+app.humanity.global://callback
+```
+
+4. Add required allowed origins/redirects for deployed web frontend,
+   Capacitor WebView origin, and backend/proxy settings if used.
+5. Copy the production publishable key into local ignored mobile env only.
+6. Set Railway backend Clerk production secret/env vars without printing values.
+7. Confirm Railway backend verifies production Clerk tokens.
+8. Remove or gate the native sign-in `Development mode` label.
+9. Rebuild Android as `versionCode 6`, `versionName 1.0.5`.
+10. Include Step 36 legal/data-deletion route changes in the release.
+11. Build the signed AAB with ignored local signing files.
+12. Upload to Google Play Internal testing only.
+13. Test Google OAuth, `/api/me/profile`, R2 upload, Explore, report/block,
+    privacy/terms/support/data-deletion.
+14. Confirm Clerk Development label is gone.
+
+Recommended sequencing:
+
+1. Deploy public frontend/legal pages first so Play policy URLs can be finalized.
+2. Then perform Clerk production migration and Android `1.0.5` internal release.

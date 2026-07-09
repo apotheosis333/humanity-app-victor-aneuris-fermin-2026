@@ -63,3 +63,30 @@ See `docs/play-policy-owner-review.md` for the proposed owner-review Data Safety
 - Location, contacts, camera, microphone, and ads confirmation.
 
 Do not submit those draft answers until the owner confirms the open questions.
+
+## Step 38 Owner Answer Updates
+
+Owner draft answers recorded on 2026-07-09:
+
+- Target audience: `16+`.
+- Ads: no ads.
+- In-app purchases: no.
+- Native location permission: no.
+- Native contacts permission: no.
+- Native camera permission: no.
+- Native microphone permission: no.
+- Account deletion: request-only/manual review.
+- Deletion timeline target: within 30 days after a verified deletion request,
+  unless legal/security retention is required.
+
+Code/config verification found no obvious conflict with these answers:
+
+- Android manifest currently declares only Internet permission.
+- No obvious ad SDK or Play Billing dependency was found.
+- Profile photos are uploaded through web/file upload flows, not a declared
+  native camera permission.
+- Connections/messages, reports, blocks, profile photos, and app activity should
+  still be treated as user/app data in Data Safety.
+
+Retention/anonymization, provider log retention, and moderation record handling
+still need owner/legal confirmation before Play Console submission.

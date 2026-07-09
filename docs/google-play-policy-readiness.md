@@ -40,12 +40,12 @@ data.
 
 ### Privacy Policy URL
 
-Status: draft route exists; not ready for submission until public URL and
-founder/legal review are complete.
+Status: draft route exists; blocked by missing confirmed public frontend URL.
 
 The in-app Privacy page now has launch-prep draft copy instead of the earlier
 placeholder. Play Console will still need a public hosted privacy policy URL
-before production review.
+before production review. The backend Railway URL is not a confirmed frontend
+legal-page host.
 
 Needs owner/legal confirmation:
 
@@ -90,7 +90,8 @@ owner review of moderation, reporting, blocking, and UGC policy language.
 
 ### Target Audience And Content
 
-Status: needs owner decision.
+Status: owner draft answer recorded as `16+`; still needs Play Console
+submission and final policy review.
 
 The app mission is broad and community-oriented, but target audience choices in
 Play Console have policy implications. Do not guess age ranges without founder
@@ -98,8 +99,8 @@ approval.
 
 ### Ads Declaration
 
-Status: likely no ads based on current source and QA, but owner confirmation is
-required before submitting the declaration.
+Status: owner draft answer recorded as `No ads`; source check found no obvious
+ad SDK or ad placement dependency.
 
 ### App Access Instructions
 
@@ -260,3 +261,46 @@ It includes:
 
 No Play Console forms were submitted, no AAB was uploaded, no production rollout
 was started, and no credentials or private data were added.
+
+## Step 38 Owner Policy Answers And URL Strategy
+
+Date: 2026-07-09
+
+Owner policy answers recorded:
+
+- Support contact: `jawsofthetrap@gmail.com`.
+- Target age: `16+`.
+- Ads: no ads.
+- In-app purchases: no.
+- Native location, contacts, camera, microphone permissions: no.
+- Account deletion: request-only/manual review.
+- Deletion target: within 30 days after a verified deletion request, unless
+  legal/security retention is required.
+- Retention/anonymization: still requires owner/legal confirmation.
+- Reviewer access: Google OAuth first; QA credentials only in Play Console if
+  Google requires direct credentials.
+- Clerk production migration: recommended before broader closed testing and
+  Play policy submission; planning approved, execution deferred to a later
+  explicit migration step.
+
+Behavior verification:
+
+- Android manifest declares only `android.permission.INTERNET`.
+- No obvious ad SDK or Play Billing dependency was found.
+- Report/block routes exist and require auth.
+- Account deletion route creates a pending manual-review request.
+- Profile photo upload and finalize flows exist.
+- Connections and messages exist; messages are limited to accepted connections.
+- `/privacy`, `/terms`, `/support`, and `/data-deletion` are routed in source.
+
+Public URL gap:
+
+- No confirmed current public frontend deployment was found for the Step 36
+  legal pages.
+- Do not use an old Replit URL for Play policy URLs unless it is redeployed and
+  verified with the current legal build.
+- Next safest step is to deploy the frontend/legal pages publicly and verify:
+  - `https://<public-domain>/privacy`
+  - `https://<public-domain>/data-deletion`
+
+See `docs/play-policy-owner-review.md` for the full Play Console answer pack.
