@@ -100,7 +100,8 @@ required before submitting the declaration.
 ### App Access Instructions
 
 Status: partially ready for internal testing; still needs Play Console-only
-reviewer instructions.
+reviewer credentials or a reviewer sign-in plan that works with the Android
+build.
 
 Because the app requires sign-in for profile, connections, messaging, reporting,
 blocking, uploads, and account deletion request testing, Play review may require
@@ -115,6 +116,10 @@ Recommended approach:
 3. Provide Play Console app access instructions only inside Play Console.
 4. Do not document tester emails, passwords, tokens, or account identifiers in
    repository docs.
+5. Current Android native sign-in offers Google OAuth only. Username-only Clerk
+   QA users cannot sign in to the Play-installed app unless email/OAuth access
+   is added for those accounts or another approved reviewer sign-in path is
+   implemented.
 
 ### Data Deletion / Account Deletion
 
@@ -147,6 +152,9 @@ Implemented:
   report creation returned `201 pending`, block creation returned
   `201 blocked`, blocked users were hidden from discovery in both directions,
   and unblock restored future QA visibility.
+- Play-installed report/block UI spot-check opened the `HuMANity QA Two`
+  profile, rendered Report/Block controls, submitted a harmless report prompt
+  without blank screen/crash, and showed the block confirmation dialog.
 
 Still needed:
 
@@ -154,7 +162,8 @@ Still needed:
 - Clear public safety/moderation policy language.
 - Owner-approved terms covering prohibited content, moderation decisions, and
   account enforcement.
-- Play-installed Android UI spot-check for report/block dialog success states.
+- A Play-installed end-to-end block confirmation test from a dedicated QA or
+  reviewer account that can be safely cleaned up.
 
 ### Store Listing
 
@@ -183,9 +192,10 @@ Do not submit listing copy until founder review.
 2. Launch-ready Privacy Policy and Terms of Service.
 3. Final support/contact page or URL.
 4. Public data deletion instructions or URL.
-5. Play Console-only reviewer/test account instructions if Google requires app
-   access credentials.
-6. Play-installed Android UI spot-check for report/block success states.
+5. Play Console-only reviewer/test account credentials or instructions if Google
+   requires app access.
+6. A dedicated reviewer sign-in path for the Android app, because the current
+   native mobile sign-in is Google OAuth-only.
 7. Play Console Data Safety, Content Rating, Target Audience, Ads, App Access,
    and UGC/moderation declarations.
 8. Store listing copy and graphics/screenshots.

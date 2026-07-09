@@ -304,3 +304,63 @@ Remaining manual Android UI spot-check:
 No tester emails, QA credentials, tokens, cookies, Clerk keys, Railway tokens,
 R2 keys, signed URLs, `.env` values, signing keys, AABs/APKs, build outputs,
 screenshots, or private account data were documented.
+
+## Step 35 Play-Installed Report/Block UI Spot-Check
+
+Date: 2026-07-08
+
+Play-installed baseline:
+
+- Package ID: `app.humanity.global`.
+- Version tested: `5 (1.0.4)`.
+- Installer package: `com.android.vending`.
+- Launch: passed.
+- Blank WebView check: passed.
+- Unexpected native permission prompts: none observed.
+- Google OAuth/Clerk session: active from the existing internal tester session.
+
+Find People/profile result:
+
+- Search by username found `HuMANity QA Two`.
+- The profile opened in the Play-installed app.
+- Profile content, public QA bio, country, languages, interests, Report button,
+  and Block button rendered.
+
+Report UI result:
+
+- Report opened the expected prompt asking what should be reviewed.
+- A harmless QA reason was submitted.
+- The UI returned to the profile page without a blank screen or crash.
+- The button showed a loading state and then returned to normal.
+
+Block UI result:
+
+- Block opened the expected native confirmation dialog.
+- The block was canceled and not created because the active Play session was not
+  one of the dedicated QA accounts. This avoided creating persistent block
+  cleanup tied to a private tester account.
+
+Cleanup:
+
+- An accidental harmless connection request created during tap targeting was
+  canceled through the Play-installed UI, returning the profile action to
+  `Connect`.
+- No block was created, so no unblock was needed.
+
+Account deletion/legal/support result:
+
+- Profile edit opened in the Play-installed app.
+- The account deletion request area was reachable and still describes manual
+  review/completion.
+- No deletion request was submitted.
+- Footer Privacy Policy, Terms of Service, and Support links were visible.
+- Footer link tapping from the deeply scrolled mobile footer did not navigate
+  during this pass; these pages previously opened in Step 32 and still need final
+  launch copy/legal review.
+
+Limitation:
+
+- The current Android native sign-in screen is Google OAuth-only. The
+  username-only QA Clerk users cannot be used as Play-installed app users unless
+  approved email/OAuth credentials are added or a future safe reviewer sign-in
+  path is implemented.

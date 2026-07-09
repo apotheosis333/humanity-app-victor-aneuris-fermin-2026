@@ -311,3 +311,87 @@ Remaining QA note:
 Next recommended task:
 
 `TASK: STEP 35 - PLAY-INSTALLED REPORT/BLOCK UI SPOT-CHECK AND GOOGLE PLAY APP ACCESS PREP`
+
+## Step 35 Play-Installed Report/Block UI Spot-Check
+
+Date: 2026-07-08
+
+Play-installed baseline:
+
+- AVD: `HuMANity_PlayStore_Test_API_36`.
+- Package ID: `app.humanity.global`.
+- Version tested: `5 (1.0.4)`.
+- Installer package: `com.android.vending`.
+- App launch: passed.
+- Blank WebView check: passed.
+- Unexpected native permission prompts: none observed.
+- Existing Google OAuth/Clerk session: still active.
+
+QA profile UI result:
+
+- `HuMANity QA Two` appeared in Find People when searched by username.
+- The QA profile page opened in the Play-installed app.
+- Report and Block controls rendered on the profile page.
+- The current internal build's native Android sign-in screen only offers Google
+  OAuth, so the username-only QA Clerk users cannot themselves sign in to the
+  Play-installed app without adding email/OAuth credentials. No real email alias
+  was added in this step.
+
+Report UI result:
+
+- Tapping Report opened the expected browser prompt asking what should be
+  reviewed.
+- A harmless QA report reason was submitted.
+- The UI returned to the profile page without a blank screen or crash.
+- The report button briefly showed a loading state and then settled.
+- No private data was shown in the report prompt.
+
+Block UI result:
+
+- Tapping Block opened the expected browser confirmation:
+  `Block this member? Existing connections will be removed.`
+- The block was not confirmed because the signed-in Play session is a private
+  tester session rather than `HuMANity QA One`; this avoids creating cleanup work
+  against a non-QA account.
+- No blank screen or crash occurred.
+
+Cleanup:
+
+- A harmless accidental connection request to `HuMANity QA Two` was canceled
+  through the Play-installed UI, returning the button to `Connect`.
+- No QA block was created, so no unblock cleanup was needed.
+
+Account deletion, legal, and support:
+
+- The Profile edit page opened in the Play-installed app.
+- The account deletion request section was reachable; visible copy still says
+  deletion is completed manually after review.
+- No deletion request was submitted.
+- Footer links for Privacy Policy, Terms of Service, and Support were visible.
+- Footer link tapping from this scrolled mobile position did not successfully
+  navigate during this pass; these routes previously opened in Step 32 and still
+  need final launch copy/legal review.
+
+App access instruction draft:
+
+- HuMANity requires sign-in. A dedicated test account can be provided in Google
+  Play Console App access credentials. After signing in, reviewers can test
+  profile creation/editing, profile photo upload, Explore/countries,
+  report/block controls, privacy/terms/support pages, and the account deletion
+  request UI.
+- Do not commit reviewer credentials. Enter credentials only inside Play Console
+  after a dedicated approval step.
+
+Remaining blockers:
+
+- Create or approve Play-reviewer credentials that work with the current Android
+  Google OAuth-only sign-in, or add a safe reviewer sign-in path in a future
+  code step.
+- Production Clerk migration is still required before broader testing or
+  production review.
+- Privacy/Terms/Support copy and public data deletion instructions still need
+  founder/legal review.
+
+Next recommended task:
+
+`TASK: STEP 36 - PREPARE GOOGLE PLAY APP ACCESS, DATA DELETION URL, AND LEGAL COPY DRAFTS`

@@ -141,6 +141,46 @@ Date: 2026-07-08
 - Do not document QA credentials in this repository. If Play asks for app access
   credentials, enter them only in Play Console after a dedicated approval step.
 
+## Step 35 Play-Installed App Access And Report/Block UI Status
+
+Date: 2026-07-08
+
+- Play-installed package baseline passed for `app.humanity.global` version
+  `5 (1.0.4)` installed by `com.android.vending`.
+- The app launched with no blank WebView and no unexpected native permission
+  prompts.
+- An existing Google OAuth/Clerk session remained active in the internal build.
+- `HuMANity QA Two` was found through the Play-installed Find People UI by
+  username.
+- The QA profile opened and rendered Report and Block controls.
+- Report UI opened the expected review prompt; a harmless QA reason was
+  submitted without a blank screen or crash.
+- Block UI opened the expected confirmation dialog. The block was not confirmed
+  because the active Play session was not one of the dedicated QA accounts.
+- A harmless accidental connection request to the QA profile was canceled through
+  the UI so the profile remains reusable.
+- No new AAB was built or uploaded, and no Google Play release action was taken.
+
+Safe Play Console App Access draft:
+
+```text
+HuMANity requires sign-in. A dedicated test account can be provided in Google
+Play Console App access credentials. After signing in, reviewers can test
+profile creation/editing, profile photo upload, Explore/countries,
+report/block controls, privacy/terms/support pages, and the account deletion
+request UI.
+```
+
+Do not commit reviewer credentials. Enter them only inside Play Console after a
+dedicated approval step.
+
+Important limitation:
+
+- The current Android native sign-in screen offers Google OAuth only. The
+  username-only QA Clerk users created for backend QA cannot directly sign in to
+  the Play-installed app unless they receive approved email/OAuth credentials or
+  the app adds a safe reviewer sign-in path in a later code step.
+
 ## Step 28 Validation Result
 
 Commands run:
