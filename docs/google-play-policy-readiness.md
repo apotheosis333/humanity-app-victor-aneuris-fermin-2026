@@ -99,7 +99,8 @@ required before submitting the declaration.
 
 ### App Access Instructions
 
-Status: needed.
+Status: partially ready for internal testing; still needs Play Console-only
+reviewer instructions.
 
 Because the app requires sign-in for profile, connections, messaging, reporting,
 blocking, uploads, and account deletion request testing, Play review may require
@@ -108,10 +109,12 @@ the repository.
 
 Recommended approach:
 
-1. Create dedicated reviewer/test accounts in Clerk.
-2. Store credentials outside the repository.
+1. Use the dedicated harmless QA profiles now available for internal testing:
+   `HuMANity QA One` and `HuMANity QA Two`.
+2. Store any future reviewer credentials outside the repository.
 3. Provide Play Console app access instructions only inside Play Console.
-4. Ensure each test account has a completed harmless QA profile.
+4. Do not document tester emails, passwords, tokens, or account identifiers in
+   repository docs.
 
 ### Data Deletion / Account Deletion
 
@@ -139,14 +142,19 @@ Implemented:
 - User blocking endpoint.
 - Block filtering in discovery/connections/messaging paths.
 - Account deletion request entry point.
+- Two completed harmless QA profiles are available for internal testing.
+- Authenticated backend report/block QA passed with real Clerk QA users:
+  report creation returned `201 pending`, block creation returned
+  `201 blocked`, blocked users were hidden from discovery in both directions,
+  and unblock restored future QA visibility.
 
 Still needed:
 
 - Admin/moderation review workflow for pending reports.
 - Clear public safety/moderation policy language.
-- End-to-end QA with two dedicated test profiles.
 - Owner-approved terms covering prohibited content, moderation decisions, and
   account enforcement.
+- Play-installed Android UI spot-check for report/block dialog success states.
 
 ### Store Listing
 
@@ -175,8 +183,9 @@ Do not submit listing copy until founder review.
 2. Launch-ready Privacy Policy and Terms of Service.
 3. Final support/contact page or URL.
 4. Public data deletion instructions or URL.
-5. Dedicated QA/reviewer accounts with completed profiles.
-6. Report/block end-to-end QA with two test profiles.
+5. Play Console-only reviewer/test account instructions if Google requires app
+   access credentials.
+6. Play-installed Android UI spot-check for report/block success states.
 7. Play Console Data Safety, Content Rating, Target Audience, Ads, App Access,
    and UGC/moderation declarations.
 8. Store listing copy and graphics/screenshots.

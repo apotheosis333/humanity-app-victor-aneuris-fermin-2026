@@ -271,3 +271,36 @@ tokens, R2 keys, or signed URLs were committed.
 
 See `docs/android-auth-upload-smoke-test.md` for the authenticated profile photo
 upload retest result.
+
+## Step 34 Report/Block Backend Smoke Test
+
+Date: 2026-07-08
+
+Dedicated QA profiles:
+
+- `HuMANity QA One`
+- `HuMANity QA Two`
+
+Result:
+
+- Both QA profiles have completed public profile rows and are visible to each
+  other in discovery before blocking.
+- Current-user exclusion works in discovery.
+- Authenticated report API flow passed: a harmless QA report returned `201` and
+  status `pending`.
+- Authenticated block API flow passed: block returned `201` and status
+  `blocked`.
+- Discovery filtered both directions while the block existed.
+- The block appeared in the blocker account's block list.
+- The QA block was removed with the implemented unblock route after verification
+  so both profiles remain available for future internal QA.
+
+Remaining manual Android UI spot-check:
+
+- In the Play-installed build, sign in with an approved tester account, open the
+  other QA profile, and visually confirm the report/block controls show success
+  states without a blank screen or crash.
+
+No tester emails, QA credentials, tokens, cookies, Clerk keys, Railway tokens,
+R2 keys, signed URLs, `.env` values, signing keys, AABs/APKs, build outputs,
+screenshots, or private account data were documented.

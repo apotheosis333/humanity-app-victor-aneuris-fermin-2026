@@ -103,6 +103,8 @@ Manual Play Console setup still required:
 - Confirm terms/support/privacy links are reachable in the app.
 - Confirm account deletion request flow is documented and accessible.
 - Confirm reporting and blocking flows are testable.
+- Dedicated harmless QA profiles now exist for report/block testing:
+  `HuMANity QA One` and `HuMANity QA Two`.
 - Confirm backend health and mobile API environment are production-ready.
 
 Do not submit to production from this step. Some Google Play developer accounts may need closed testing before production access; follow the current Play Console requirements shown for the account.
@@ -120,6 +122,24 @@ Still needed before a polished store submission:
 - Final support contact.
 - Final internal tester list.
 - Clear test account instructions for reviewers/testers.
+
+## Step 34 QA Account And Report/Block Status
+
+Date: 2026-07-08
+
+- Two dedicated username-only Clerk QA users/profiles were created or confirmed
+  for internal testing without using real email addresses.
+- Completed profiles are visible in discovery as `HuMANity QA One` and
+  `HuMANity QA Two`.
+- Authenticated backend report/block testing passed using short-lived Clerk
+  sessions and the deployed Railway API.
+- A harmless QA report was created with status `pending`.
+- A QA block was created with status `blocked`, filtered both users from
+  discovery in both directions, appeared in the block list, and was then removed
+  through the implemented unblock route so both QA profiles remain reusable.
+- No new AAB was uploaded and no Google Play release action was taken.
+- Do not document QA credentials in this repository. If Play asks for app access
+  credentials, enter them only in Play Console after a dedicated approval step.
 
 ## Step 28 Validation Result
 

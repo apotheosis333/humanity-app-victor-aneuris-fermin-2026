@@ -259,6 +259,55 @@ Clerk production migration:
 - No Clerk environment, key, OAuth, Railway variable, or app binary was changed
   in this step.
 
+## Step 34 Dedicated QA Profiles And Report/Block Result
+
+Date: 2026-07-08
+
+QA profile setup:
+
+- Two dedicated username-only Clerk QA users were created or confirmed in the
+  same Clerk development environment used by the current internal Android build.
+- No real email addresses or Gmail aliases were used.
+- No QA passwords, session tokens, Clerk keys, Railway tokens, database URLs, or
+  private identifiers were printed, documented, committed, or stored in the
+  repository.
+- Completed public profiles now exist for:
+  - `HuMANity QA One`
+  - `HuMANity QA Two`
+- QA profile data is harmless internal-testing content only.
+
+Authenticated backend QA result:
+
+- `HuMANity QA One` can find `HuMANity QA Two` in discovery before blocking.
+- `HuMANity QA Two` can find `HuMANity QA One` in discovery before blocking.
+- Current-user exclusion works; `HuMANity QA One` does not appear in its own
+  search results.
+- `HuMANity QA One` submitted a harmless report against `HuMANity QA Two`; the
+  backend returned `201` with report status `pending`.
+- `HuMANity QA One` blocked `HuMANity QA Two`; the backend returned `201` with
+  status `blocked`.
+- While blocked, both directions were hidden from discovery search.
+- The block appeared in `HuMANity QA One`'s block list.
+- The QA block was removed through the implemented unblock route after the test
+  so both profiles remain reusable and visible for future QA.
+- After unblock, `HuMANity QA One` could find `HuMANity QA Two` again.
+
+Account deletion request review:
+
+- The account deletion request UI and backend route remain request-only/manual
+  review.
+- No deletion request was submitted for the QA accounts in this step.
+- A public data deletion URL or clear public instructions are still required
+  before Play production review.
+
+Remaining QA note:
+
+- The deployed backend report/block behavior is verified with real Clerk QA
+  users and completed profiles.
+- A short Play-installed UI spot-check should still tap through another user's
+  profile to visually confirm report/block dialog success states in the Android
+  WebView before broader external testing.
+
 Next recommended task:
 
-`TASK: STEP 34 - APPROVE QA ACCOUNT SETUP, CREATE TWO DEDICATED TEST PROFILES, AND RETEST REPORT/BLOCK`
+`TASK: STEP 35 - PLAY-INSTALLED REPORT/BLOCK UI SPOT-CHECK AND GOOGLE PLAY APP ACCESS PREP`
