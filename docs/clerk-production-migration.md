@@ -202,3 +202,50 @@ VITE_API_BASE_URL=https://humanity-app-victor-aneuris-fermin-2026-production.up.
 
 Do not commit production Clerk keys, local `.env` files, Google OAuth client
 secrets, Railway tokens, signing files, AABs, APKs, or private account data.
+
+## Step 40B Production Env Switch And Internal Release
+
+Date: 2026-07-10
+
+Status:
+
+- Railway backend Clerk variables were switched to the Clerk production
+  instance without printing or committing secret values.
+- Railway frontend/mobile public configuration was switched to the production
+  Clerk publishable key and deployed backend API base URL.
+- Backend and frontend Railway services were redeployed and returned online.
+- Public backend checks passed:
+  - `GET /health`: `200`.
+  - `GET /api/healthz`: `200`.
+  - `GET /api/countries`: `200`, returning 24 baseline country records.
+  - `GET /api/me/profile` without auth: `401`, as expected.
+- Public frontend/legal URL checks passed for `/`, `/privacy`, `/terms`,
+  `/support`, and `/data-deletion`.
+- Android `versionCode 6`, `versionName 1.0.5` was built as a signed AAB and
+  uploaded to Google Play Internal testing.
+- Google Play Internal testing release `6 (1.0.5)` is active and available to
+  internal testers.
+- The Play Store AVD updated HuMANity from `5 (1.0.4)` to `6 (1.0.5)` through
+  Google Play.
+
+Play-installed result:
+
+- Package ID: `app.humanity.global`.
+- Version code: `6`.
+- Version name: `1.0.5`.
+- Installer package: `com.android.vending`.
+- App launch: passed.
+- Blank WebView check: passed.
+- Clerk development label: not observed on the public startup surface.
+- Explore route opened but displayed `Showing 0 of 195 nations` even though the
+  deployed backend returned 24 country records from the workstation. This needs
+  a focused follow-up before broader testing.
+- Authenticated profile, Google OAuth, `/api/me/profile`, and upload flows were
+  not completed in this pass because the sign-in/profile route was not reached
+  reliably from the emulator UI after the update.
+
+Security notes:
+
+- Production Clerk keys, Railway tokens, Google credentials, tester emails,
+  `.env` files, signing files, AABs/APKs, build outputs, cookies, and private
+  account data were not committed.

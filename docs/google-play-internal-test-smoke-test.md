@@ -364,3 +364,72 @@ Limitation:
   username-only QA Clerk users cannot be used as Play-installed app users unless
   approved email/OAuth credentials are added or a future safe reviewer sign-in
   path is implemented.
+
+## Step 40B Play-Installed 1.0.5 Smoke Result
+
+Date: 2026-07-10
+
+Google Play Internal testing release `6 (1.0.5)` was uploaded and published to
+the internal testing track after approval. The Play Store AVD updated the
+existing Play-installed app from release `5 (1.0.4)` to release `6 (1.0.5)`
+through Google Play.
+
+Installed package verification:
+
+- Package ID: `app.humanity.global`.
+- Version code: `6`.
+- Version name: `1.0.5`.
+- Installer package: `com.android.vending`.
+- Last update time observed by ADB: `2026-07-10 12:30:58`.
+
+Play Store result:
+
+- The Play listing showed the temporary unreviewed app name.
+- The listing displayed v1.0.5 release notes.
+- The update completed and the listing changed to `Open`.
+
+Launch result:
+
+- App launch: passed.
+- Branded splash screen: passed.
+- Blank WebView check: passed.
+- Home page render: passed.
+- Clerk development label: not observed on the public startup surface.
+- Unexpected native permission prompts: none observed.
+
+Backend check from workstation:
+
+- `GET /health`: `200`.
+- `GET /api/healthz`: `200`.
+- `GET /api/countries`: `200`, returning 24 baseline country records.
+- Unauthenticated `GET /api/me/profile`: `401`, expected.
+
+Explore result:
+
+- Explore page opened in the Play-installed v1.0.5 app.
+- The visible app counter showed `Showing 0 of 195 nations`.
+- This did not match the deployed backend response of 24 country records and
+  needs a focused follow-up investigation.
+
+Auth/profile/upload result:
+
+- A fresh production-Clerk Google OAuth/profile/upload pass was not completed in
+  this session.
+- The account/profile route was not reached reliably through the emulator UI
+  after the Play update, and arbitrary native route deep links such as
+  `app.humanity.global://sign-in` are not registered by the app.
+- `/api/me/profile`, profile edit, profile photo upload/R2, profile
+  persistence, report/block, and account deletion request still need a
+  dedicated Play-installed v1.0.5 retest.
+
+Security notes:
+
+- No tester email address is recorded here.
+- No test credentials are recorded here.
+- No Google credentials, cookies, tokens, Clerk keys, Railway tokens, R2 keys,
+  signed URLs, `.env` values, keystores, signing properties, AABs, APKs, build
+  outputs, or screenshots are committed.
+
+Next recommended task:
+
+`TASK: STEP 41 - INVESTIGATE PLAY-INSTALLED 1.0.5 EXPLORE DATA AND COMPLETE PRODUCTION CLERK AUTH SMOKE TEST`

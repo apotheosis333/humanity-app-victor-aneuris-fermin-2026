@@ -198,6 +198,34 @@ founder/legal review step.
 
 `TASK: STEP 33 - CREATE DEDICATED QA TEST PROFILES AND COMPLETE REPORT/BLOCK PLUS PLAY POLICY READINESS`
 
+## Step 40B 1.0.5 Internal Testing Update
+
+Date: 2026-07-10
+
+Status:
+
+- Clerk production env values were switched on Railway backend/frontend
+  services without committing secrets.
+- Google Play Internal testing release `6 (1.0.5)` is active and available to
+  internal testers.
+- The Play Store AVD updated the app through Google Play.
+- Installed package verification passed for `app.humanity.global`
+  `versionCode=6`, `versionName=1.0.5`, installer `com.android.vending`.
+- App launch, branded splash, home render, and blank WebView check passed.
+- Explore opened but showed `Showing 0 of 195 nations` even though the deployed
+  backend returned 24 countries from the workstation.
+
+Remaining blockers after 1.0.5:
+
+- Investigate the Play-installed Explore zero-country state.
+- Complete production-Clerk Google OAuth, `/api/me/profile`, profile edit,
+  R2/profile photo upload, report/block, account deletion, and legal route
+  retesting from the Play-installed v1.0.5 build.
+
+Next recommended task:
+
+`TASK: STEP 41 - INVESTIGATE PLAY-INSTALLED 1.0.5 EXPLORE DATA AND COMPLETE PRODUCTION CLERK AUTH SMOKE TEST`
+
 ## Step 36 Legal And Data Safety Prep Update
 
 Date: 2026-07-09

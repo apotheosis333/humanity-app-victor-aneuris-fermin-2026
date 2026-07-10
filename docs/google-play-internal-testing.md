@@ -806,3 +806,50 @@ Before uploading `1.0.5` to Internal testing:
 5. Upload only to Google Play Internal testing.
 6. Pause before any final Play Console publish button that immediately publishes
    the internal testing release.
+
+## Step 40B Internal Testing Release 6
+
+Date: 2026-07-10
+
+Release status:
+
+- Google Play Internal testing release `6 (1.0.5)` was uploaded and published
+  to the Internal testing track after approval.
+- The release is active and available to internal testers.
+- The Play Console still shows the temporary unreviewed app name until app setup
+  and review are complete.
+- No production release or production rollout was started.
+
+Play-installed AVD verification:
+
+- AVD: `HuMANity_PlayStore_Test_API_36`.
+- Package ID: `app.humanity.global`.
+- Version code: `6`.
+- Version name: `1.0.5`.
+- Installer package: `com.android.vending`.
+- Update path: Google Play Store update from internal testing.
+
+Observed status:
+
+- App launch passed.
+- No blank WebView was observed.
+- Home rendered with HuMANity branding.
+- Play Store listing showed the v1.0.5 release notes and completed the update.
+- Explore opened but showed `Showing 0 of 195 nations`; backend
+  `GET /api/countries` returned 24 records from the workstation during the same
+  pass.
+
+Follow-up required:
+
+- Investigate why the Play-installed frontend shows zero Explore countries
+  while the deployed backend returns 24 records.
+- Complete a fresh production-Clerk Google OAuth/profile/upload smoke test after
+  the Explore issue is understood or fixed.
+- Recheck Privacy, Terms, Support, and Data Deletion pages from the
+  Play-installed v1.0.5 build.
+
+Security notes:
+
+- No tester email addresses, Google credentials, Clerk keys, Railway tokens, R2
+  keys, `.env` files, signing files, AABs/APKs, build outputs, cookies,
+  screenshots, or private account data are documented here.
