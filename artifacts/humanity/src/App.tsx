@@ -400,12 +400,19 @@ function ClerkQueryClientCacheInvalidator() {
 }
 
 function ApiAuthTokenBridge() {
-  const { getToken } = useAuth();
+  const { getToken, isLoaded, isSignedIn } = useAuth();
 
   useEffect(() => {
-    configureApiAuthTokenGetter(() => getToken());
+    configureApiAuthTokenGetter(() => {
+      if (!isLoaded || !isSignedIn) {
+        return null;
+      }
+
+      return getToken();
+    });
+
     return () => configureApiAuthTokenGetter(null);
-  }, [getToken]);
+  }, [getToken, isLoaded, isSignedIn]);
 
   return null;
 }

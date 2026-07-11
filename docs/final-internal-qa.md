@@ -226,6 +226,50 @@ Next recommended task:
 
 `TASK: STEP 41 - INVESTIGATE PLAY-INSTALLED 1.0.5 EXPLORE DATA AND COMPLETE PRODUCTION CLERK AUTH SMOKE TEST`
 
+## Step 41 Explore/API Auth Fix Update
+
+Date: 2026-07-10
+
+Status:
+
+- The Play-installed `1.0.5` Explore zero-country state was investigated.
+- The deployed backend and CORS configuration were healthy; country endpoints
+  returned production data from the workstation.
+- The frontend issue was traced to the native mobile API auth bridge waiting for
+  a Clerk bearer token even for public signed-out requests.
+- The mobile API auth bridge now skips token attachment until Clerk is loaded
+  and the user is signed in.
+- Android version metadata was advanced to `8 (1.0.7)`.
+- Google Play Internal testing release `8 (1.0.7)` was uploaded and published to
+  internal testers only.
+
+Validation:
+
+- TypeScript project build passed.
+- Frontend typecheck/build passed.
+- Capacitor sync passed.
+- Android debug build passed.
+- Backend typecheck/build passed.
+- Signed release AAB build passed.
+
+Current blocker:
+
+- The Play Store AVD still showed installed version `7 (1.0.6)` and the `1.0.6`
+  listing notes after repeated refreshes.
+- The `1.0.7` Play-installed retest is pending Google Play propagation/cache
+  refresh on the tester device.
+
+Remaining QA after `1.0.7` is offered in Play Store:
+
+- Confirm Explore renders production country cards.
+- Complete production-Clerk Google OAuth.
+- Verify `/api/me/profile`, profile edit, R2 profile photo upload, persistence,
+  legal/data-deletion routes, and report/block UI.
+
+Next recommended task:
+
+`TASK: STEP 41B - INSTALL PLAY INTERNAL 1.0.7 AFTER PROPAGATION AND COMPLETE PRODUCTION AUTH SMOKE TEST`
+
 ## Step 36 Legal And Data Safety Prep Update
 
 Date: 2026-07-09

@@ -433,3 +433,75 @@ Security notes:
 Next recommended task:
 
 `TASK: STEP 41 - INVESTIGATE PLAY-INSTALLED 1.0.5 EXPLORE DATA AND COMPLETE PRODUCTION CLERK AUTH SMOKE TEST`
+
+## Step 41 Explore Data Investigation
+
+Date: 2026-07-10
+
+Root cause:
+
+- The generated API client was configured to ask Clerk for a bearer token before
+  every request, including public country/explore reads.
+- In the native Android WebView signed-out path, that Clerk token lookup could
+  remain pending, so public Explore API calls never reached the Railway backend.
+- The `1.0.5` UI masked the pending request as `Showing 0 of 195 nations`; the
+  first `1.0.6` fix made the loading state visible but still waited on the
+  signed-out token lookup.
+
+Code/build result:
+
+- The API auth bridge now returns no bearer token while Clerk is not loaded or
+  the user is signed out, allowing public API calls to run immediately.
+- The generated fetch helper no longer treats a non-streaming WebView response
+  as an empty response solely because `response.body` is null.
+- Explore now shows explicit loading/error states instead of silently showing an
+  empty country count.
+- Android version metadata was advanced to `8 (1.0.7)` for the fix build.
+
+Validation result:
+
+- Full TypeScript project build: passed.
+- Frontend typecheck: passed.
+- Frontend production build: passed with existing sourcemap/chunk-size warnings.
+- Capacitor sync: passed.
+- Android debug build: passed with the known local SDK XML warning.
+- Backend typecheck: passed.
+- Backend build: passed.
+- Signed release AAB build: passed.
+
+Google Play result:
+
+- Google Play Internal testing release `8 (1.0.7)` was uploaded and published to
+  the internal testing track.
+- Play Console showed release `8 (1.0.7)` as available to internal testers.
+- No production rollout was started.
+
+Play Store AVD retest status:
+
+- The Play Store AVD remained installed on `7 (1.0.6)` after repeated Play Store
+  listing refreshes.
+- The Play Store listing still showed the `1.0.6` release notes and only the
+  `Open` button, not an `Update` button, during this session.
+- A true Play-installed `1.0.7` smoke test is therefore blocked by Google Play
+  propagation/cache delay, not by the local build or Play Console upload.
+
+Pending smoke tests after the Play Store offers `1.0.7`:
+
+- Open Explore and confirm production country cards render.
+- Complete production-Clerk Google OAuth.
+- Verify `/api/me/profile`.
+- Verify profile edit, R2 profile photo upload, and persistence.
+- Recheck privacy, terms, support, and data deletion pages.
+- Spot-check report/block UI if a second profile is available.
+
+Security notes:
+
+- No tester email address is recorded here.
+- No test credentials are recorded here.
+- No Google credentials, cookies, tokens, Clerk keys, Railway tokens, R2 keys,
+  signed URLs, `.env` values, keystores, signing properties, AABs, APKs, build
+  outputs, screenshots, or private user data are committed.
+
+Next recommended task:
+
+`TASK: STEP 41B - INSTALL PLAY INTERNAL 1.0.7 AFTER PROPAGATION AND COMPLETE PRODUCTION AUTH SMOKE TEST`

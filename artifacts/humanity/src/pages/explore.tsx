@@ -18,7 +18,7 @@ export default function Explore() {
     { query: { enabled: search.length > 0, queryKey: getSearchCountriesQueryKey({ q: search }) } }
   );
 
-  const { data: continents, isLoading: loadingContinents } = useListContinents();
+  const { data: continents, isError: continentsError, isLoading: loadingContinents } = useListContinents();
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -32,8 +32,9 @@ export default function Explore() {
   };
 
   const allCountries = continents?.flatMap(c => c.countries) || [];
+  const sourceData = search.length > 0 ? searchResults || [] : allCountries;
   
-  const filteredData = (search.length > 0 ? searchResults : allCountries)?.filter(c => {
+  const filteredData = sourceData.filter(c => {
     if (continent && c.continent !== continent) return false;
     if (language && !c.languages?.toLowerCase().includes(language.toLowerCase())) return false;
     if (religion && !c.religion?.toLowerCase().includes(religion.toLowerCase())) return false;
@@ -41,6 +42,8 @@ export default function Explore() {
   });
 
   const activeData = filteredData;
+  const isLoadingCountries = loadingContinents || isSearching;
+  const totalAvailable = sourceData.length;
 
   return (
     <div className="w-full pb-24 relative z-10">
@@ -133,15 +136,25 @@ export default function Explore() {
           </div>
           
           <div className="text-white/60 text-sm font-serif italic">
-            Showing {activeData?.length || 0} of 195 nations
+            {isLoadingCountries
+              ? "Loading countries..."
+              : continentsError
+                ? "Countries could not be loaded. Please try again."
+                : `Showing ${activeData.length} of ${totalAvailable} ${totalAvailable === 1 ? "nation" : "nations"}`}
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {loadingContinents || isSearching ? (
+          {isLoadingCountries ? (
             Array.from({ length: 12 }).map((_, i) => (
               <Skeleton key={i} className="h-80 w-full rounded-3xl bg-white/5" />
             ))
+          ) : continentsError ? (
+            <div className="col-span-full py-24 text-center space-y-4 animate-fade-up">
+              <MapPin className="mx-auto h-16 w-16 text-white/20" />
+              <p className="text-2xl text-white font-serif">Countries could not be loaded.</p>
+              <p className="text-white/60">Check your connection and try again.</p>
+            </div>
           ) : activeData?.length === 0 ? (
             <div className="col-span-full py-24 text-center space-y-4 animate-fade-up">
               <MapPin className="mx-auto h-16 w-16 text-white/20" />
