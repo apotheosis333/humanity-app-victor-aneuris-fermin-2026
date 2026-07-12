@@ -274,3 +274,31 @@ Remaining Clerk validation:
 - Confirm no Clerk Development warning appears.
 - Confirm Google OAuth returns through `app.humanity.global://callback`.
 - Confirm `/api/me/profile` succeeds after sign-in.
+
+## Step 43 Android Clerk Redirect Status
+
+Date: 2026-07-12
+
+Production mobile auth status:
+
+- Play-installed `9 (1.0.8)` confirmed the signed-out app can reach the native
+  HuMANity sign-in screen.
+- Play-installed `10 (1.0.9)` showed that Clerk's embedded prebuilt sign-in
+  component did not render reliably inside the Android release WebView.
+- Play-installed `11 (1.0.10)` restored the HuMANity-branded native sign-in
+  screen and uses Clerk's hosted sign-in redirect from the button.
+
+Current blocker:
+
+- The `1.0.10` sign-in button fires and enters `Opening sign-in...`, but the
+  hosted Clerk redirect handoff does not proceed from the Android WebView.
+- No localhost callback error, Clerk development warning, native permission
+  prompt, or obvious Android runtime crash was observed in this pass.
+
+Next investigation:
+
+- Verify the correct Clerk production app supports the Android hosted redirect
+  pattern for `app.humanity.global://callback`.
+- Compare Clerk's recommended Capacitor/custom-scheme OAuth flow against the
+  current `redirectToSignIn` and `handleRedirectCallback` wiring.
+- Retest only through a Play-installed build after any auth-flow change.

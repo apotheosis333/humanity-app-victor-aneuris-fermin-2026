@@ -926,3 +926,33 @@ Next Play Console step:
 - Publish only to Internal testing, then update the Play Store AVD from Google
   Play and rerun production Clerk auth, profile save, R2 upload, Support route,
   and report/block visibility checks.
+
+## Step 43 Internal Testing Releases 1.0.8 through 1.0.10
+
+Date: 2026-07-12
+
+Internal testing status:
+
+- `9 (1.0.8)` was uploaded and published to Internal testing only.
+- A corrected `1.0.8` release was required because the first release summary was
+  labeled `9 (1.0.8)` while still serving bundle `8 (1.0.7)`.
+- `10 (1.0.9)` was uploaded and published to Internal testing only after a
+  mobile sign-in rendering fix.
+- `11 (1.0.10)` was uploaded and published to Internal testing only after a
+  second targeted Clerk redirect fix.
+- The latest Play Console Internal testing release is `11 (1.0.10)`, available
+  to internal testers.
+
+AVD verification:
+
+- The Google Play Store AVD installed `app.humanity.global` from
+  `com.android.vending`.
+- Installed version verified after propagation: `versionCode=11`,
+  `versionName=1.0.10`.
+
+Current blocker:
+
+- Play-installed `1.0.10` launches and opens the HuMANity-branded sign-in card.
+- The sign-in button enters the `Opening sign-in...` state, but Clerk's hosted
+  redirect does not complete the handoff from the Android WebView.
+- No production release or production rollout was started.

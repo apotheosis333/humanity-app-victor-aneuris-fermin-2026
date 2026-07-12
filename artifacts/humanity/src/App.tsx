@@ -2,7 +2,6 @@ import { Component, type ErrorInfo, type ReactNode, useEffect, useRef, useState 
 import { Switch, Route, useLocation, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider, useQueryClient } from "@tanstack/react-query";
 import { ClerkProvider, SignIn, SignUp, useAuth, useClerk } from "@clerk/react";
-import { useSignIn } from "@clerk/react/legacy";
 import { dark } from "@clerk/themes";
 import { App as CapacitorApp } from "@capacitor/app";
 import { Capacitor } from "@capacitor/core";
@@ -147,24 +146,23 @@ const clerkAppearance = {
 const queryClient = new QueryClient();
 
 function NativeSignInPage() {
-  const { isLoaded, signIn } = useSignIn();
+  const clerk = useClerk();
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const signInWithGoogle = async () => {
-    if (!isLoaded || !signIn || isSubmitting) return;
+    if (isSubmitting) return;
 
     setError(null);
     setIsSubmitting(true);
     try {
-      await signIn.authenticateWithRedirect({
-        strategy: "oauth_google",
-        redirectUrl: mobileCallbackUrl,
-        redirectUrlComplete: appHomePath,
+      await clerk.redirectToSignIn({
+        signInForceRedirectUrl: mobileCallbackUrl,
+        signInFallbackRedirectUrl: mobileCallbackUrl,
       });
     } catch (err) {
-      console.error("Native Google sign-in failed", err);
-      setError("Google sign-in could not start. Please try again.");
+      console.error("Native sign-in redirect failed", err);
+      setError("Sign in could not start. Please try again.");
       setIsSubmitting(false);
     }
   };
@@ -183,13 +181,13 @@ function NativeSignInPage() {
         <button
           type="button"
           onClick={signInWithGoogle}
-          disabled={!isLoaded || !signIn || isSubmitting}
+          disabled={isSubmitting}
           className="mt-6 flex min-h-12 w-full items-center justify-center gap-3 rounded-xl border border-white/15 bg-white/[0.04] px-4 text-sm font-semibold text-white transition hover:bg-white/[0.08] disabled:cursor-not-allowed disabled:opacity-60"
         >
           <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-sm font-bold text-slate-900">
             G
           </span>
-          {isSubmitting ? "Opening Google..." : "Continue with Google"}
+          {isSubmitting ? "Opening sign-in..." : "Continue with Google"}
         </button>
         <p className="mt-6 text-xs text-slate-400">Secured by Clerk</p>
         {isClerkDevelopmentKey ? (

@@ -398,6 +398,33 @@ Next recommended task:
 
 `TASK: STEP 43 - UPLOAD INTERNAL TESTING 1.0.8 AND RERUN AUTH PROFILE UPLOAD SUPPORT SMOKE TEST`
 
+## Step 43 QA Update
+
+Date: 2026-07-12
+
+Ready/verified:
+
+- Google Play Internal testing latest release is `11 (1.0.10)`.
+- Play-installed package verification passed on the Play Store AVD:
+  `app.humanity.global`, `versionCode=11`, `versionName=1.0.10`,
+  installer `com.android.vending`.
+- The Play-installed app launches to the HuMANity home screen without a blank
+  WebView or unexpected native permission prompt.
+- The signed-out header entry opens the HuMANity-branded sign-in screen.
+
+Blocked:
+
+- Android Clerk OAuth is not complete. The sign-in button fires and enters
+  `Opening sign-in...`, but the hosted Clerk redirect handoff does not proceed.
+- Because auth is blocked, the following Step 43 checks remain incomplete:
+  `/api/me/profile`, profile save, R2 profile photo upload, report/block
+  signed-in UI, and authenticated persistence.
+
+Next QA focus:
+
+- Fix and retest the Play-installed Android Clerk hosted redirect handoff before
+  continuing profile/upload/report-block smoke testing.
+
 ## Step 36 Legal And Data Safety Prep Update
 
 Date: 2026-07-09

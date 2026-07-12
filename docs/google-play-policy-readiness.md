@@ -387,3 +387,28 @@ Policy forms should wait until a Play-installed `1.0.8` pass confirms:
 - R2 profile photo upload.
 - Support route from inside the app.
 - Report/block visibility with safe QA profiles.
+
+## Step 43 Policy Readiness Update
+
+Date: 2026-07-12
+
+Google Play Internal testing remains the only Android track used for this pass.
+No production rollout was started.
+
+Latest internal build:
+
+- Track: Internal testing.
+- Latest release: `11 (1.0.10)`.
+- Installed from Google Play on the Play Store AVD with installer
+  `com.android.vending`.
+
+Policy-impacting blocker:
+
+- Account/profile, reporting, blocking, and upload flows still need a
+  Play-installed signed-in retest.
+- The current blocker is Android Clerk hosted redirect handoff from the
+  Play-installed `1.0.10` app, not a Play policy form issue.
+
+No policy forms, Data Safety answers, production submissions, tester private
+data, credentials, screenshots, AABs/APKs, signing files, or private user data
+are documented here.

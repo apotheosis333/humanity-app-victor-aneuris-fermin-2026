@@ -720,3 +720,60 @@ Support/legal result:
 Next recommended task:
 
 `TASK: STEP 43 - UPLOAD INTERNAL TESTING 1.0.8 AND RERUN AUTH PROFILE UPLOAD SUPPORT SMOKE TEST`
+
+## Step 43 Play Internal Auth Retest
+
+Date: 2026-07-12
+
+Play internal releases handled:
+
+- `9 (1.0.8)` was uploaded and published to Internal testing only.
+- The first `1.0.8` release draft accidentally kept `8 (1.0.7)` as the active
+  app bundle; a corrected Internal testing release was published with app
+  bundle `9 (1.0.8)`.
+- The Play Store AVD then installed `versionCode=9`, `versionName=1.0.8`,
+  installer `com.android.vending`.
+- `1.0.8` launched cleanly and exposed the signed-out sign-in entry.
+
+Auth findings:
+
+- `1.0.8` rendered the custom HuMANity mobile sign-in card, but the Google
+  button did not reliably start the OAuth flow during the first tap pass.
+- A small fix was prepared and published as `10 (1.0.9)`, replacing the custom
+  native sign-in card with Clerk's prebuilt sign-in component.
+- Play-installed `1.0.9` rendered a blank dark sign-in route in the Android
+  WebView, so a second small fix was needed.
+- `11 (1.0.10)` restores the HuMANity-branded native sign-in card and uses
+  Clerk's hosted sign-in redirect from the button.
+- Play-installed `1.0.10` was verified on the AVD:
+  - Package ID: `app.humanity.global`.
+  - Version code: `11`.
+  - Version name: `1.0.10`.
+  - Installer package: `com.android.vending`.
+
+Current blocker:
+
+- In Play-installed `1.0.10`, the sign-in button changes to `Opening sign-in...`
+  but the Clerk hosted redirect does not leave the native sign-in screen.
+- No localhost redirect, crash, native permission prompt, or obvious Android
+  runtime exception was observed during this pass.
+- Production OAuth, native callback, `/api/me/profile`, profile save, R2 profile
+  photo upload, and report/block signed-in UI remain blocked on completing the
+  Android Clerk redirect handoff.
+
+Routes verified during this pass:
+
+- Home launch on Play-installed builds passed.
+- Support/legal routes were not fully retested after the auth blocker because
+  the Step 43 focus stayed on the Play-installed authentication path.
+
+Security notes:
+
+- No tester email address, test credentials, Google credentials, cookies,
+  tokens, Clerk keys, Railway tokens, R2 keys, signed URLs, `.env` values,
+  keystores, signing properties, AABs, APKs, build outputs, screenshots, or
+  private user data are documented here.
+
+Next recommended task:
+
+`TASK: STEP 44 - FIX PLAY-INSTALLED ANDROID CLERK HOSTED REDIRECT HANDOFF`
