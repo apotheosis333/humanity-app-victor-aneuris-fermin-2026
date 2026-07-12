@@ -574,3 +574,80 @@ Security notes:
 Next recommended task:
 
 `TASK: STEP 41C - RESOLVE PLAY INTERNAL 1.0.7 SERVING BLOCKER AND RERUN PRODUCTION SMOKE TEST`
+
+## Step 41C Play Internal 1.0.7 Serving Fix
+
+Date: 2026-07-11
+
+Root cause:
+
+- Google Play Console had app bundle `8 (1.0.7)` uploaded, but the bundle was
+  inactive and not attached to an active Internal testing release.
+- The active Internal testing release was still `7 (1.0.6)`, so the Play Store
+  AVD was correctly installing `1.0.6` even after cache clears and reinstalls.
+
+Play Console action:
+
+- Created an Internal testing release using the existing uploaded app bundle
+  `8 (1.0.7)` from the app bundle library.
+- No new AAB was uploaded.
+- No production rollout was started.
+- Play Console showed Internal testing as active with latest release
+  `8 (1.0.7)` and status `Available to internal testers`.
+- The only release warning shown was the standard supported-devices comparison;
+  no devices were reported as newly unsupported.
+
+Play Store AVD update:
+
+- AVD: `HuMANity_PlayStore_Test_API_36`.
+- The Play Store listing offered an update and showed the `1.0.7` release notes.
+- The app updated through Google Play, not sideloading.
+- Installed package verification:
+  - Package ID: `app.humanity.global`.
+  - Version code: `8`.
+  - Version name: `1.0.7`.
+  - Installer package: `com.android.vending`.
+
+Production data smoke result:
+
+- Play-installed app launch: passed.
+- Blank WebView check: passed after normal startup delay.
+- Home rendered with HuMANity branding.
+- Explore opened in the Play-installed `1.0.7` build.
+- Production country cards rendered in the app; Egypt and Ethiopia were visible.
+- Workstation backend check confirmed `GET /api/countries` returned `24`
+  baseline public country records.
+- The prior Play-installed `1.0.6` zero-country/old-serving blocker is resolved.
+
+Legal route smoke result:
+
+- Footer legal links were visible in the Play-installed app.
+- Privacy route rendered readable mobile legal copy.
+- Terms route rendered readable mobile legal copy.
+- Data Deletion route rendered readable mobile data deletion instructions.
+- The compact footer Support tap was inconsistent in this viewport and should be
+  retested from a top-of-page or larger viewport position. The `/support` route
+  exists in source and remains part of the public legal route set.
+
+Authenticated flow status:
+
+- A fresh production Clerk sign-in, `/api/me/profile`, profile edit, R2 profile
+  photo upload, persistence, and report/block UI retest were not completed in
+  this pass.
+- The current emulator UI did not expose a reliable sign-in/profile entry point
+  from the tested screen positions, and the app only resolves its OAuth callback
+  native scheme, not arbitrary native route deep links such as `/profile`.
+- The installed release did not expose a WebView DevTools target for direct
+  route inspection.
+
+Security notes:
+
+- No tester email address is recorded here.
+- No test credentials are recorded here.
+- No Google credentials, cookies, tokens, Clerk keys, Railway tokens, R2 keys,
+  signed URLs, `.env` values, keystores, signing properties, AABs, APKs, build
+  outputs, screenshots, or private user data are committed.
+
+Next recommended task:
+
+`TASK: STEP 42 - COMPLETE PLAY-INSTALLED 1.0.7 AUTH PROFILE UPLOAD AND SUPPORT ROUTE RETEST`

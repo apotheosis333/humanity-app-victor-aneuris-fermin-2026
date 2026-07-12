@@ -306,6 +306,57 @@ Next recommended task:
 
 `TASK: STEP 41C - RESOLVE PLAY INTERNAL 1.0.7 SERVING BLOCKER AND RERUN PRODUCTION SMOKE TEST`
 
+## Step 41C 1.0.7 Serving Fix And Public Smoke Result
+
+Date: 2026-07-11
+
+Status:
+
+- The Play internal serving blocker was resolved in Play Console.
+- App bundle `8 (1.0.7)` had been uploaded but was inactive because it was not
+  attached to an active Internal testing release.
+- A new Internal testing release was created from the existing app bundle
+  library entry for `8 (1.0.7)`.
+- No new AAB was uploaded and no production rollout was started.
+- Play Console now shows Internal testing active with latest release
+  `8 (1.0.7)` available to internal testers.
+- The Play Store AVD updated from `7 (1.0.6)` to `8 (1.0.7)` through Google
+  Play.
+
+Installed package verification:
+
+- Package ID: `app.humanity.global`.
+- Version code: `8`.
+- Version name: `1.0.7`.
+- Installer package: `com.android.vending`.
+
+Public app smoke result:
+
+- App launch: passed.
+- Blank WebView check: passed after normal startup delay.
+- Home rendered with HuMANity branding.
+- Explore opened and rendered production country cards.
+- Egypt and Ethiopia were visible in the Play-installed app.
+- Deployed backend `GET /api/countries` returned 24 country records from the
+  workstation.
+- Privacy, Terms, and Data Deletion routes rendered readable mobile copy.
+
+Remaining QA:
+
+- Fresh production Clerk OAuth, `/api/me/profile`, profile edit, R2 profile
+  photo upload, persistence, and report/block UI were not completed in this
+  pass because the tested emulator session did not expose a reliable
+  sign-in/profile entry point.
+- The compact footer Support tap was inconsistent in the tested viewport and
+  needs one more Play-installed route retest.
+- The app's native scheme resolves the OAuth callback, but not arbitrary
+  `/profile` route deep links, so this retest should use the actual UI sign-in
+  path or a prepared signed-in tester session.
+
+Next recommended task:
+
+`TASK: STEP 42 - COMPLETE PLAY-INSTALLED 1.0.7 AUTH PROFILE UPLOAD AND SUPPORT ROUTE RETEST`
+
 ## Step 36 Legal And Data Safety Prep Update
 
 Date: 2026-07-09

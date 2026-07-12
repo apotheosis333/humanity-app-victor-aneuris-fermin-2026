@@ -853,3 +853,40 @@ Security notes:
 - No tester email addresses, Google credentials, Clerk keys, Railway tokens, R2
   keys, `.env` files, signing files, AABs/APKs, build outputs, cookies,
   screenshots, or private account data are documented here.
+
+## Step 41C Internal Testing Release 8 Activation
+
+Date: 2026-07-11
+
+Release status:
+
+- Play Console was inspected because the Play Store AVD kept receiving
+  `7 (1.0.6)` even after `8 (1.0.7)` had been uploaded.
+- The serving blocker was that app bundle `8 (1.0.7)` was inactive and not
+  attached to an active Internal testing release.
+- An Internal testing release was created using the existing uploaded app bundle
+  `8 (1.0.7)` from the app bundle library.
+- No new AAB was uploaded.
+- No production release or production rollout was started.
+- Play Console now shows Internal testing latest release `8 (1.0.7)`,
+  available to internal testers.
+
+Play-installed AVD verification:
+
+- AVD: `HuMANity_PlayStore_Test_API_36`.
+- The Play Store listing offered the `1.0.7` update.
+- The app updated through Google Play.
+- Installed package verification:
+  - Package ID: `app.humanity.global`.
+  - Version code: `8`.
+  - Version name: `1.0.7`.
+  - Installer package: `com.android.vending`.
+
+Observed status:
+
+- App launch and home render passed.
+- Explore rendered production country cards from the Railway backend.
+- Backend `GET /api/countries` returned 24 records from the workstation.
+- Privacy, Terms, and Data Deletion routes rendered in the Play-installed app.
+- Support and the authenticated profile/upload/report-block flows still need a
+  focused follow-up retest from a reliable signed-in entry point.
