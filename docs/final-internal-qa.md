@@ -357,6 +357,47 @@ Next recommended task:
 
 `TASK: STEP 42 - COMPLETE PLAY-INSTALLED 1.0.7 AUTH PROFILE UPLOAD AND SUPPORT ROUTE RETEST`
 
+## Step 42 Auth Entry Retest And 1.0.8 Prep
+
+Date: 2026-07-12
+
+Play-installed app checked:
+
+- Package ID: `app.humanity.global`.
+- Version code: `8`.
+- Version name: `1.0.7`.
+- Installer package: `com.android.vending`.
+
+Result:
+
+- App launch passed.
+- No blank WebView or unexpected native permission prompt was observed.
+- The signed-out session did not expose a reliable sign-in/profile entry point.
+- The header auth control stayed in Clerk loading state and therefore hid the
+  `/sign-in` link.
+- Profile, production Clerk OAuth, `/api/me/profile`, profile save, R2 photo
+  upload, and report/block signed-in UI were blocked in the Play-installed
+  `1.0.7` build.
+
+Fix status:
+
+- A small code fix was prepared so the header auth control always exposes the
+  `/sign-in` route while Clerk is initializing.
+- Android metadata was bumped to `9 (1.0.8)`.
+- A signed `1.0.8` AAB was built locally after validation.
+- The AAB was not uploaded or published.
+- Production rollout was not started.
+
+Support/legal:
+
+- Public Support, Privacy, Terms, and Data Deletion URLs returned `200`.
+- Support still needs a Play-installed in-app route retest after `1.0.8` is
+  distributed through Internal testing.
+
+Next recommended task:
+
+`TASK: STEP 43 - UPLOAD INTERNAL TESTING 1.0.8 AND RERUN AUTH PROFILE UPLOAD SUPPORT SMOKE TEST`
+
 ## Step 36 Legal And Data Safety Prep Update
 
 Date: 2026-07-09

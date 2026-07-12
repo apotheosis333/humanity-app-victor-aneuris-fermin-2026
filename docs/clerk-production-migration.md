@@ -249,3 +249,28 @@ Security notes:
 - Production Clerk keys, Railway tokens, Google credentials, tester emails,
   `.env` files, signing files, AABs/APKs, build outputs, cookies, and private
   account data were not committed.
+
+## Step 42 Android Clerk Loading Finding
+
+Date: 2026-07-12
+
+Play-installed `8 (1.0.7)` uses the production Clerk configuration in the
+packaged Android app, but the signed-out header auth control remained in a Clerk
+loading state during the Android WebView retest. This hid the intended
+`/sign-in` entry point.
+
+The immediate app-side fix is intentionally narrow:
+
+- Keep the production Clerk configuration unchanged.
+- Do not expose or print Clerk keys.
+- Render the existing `/sign-in` link while Clerk is still initializing, so
+  Android users are not trapped behind a loading-only auth control.
+- Retest production Google OAuth from the Play-installed `9 (1.0.8)` build after
+  it is uploaded to Internal testing.
+
+Remaining Clerk validation:
+
+- Confirm the native Google OAuth screen appears.
+- Confirm no Clerk Development warning appears.
+- Confirm Google OAuth returns through `app.humanity.global://callback`.
+- Confirm `/api/me/profile` succeeds after sign-in.

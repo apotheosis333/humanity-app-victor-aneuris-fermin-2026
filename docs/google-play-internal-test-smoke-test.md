@@ -651,3 +651,72 @@ Security notes:
 Next recommended task:
 
 `TASK: STEP 42 - COMPLETE PLAY-INSTALLED 1.0.7 AUTH PROFILE UPLOAD AND SUPPORT ROUTE RETEST`
+
+## Step 42 Play-Installed 1.0.7 Auth Entry Retest
+
+Date: 2026-07-12
+
+Play-installed baseline:
+
+- AVD: `HuMANity_PlayStore_Test_API_36`.
+- Package ID: `app.humanity.global`.
+- Installed version code: `8`.
+- Installed version name: `1.0.7`.
+- Installer package: `com.android.vending`.
+- Launch from the Play-installed app: passed.
+- Blank WebView check: passed.
+- Unexpected native runtime permissions: none observed.
+- Requested Android permissions remain limited to `android.permission.INTERNET`
+  plus the app's signature-scoped dynamic receiver permission.
+
+Auth/profile entry result:
+
+- The intended signed-out entry point is the header auth control, which should
+  link to `/sign-in`.
+- In the Play-installed `1.0.7` Android WebView, the header auth control stayed
+  in the Clerk loading skeleton state instead of becoming a tappable Sign In
+  link.
+- The mobile drawer did not show Profile, confirming the current app session was
+  signed out.
+- Protected routes such as Connections/Messages can also wait on Clerk
+  `isLoaded`, so they did not provide a reliable alternate sign-in path during
+  this pass.
+
+Packaged configuration check:
+
+- The installed bundle contains a live Clerk publishable-key marker, the
+  production Railway API base URL, and `app.humanity.global://callback`.
+- No key values, tokens, cookies, sessions, signed URLs, or credentials were
+  printed or documented.
+
+Code fix prepared:
+
+- The header auth control now renders the existing `/sign-in` link even while
+  Clerk is still initializing, instead of hiding the entry point behind a
+  loading-only skeleton.
+- Android metadata was advanced to `9 (1.0.8)` for the next Internal testing
+  build.
+- A signed `1.0.8` AAB was built locally after validation.
+- No AAB was uploaded to Google Play.
+- No Google Play release was created or published.
+- No production rollout was started.
+
+Smoke tests not completed on Play-installed `1.0.7`:
+
+- Production Clerk Google OAuth.
+- Native callback return through `app.humanity.global://callback`.
+- `/api/me/profile`.
+- Profile save.
+- R2 profile photo upload.
+- Report/block signed-in UI.
+
+Support/legal result:
+
+- Public web policy URLs returned `200` for `/support`, `/privacy`, `/terms`,
+  and `/data-deletion`.
+- The Play-installed app still needs Support route verification after the
+  `1.0.8` auth-entry fix is available through Google Play Internal testing.
+
+Next recommended task:
+
+`TASK: STEP 43 - UPLOAD INTERNAL TESTING 1.0.8 AND RERUN AUTH PROFILE UPLOAD SUPPORT SMOKE TEST`

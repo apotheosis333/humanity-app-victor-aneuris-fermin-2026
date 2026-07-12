@@ -890,3 +890,39 @@ Observed status:
 - Privacy, Terms, and Data Deletion routes rendered in the Play-installed app.
 - Support and the authenticated profile/upload/report-block flows still need a
   focused follow-up retest from a reliable signed-in entry point.
+
+## Step 42 Android 1.0.8 Auth Entry Fix Prepared
+
+Date: 2026-07-12
+
+Step 42 retested the Play-installed `8 (1.0.7)` app and found that the
+signed-out auth/profile entry point was still not reliable on Android.
+
+Findings:
+
+- The Play-installed app was confirmed as `app.humanity.global`,
+  `versionCode=8`, `versionName=1.0.7`, installed by `com.android.vending`.
+- The app launched without a blank WebView or unexpected native permission
+  prompt.
+- The session was signed out; the mobile drawer did not show Profile.
+- The header auth control remained in its Clerk loading skeleton state, hiding
+  the intended `/sign-in` link.
+- Because Clerk did not reach `isLoaded`, protected pages also did not provide a
+  dependable sign-in gate.
+
+Prepared fix:
+
+- The header auth control now links to `/sign-in` even while Clerk is still
+  initializing.
+- Android version metadata is prepared as `9 (1.0.8)`.
+- Full validation passed and a local signed `1.0.8` AAB was built.
+- The `1.0.8` AAB has not been uploaded to Play Console.
+- No Internal testing release was created for `1.0.8`.
+- No production rollout was started.
+
+Next Play Console step:
+
+- Upload the signed `1.0.8` AAB to Internal testing only after approval.
+- Publish only to Internal testing, then update the Play Store AVD from Google
+  Play and rerun production Clerk auth, profile save, R2 upload, Support route,
+  and report/block visibility checks.

@@ -307,7 +307,16 @@ function AuthControl() {
   const { t } = useTranslation();
 
   if (!isLoaded) {
-    return <div className="ml-1 md:ml-2 h-9 w-9 rounded-full glass border border-white/10 animate-pulse" />;
+    return (
+      <Link
+        href="/sign-in"
+        aria-label={t("nav.signIn")}
+        className="ml-1 md:ml-2 text-sm font-semibold transition-all duration-300 flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 text-white/80 hover:text-white hover:bg-white/5"
+      >
+        <LogIn className="h-4 w-4" />
+        <span className="hidden sm:inline">{t("nav.signIn")}</span>
+      </Link>
+    );
   }
 
   if (isSignedIn) {

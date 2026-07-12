@@ -357,3 +357,33 @@ Remaining blockers:
 - Clerk production migration is still required before broader testing or
   production review.
 - Play Console policy URLs have not been entered/submitted yet.
+
+## Step 42 Policy Readiness Update
+
+Date: 2026-07-12
+
+The Play-installed `8 (1.0.7)` app is not ready for Play policy submission yet
+because the signed-out Android auth/profile entry point was not reliable during
+the retest.
+
+Current status:
+
+- Public backend country data works.
+- Public Support, Privacy, Terms, and Data Deletion URLs return `200`.
+- The Android app launches from Google Play Internal testing.
+- The signed-out auth control can stay in Clerk loading state in `1.0.7`,
+  blocking production Clerk OAuth/profile/upload verification.
+
+Prepared remediation:
+
+- Android `9 (1.0.8)` has been prepared with a small auth-entry fix.
+- A signed `1.0.8` AAB exists locally but has not been uploaded or published.
+
+Policy forms should wait until a Play-installed `1.0.8` pass confirms:
+
+- Production Clerk Google OAuth.
+- `/api/me/profile`.
+- Profile save.
+- R2 profile photo upload.
+- Support route from inside the app.
+- Report/block visibility with safe QA profiles.
