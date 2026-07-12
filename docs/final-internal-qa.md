@@ -270,6 +270,42 @@ Next recommended task:
 
 `TASK: STEP 41B - INSTALL PLAY INTERNAL 1.0.7 AFTER PROPAGATION AND COMPLETE PRODUCTION AUTH SMOKE TEST`
 
+## Step 41B Play Store Serving Blocker
+
+Date: 2026-07-11
+
+Status:
+
+- Play Console shows Internal testing release `8 (1.0.7)` as available to
+  internal testers.
+- The Play Store AVD still received `7 (1.0.6)` after uninstalling and
+  reinstalling from Google Play Internal testing.
+- Clearing Play Store app data/cache and reopening the opt-in/listing did not
+  change the served build.
+- Installed package verification after reinstall:
+  - Package ID: `app.humanity.global`.
+  - Version code: `7`.
+  - Version name: `1.0.6`.
+  - Installer package: `com.android.vending`.
+
+Result:
+
+- The Play-installed `1.0.7` smoke test remains blocked by Google Play serving
+  the older internal build to the tester AVD.
+- No sideloaded APK/AAB was used.
+- No production rollout was started.
+
+Remaining QA:
+
+- Confirm Play Store serves `8 (1.0.7)`.
+- Rerun Explore, production Clerk Google OAuth, `/api/me/profile`, profile edit,
+  R2 profile upload, legal/data-deletion route, and report/block checks from the
+  Play-installed `1.0.7` build.
+
+Next recommended task:
+
+`TASK: STEP 41C - RESOLVE PLAY INTERNAL 1.0.7 SERVING BLOCKER AND RERUN PRODUCTION SMOKE TEST`
+
 ## Step 36 Legal And Data Safety Prep Update
 
 Date: 2026-07-09

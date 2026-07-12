@@ -505,3 +505,72 @@ Security notes:
 Next recommended task:
 
 `TASK: STEP 41B - INSTALL PLAY INTERNAL 1.0.7 AFTER PROPAGATION AND COMPLETE PRODUCTION AUTH SMOKE TEST`
+
+## Step 41B Play Store Propagation Recheck
+
+Date: 2026-07-11
+
+Play Console state:
+
+- Google Play Console Internal testing release `8 (1.0.7)` is visible.
+- Release `8 (1.0.7)` shows `Available to internal testers`.
+- The release is on the Internal testing track.
+- No production rollout was started or changed during this step.
+
+Play Store AVD refresh attempts:
+
+- AVD: `HuMANity_PlayStore_Test_API_36`.
+- The previously installed Play build was `7 (1.0.6)` from
+  `com.android.vending`.
+- The Play Store listing still showed `1.0.6` release notes and did not offer
+  an Update button.
+- The app was uninstalled and reinstalled from the Google Play Internal testing
+  listing only.
+- Play Store app data/cache was cleared, then the opt-in/listing was reopened
+  and the app was reinstalled from Google Play again.
+
+Installed result after reinstall:
+
+- Package ID: `app.humanity.global`.
+- Installed version code: `7`.
+- Installed version name: `1.0.6`.
+- Installer package: `com.android.vending`.
+
+Conclusion:
+
+- Google Play is still serving `7 (1.0.6)` to the Play Store AVD even though
+  Play Console shows `8 (1.0.7)` available to internal testers.
+- A valid Play-installed `1.0.7` smoke test could not be completed in this
+  session.
+- The app was not sideloaded, and no local APK/AAB install was used to fake
+  Play-installed success.
+
+Blocked smoke tests:
+
+- Explore production country-data retest on Play-installed `1.0.7`.
+- Production Clerk Google OAuth callback retest.
+- Authenticated `/api/me/profile` retest.
+- Profile edit and R2 profile photo upload retest.
+- Privacy, Terms, Support, and Data Deletion route retest.
+- Report/block UI retest.
+
+Recommended next action:
+
+1. Wait for Google Play tester-serving cache to catch up, or inspect Play
+   Console release/track/draft state for anything preventing `8 (1.0.7)` from
+   being served to this tester/device.
+2. Reopen the Play Store listing and confirm the visible listing notes or
+   installed package metadata shows `8 (1.0.7)`.
+3. Only then rerun the production auth/profile/R2/legal smoke test.
+
+Security notes:
+
+- No tester email address is recorded here.
+- No test credentials are recorded here.
+- No Google credentials, cookies, tokens, Clerk keys, Railway tokens, R2 keys,
+  signed URLs, `.env` values, keystores, signing properties, AABs, APKs, build
+  outputs, screenshots, or private user data are committed.
+
+Next recommended task:
+
+`TASK: STEP 41C - RESOLVE PLAY INTERNAL 1.0.7 SERVING BLOCKER AND RERUN PRODUCTION SMOKE TEST`
