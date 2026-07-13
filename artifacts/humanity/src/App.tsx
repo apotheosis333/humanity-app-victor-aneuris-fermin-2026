@@ -1,7 +1,7 @@
 import { Component, type ErrorInfo, type ReactNode, useEffect, useRef, useState } from "react";
 import { Switch, Route, useLocation, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider, useQueryClient } from "@tanstack/react-query";
-import { ClerkProvider, SignIn, SignUp, useAuth, useClerk } from "@clerk/react";
+import { ClerkProvider, SignIn, SignUp, useAuth, useClerk, useSignIn } from "@clerk/react";
 import { dark } from "@clerk/themes";
 import { App as CapacitorApp } from "@capacitor/app";
 import { Capacitor } from "@capacitor/core";
@@ -34,11 +34,21 @@ const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY?.trim();
 const isClerkDevelopmentKey = clerkPubKey?.startsWith("pk_test_") ?? false;
 
 const isNativeMobile = Capacitor.isNativePlatform();
-const clerkProxyUrl = isNativeMobile
-  ? undefined
-  : import.meta.env.VITE_CLERK_PROXY_URL?.trim() || undefined;
+const rawClerkProxyUrl = import.meta.env.VITE_CLERK_PROXY_URL?.trim() || undefined;
+const isLocalClerkProxyUrl =
+  Boolean(rawClerkProxyUrl) &&
+  (rawClerkProxyUrl!.startsWith("/") ||
+    /^https?:\/\/(?:localhost|127\.0\.0\.1|\[::1\])(?::|\/|$)/i.test(rawClerkProxyUrl!));
+const clerkProxyUrl =
+  isClerkDevelopmentKey || (isNativeMobile && isLocalClerkProxyUrl) ? undefined : rawClerkProxyUrl;
 const mobileCallbackUrl = "app.humanity.global://callback";
 const ssoCallbackPath = "/sso-callback";
+const nativeClerkScriptProps = isNativeMobile
+  ? {
+      __internal_clerkJSUrl: "https://cdn.jsdelivr.net/npm/@clerk/clerk-js@6/dist/clerk.browser.js",
+      __internal_clerkUIUrl: "https://cdn.jsdelivr.net/npm/@clerk/ui@1/dist/ui.browser.js",
+    }
+  : {};
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 const appHomePath = basePath || "/";
@@ -146,22 +156,57 @@ const clerkAppearance = {
 const queryClient = new QueryClient();
 
 function NativeSignInPage() {
-  const clerk = useClerk();
+  const { signIn } = useSignIn();
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const redirectToExternalVerification = () => {
+    const redirectUrl = signIn?.firstFactorVerification?.externalVerificationRedirectURL?.href;
+    if (redirectUrl) {
+      window.location.assign(redirectUrl);
+      return true;
+    }
+    return false;
+  };
 
   const signInWithGoogle = async () => {
     if (isSubmitting) return;
 
+    if (!signIn) {
+      setError("Sign in is still loading. Please try again in a moment.");
+      return;
+    }
+
     setError(null);
     setIsSubmitting(true);
     try {
-      await clerk.redirectToSignIn({
-        signInForceRedirectUrl: mobileCallbackUrl,
-        signInFallbackRedirectUrl: mobileCallbackUrl,
-      });
+      const result = await Promise.race([
+        signIn.sso({
+          strategy: "oauth_google",
+          redirectUrl: appHomePath,
+          redirectCallbackUrl: mobileCallbackUrl,
+        }),
+        new Promise<"pending">((resolve) => {
+          window.setTimeout(() => resolve("pending"), 2000);
+        }),
+      ]);
+
+      if (redirectToExternalVerification()) {
+        return;
+      }
+
+      if (result === "pending") {
+        throw new Error("Clerk did not provide a Google sign-in redirect URL.");
+      }
+
+      if (result.error) {
+        throw result.error;
+      }
+      if (!redirectToExternalVerification()) {
+        throw new Error("Clerk did not provide a Google sign-in redirect URL.");
+      }
     } catch (err) {
-      console.error("Native sign-in redirect failed", err);
+      console.error("Native Google sign-in failed", err);
       setError("Sign in could not start. Please try again.");
       setIsSubmitting(false);
     }
@@ -454,6 +499,7 @@ function ClerkProviderWithRoutes() {
 
   return (
     <ClerkProvider
+      {...nativeClerkScriptProps}
       publishableKey={clerkPubKey}
       proxyUrl={clerkProxyUrl}
       appearance={clerkAppearance}

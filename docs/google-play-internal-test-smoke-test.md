@@ -777,3 +777,59 @@ Security notes:
 Next recommended task:
 
 `TASK: STEP 44 - FIX PLAY-INSTALLED ANDROID CLERK HOSTED REDIRECT HANDOFF`
+
+## Step 44 Clerk Redirect Handoff Investigation
+
+Date: 2026-07-12
+
+Internal testing releases handled:
+
+- `13 (1.0.12)` was approved for Internal testing only during the first
+  redirect-handoff pass.
+- `15 (1.0.14)` was uploaded and published to Internal testing only after
+  adding a native Google SSO callback handoff path.
+- Play-installed `1.0.14` was verified on the AVD with installer
+  `com.android.vending`, but the Google sign-in flow still did not open the
+  OAuth surface.
+
+Debug-only probe:
+
+- A local debug-only `16 (1.0.15)` build was used to isolate the blocker.
+- The native build can now load Clerk JS/UI through explicit CDN script URLs.
+- The app now allows a deployed, non-local `VITE_CLERK_PROXY_URL` in native
+  builds while still ignoring relative, localhost, and loopback Clerk proxy
+  values for Capacitor.
+
+Current blocker:
+
+- The Clerk frontend API custom host configured by the production publishable
+  key does not resolve in DNS from the test machine or Android WebView.
+- The public app domain also does not resolve, so the backend Clerk proxy cannot
+  yet present a Clerk-recognized custom-domain host.
+- A deployed backend proxy host alone is not enough; Clerk rejects it when the
+  request cannot be attributed to the configured Clerk instance/domain.
+
+Result:
+
+- Release `15 (1.0.14)` is published to Internal testing only, but Android
+  Google OAuth remains blocked.
+- Another Play release should not be uploaded until the Clerk custom domain DNS
+  is fixed or the mobile build is switched to a production Clerk publishable key
+  whose frontend API host resolves publicly.
+
+Next required owner action:
+
+1. In Clerk, either finish the custom domain setup for the production Clerk
+   frontend API host, or obtain a production publishable key that uses a
+   reachable default Clerk frontend API host.
+2. In DNS, ensure the app/custom Clerk hosts required by Clerk resolve publicly.
+3. Rebuild the Android app with the reachable Clerk configuration.
+4. Upload the next Internal testing release only after debug validation confirms
+   Clerk no longer fails on frontend API reachability/attribution.
+
+Security notes:
+
+- No tester email address, test credentials, Google credentials, cookies,
+  tokens, Clerk keys, Railway tokens, R2 keys, signed URLs, `.env` values,
+  keystores, signing properties, AABs, APKs, build outputs, screenshots, or
+  private user data are documented here.
