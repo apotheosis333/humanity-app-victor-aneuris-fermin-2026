@@ -882,3 +882,38 @@ Release status:
 - `versionCode 16` / `versionName 1.0.15` remains the next source candidate.
 - No `1.0.15` AAB was uploaded or published because the DNS blocker remains.
 - No production rollout or Play policy form submission occurred.
+
+## Step 44C DNS Access Recheck
+
+Date: 2026-07-12
+
+GoDaddy access result:
+
+- The GoDaddy DNS management page was opened again for `humanity.global`.
+- The logged-in GoDaddy account still returned `Domain not found`.
+- No editable DNS zone was available for `humanity.global`.
+- No DNS records were added, edited, or deleted.
+
+Public DNS result:
+
+- `humanity.global` still uses `ns07.domaincontrol.com` and
+  `ns08.domaincontrol.com`.
+- The required Clerk CNAME records for `clerk`, `accounts`, `clkmail`,
+  `clk._domainkey`, and `clk2._domainkey` were not publicly resolvable during
+  this check.
+
+Release status:
+
+- Android `versionCode 16` / `versionName 1.0.15` was not rebuilt, uploaded, or
+  published because Clerk custom-domain DNS remains unconfigured.
+- Google Play Internal testing was not changed.
+- No production rollout or Play policy form submission occurred.
+
+Next required owner action:
+
+1. Sign out of the current GoDaddy account or switch accounts.
+2. Sign into the GoDaddy account that actually owns or can manage
+   `humanity.global`, or accept/grant delegate DNS access for that domain.
+3. Confirm GoDaddy DNS management opens an editable zone for `humanity.global`.
+4. Resume Step 44C to add only the five Clerk CNAME records and continue
+   verification.
