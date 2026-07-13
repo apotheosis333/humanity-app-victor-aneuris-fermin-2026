@@ -833,3 +833,52 @@ Security notes:
   tokens, Clerk keys, Railway tokens, R2 keys, signed URLs, `.env` values,
   keystores, signing properties, AABs, APKs, build outputs, screenshots, or
   private user data are documented here.
+
+## Step 44B Clerk DNS Access Blocker
+
+Date: 2026-07-12
+
+Clerk production domain status:
+
+- Clerk Production is configured with primary domain `humanity.global`.
+- Clerk shows DNS configuration as `0/5 Verified`.
+- The production publishable key expects the Clerk Frontend API host under
+  `clerk.humanity.global`, which currently does not resolve publicly.
+- Android auth remains blocked until Clerk production DNS verifies and
+  certificates are issued, or until the app is switched to a reachable Clerk
+  production Frontend API configuration.
+
+Required Clerk DNS records:
+
+```text
+clerk            CNAME  frontend-api.clerk.services
+accounts         CNAME  accounts.clerk.services
+clkmail          CNAME  mail.wp979peffdxu.clerk.services
+clk._domainkey   CNAME  dkim1.wp979peffdxu.clerk.services
+clk2._domainkey  CNAME  dkim2.wp979peffdxu.clerk.services
+```
+
+GoDaddy access result:
+
+- Public RDAP confirms `humanity.global` is registered through GoDaddy.
+- Public DNS confirms the authoritative nameservers are
+  `ns07.domaincontrol.com` and `ns08.domaincontrol.com`.
+- The GoDaddy account opened during Step 44B did not show `humanity.global` in
+  the registered-domain portfolio.
+- GoDaddy direct DNS management for `humanity.global` returned `Domain not
+  found`, so the DNS zone is not accessible from that logged-in account.
+- No DNS records were added or changed.
+
+Next required owner action:
+
+1. Sign in to the GoDaddy account that owns or can manage `humanity.global`, or
+   grant delegate access to the current account for DNS management.
+2. Add only the five Clerk CNAME records above.
+3. Return to Clerk Production Domains and rerun/confirm DNS verification.
+4. Continue Step 44B only after Clerk DNS and SSL certificate status are active.
+
+Release status:
+
+- `versionCode 16` / `versionName 1.0.15` remains the next source candidate.
+- No `1.0.15` AAB was uploaded or published because the DNS blocker remains.
+- No production rollout or Play policy form submission occurred.
