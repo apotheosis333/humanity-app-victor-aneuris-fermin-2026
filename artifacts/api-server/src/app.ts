@@ -2,15 +2,10 @@ import express, { type Express } from "express";
 import cors from "cors";
 import pinoHttp from "pino-http";
 import { clerkMiddleware } from "@clerk/express";
-import { publishableKeyFromHost } from "@clerk/shared/keys";
 import router from "./routes";
 import { logger } from "./lib/logger";
 import { corsOptions } from "./lib/cors";
-import {
-  CLERK_PROXY_PATH,
-  clerkProxyMiddleware,
-  getClerkProxyHost,
-} from "./middlewares/clerkProxyMiddleware";
+import { CLERK_PROXY_PATH } from "./middlewares/clerkProxyMiddleware";
 
 const app: Express = express();
 
@@ -42,7 +37,21 @@ app.use(
   }),
 );
 
-app.use(CLERK_PROXY_PATH, clerkProxyMiddleware());
+const clerkProxyUrl =
+  process.env.CLERK_PROXY_URL || process.env.VITE_CLERK_PROXY_URL || undefined;
+
+app.use(
+  clerkMiddleware({
+    frontendApiProxy: {
+      enabled: true,
+      path: CLERK_PROXY_PATH,
+    },
+    ...(clerkProxyUrl ? { proxyUrl: clerkProxyUrl } : {}),
+    ...(process.env.CLERK_PUBLISHABLE_KEY
+      ? { publishableKey: process.env.CLERK_PUBLISHABLE_KEY }
+      : {}),
+  }),
+);
 
 app.use(cors(corsOptions));
 app.use(express.json());
@@ -59,15 +68,6 @@ app.get("/health", (_req, res) => {
 app.get("/api/healthz", (_req, res) => {
   res.json({ status: "ok" });
 });
-
-app.use(
-  clerkMiddleware((req) => ({
-    publishableKey: publishableKeyFromHost(
-      getClerkProxyHost(req) ?? "",
-      process.env.CLERK_PUBLISHABLE_KEY,
-    ),
-  })),
-);
 
 app.use("/api", router);
 

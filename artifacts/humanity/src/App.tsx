@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider, useQueryClient } from "@tanstack/reac
 import { ClerkProvider, SignIn, SignUp, useAuth, useClerk, useSignIn } from "@clerk/react";
 import { dark } from "@clerk/themes";
 import { App as CapacitorApp } from "@capacitor/app";
+import { Browser } from "@capacitor/browser";
 import { Capacitor } from "@capacitor/core";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -43,12 +44,12 @@ const clerkProxyUrl =
   isClerkDevelopmentKey || (isNativeMobile && isLocalClerkProxyUrl) ? undefined : rawClerkProxyUrl;
 const mobileCallbackUrl = "app.humanity.global://callback";
 const ssoCallbackPath = "/sso-callback";
-const nativeClerkScriptProps = isNativeMobile
-  ? {
-      __internal_clerkJSUrl: "https://cdn.jsdelivr.net/npm/@clerk/clerk-js@6/dist/clerk.browser.js",
-      __internal_clerkUIUrl: "https://cdn.jsdelivr.net/npm/@clerk/ui@1/dist/ui.browser.js",
-    }
-  : {};
+const nativeClerkScriptProps =
+  isNativeMobile && clerkProxyUrl
+    ? {
+        __internal_clerkJSUrl: `${clerkProxyUrl.replace(/\/$/, "")}/npm/@clerk/clerk-js@6.25.3/dist/clerk.browser.js`,
+      }
+    : {};
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 const appHomePath = basePath || "/";
@@ -79,6 +80,8 @@ function useNativeDeepLinks() {
         if (openedUrl.protocol !== "app.humanity.global:" || openedUrl.host !== "callback") {
           return;
         }
+
+        void Browser.close().catch(() => undefined);
 
         if (openedUrl.search) {
           setLocation(`${ssoCallbackPath}${openedUrl.search}`, { replace: true });
@@ -155,19 +158,26 @@ const clerkAppearance = {
 
 const queryClient = new QueryClient();
 
+function getNativeSignInErrorMessage(err: unknown): string {
+  const clerkError = err as {
+    errors?: Array<{ code?: string; longMessage?: string; message?: string }>;
+    message?: string;
+  };
+  const firstError = clerkError.errors?.[0];
+  const detail = firstError?.longMessage ?? firstError?.message ?? clerkError.message;
+  const code = firstError?.code ? `${firstError.code}: ` : "";
+
+  if (detail) {
+    return `Sign in could not start. ${code}${detail}`;
+  }
+
+  return "Sign in could not start. Please try again.";
+}
+
 function NativeSignInPage() {
   const { signIn } = useSignIn();
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const redirectToExternalVerification = () => {
-    const redirectUrl = signIn?.firstFactorVerification?.externalVerificationRedirectURL?.href;
-    if (redirectUrl) {
-      window.location.assign(redirectUrl);
-      return true;
-    }
-    return false;
-  };
 
   const signInWithGoogle = async () => {
     if (isSubmitting) return;
@@ -180,34 +190,20 @@ function NativeSignInPage() {
     setError(null);
     setIsSubmitting(true);
     try {
-      const result = await Promise.race([
-        signIn.sso({
-          strategy: "oauth_google",
-          redirectUrl: appHomePath,
-          redirectCallbackUrl: mobileCallbackUrl,
-        }),
-        new Promise<"pending">((resolve) => {
-          window.setTimeout(() => resolve("pending"), 2000);
-        }),
-      ]);
-
-      if (redirectToExternalVerification()) {
-        return;
-      }
-
-      if (result === "pending") {
-        throw new Error("Clerk did not provide a Google sign-in redirect URL.");
-      }
+      const result = await signIn.sso({
+        strategy: "oauth_google",
+        redirectUrl: mobileCallbackUrl,
+        redirectCallbackUrl: `${window.location.origin}${ssoCallbackPath}`,
+      });
 
       if (result.error) {
         throw result.error;
       }
-      if (!redirectToExternalVerification()) {
-        throw new Error("Clerk did not provide a Google sign-in redirect URL.");
-      }
+
+      throw new Error(`Clerk did not redirect. Status: ${signIn.status ?? "unknown"}.`);
     } catch (err) {
       console.error("Native Google sign-in failed", err);
-      setError("Sign in could not start. Please try again.");
+      setError(getNativeSignInErrorMessage(err));
       setIsSubmitting(false);
     }
   };
@@ -503,6 +499,9 @@ function ClerkProviderWithRoutes() {
       publishableKey={clerkPubKey}
       proxyUrl={clerkProxyUrl}
       appearance={clerkAppearance}
+      standardBrowser={!isNativeMobile}
+      prefetchUI={!isNativeMobile}
+      allowedRedirectProtocols={["http", "https", "app.humanity.global"]}
       signInUrl={`${basePath}/sign-in`}
       signUpUrl={`${basePath}/sign-up`}
       signInForceRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
