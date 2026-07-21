@@ -412,3 +412,33 @@ Policy-impacting blocker:
 No policy forms, Data Safety answers, production submissions, tester private
 data, credentials, screenshots, AABs/APKs, signing files, or private user data
 are documented here.
+
+## Step 45 Production Auth Domain Decision
+
+Date: 2026-07-20
+
+The selected path is to recover DNS management for `humanity.global`; no new
+domain will be introduced at this stage. This avoids changing the locked Play
+package identity and keeps the native callback at
+`app.humanity.global://callback`.
+
+DNS access is still unavailable. No DNS records, nameservers, Clerk domains,
+Play releases, or policy forms changed during this decision step.
+
+When access is confirmed, the approved-scope proposal is limited to these
+Clerk CNAME hosts:
+
+```text
+clerk            CNAME  frontend-api.clerk.services
+accounts         CNAME  accounts.clerk.services
+clkmail          CNAME  mail.wp979peffdxu.clerk.services
+clk._domainkey   CNAME  dkim1.wp979peffdxu.clerk.services
+clk2._domainkey  CNAME  dkim2.wp979peffdxu.clerk.services
+```
+
+No new Internal testing or production release should be submitted until Clerk
+verifies DNS and certificates and production Google OAuth passes locally.
+
+Exact next task: recover the correct GoDaddy account, confirm the DNS zone is
+editable without a transfer or nameserver change, and request approval to add
+only the five Clerk records.

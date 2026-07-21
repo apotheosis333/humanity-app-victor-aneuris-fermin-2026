@@ -302,3 +302,41 @@ Next investigation:
 - Compare Clerk's recommended Capacitor/custom-scheme OAuth flow against the
   current `redirectToSignIn` and `handleRedirectCallback` wiring.
 - Retest only through a Play-installed build after any auth-flow change.
+
+## Step 45 Production Domain Decision
+
+Date: 2026-07-20
+
+Chosen path: recover DNS access to `humanity.global` through the GoDaddy
+account that owns or manages the domain.
+
+This path preserves the existing Clerk production domain, Google OAuth setup,
+Android package identity, and native callback. The callback remains:
+
+```text
+app.humanity.global://callback
+```
+
+DNS access is not yet available. The current GoDaddy account cannot open the
+`humanity.global` zone, and the current Cloudflare account has no managed
+domains. No nameserver change, transfer, DNS edit, or Clerk domain change is
+approved in this decision step.
+
+Once the correct GoDaddy account can open the DNS zone, add only the Clerk
+records supplied by the production Domains page:
+
+```text
+clerk            CNAME  frontend-api.clerk.services
+accounts         CNAME  accounts.clerk.services
+clkmail          CNAME  mail.wp979peffdxu.clerk.services
+clk._domainkey   CNAME  dkim1.wp979peffdxu.clerk.services
+clk2._domainkey  CNAME  dkim2.wp979peffdxu.clerk.services
+```
+
+Do not publish another Play build until Clerk verifies the records, issues the
+required certificates, and production Google OAuth opens successfully in a
+local Android test.
+
+Exact next task: recover the GoDaddy account that manages `humanity.global`,
+confirm its DNS zone opens, and then request approval to add only the five
+Clerk records above.

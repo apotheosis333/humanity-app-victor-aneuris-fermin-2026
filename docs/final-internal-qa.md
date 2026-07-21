@@ -698,3 +698,26 @@ Still required before final Play policy form work:
 - Run Play-installed smoke tests for Google OAuth, profile load/save, R2 profile
   photo upload, Explore/countries, privacy, terms, support, and data deletion.
 - Confirm the Clerk development warning is gone in the Play-installed build.
+
+## Step 45 Clerk Domain Gate
+
+Date: 2026-07-20
+
+The owner selected recovery of `humanity.global` DNS access as the production
+authentication path. This preserves the existing Android package and
+`app.humanity.global://callback` callback.
+
+Current gate:
+
+- The correct GoDaddy DNS zone is not accessible yet.
+- No replacement domain was provided.
+- No DNS or Clerk settings changed in Step 45.
+- No Play build was uploaded or published.
+
+Once access exists, add only Clerk's five CNAME records for `clerk`, `accounts`,
+`clkmail`, `clk._domainkey`, and `clk2._domainkey`. Wait for Clerk DNS and
+certificate verification, then complete a local production-auth Android test.
+Do not advance Internal testing beyond `21 (1.0.20)` before that test passes.
+
+Exact next task: verify the managing GoDaddy account can open and edit the
+`humanity.global` DNS zone, then obtain approval for the five-record DNS change.

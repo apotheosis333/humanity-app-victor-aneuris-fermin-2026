@@ -964,3 +964,32 @@ Required next action:
    release.
 4. Do not upload another AAB until production Clerk JS loads and Google OAuth
    opens successfully in a local Android test.
+
+## Step 45 Domain Access Decision
+
+Date: 2026-07-20
+
+- Chosen path: recover DNS control of `humanity.global` in the correct GoDaddy
+  account.
+- DNS access is not yet available; the current GoDaddy account cannot manage
+  the zone, and the current Cloudflare account has no domains.
+- No alternate controlled domain was provided.
+- No DNS, nameserver, registrar, Clerk domain, OAuth, or Play release changes
+  were made.
+- The Android callback remains `app.humanity.global://callback`.
+
+After access is recovered, the DNS task is limited to these Clerk CNAMEs:
+
+```text
+clerk            CNAME  frontend-api.clerk.services
+accounts         CNAME  accounts.clerk.services
+clkmail          CNAME  mail.wp979peffdxu.clerk.services
+clk._domainkey   CNAME  dkim1.wp979peffdxu.clerk.services
+clk2._domainkey  CNAME  dkim2.wp979peffdxu.clerk.services
+```
+
+Internal testing must remain on `21 (1.0.20)` until Clerk DNS and certificates
+verify and a local Android production-auth test succeeds.
+
+Exact next task: recover the managing GoDaddy account, confirm the DNS zone is
+editable, and request approval before adding the five records.
