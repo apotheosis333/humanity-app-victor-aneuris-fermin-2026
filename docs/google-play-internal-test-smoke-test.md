@@ -917,3 +917,50 @@ Next required owner action:
 3. Confirm GoDaddy DNS management opens an editable zone for `humanity.global`.
 4. Resume Step 44C to add only the five Clerk CNAME records and continue
    verification.
+
+## Release 21 Clerk Domain Recheck
+
+Date: 2026-07-20
+
+Internal testing status:
+
+- Google Play Internal testing release `21 (1.0.20)` is active.
+- The emulator restored and verified the Play-installed build with
+  `versionCode=21`, `versionName=1.0.20`, and installer
+  `com.android.vending`.
+- The production Clerk publishable key still resolves through the pending
+  `humanity.global` configuration, so Google sign-in cannot start.
+
+Domain findings:
+
+- Clerk rejected the Railway service hostname as a production application
+  domain because `railway.app` domains are not accepted for production apps.
+- No domain change was applied, and no Clerk sessions were invalidated.
+- The signed-in GoDaddy account still cannot manage `humanity.global`.
+- The signed-in Cloudflare account has no managed domains or subdomains.
+- The Clerk proxy configuration currently contains a full Railway URL in a
+  path field, producing an invalid concatenated Frontend API URL. Correcting
+  only that field cannot work until the application domain routes the proxy
+  path to the deployed backend.
+
+Debug fallback result:
+
+- A local ignored Android build environment was temporarily switched to the
+  reachable Clerk development publishable key.
+- Frontend typecheck, frontend build, Capacitor sync, and Android debug build
+  passed.
+- Clerk development JS loaded, but the development-browser handshake rejected
+  the Capacitor WebView before `signIn.sso()` could produce an OAuth URL.
+- The emulator was restored to the Play-installed `1.0.20` build afterward,
+  and the ignored local environment was restored to the production key.
+
+Required next action:
+
+1. Obtain DNS control of `humanity.global`, or provide another custom domain
+   that the owner can manage.
+2. Point that domain to the deployed application/proxy and complete Clerk's
+   required production DNS records.
+3. Verify Clerk DNS and certificates before building another Internal testing
+   release.
+4. Do not upload another AAB until production Clerk JS loads and Google OAuth
+   opens successfully in a local Android test.

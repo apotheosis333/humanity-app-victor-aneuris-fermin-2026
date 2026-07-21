@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider, useQueryClient } from "@tanstack/reac
 import { ClerkProvider, SignIn, SignUp, useAuth, useClerk, useSignIn } from "@clerk/react";
 import { dark } from "@clerk/themes";
 import { App as CapacitorApp } from "@capacitor/app";
+import { AppLauncher } from "@capacitor/app-launcher";
 import { Browser } from "@capacitor/browser";
 import { Capacitor } from "@capacitor/core";
 import { Toaster } from "@/components/ui/toaster";
@@ -198,6 +199,12 @@ function NativeSignInPage() {
 
       if (result.error) {
         throw result.error;
+      }
+
+      const redirectUrl = signIn.firstFactorVerification.externalVerificationRedirectURL;
+      if (redirectUrl) {
+        await AppLauncher.openUrl({ url: redirectUrl.toString() });
+        return;
       }
 
       throw new Error(`Clerk did not redirect. Status: ${signIn.status ?? "unknown"}.`);
