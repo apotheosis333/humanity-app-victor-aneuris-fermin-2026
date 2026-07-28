@@ -721,3 +721,41 @@ Do not advance Internal testing beyond `21 (1.0.20)` before that test passes.
 
 Exact next task: verify the managing GoDaddy account can open and edit the
 `humanity.global` DNS zone, then obtain approval for the five-record DNS change.
+
+## Step 45 Replacement Domain Resolution
+
+Date: 2026-07-21
+
+- The controlled replacement domain `humanityexplorer.app` was purchased and
+  configured as Clerk Production's primary domain.
+- Clerk DNS verification and SSL issuance completed successfully.
+- Google OAuth now includes Clerk's new production callback URL.
+- The regenerated public Clerk key is present only in ignored local mobile
+  configuration and Railway environment configuration.
+- Public checks passed for the Clerk endpoint, backend `/health`, and
+  `/api/countries`.
+- Android package identity remains `app.humanity.global`; only the Clerk web
+  domain changed.
+
+Next gate: build and locally smoke-test `22 (1.0.21)`. Do not publish that
+release to Internal testing until production Google OAuth completes on Android.
+
+## Version 22 Local Auth Gate
+
+Date: 2026-07-28
+
+Production Google OAuth now completes through the Clerk Android SDK and returns
+to the HuMANity activity. The native-to-WebView session exchange cannot finish
+because the Railway project is suspended after its trial expired; the public
+backend hostname currently serves a Railway fallback response.
+
+Required order:
+
+1. The owner selects an approved Railway plan or explicitly chooses another
+   backend host.
+2. Redeploy the current backend, including `/api/mobile-auth/web-session`.
+3. Confirm `/health` and `/api/countries` respond from the deployment.
+4. Repeat the local Android OAuth, profile, R2 upload, Explore, and legal-route
+   tests.
+5. Only after those checks pass, build and upload a new Google Play Internal
+   testing release.

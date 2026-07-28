@@ -340,3 +340,55 @@ local Android test.
 Exact next task: recover the GoDaddy account that manages `humanity.global`,
 confirm its DNS zone opens, and then request approval to add only the five
 Clerk records above.
+
+## Replacement Production Domain Completed
+
+Date: 2026-07-21
+
+- The owner purchased and controls `humanityexplorer.app` in GoDaddy.
+- Clerk Production now uses `humanityexplorer.app` as its verified primary
+  domain. DNS verification passed and Clerk issued the SSL certificates.
+- The obsolete Clerk proxy configuration tied to `humanity.global` was
+  removed before the domain change.
+- The five Clerk CNAME records for the frontend API, account portal, email,
+  and DKIM were added to the GoDaddy zone and resolve publicly.
+- The regenerated Clerk production publishable key was updated in the ignored
+  Android build environment and in the Railway backend environment. No key
+  value was written to source control.
+- Google OAuth remains enabled. The Google Cloud OAuth client now allows
+  `https://clerk.humanityexplorer.app/v1/oauth_callback`; the old callback is
+  retained temporarily as a rollback path until mobile authentication passes.
+- The Android application ID and native callback remain unchanged:
+  `app.humanity.global` and `app.humanity.global://callback`.
+
+Next release candidate: `versionCode 22`, `versionName 1.0.21`. Build and test
+it locally before uploading it to Google Play Internal testing.
+
+The Capacitor WebView uses `https://humanityexplorer.app` as its local app
+origin. Clerk production keys reject Capacitor's default `https://localhost`
+origin, even when the Clerk frontend API and DNS are configured correctly.
+`CAPACITOR_SERVER_HOSTNAME` remains available as an explicit build-time
+override.
+
+## Native Android OAuth Validation
+
+Date: 2026-07-28
+
+The local Android `22 (1.0.21)` candidate now starts Google OAuth through the
+official Clerk Android SDK instead of attempting to share a Clerk browser
+session between the Capacitor WebView and an external browser. The native flow
+completed Google authentication, returned to HuMANity, activated a Clerk
+mobile session, and produced an authenticated request to the backend web-session
+exchange endpoint.
+
+The backend exchange is intentionally short lived: an authenticated native
+session requests a one-time Clerk sign-in ticket, and the WebView consumes that
+ticket to establish its own Clerk session. The endpoint is authenticated,
+rate-limited, and returns `Cache-Control: no-store`.
+
+End-to-end validation is currently blocked by hosting, not Clerk or Android.
+The Railway service is suspended after the project trial expired. Its public
+hostname returns Railway's fallback response, so the new exchange endpoint and
+existing API routes are unavailable. Restore the Railway project on an approved
+plan, redeploy the current branch, and then repeat the local Android smoke test.
+Do not upload `22 (1.0.21)` to Google Play until that test passes.

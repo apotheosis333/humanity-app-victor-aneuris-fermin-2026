@@ -993,3 +993,50 @@ verify and a local Android production-auth test succeeds.
 
 Exact next task: recover the managing GoDaddy account, confirm the DNS zone is
 editable, and request approval before adding the five records.
+
+## Production Clerk Domain Unblocked
+
+Date: 2026-07-21
+
+- Clerk Production primary domain: `humanityexplorer.app`.
+- Clerk DNS: verified.
+- Clerk SSL certificates: issued.
+- Google OAuth callback added:
+  `https://clerk.humanityexplorer.app/v1/oauth_callback`.
+- Railway backend health and `/api/countries` both returned HTTP 200 after the
+  regenerated production publishable key was applied.
+- No new Google Play release was uploaded during the domain change.
+- The next local and Internal testing candidate is `22 (1.0.21)`.
+
+Required smoke test before Internal testing publication:
+
+1. Build and install `22 (1.0.21)` locally with the ignored production mobile
+   environment.
+2. Confirm Clerk loads without a development or localhost error.
+3. Complete Google OAuth and return through `app.humanity.global://callback`.
+4. Verify `/api/me/profile`, profile save, R2 upload, Explore countries, and
+   legal/support routes.
+
+The Android WebView origin for this candidate must be
+`https://humanityexplorer.app`. Do not ship a production Clerk build whose
+generated Capacitor configuration falls back to `https://localhost`.
+
+## Version 22 Native OAuth Result And Hosting Blocker
+
+Date: 2026-07-28
+
+- The debug build installed and launched on the Play Store emulator.
+- The native Clerk Android SDK opened Google OAuth and returned to HuMANity.
+- Clerk created and activated a native mobile session.
+- The app then attempted the authenticated WebView-session exchange at
+  `/api/mobile-auth/web-session`.
+- That request failed because the Railway backend service is suspended and its
+  hostname currently returns a provider fallback response without the app's
+  API or CORS headers.
+- The failure is after OAuth; it is not a DNS, Clerk-domain, callback, or Android
+  activity failure.
+
+No `22 (1.0.21)` AAB was uploaded or published during this test. Restore and
+redeploy the Railway backend first, then verify the session exchange,
+`/api/me/profile`, profile save, R2 upload, Explore, and legal/support routes
+before creating any new Internal testing release.

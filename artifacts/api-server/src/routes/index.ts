@@ -15,6 +15,7 @@ import storageRouter from "./storage";
 import musicRouter from "./music";
 import worldNewsRouter from "./world-news";
 import complianceRouter from "./compliance";
+import mobileAuthRouter from "./mobile-auth";
 
 const router: IRouter = Router();
 
@@ -30,6 +31,7 @@ router.use(messagesRouter);
 router.use(dinnerTableRouter);
 router.use(worldNewsRouter);
 router.use(complianceRouter);
+router.use(mobileAuthRouter);
 router.use(countriesRouter);
 router.use(timelineRouter);
 router.use(milestonesRouter);

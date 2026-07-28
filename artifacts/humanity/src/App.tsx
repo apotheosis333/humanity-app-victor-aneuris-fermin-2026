@@ -3,10 +3,7 @@ import { Switch, Route, useLocation, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider, useQueryClient } from "@tanstack/react-query";
 import { ClerkProvider, SignIn, SignUp, useAuth, useClerk, useSignIn } from "@clerk/react";
 import { dark } from "@clerk/themes";
-import { App as CapacitorApp } from "@capacitor/app";
-import { AppLauncher } from "@capacitor/app-launcher";
-import { Browser } from "@capacitor/browser";
-import { Capacitor } from "@capacitor/core";
+import { Capacitor, registerPlugin } from "@capacitor/core";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
@@ -30,7 +27,7 @@ import Connections from "@/pages/connections";
 import Messages from "@/pages/messages";
 import { LegalPage } from "@/pages/legal";
 import { Layout } from "@/components/layout";
-import { configureApiAuthTokenGetter } from "@/lib/api-config";
+import { apiUrl, configureApiAuthTokenGetter } from "@/lib/api-config";
 
 const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY?.trim();
 const isClerkDevelopmentKey = clerkPubKey?.startsWith("pk_test_") ?? false;
@@ -43,8 +40,6 @@ const isLocalClerkProxyUrl =
     /^https?:\/\/(?:localhost|127\.0\.0\.1|\[::1\])(?::|\/|$)/i.test(rawClerkProxyUrl!));
 const clerkProxyUrl =
   isClerkDevelopmentKey || (isNativeMobile && isLocalClerkProxyUrl) ? undefined : rawClerkProxyUrl;
-const mobileCallbackUrl = "app.humanity.global://callback";
-const ssoCallbackPath = "/sso-callback";
 const nativeClerkScriptProps =
   isNativeMobile && clerkProxyUrl
     ? {
@@ -55,59 +50,17 @@ const nativeClerkScriptProps =
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 const appHomePath = basePath || "/";
 
+interface NativeClerkPlugin {
+  signIn(): Promise<{ token: string }>;
+  signOut(): Promise<void>;
+}
+
+const NativeClerk = registerPlugin<NativeClerkPlugin>("NativeClerk");
+
 function stripBase(path: string): string {
   return basePath && path.startsWith(basePath)
     ? path.slice(basePath.length) || "/"
     : path;
-}
-
-function normalizeAppPath(path: string): string {
-  if (!path.startsWith("/")) return "/";
-  return stripBase(path);
-}
-
-function useNativeDeepLinks() {
-  const [, setLocation] = useLocation();
-
-  useEffect(() => {
-    if (!isNativeMobile) return;
-
-    let removed = false;
-    let cleanup: (() => void) | undefined;
-
-    void CapacitorApp.addListener("appUrlOpen", ({ url }) => {
-      try {
-        const openedUrl = new URL(url);
-        if (openedUrl.protocol !== "app.humanity.global:" || openedUrl.host !== "callback") {
-          return;
-        }
-
-        void Browser.close().catch(() => undefined);
-
-        if (openedUrl.search) {
-          setLocation(`${ssoCallbackPath}${openedUrl.search}`, { replace: true });
-          return;
-        }
-
-        const nextParam = openedUrl.searchParams.get("redirect_url") ?? openedUrl.searchParams.get("redirect_url_complete");
-        const nextPath = nextParam ? new URL(nextParam, window.location.origin).pathname : "/";
-        setLocation(normalizeAppPath(nextPath), { replace: true });
-      } catch {
-        setLocation("/", { replace: true });
-      }
-    }).then((handle) => {
-      if (removed) {
-        void handle.remove();
-        return;
-      }
-      cleanup = () => void handle.remove();
-    });
-
-    return () => {
-      removed = true;
-      cleanup?.();
-    };
-  }, [setLocation]);
 }
 
 const clerkAppearance = {
@@ -177,6 +130,7 @@ function getNativeSignInErrorMessage(err: unknown): string {
 
 function NativeSignInPage() {
   const { signIn } = useSignIn();
+  const [, setLocation] = useLocation();
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -190,28 +144,46 @@ function NativeSignInPage() {
 
     setError(null);
     setIsSubmitting(true);
+    let nativeSessionStarted = false;
     try {
-      const result = await signIn.sso({
-        strategy: "oauth_google",
-        redirectUrl: mobileCallbackUrl,
-        redirectCallbackUrl: `${window.location.origin}${ssoCallbackPath}`,
+      const { token } = await NativeClerk.signIn();
+      nativeSessionStarted = true;
+
+      const response = await fetch(apiUrl("/api/mobile-auth/web-session"), {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
       });
-
-      if (result.error) {
-        throw result.error;
+      if (!response.ok) {
+        throw new Error("The backend could not create a mobile web session.");
       }
 
-      const redirectUrl = signIn.firstFactorVerification.externalVerificationRedirectURL;
-      if (redirectUrl) {
-        await AppLauncher.openUrl({ url: redirectUrl.toString() });
-        return;
+      const body = (await response.json()) as { ticket?: string };
+      if (!body.ticket) {
+        throw new Error("The backend returned an invalid mobile web session.");
       }
 
-      throw new Error(`Clerk did not redirect. Status: ${signIn.status ?? "unknown"}.`);
+      const ticketResult = await signIn.ticket({ ticket: body.ticket });
+      if (ticketResult.error) {
+        throw ticketResult.error;
+      }
+
+      const finalizeResult = await signIn.finalize();
+      if (finalizeResult.error) {
+        throw finalizeResult.error;
+      }
+
+      setLocation("/", { replace: true });
     } catch (err) {
       console.error("Native Google sign-in failed", err);
       setError(getNativeSignInErrorMessage(err));
       setIsSubmitting(false);
+    } finally {
+      if (nativeSessionStarted) {
+        void NativeClerk.signOut().catch(() => undefined);
+      }
     }
   };
 
@@ -243,68 +215,6 @@ function NativeSignInPage() {
         ) : null}
       </section>
     </div>
-  );
-}
-
-function SSOCallbackPage() {
-  const [, setLocation] = useLocation();
-  const clerk = useClerk();
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    const completeCallback = async () => {
-      try {
-        await clerk.handleRedirectCallback(
-          {
-            signInUrl: `${basePath}/sign-in`,
-            signUpUrl: `${basePath}/sign-up`,
-            signInForceRedirectUrl: appHomePath,
-            signUpForceRedirectUrl: appHomePath,
-            signInFallbackRedirectUrl: appHomePath,
-            signUpFallbackRedirectUrl: appHomePath,
-            reloadResource: "signIn",
-          },
-          async (to) => {
-            setLocation(normalizeAppPath(to), { replace: true });
-          },
-        );
-
-        if (!cancelled) {
-          setLocation("/", { replace: true });
-        }
-      } catch (err) {
-        console.error("Native SSO callback failed", err);
-        if (!cancelled) {
-          setError("Sign in could not finish. Please go back and try again.");
-        }
-      }
-    };
-
-    void completeCallback();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [clerk, setLocation]);
-
-  return (
-    <main className="flex min-h-[100dvh] items-center justify-center bg-[#020617] px-4 text-white">
-      <section className="w-full max-w-md rounded-2xl border border-white/10 bg-white/[0.04] p-6 text-center shadow-2xl">
-        <img src={`${basePath}/logo.svg`} alt="HuMANity" className="mx-auto mb-5 h-9 w-auto" />
-        <p className="text-sm text-slate-300">{error ?? "Finishing sign in..."}</p>
-        {error ? (
-          <button
-            type="button"
-            onClick={() => setLocation("/sign-in", { replace: true })}
-            className="mt-5 min-h-11 rounded-xl bg-blue-600 px-4 text-sm font-semibold text-white"
-          >
-            Back to sign in
-          </button>
-        ) : null}
-      </section>
-    </main>
   );
 }
 
@@ -401,26 +311,30 @@ function SignInPage() {
         routing="path"
         path={`${basePath}/sign-in`}
         signUpUrl={`${basePath}/sign-up`}
-        forceRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
-        fallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
-        signUpForceRedirectUrl={isNativeMobile ? mobileCallbackUrl : `${basePath}/sign-up`}
-        signUpFallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : `${basePath}/sign-up`}
+        forceRedirectUrl={appHomePath}
+        fallbackRedirectUrl={appHomePath}
+        signUpForceRedirectUrl={`${basePath}/sign-up`}
+        signUpFallbackRedirectUrl={`${basePath}/sign-up`}
       />
     </div>
   );
 }
 
 function SignUpPage() {
+  if (isNativeMobile) {
+    return <NativeSignInPage />;
+  }
+
   return (
     <div className="flex min-h-[100dvh] items-center justify-center bg-[#020617] px-4">
       <SignUp
         routing="path"
         path={`${basePath}/sign-up`}
         signInUrl={`${basePath}/sign-in`}
-        forceRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
-        fallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
-        signInForceRedirectUrl={isNativeMobile ? mobileCallbackUrl : `${basePath}/sign-in`}
-        signInFallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : `${basePath}/sign-in`}
+        forceRedirectUrl={appHomePath}
+        fallbackRedirectUrl={appHomePath}
+        signInForceRedirectUrl={`${basePath}/sign-in`}
+        signInFallbackRedirectUrl={`${basePath}/sign-in`}
       />
     </div>
   );
@@ -498,7 +412,6 @@ function AppRoutes() {
 
 function ClerkProviderWithRoutes() {
   const [, setLocation] = useLocation();
-  useNativeDeepLinks();
 
   return (
     <ClerkProvider
@@ -508,13 +421,13 @@ function ClerkProviderWithRoutes() {
       appearance={clerkAppearance}
       standardBrowser={!isNativeMobile}
       prefetchUI={!isNativeMobile}
-      allowedRedirectProtocols={["http", "https", "app.humanity.global"]}
+      allowedRedirectProtocols={["http", "https", "clerk", "app.humanity.global"]}
       signInUrl={`${basePath}/sign-in`}
       signUpUrl={`${basePath}/sign-up`}
-      signInForceRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
-      signInFallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
-      signUpForceRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
-      signUpFallbackRedirectUrl={isNativeMobile ? mobileCallbackUrl : appHomePath}
+      signInForceRedirectUrl={appHomePath}
+      signInFallbackRedirectUrl={appHomePath}
+      signUpForceRedirectUrl={appHomePath}
+      signUpFallbackRedirectUrl={appHomePath}
       routerPush={(to) => setLocation(stripBase(to))}
       routerReplace={(to) => setLocation(stripBase(to), { replace: true })}
     >
@@ -523,7 +436,6 @@ function ClerkProviderWithRoutes() {
         <ClerkQueryClientCacheInvalidator />
         <TooltipProvider>
           <Switch>
-            <Route path="/sso-callback/*?" component={SSOCallbackPage} />
             <Route path="/sign-in/*?" component={SignInPage} />
             <Route path="/sign-up/*?" component={SignUpPage} />
             <Route>

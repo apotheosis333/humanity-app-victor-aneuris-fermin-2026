@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 def releaseSigningPropertiesFile = rootProject.file('key.properties')
 def releaseSigningProperties = new Properties()
@@ -8,6 +9,21 @@ if (releaseSigningPropertiesFile.exists()) {
 def requiredReleaseSigningKeys = ['storeFile', 'storePassword', 'keyAlias', 'keyPassword']
 def missingReleaseSigningKeys = requiredReleaseSigningKeys.findAll { !releaseSigningProperties.getProperty(it) }
 def hasReleaseSigningConfig = missingReleaseSigningKeys.isEmpty()
+
+def clerkPublishableKey = System.getenv('VITE_CLERK_PUBLISHABLE_KEY')?.trim()
+def frontendEnvFile = rootProject.file('../.env.local')
+if (!clerkPublishableKey && frontendEnvFile.exists()) {
+    def clerkEnvLine = frontendEnvFile.readLines().find { line ->
+        line.trim().startsWith('VITE_CLERK_PUBLISHABLE_KEY=')
+    }
+    if (clerkEnvLine) {
+        clerkPublishableKey = clerkEnvLine.substring(clerkEnvLine.indexOf('=') + 1).trim()
+        clerkPublishableKey = clerkPublishableKey.replaceAll(/^['"]|['"]$/, '')
+    }
+}
+def escapedClerkPublishableKey = (clerkPublishableKey ?: '')
+    .replace('\\', '\\\\')
+    .replace('"', '\\"')
 
 gradle.taskGraph.whenReady { taskGraph ->
     def needsReleaseSigning = taskGraph.allTasks.any { task ->
@@ -21,12 +37,16 @@ gradle.taskGraph.whenReady { taskGraph ->
 android {
     namespace = "app.humanity.global"
     compileSdk = rootProject.ext.compileSdkVersion
+    buildFeatures {
+        buildConfig = true
+    }
     defaultConfig {
         applicationId "app.humanity.global"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 21
-        versionName "1.0.20"
+        versionCode 22
+        versionName "1.0.21"
+        buildConfigField "String", "CLERK_PUBLISHABLE_KEY", "\"${escapedClerkPublishableKey}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -69,6 +89,7 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation project(':capacitor-cordova-android-plugins')
+    implementation 'com.clerk:clerk-android-api:1.0.37'
 }
 
 apply from: 'capacitor.build.gradle'
