@@ -1063,3 +1063,35 @@ Before the next Internal testing upload, confirm the release version is unused,
 build and sign the AAB from this commit, and retain the backend upload fallback.
 Bucket CORS can be tightened separately with a bucket-scoped credential that is
 authorized to manage CORS.
+
+## Internal Testing 22 (1.0.21)
+
+Date: 2026-07-28
+
+- A signed release AAB was built from the validated production-auth commit and
+  published only to Google Play Internal testing.
+- Google Play reports release `22 (1.0.21)` as active and available to the
+  configured internal tester list.
+- A fresh Play Store installation reported version code `22`, version name
+  `1.0.21`, and installer `com.android.vending`.
+- Production Clerk Google OAuth completed and returned to HuMANity; the session
+  remained authenticated after a cold app restart.
+- Authenticated profile load/save passed. A replacement profile photo completed
+  the request-url, authenticated backend upload fallback, finalize, object-read,
+  and profile persistence flow.
+- Explore rendered all 24 seeded countries.
+- Privacy Policy, Terms of Service, Support, and Data Deletion rendered in the
+  Play-installed build.
+- Railway request logs showed successful profile, storage, and country API
+  responses. Android logs contained no application crash or fatal exception.
+
+Known non-blocking items:
+
+- Direct browser-to-R2 PUT remains unavailable until bucket CORS permits the
+  production WebView origin; the authenticated backend fallback is working.
+- Play Console warns that no deobfuscation file was uploaded. Release minifying
+  and obfuscation are currently disabled, so no mapping file is produced.
+- Founder/legal review and the remaining Play policy/store-listing declarations
+  are still required before any production submission.
+
+No production rollout was started.

@@ -782,3 +782,31 @@ finalized object remained readable after restart.
 No Play release was uploaded or published in this QA pass. The next release task
 must first confirm available version metadata, produce a signed AAB from the
 validated commit, and remain limited to Google Play Internal testing.
+
+## Play-Installed Production QA: 22 (1.0.21)
+
+Date: 2026-07-28
+
+Passed on the Google Play-installed Android build:
+
+- Internal testing publication and Play Store installation verification.
+- Production Clerk Google OAuth and authenticated cold restart.
+- Authenticated profile read/write and persisted profile-photo replacement.
+- S3-compatible storage request, backend upload fallback, finalize, and object
+  retrieval.
+- Explore data showing 24 of 24 seeded countries.
+- Privacy Policy, Terms of Service, Support, and Data Deletion routes.
+- Backend log correlation and Android fatal-error scan.
+
+Release `22 (1.0.21)` remains limited to Internal testing. No production rollout
+or Play policy submission was performed.
+
+Remaining release gates:
+
+1. Complete founder/legal review of the launch-prep Privacy Policy and Terms.
+2. Finish the Google Play App content, Data safety, content-rating, app-access,
+   store-listing, and production-readiness declarations with owner approval.
+3. Resolve or formally accept the direct R2 CORS limitation; the authenticated
+   backend upload fallback currently protects the user flow.
+4. Complete a final production-submission review before requesting any rollout
+   beyond Internal testing.
