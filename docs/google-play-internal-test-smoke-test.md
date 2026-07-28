@@ -1040,3 +1040,26 @@ No `22 (1.0.21)` AAB was uploaded or published during this test. Restore and
 redeploy the Railway backend first, then verify the session exchange,
 `/api/me/profile`, profile save, R2 upload, Explore, and legal/support routes
 before creating any new Internal testing release.
+
+## Restored Backend Smoke Test
+
+Date: 2026-07-28
+
+Local Android candidate results:
+
+- Railway backend restored and `/health` passed.
+- Production Clerk Google OAuth and the native-to-WebView session exchange
+  passed.
+- Authenticated profile load, profile save, and app-restart persistence passed.
+- The direct R2 browser PUT was rejected because the bucket CORS policy does
+  not yet include the `https://humanityexplorer.app` WebView origin.
+- The authenticated backend upload fallback, finalize request, object read,
+  profile photo save, and app-restart photo persistence all passed.
+- Explore loaded the seeded country data.
+- Privacy, Terms, Support, and Data Deletion routes rendered in the Android app.
+- No new AAB was uploaded or published during this validation.
+
+Before the next Internal testing upload, confirm the release version is unused,
+build and sign the AAB from this commit, and retain the backend upload fallback.
+Bucket CORS can be tightened separately with a bucket-scoped credential that is
+authorized to manage CORS.

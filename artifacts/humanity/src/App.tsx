@@ -419,8 +419,8 @@ function ClerkProviderWithRoutes() {
       publishableKey={clerkPubKey}
       proxyUrl={clerkProxyUrl}
       appearance={clerkAppearance}
-      standardBrowser={!isNativeMobile}
-      prefetchUI={!isNativeMobile}
+      standardBrowser
+      prefetchUI
       allowedRedirectProtocols={["http", "https", "clerk", "app.humanity.global"]}
       signInUrl={`${basePath}/sign-in`}
       signUpUrl={`${basePath}/sign-up`}

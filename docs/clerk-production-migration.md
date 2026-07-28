@@ -392,3 +392,22 @@ hostname returns Railway's fallback response, so the new exchange endpoint and
 existing API routes are unavailable. Restore the Railway project on an approved
 plan, redeploy the current branch, and then repeat the local Android smoke test.
 Do not upload `22 (1.0.21)` to Google Play until that test passes.
+
+## Railway Restore And End-to-End Android Result
+
+Date: 2026-07-28
+
+- Railway service was restored and the current backend deployed successfully.
+- `/health` returned HTTP 200.
+- Production Google OAuth completed through the Clerk Android SDK.
+- An existing native Clerk session is now reused on app restart, avoiding a
+  duplicate-session OAuth error.
+- The native-to-WebView exchange completed and authenticated
+  `/api/me/profile` requests succeeded.
+- Profile creation, update, reload after app restart, and authenticated profile
+  photo persistence succeeded.
+- Clerk's browser UI bundle is loaded for the authenticated header controls.
+
+The local production-auth gate is clear. Do not publish a new Play Internal
+testing release until the current code is committed, rebuilt as a signed AAB,
+and its version metadata is confirmed.

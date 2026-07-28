@@ -759,3 +759,26 @@ Required order:
    tests.
 5. Only after those checks pass, build and upload a new Google Play Internal
    testing release.
+
+## Railway Restore And Production Android QA
+
+Date: 2026-07-28
+
+Completed locally against production services:
+
+- Railway backend restore, deployment, and `/health` verification.
+- Clerk production Google OAuth, native session reuse, WebView session exchange,
+  and authenticated `/api/me/profile` access.
+- Profile creation/update, R2-backed photo upload, profile save, and persistence
+  after a full app restart.
+- Explore/country API loading.
+- Privacy Policy, Terms of Service, Support, and Data Deletion route rendering.
+
+The direct signed R2 PUT remains incompatible with the current WebView origin
+until bucket CORS is updated. The new authenticated, rate-limited backend upload
+fallback completed successfully under the existing 5 MB image limit, and the
+finalized object remained readable after restart.
+
+No Play release was uploaded or published in this QA pass. The next release task
+must first confirm available version metadata, produce a signed AAB from the
+validated commit, and remain limited to Google Play Internal testing.

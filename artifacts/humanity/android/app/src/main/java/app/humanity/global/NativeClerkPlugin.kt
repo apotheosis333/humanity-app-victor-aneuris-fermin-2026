@@ -38,6 +38,21 @@ class NativeClerkPlugin : Plugin() {
         Clerk.initialize(context, BuildConfig.CLERK_PUBLISHABLE_KEY)
         withTimeout(60_000) { Clerk.isInitialized.first { it } }
 
+        val existingSession = Clerk.session
+        if (existingSession != null) {
+          if (Clerk.activeSession == null) {
+            when (Clerk.auth.setActive(existingSession.id)) {
+              is ClerkResult.Success -> Unit
+              is ClerkResult.Failure -> {
+                call.reject("Clerk could not reactivate the mobile session")
+                return@launch
+              }
+            }
+          }
+          resolveToken(call)
+          return@launch
+        }
+
         when (val authResult = Clerk.auth.signInWithOAuth(OAuthProvider.GOOGLE)) {
           is ClerkResult.Success -> {
             val sessionId =
@@ -49,16 +64,7 @@ class NativeClerkPlugin : Plugin() {
             }
 
             when (val activeResult = Clerk.auth.setActive(sessionId)) {
-              is ClerkResult.Success -> {
-                when (val tokenResult = Clerk.auth.getToken()) {
-                  is ClerkResult.Success -> {
-                    val result = JSObject()
-                    result.put("token", tokenResult.value)
-                    call.resolve(result)
-                  }
-                  is ClerkResult.Failure -> call.reject("Clerk could not create a session token")
-                }
-              }
+              is ClerkResult.Success -> resolveToken(call)
               is ClerkResult.Failure -> call.reject("Clerk could not activate the mobile session")
             }
           }
@@ -67,6 +73,17 @@ class NativeClerkPlugin : Plugin() {
       } catch (_: Exception) {
         call.reject("Clerk native sign-in could not finish")
       }
+    }
+  }
+
+  private suspend fun resolveToken(call: PluginCall) {
+    when (val tokenResult = Clerk.auth.getToken()) {
+      is ClerkResult.Success -> {
+        val result = JSObject()
+        result.put("token", tokenResult.value)
+        call.resolve(result)
+      }
+      is ClerkResult.Failure -> call.reject("Clerk could not create a session token")
     }
   }
 

@@ -13,6 +13,11 @@ interface UploadResponse {
   metadata: UploadMetadata;
 }
 
+interface ProxyUploadResponse {
+  objectPath: string;
+  metadata: UploadMetadata;
+}
+
 interface UseUploadOptions {
   /** Base path where object storage routes are mounted (default: "/api/storage") */
   basePath?: string;
@@ -157,6 +162,26 @@ export function useUpload(options: UseUploadOptions = {}) {
     []
   );
 
+  const uploadThroughBackend = useCallback(
+    async (file: File): Promise<ProxyUploadResponse> => {
+      const contentType = file.type || "application/octet-stream";
+      const headers = await buildBackendHeaders();
+      headers.set("Content-Type", contentType);
+      headers.set("X-Upload-Name", file.name);
+
+      const response = await fetch(`${basePath}/uploads/proxy`, {
+        method: "POST",
+        headers,
+        body: await toUploadBlob(file),
+      });
+      if (!response.ok) {
+        throw new UploadError("Storage upload failed", "direct-put", response.status);
+      }
+      return response.json();
+    },
+    [basePath, buildBackendHeaders],
+  );
+
   const uploadFile = useCallback(
     async (file: File): Promise<UploadResponse | null> => {
       setIsUploading(true);
@@ -168,7 +193,13 @@ export function useUpload(options: UseUploadOptions = {}) {
         const uploadResponse = await requestUploadUrl(file);
 
         setProgress(30);
-        await uploadToPresignedUrl(file, uploadResponse.uploadURL);
+        try {
+          await uploadToPresignedUrl(file, uploadResponse.uploadURL);
+        } catch {
+          const proxyResponse = await uploadThroughBackend(file);
+          uploadResponse.objectPath = proxyResponse.objectPath;
+          uploadResponse.metadata = proxyResponse.metadata;
+        }
 
         setProgress(100);
         options.onSuccess?.(uploadResponse);
@@ -191,7 +222,7 @@ export function useUpload(options: UseUploadOptions = {}) {
         setIsUploading(false);
       }
     },
-    [requestUploadUrl, uploadToPresignedUrl, options]
+    [requestUploadUrl, uploadToPresignedUrl, uploadThroughBackend, options]
   );
 
   const getUploadParameters = useCallback(

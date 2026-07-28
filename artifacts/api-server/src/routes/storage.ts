@@ -1,4 +1,4 @@
-import { Router, type IRouter, type Request, type Response } from "express";
+import express, { Router, type IRouter, type Request, type Response } from "express";
 import { Readable } from "stream";
 import {
   RequestUploadUrlBody,
@@ -16,6 +16,59 @@ const objectStorageService = new ObjectStorageService();
 
 const ALLOWED_UPLOAD_CONTENT_TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_UPLOAD_BYTES = 5 * 1024 * 1024;
+
+/**
+ * POST /storage/uploads/proxy
+ *
+ * Authenticated fallback for WebViews that cannot complete a direct signed
+ * upload because the storage provider rejects their browser origin. The file
+ * is still subject to the same type, size, rate-limit, and finalize checks.
+ */
+router.post(
+  "/storage/uploads/proxy",
+  requireAuth,
+  uploadLimiter,
+  express.raw({ type: ALLOWED_UPLOAD_CONTENT_TYPES, limit: MAX_UPLOAD_BYTES }),
+  async (req: Request, res: Response) => {
+    const contentType = req.get("Content-Type")?.split(";", 1)[0]?.trim() ?? "";
+    if (!ALLOWED_UPLOAD_CONTENT_TYPES.includes(contentType)) {
+      res.status(400).json({ error: "Unsupported file type. Use JPG, PNG, or WEBP." });
+      return;
+    }
+    if (!Buffer.isBuffer(req.body) || req.body.length === 0) {
+      res.status(400).json({ error: "Missing upload body" });
+      return;
+    }
+    if (req.body.length > MAX_UPLOAD_BYTES) {
+      res.status(413).json({ error: "File too large. Maximum size is 5MB." });
+      return;
+    }
+
+    try {
+      const uploadURL = await objectStorageService.getObjectEntityUploadURL();
+      const uploadResponse = await fetch(uploadURL, {
+        method: "PUT",
+        headers: { "Content-Type": contentType },
+        body: req.body,
+      });
+      if (!uploadResponse.ok) {
+        throw new Error(`Storage provider returned ${uploadResponse.status}`);
+      }
+
+      res.json({
+        objectPath: objectStorageService.normalizeObjectEntityPath(uploadURL),
+        metadata: {
+          name: req.get("X-Upload-Name")?.slice(0, 255) || "upload",
+          size: req.body.length,
+          contentType,
+        },
+      });
+    } catch (error) {
+      req.log.error({ err: error }, "Error proxying object upload");
+      res.status(502).json({ error: "Failed to upload object" });
+    }
+  },
+);
 
 /**
  * POST /storage/uploads/request-url
