@@ -46,6 +46,16 @@ Reviewers should be able to sign in, create or edit a profile, upload a profile 
 
 Because the current Android sign-in path uses Google OAuth, reviewer access needs a Google-account-compatible test path or a future approved reviewer sign-in improvement.
 
+Update (2026-07-30): Android `23 (1.0.22)` adds a dedicated reviewer
+email/password path while preserving Google OAuth. Production Clerk email and
+password authentication is enabled, and a dedicated reviewer account exists.
+Credentials are stored only in the ignored local file
+`artifacts/humanity/.play-reviewer-credentials.json` and must be entered only in
+Google Play Console.
+
+The code-derived Play category inventory is in
+`docs/google-play-data-safety-inventory.md`.
+
 ## Step 37 Proposed Play Data Safety Answers
 
 See `docs/play-policy-owner-review.md` for the proposed owner-review Data Safety answer matrix. It expands this readiness matrix into draft Play Console-style answers for:

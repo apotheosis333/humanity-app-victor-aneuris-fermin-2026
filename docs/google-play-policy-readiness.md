@@ -481,3 +481,32 @@ Exact next task: create a dedicated Play reviewer sign-in path/account, prepare
 the final Data Safety inventory, obtain owner acceptance of the IARC terms and
 questionnaire answers, and prepare the required store-listing graphics. Keep
 all work on Internal testing until those items are reviewed.
+
+## Reviewer Access And Listing Assets
+
+Date: 2026-07-30
+
+- Android `23 (1.0.22)` adds an email/password reviewer-access form alongside
+  the existing Google OAuth button.
+- Production Clerk email/password authentication is enabled.
+- A dedicated reviewer account exists; its credentials are local-only and
+  ignored by Git.
+- A code-derived Data Safety inventory is available at
+  `docs/google-play-data-safety-inventory.md`.
+- Play-ready assets are under `docs/play-store-assets`: a 512 x 512 icon, a
+  1024 x 500 feature graphic, and four 1080 x 1920 screenshots captured from
+  the real Play-installed Android app without private profile data.
+
+Remaining owner gates are acceptance of the IARC terms, approval of the exact
+Content Rating questionnaire answers, and final confirmation of the Data Safety
+sharing/retention judgments.
+
+Play Console draft status:
+
+- Dedicated reviewer sign-in details are saved without storing credentials in
+  the repository.
+- Target audience is saved as ages 16-17 and 18 and over.
+- Approved listing copy, app icon, feature graphic, and four phone screenshots
+  are saved in the default store-listing draft.
+- No publishing-overview submission, production rollout, or Content Rating
+  acceptance was completed during this update.

@@ -1,4 +1,4 @@
-import { Component, type ErrorInfo, type ReactNode, useEffect, useRef, useState } from "react";
+import { Component, type ErrorInfo, type FormEvent, type ReactNode, useEffect, useRef, useState } from "react";
 import { Switch, Route, useLocation, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider, useQueryClient } from "@tanstack/react-query";
 import { ClerkProvider, SignIn, SignUp, useAuth, useClerk, useSignIn } from "@clerk/react";
@@ -52,6 +52,7 @@ const appHomePath = basePath || "/";
 
 interface NativeClerkPlugin {
   signIn(): Promise<{ token: string }>;
+  signInWithPassword(options: { identifier: string; password: string }): Promise<{ token: string }>;
   signOut(): Promise<void>;
 }
 
@@ -133,6 +134,43 @@ function NativeSignInPage() {
   const [, setLocation] = useLocation();
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showReviewerAccess, setShowReviewerAccess] = useState(false);
+  const [reviewerIdentifier, setReviewerIdentifier] = useState("");
+  const [reviewerPassword, setReviewerPassword] = useState("");
+
+  const finishNativeSignIn = async (token: string) => {
+    if (!signIn) {
+      throw new Error("Sign in is still loading. Please try again in a moment.");
+    }
+
+    const response = await fetch(apiUrl("/api/mobile-auth/web-session"), {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) {
+      throw new Error("The backend could not create a mobile web session.");
+    }
+
+    const body = (await response.json()) as { ticket?: string };
+    if (!body.ticket) {
+      throw new Error("The backend returned an invalid mobile web session.");
+    }
+
+    const ticketResult = await signIn.ticket({ ticket: body.ticket });
+    if (ticketResult.error) {
+      throw ticketResult.error;
+    }
+
+    const finalizeResult = await signIn.finalize();
+    if (finalizeResult.error) {
+      throw finalizeResult.error;
+    }
+
+    setLocation("/", { replace: true });
+  };
 
   const signInWithGoogle = async () => {
     if (isSubmitting) return;
@@ -149,35 +187,40 @@ function NativeSignInPage() {
       const { token } = await NativeClerk.signIn();
       nativeSessionStarted = true;
 
-      const response = await fetch(apiUrl("/api/mobile-auth/web-session"), {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      });
-      if (!response.ok) {
-        throw new Error("The backend could not create a mobile web session.");
-      }
-
-      const body = (await response.json()) as { ticket?: string };
-      if (!body.ticket) {
-        throw new Error("The backend returned an invalid mobile web session.");
-      }
-
-      const ticketResult = await signIn.ticket({ ticket: body.ticket });
-      if (ticketResult.error) {
-        throw ticketResult.error;
-      }
-
-      const finalizeResult = await signIn.finalize();
-      if (finalizeResult.error) {
-        throw finalizeResult.error;
-      }
-
-      setLocation("/", { replace: true });
+      await finishNativeSignIn(token);
     } catch (err) {
       console.error("Native Google sign-in failed", err);
+      setError(getNativeSignInErrorMessage(err));
+      setIsSubmitting(false);
+    } finally {
+      if (nativeSessionStarted) {
+        void NativeClerk.signOut().catch(() => undefined);
+      }
+    }
+  };
+
+  const signInReviewer = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (isSubmitting) return;
+
+    const identifier = reviewerIdentifier.trim();
+    if (!identifier || !reviewerPassword) {
+      setError("Enter the reviewer email and password provided in Google Play Console.");
+      return;
+    }
+
+    setError(null);
+    setIsSubmitting(true);
+    let nativeSessionStarted = false;
+    try {
+      const { token } = await NativeClerk.signInWithPassword({
+        identifier,
+        password: reviewerPassword,
+      });
+      nativeSessionStarted = true;
+      await finishNativeSignIn(token);
+    } catch (err) {
+      console.error("Native reviewer sign-in failed");
       setError(getNativeSignInErrorMessage(err));
       setIsSubmitting(false);
     } finally {
@@ -209,6 +252,52 @@ function NativeSignInPage() {
           </span>
           {isSubmitting ? "Opening sign-in..." : "Continue with Google"}
         </button>
+        <div className="my-5 flex items-center gap-3" aria-hidden="true">
+          <span className="h-px flex-1 bg-white/10" />
+          <span className="text-xs text-slate-500">or</span>
+          <span className="h-px flex-1 bg-white/10" />
+        </div>
+        <button
+          type="button"
+          onClick={() => setShowReviewerAccess((visible) => !visible)}
+          aria-expanded={showReviewerAccess}
+          className="min-h-12 w-full rounded-xl border border-white/15 px-4 text-sm font-semibold text-slate-200 transition hover:bg-white/[0.05]"
+        >
+          Reviewer access
+        </button>
+        {showReviewerAccess ? (
+          <form className="mt-4 space-y-4 text-left" onSubmit={signInReviewer}>
+            <label className="block text-sm font-medium text-slate-200">
+              Reviewer email
+              <input
+                type="email"
+                autoComplete="username"
+                value={reviewerIdentifier}
+                onChange={(event) => setReviewerIdentifier(event.target.value)}
+                disabled={isSubmitting}
+                className="mt-2 min-h-12 w-full rounded-xl border border-white/15 bg-[#1E293B] px-3 text-base text-white outline-none focus:border-blue-400 disabled:opacity-60"
+              />
+            </label>
+            <label className="block text-sm font-medium text-slate-200">
+              Password
+              <input
+                type="password"
+                autoComplete="current-password"
+                value={reviewerPassword}
+                onChange={(event) => setReviewerPassword(event.target.value)}
+                disabled={isSubmitting}
+                className="mt-2 min-h-12 w-full rounded-xl border border-white/15 bg-[#1E293B] px-3 text-base text-white outline-none focus:border-blue-400 disabled:opacity-60"
+              />
+            </label>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="min-h-12 w-full rounded-xl bg-blue-600 px-4 text-sm font-semibold text-white transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {isSubmitting ? "Signing in..." : "Sign in for review"}
+            </button>
+          </form>
+        ) : null}
         <p className="mt-6 text-xs text-slate-400">Secured by Clerk</p>
         {isClerkDevelopmentKey ? (
           <p className="mt-2 text-xs text-amber-300">Development mode</p>

@@ -3,6 +3,7 @@ package app.humanity.global
 import com.clerk.api.Clerk
 import com.clerk.api.network.serialization.ClerkResult
 import com.clerk.api.sso.OAuthProvider
+import com.clerk.api.signin.SignIn
 import com.getcapacitor.JSObject
 import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall
@@ -72,6 +73,57 @@ class NativeClerkPlugin : Plugin() {
         }
       } catch (_: Exception) {
         call.reject("Clerk native sign-in could not finish")
+      }
+    }
+  }
+
+  @PluginMethod
+  fun signInWithPassword(call: PluginCall) {
+    if (BuildConfig.CLERK_PUBLISHABLE_KEY.isBlank()) {
+      call.reject("Clerk publishable key is missing")
+      return
+    }
+
+    val identifier = call.getString("identifier")?.trim().orEmpty()
+    val password = call.getString("password").orEmpty()
+    if (identifier.isBlank() || password.isBlank()) {
+      call.reject("Reviewer email and password are required")
+      return
+    }
+
+    scope.launch {
+      try {
+        Clerk.initialize(context, BuildConfig.CLERK_PUBLISHABLE_KEY)
+        withTimeout(60_000) { Clerk.isInitialized.first { it } }
+        Clerk.auth.signOut()
+
+        when (
+          val authResult = Clerk.auth.signInWithPassword {
+            this.identifier = identifier
+            this.password = password
+          }
+        ) {
+          is ClerkResult.Success -> {
+            if (authResult.value.status == SignIn.Status.COMPLETE) {
+              resolveToken(call)
+              return@launch
+            }
+
+            val sessionId = authResult.value.createdSessionId
+            if (sessionId == null) {
+              call.reject("Clerk reviewer sign-in requires an additional verification step")
+              return@launch
+            }
+
+            when (val activeResult = Clerk.auth.setActive(sessionId)) {
+              is ClerkResult.Success -> resolveToken(call)
+              is ClerkResult.Failure -> call.reject("Clerk could not activate the reviewer session")
+            }
+          }
+          is ClerkResult.Failure -> call.reject("Clerk reviewer sign-in failed")
+        }
+      } catch (_: Exception) {
+        call.reject("Clerk reviewer sign-in could not finish")
       }
     }
   }
