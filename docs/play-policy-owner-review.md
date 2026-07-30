@@ -263,3 +263,28 @@ Date: 2026-07-09
   keys.
 - No Play Console submission, production rollout, AAB upload, Clerk production
   migration, or custom domain/DNS change occurred.
+
+## Play Console Setup Update
+
+Date: 2026-07-30
+
+This update supersedes the older preparation status above. Production Clerk
+OAuth and the Play-installed Android authentication flow have since passed
+internal QA.
+
+Saved in Play Console:
+
+- Privacy policy, Ads, Government apps, Financial features, and Health.
+- App category set to Social, with public store contact details configured.
+- Approved store-listing text saved as a draft.
+- Verified Data Safety security and deletion details saved as a partial draft.
+
+Still awaiting owner/implementation completion:
+
+- A dedicated reviewer account or sign-in path that satisfies Play's rule that
+  reviewers cannot create an account or use a personal account.
+- The exact Data Safety data-type and handling inventory.
+- Owner acceptance of IARC terms and approval of the Content Rating answers.
+- Play store icon, feature graphic, and phone screenshots.
+
+No production rollout was started.

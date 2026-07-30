@@ -442,3 +442,42 @@ verifies DNS and certificates and production Google OAuth passes locally.
 Exact next task: recover the correct GoDaddy account, confirm the DNS zone is
 editable without a transfer or nameserver change, and request approval to add
 only the five Clerk records.
+
+## Play Console App Setup Progress
+
+Date: 2026-07-30
+
+The following Google Play app-setup items are now saved for the draft app:
+
+- Privacy policy URL points to the verified public Privacy page.
+- Ads declaration: the app does not contain ads.
+- Government apps declaration: the app is not a government app.
+- Financial features declaration: the app has no financial features.
+- Health declaration: the app has no health features.
+- App type/category: App / Social.
+- Public store contact details and website are configured in Play Console.
+- Founder-approved short and full descriptions are saved as a store-listing
+  draft.
+- Data Safety has a saved partial draft covering collection, encryption in
+  transit, OAuth account creation, the verified data-deletion URL, and the lack
+  of a separate partial-data-deletion flow.
+
+The app remains on Internal testing. No production release or production
+rollout was created.
+
+Remaining blockers:
+
+1. Sign in details requires a dedicated reviewer account that gives Google
+   full access without asking reviewers to create or use a personal account.
+2. Data Safety still needs an exact inventory of data collected by the app,
+   Clerk, backend services, and supporting SDKs before data types and handling
+   answers can be submitted.
+3. Content Rating requires acceptance of the IARC terms and questionnaire
+   answers. Target Audience remains locked until Sign in details is complete.
+4. The store listing still needs compliant Play icon, feature graphic, and
+   phone screenshots before it can be completed.
+
+Exact next task: create a dedicated Play reviewer sign-in path/account, prepare
+the final Data Safety inventory, obtain owner acceptance of the IARC terms and
+questionnaire answers, and prepare the required store-listing graphics. Keep
+all work on Internal testing until those items are reviewed.
