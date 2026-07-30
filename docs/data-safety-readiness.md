@@ -56,6 +56,12 @@ Google Play Console.
 The code-derived Play category inventory is in
 `docs/google-play-data-safety-inventory.md`.
 
+Update (2026-07-30): the owner approved the conservative inventory and its
+documented service-provider/deletion assumptions. The declaration was entered
+and saved in Google Play Console with encrypted transport, account-deletion
+request support, and no non-exempt third-party sharing. Future provider, SDK,
+schema, or data-flow changes require this declaration to be reviewed again.
+
 ## Step 37 Proposed Play Data Safety Answers
 
 See `docs/play-policy-owner-review.md` for the proposed owner-review Data Safety answer matrix. It expands this readiness matrix into draft Play Console-style answers for:

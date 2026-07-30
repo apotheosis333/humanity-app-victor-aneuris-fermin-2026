@@ -510,3 +510,27 @@ Play Console draft status:
   are saved in the default store-listing draft.
 - No publishing-overview submission, production rollout, or Content Rating
   acceptance was completed during this update.
+
+## Play App Information Setup Complete
+
+Date: 2026-07-30
+
+After explicit owner approval:
+
+- The IARC Terms of Use were accepted and the Social/Communication
+  questionnaire was completed. Google Play reports a Teen or 12+ rating,
+  depending on the regional rating authority, with a Users Interact element.
+- The conservative Data Safety inventory was entered and saved. It discloses
+  collected personal information, approximate location, in-app messages,
+  photos, diagnostics, app activity, user-generated content, and device IDs;
+  it declares encrypted transport and no non-exempt third-party sharing.
+- The target audience remains ages 16-17 and 18 and over.
+- The public store contact and website were saved, and the approved default
+  listing text and visual assets were saved to Publishing overview.
+- Google Play no longer shows the Finish setting up your app section, which
+  confirms that all app-information setup tasks are complete.
+
+No production release, production rollout, or Play policy review submission
+was started. The next Google Play gate is a closed test with at least 12 opted-
+in testers maintained for at least 14 days before production access can be
+requested.
