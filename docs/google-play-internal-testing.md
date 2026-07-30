@@ -956,3 +956,36 @@ Current blocker:
 - The sign-in button enters the `Opening sign-in...` state, but Clerk's hosted
   redirect does not complete the handoff from the Android WebView.
 - No production release or production rollout was started.
+
+## Internal Testing 23 (1.0.22)
+
+Date: 2026-07-30
+
+- The signed bundle for version code `23`, version name `1.0.22`, passed local
+  signature verification and was published only to Google Play Internal
+  testing.
+- Google Play reports release `23 (1.0.22)` as available to internal testers.
+- A fresh Play Store installation reported package `app.humanity.global`,
+  version code `23`, version name `1.0.22`, and installer
+  `com.android.vending`.
+- The dedicated reviewer password flow initially reached Clerk but triggered
+  Client Trust on the fresh device. Client Trust was disabled in the Clerk
+  production instance so Play reviewers are not asked for an email code they
+  cannot access. Lockout, bot, and user-enumeration protections remain enabled.
+- Reviewer sign-in then passed in the Play-installed build, and authenticated
+  Explore loaded successfully.
+- The Play warning about a missing deobfuscation file remains non-blocking
+  because release minification/obfuscation is not enabled.
+- No production release or production rollout was created.
+
+Closed testing preparation status:
+
+- The existing `Closed testing - Alpha` track is inactive and has no release.
+- Its setup is `0 of 4` complete: select countries, select testers, create and
+  roll out a release, then preview/confirm and send the closed release for
+  review.
+- Production access requires at least 12 testers to opt in and remain opted in
+  for at least 14 continuous days. Inviting testers alone does not start that
+  clock.
+- Do not start the Alpha rollout until at least 12 consenting tester Google
+  accounts and the intended country availability are ready.

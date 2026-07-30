@@ -534,3 +534,22 @@ No production release, production rollout, or Play policy review submission
 was started. The next Google Play gate is a closed test with at least 12 opted-
 in testers maintained for at least 14 days before production access can be
 requested.
+
+## Reviewer Access And Closed-Test Gate
+
+Date: 2026-07-30
+
+- Internal release `23 (1.0.22)` is available to internal testers and its
+  dedicated reviewer login passed in a clean Play Store installation.
+- Clerk Client Trust was disabled because it required a second-factor email
+  code on every fresh reviewer device. This is an explicit security/usability
+  tradeoff for deterministic Play review access; password lockout, bot
+  protection, and user-enumeration protection remain enabled.
+- Reviewer credentials are stored only in Google Play Console and an ignored
+  local file. They must never be copied into repository documentation.
+- The existing Alpha closed track still needs country selection, a tester list,
+  a release, and review/rollout confirmation.
+- At least 12 testers must actually opt in and remain opted in for at least 14
+  continuous days before the production-access application unlocks.
+- Do not request production access or start a production rollout until the
+  closed-test requirement is complete and its feedback has been reviewed.

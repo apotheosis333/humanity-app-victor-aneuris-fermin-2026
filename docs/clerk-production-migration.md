@@ -411,3 +411,23 @@ Date: 2026-07-28
 The local production-auth gate is clear. Do not publish a new Play Internal
 testing release until the current code is committed, rebuilt as a signed AAB,
 and its version metadata is confirmed.
+
+## Play Reviewer Password Access
+
+Date: 2026-07-30
+
+Internal release `23 (1.0.22)` confirmed that production Clerk password
+authentication works from the Play-installed Android app. A clean installation
+initially returned `needs_client_trust`, even though the dedicated reviewer
+account had a verified email, a password, no MFA, and no lock or ban.
+
+Clerk Client Trust was disabled in the production instance so Google Play
+reviewers can use the supplied credentials without access to a private email
+inbox for a second-factor code. Lockout policy, bot sign-up protection, and
+user-enumeration protection remain enabled. After the change, the same
+Play-installed build completed reviewer sign-in and opened authenticated
+Explore.
+
+Revisit this tradeoff after Play review. If Client Trust is re-enabled, the
+mobile custom flow must implement Clerk's `needs_client_trust` verification
+state, and ordinary users must have access to their verified email or phone.

@@ -1095,3 +1095,29 @@ Known non-blocking items:
   are still required before any production submission.
 
 No production rollout was started.
+
+## Internal Testing 23 Reviewer Access Smoke Test
+
+Date: 2026-07-30
+
+- Google Play Internal testing serves `23 (1.0.22)`.
+- The test AVD installed the app from Google Play; package manager reports
+  installer `com.android.vending`.
+- The production Clerk reviewer account is enabled, email-verified,
+  password-enabled, not locked or banned, and has no user-configured MFA.
+- A fresh Play install initially returned Clerk's `needs_client_trust` state.
+  This was an instance-level Client Trust challenge, not an invalid password,
+  package, callback, or backend failure.
+- Client Trust was disabled for production reviewer compatibility. Clerk
+  lockout, bot protection, and user-enumeration protection remain enabled.
+- The same Play-installed app then completed reviewer sign-in and displayed the
+  authenticated account control.
+- Explore opened successfully after sign-in and rendered its production-backed
+  filtering interface.
+- Reviewer credentials remain only in the ignored local credential file and
+  Google Play Console. They were not added to source, documentation, logs, or
+  Git history.
+
+Remaining gate: configure and launch the existing Alpha closed-testing track
+with at least 12 consenting testers, then maintain 12 opted-in testers for 14
+continuous days. No production rollout was started.
