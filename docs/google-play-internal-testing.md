@@ -1011,3 +1011,19 @@ Date: 2026-08-03
 
 The qualifying clock does not begin until at least 12 testers have opted in and
 remain opted in continuously for 14 days.
+
+## Alpha Tester Enrollment Handoff
+
+Date: 2026-08-03
+
+- Google Play reports the Alpha track as active with release `23 (1.0.22)` in
+  review and 177 countries and regions targeted.
+- The closed-test web enrollment URL is available at
+  `https://play.google.com/apps/testing/app.humanity.global`.
+- The Android listing URL is
+  `https://play.google.com/store/apps/details?id=app.humanity.global`.
+- Testers must be members of the selected Play Console tester list and must
+  individually opt in through the enrollment URL.
+- The selected list currently contains one tester. Eleven more consenting
+  Google accounts are required before the qualifying 14-day period can begin.
+- No production release or production rollout was created.
