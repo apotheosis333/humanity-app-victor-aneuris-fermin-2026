@@ -50,6 +50,22 @@ const pageCopy = {
     ],
     links: [{ href: "/support", label: "Contact support" }],
   },
+  childSafety: {
+    title: "Child Safety Standards",
+    eyebrow: "Standards against child sexual abuse and exploitation",
+    body: [
+      "HuMANity has zero tolerance for child sexual abuse and exploitation (CSAE), child sexual abuse material (CSAM), grooming, sexual solicitation of minors, sextortion, trafficking, or any content or conduct that sexualizes or endangers a child.",
+      "HuMANity is intended for people age 16 and older. Users must not use the service to contact, target, exploit, or endanger minors, or to create, upload, request, share, promote, or store content involving the sexual abuse or exploitation of children.",
+      "Users can report safety concerns through the in-app Report controls available on user profiles. Users can also block another user to stop direct interaction. Safety concerns may be submitted through Support when the in-app reporting flow is unavailable.",
+      "HuMANity reviews reported accounts and content and may remove content, restrict features, suspend or terminate accounts, preserve relevant records, and take other protective action. Urgent child-safety reports are prioritized for prompt review.",
+      "HuMANity complies with applicable child-safety laws. When HuMANity becomes aware of apparent CSAM or child exploitation, it will preserve and report relevant information to the appropriate regional or national authorities and child-protection reporting organizations as required by law.",
+      "The designated child-safety contact is available through the Support page and is responsible for questions about HuMANity's CSAM prevention practices and compliance.",
+    ],
+    links: [
+      { href: "/support", label: "Report a safety concern" },
+      { href: "/terms", label: "Terms of Service" },
+    ],
+  },
 };
 
 export function LegalPage({ kind }: { kind: keyof typeof pageCopy }) {

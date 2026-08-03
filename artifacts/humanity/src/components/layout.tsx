@@ -290,6 +290,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Link href="/terms" className="hover:text-[#FBBF24] transition-colors inline-block w-fit">Terms of Service</Link>
                 <Link href="/support" className="hover:text-[#FBBF24] transition-colors inline-block w-fit">Support</Link>
                 <Link href="/data-deletion" className="hover:text-[#FBBF24] transition-colors inline-block w-fit">Data Deletion</Link>
+                <Link href="/child-safety" className="hover:text-[#FBBF24] transition-colors inline-block w-fit">Child Safety</Link>
               </div>
               <p>{t("footer.copyright", { year: new Date().getFullYear() })}</p>
               <p>{t("footer.builtFor")}</p>

@@ -46,7 +46,12 @@ https://humanity-frontend-legal-production.up.railway.app/privacy
 https://humanity-frontend-legal-production.up.railway.app/terms
 https://humanity-frontend-legal-production.up.railway.app/support
 https://humanity-frontend-legal-production.up.railway.app/data-deletion
+https://humanity-frontend-legal-production.up.railway.app/child-safety
 ```
+
+The child-safety standards route was deployed and verified on 2026-08-03. The
+Railway deployment completed successfully, all five legal routes returned HTTP
+200, and the served frontend asset contained the published standards copy.
 
 Deployment approach:
 

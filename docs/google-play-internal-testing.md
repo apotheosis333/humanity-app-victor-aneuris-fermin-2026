@@ -989,3 +989,25 @@ Closed testing preparation status:
   clock.
 - Do not start the Alpha rollout until at least 12 consenting tester Google
   accounts and the intended country availability are ready.
+
+## Alpha Closed-Test Review Submission
+
+Date: 2026-08-03
+
+- Alpha targets all 177 available countries and regions.
+- The existing `HuMANity Internal Testers` list is attached. It currently has
+  one tester; 11 more consenting Google accounts remain required for the
+  production-access test threshold.
+- Existing bundle `23 (1.0.22)` was added from the Play artifact library; no
+  new AAB was uploaded.
+- The public child-safety standards page was deployed and verified at
+  `https://humanity-frontend-legal-production.up.railway.app/child-safety`.
+- Advertising ID was declared as not used.
+- The owner-approved Child Safety Standards declaration was completed with the
+  public URL and developer-account contact.
+- Google Play accepted all 14 prepared changes for review. Publishing overview
+  reports `Changes in review`.
+- No production release or production rollout was created.
+
+The qualifying clock does not begin until at least 12 testers have opted in and
+remain opted in continuously for 14 days.

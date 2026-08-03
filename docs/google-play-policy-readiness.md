@@ -553,3 +553,30 @@ Date: 2026-07-30
   continuous days before the production-access application unlocks.
 - Do not request production access or start a production rollout until the
   closed-test requirement is complete and its feedback has been reviewed.
+
+## Closed-Test Policy Blockers
+
+Date: 2026-08-03
+
+- Alpha closed testing targets all 177 available countries and regions.
+- The existing internal tester email list is attached to Alpha. It currently
+  contains one tester; 11 more consenting Google accounts are still required
+  before the 12-tester, 14-day production-access clock can begin.
+- Release `23 (1.0.22)` is prepared for Alpha using the existing Play bundle.
+- The owner confirmed that HuMANity does not use Advertising ID and approved
+  the `No` declaration.
+- The owner confirmed the in-app child-safety reporting flow, compliance with
+  applicable child-safety laws, required reporting to relevant authorities,
+  and use of the developer-account email as the designated contact.
+- The public child-safety standards URL is:
+  `https://humanity-frontend-legal-production.up.railway.app/child-safety`.
+- The Advertising ID declaration was saved as `No`, matching the audited
+  Android manifest and dependency set.
+- The Child Safety Standards declaration was saved with the public standards
+  URL, the developer-account contact, and both owner-approved certifications.
+- Google Play accepted all 14 prepared changes for review, including the Alpha
+  release, country and tester targeting, store listing, content rating, target
+  audience, privacy policy, Data Safety, and required declarations.
+- Publishing overview now reports `Changes in review` and confirmed that 14
+  changes were sent for review.
+- No production release or production rollout was created.
